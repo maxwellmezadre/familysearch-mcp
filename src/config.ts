@@ -30,13 +30,20 @@ export type ImportBrowser = (typeof IMPORT_BROWSERS)[number];
 
 export const SESSION_KEY_BYTES = 32;
 
-const literals = <T extends readonly string[]>(values: T) =>
-  Type.Union(values.map((value) => Type.Literal(value)));
+export const FsEnvSchema = Type.Union([Type.Literal("production"), Type.Literal("beta")]);
+export const ImportBrowserSchema = Type.Union([
+  Type.Literal("dia"),
+  Type.Literal("arc"),
+  Type.Literal("chrome"),
+  Type.Literal("chromium"),
+  Type.Literal("brave"),
+  Type.Literal("edge"),
+]);
 
 export const ConfigSchema = Type.Object({
   /** Everything the tool persists lives under this directory. */
   configDir: Type.String({ minLength: 1 }),
-  env: literals(FS_ENVS),
+  env: FsEnvSchema,
   /** Derived from `env`; every request goes to this origin and nowhere else. */
   baseUrl: Type.String({ minLength: 1 }),
   sessionPath: Type.String({ minLength: 1 }),
@@ -50,9 +57,13 @@ export const ConfigSchema = Type.Object({
   sessionKey: Type.Optional(Type.String({ minLength: 1 })),
   readOnly: Type.Boolean(),
   logFile: Type.Optional(Type.String({ minLength: 1 })),
-  browserChannel: literals(BROWSER_CHANNELS),
+  browserChannel: Type.Union([
+    Type.Literal("chrome"),
+    Type.Literal("chromium"),
+    Type.Literal("msedge"),
+  ]),
   /** When set, `login` imports the session from this browser instead of opening a window. */
-  importBrowser: Type.Optional(literals(IMPORT_BROWSERS)),
+  importBrowser: Type.Optional(ImportBrowserSchema),
   /** Minimum gap between two FamilySearch requests (plus random jitter). */
   minIntervalMs: Type.Integer({ minimum: 0 }),
   jitterMs: Type.Integer({ minimum: 0 }),
