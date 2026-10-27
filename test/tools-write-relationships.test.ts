@@ -134,6 +134,16 @@ describe("link_spouses", () => {
     expect(rel.facts[0].place.original).toBe("Recife");
   });
 
+  test("read-back does not count a co-parent without a couple relationship", async () => {
+    const { run } = setup([
+      families(), personDoc(B, "Esposa Lia"), response({ status: 201 }),
+      families({ childAndParentsRelationships: [{ id: "R-2", parent1: ref(A), parent2: ref(B), child: ref("DDDD-444") }] }),
+    ]);
+    const out = await run("link_spouses", { person1_id: A, person2_id: B, reason });
+    expect(out.status).toBe("applied");
+    expect(out.readBack.ok).toBe(false);
+  });
+
   test("preview never asks or writes", async () => {
     const { run, fetch, approver } = setup([families(), personDoc(B, "Esposa Lia")]);
     const out = await run("link_spouses", { person1_id: A, person2_id: B, reason, preview: true });

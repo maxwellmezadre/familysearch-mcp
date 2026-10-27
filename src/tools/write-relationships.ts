@@ -139,7 +139,7 @@ export const linkSpouses = defineTool({
     return runWritePlan(ctx, plan, {
       preview: args.preview,
       readBack: async () => {
-        const found = toFamily(await readFamilies(ctx.http, a), a).spouses.some((s) => s.spouse?.id === b);
+        const found = toFamily(await readFamilies(ctx.http, a), a).spouses.some((s) => s.relationshipId && s.spouse?.id === b);
         return done([refresh("casal", found, found ? "o cônjuge aparece na família da primeira pessoa" : "o cônjuge não aparece na família da primeira pessoa")]);
       },
     });
