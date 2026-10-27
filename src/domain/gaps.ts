@@ -1,4 +1,5 @@
 import type { CachedPerson } from "../cache/repo.js";
+import { personUrl } from "./normalize.js";
 
 // Offline analysis of the cached lineage: what is missing, ranked by how
 // worthwhile it is to research. Pure: no network, no database.
@@ -85,7 +86,7 @@ export function findGaps(people: CachedPerson[], maxGeneration: number, baseUrl:
       kinds: found.map(([kind]) => kind),
       labels: found.map(([, label]) => label),
       score: Math.round(((raw * (maxGeneration + 1 - generation)) / (maxGeneration + 1)) * 100) / 100,
-      url: `${baseUrl}/tree/person/details/${p.id}`,
+      url: personUrl(baseUrl, p.id),
     });
   }
   return gaps.sort((a, b) => b.score - a.score || Number(a.number) - Number(b.number));

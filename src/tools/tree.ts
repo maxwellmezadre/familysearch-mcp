@@ -1,5 +1,6 @@
 import { Type } from "@sinclair/typebox";
 import {
+  personUrl,
   toChanges,
   toFamily,
   toMemories,
@@ -28,8 +29,6 @@ import { generationsField, limitField, personIdField } from "./fields.js";
 // Reads of the shared Family Tree. Every tool is live (the tree is edited by
 // other people all the time) and costs the number of requests its description
 // states.
-
-export const personUrl = (baseUrl: string, id: string): string => `${baseUrl}/tree/person/details/${id}`;
 
 const textField = (description: string) => Type.Optional(Type.String({ minLength: 1, description }));
 

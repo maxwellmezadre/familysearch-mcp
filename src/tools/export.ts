@@ -44,7 +44,7 @@ export const exportTool = defineTool({
       args.format === "gedcom"
         ? toGedcom(data, at)
         : args.format === "csv"
-          ? toCsv(persons)
+          ? toCsv(persons, ctx.config.baseUrl)
           : `${JSON.stringify(data, null, 2)}\n`;
 
     const dir = resolve(ctx.config.exportDir);

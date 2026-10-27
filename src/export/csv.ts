@@ -1,3 +1,4 @@
+import { personUrl } from "../domain/normalize.js";
 import type { ExportPerson } from "./gedcom.js";
 
 // RFC 4180 quoting: a field with a comma, quote or line break is wrapped in
@@ -9,7 +10,8 @@ const field = (value: unknown): string => {
 
 const HEADER = "id,name,gender,living,birth_date,birth_place,death_date,death_place,ascendancy,generation,url";
 
-export function toCsv(people: ExportPerson[]): string {
+/** `baseUrl` is the configured environment's: a beta export links to beta. */
+export function toCsv(people: ExportPerson[], baseUrl: string): string {
   const rows = people.map((p) =>
     [
       p.id,
@@ -22,7 +24,7 @@ export function toCsv(people: ExportPerson[]): string {
       p.deathPlace,
       p.ascendancy,
       p.generation,
-      `https://www.familysearch.org/tree/person/details/${p.id}`,
+      personUrl(baseUrl, p.id),
     ]
       .map(field)
       .join(","),

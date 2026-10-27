@@ -114,9 +114,14 @@ describe("toGedcom", () => {
 
 describe("toCsv", () => {
   test("header and RFC 4180 quoting", () => {
-    const csv = toCsv([person("A", { name: 'Rossi, Giulia "Gigi"' })]);
+    const csv = toCsv([person("A", { name: 'Rossi, Giulia "Gigi"' })], "https://www.familysearch.org");
     const [header, row] = csv.split("\n");
     expect(header).toBe("id,name,gender,living,birth_date,birth_place,death_date,death_place,ascendancy,generation,url");
     expect(row).toStartWith('A,"Rossi, Giulia ""Gigi""",female,false,5 November 1937,"Torino, Italia",,,1,0,https://');
+  });
+
+  test("the link points at the configured environment", () => {
+    const [, row] = toCsv([person("A")], "https://beta.familysearch.org").split("\n");
+    expect(row).toEndWith(",https://beta.familysearch.org/tree/person/details/A");
   });
 });

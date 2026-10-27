@@ -1,5 +1,5 @@
 import { Type } from "@sinclair/typebox";
-import { toPlaces, toRecordDetail, toRecordHits, toSearchHits } from "../domain/normalize.js";
+import { personUrl, toPlaces, toRecordDetail, toRecordHits, toSearchHits } from "../domain/normalize.js";
 import type { RecordQuery } from "../domain/types.js";
 import {
   readRecordHints,
@@ -10,7 +10,6 @@ import {
 } from "../familysearch/api.js";
 import { compactObject, defineTool } from "./define.js";
 import { limitField, personIdField } from "./fields.js";
-import { personUrl } from "./tree.js";
 
 // Research: historical records, FamilySearch's own suggestions (record hints
 // and possible duplicates) and standardized places. All live, all read-only.

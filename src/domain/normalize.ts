@@ -233,6 +233,7 @@ export function toMemories(document: GxDocument | null): Memory[] {
 // ---- records and places -----------------------------------------------------
 
 export const recordUrl = (baseUrl: string, id: string): string => `${baseUrl}/ark:/61903/1:1:${id}`;
+export const personUrl = (baseUrl: string, id: string): string => `${baseUrl}/tree/person/details/${id}`;
 
 /** The collection a record belongs to: the `sd_c_*` description, FamilySearch's convention. */
 function collectionOf(document: GxDocument): string | null {
