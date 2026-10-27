@@ -146,6 +146,17 @@ export function createCacheRepo(db: Database, now: () => number) {
       db.query("UPDATE persons SET merged_into = ? WHERE id = ?").run(survivorId, id);
     },
 
+    /**
+     * A write changed these people on FamilySearch: the next sync re-reads the
+     * pedigree and their details. A merge mark is dropped too (a restored person
+     * exists again); sync finds a real merge again by its 301.
+     */
+    invalidate(ids: string[]): void {
+      db.query("DELETE FROM meta WHERE key = 'pedigree_at'").run();
+      const forget = db.query("UPDATE persons SET details_at = NULL, merged_into = NULL WHERE id = ?");
+      for (const id of ids) forget.run(id);
+    },
+
     /** Forgets which persons were detailed (sync --full). */
     resetDetails(): void {
       db.exec("UPDATE persons SET details_at = NULL");

@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import type { Ctx } from "../context.js";
 import { ApprovalRefusedError, WriteUncertainError } from "../core/errors.js";
 import type { WriteResult } from "../core/ticket.js";
@@ -28,6 +29,25 @@ export const isFailedWrite = (result: unknown): boolean =>
   typeof result === "object" && result !== null && ["refused", "partial", "uncertain"].includes((result as { status?: unknown }).status as string);
 
 const errorText = (error: unknown) => (error instanceof Error ? error.message : String(error));
+
+/**
+ * DESIGN §11: the people a write touched go back to the next sync. Only a cache
+ * that already exists is changed (a write never creates one), and a failure here
+ * never hides what happened on FamilySearch.
+ */
+function invalidateCache(ctx: Ctx, plan: WritePlan, status: WriteOutcome["status"]): void {
+  if (!plan.touches?.length || !existsSync(ctx.config.dbPath)) return;
+  try {
+    const repo = ctx.cache();
+    repo.transaction(() => {
+      repo.invalidate(plan.touches ?? []);
+      // Only a 2xx merge is known to have happened; otherwise sync finds out by the 301.
+      if (plan.merged && status === "applied") repo.markMerged(plan.merged.duplicate, plan.merged.survivor);
+    });
+  } catch (error) {
+    ctx.log.warn(`Não consegui marcar no cache as pessoas alteradas (${errorText(error)}); rode sync --full.`);
+  }
+}
 
 export async function runWritePlan(
   ctx: Ctx,
@@ -95,6 +115,8 @@ export async function runWritePlan(
     if (status === "partial" && applied === 0) status = "refused";
     message += status === "partial" ? ` ${applied} de ${plan.writes.length} escritas foram aplicadas; nada foi refeito.` : "";
   }
+
+  if (status !== "refused") invalidateCache(ctx, plan, status);
 
   let readBack: ReadBack | null = null;
   if (status === "applied") {

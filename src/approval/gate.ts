@@ -29,6 +29,10 @@ export type WritePlan = {
   details: string;
   writes: PlannedWrite[];
   confirm?: { title: string; expected: string };
+  /** People whose cached copy the writes make stale (DESIGN §11). */
+  touches?: string[];
+  /** A merge: once applied, the cache marks the duplicate as merged into the survivor. */
+  merged?: { duplicate: string; survivor: string };
 };
 
 const MIN_REASON = 10;

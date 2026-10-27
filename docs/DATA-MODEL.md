@@ -94,7 +94,12 @@ duplicata, e `skip_copy` é a exceção explícita.
 
 ## O cache
 
-`cache.<env>.db`, SQLite, preenchido só pelo `sync`.
+`cache.<env>.db`, SQLite, preenchido só pelo `sync`. Uma escrita que chegou ao
+FamilySearch (aplicada, em parte ou incerta) não grava dados no cache: apaga a
+data da linhagem e a marca de "detalhada" das pessoas que tocou, para o próximo
+`sync` reler a linhagem e essas pessoas. Uma mesclagem aplicada também marca a
+duplicata como mesclada na sobrevivente. Se o cache ainda não existe, a escrita
+não o cria.
 
 | Tabela | Conteúdo |
 | --- | --- |
@@ -124,7 +129,8 @@ Para ninguém inventar:
 - O cache não guarda fatos além de nascimento e falecimento, nem casamento,
   fontes ou notas: para isso, as leituras ao vivo. O GEDCOM exportado traz nome,
   sexo, nascimento, falecimento, o id do FamilySearch (`_FSFTID`) e as famílias.
-- As escritas não atualizam o cache. Depois de escrever, `sync --full`.
+- As escritas não atualizam o cache, só o marcam como desatualizado. Depois de
+  escrever, `sync`.
 - Memórias são só leitura: não há upload de fotos nem de documentos.
 - Não existe refresh do token: quando a sessão expira, é preciso um login novo
   (ou a reimportação do navegador).

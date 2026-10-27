@@ -236,6 +236,8 @@ export const mergePersons = defineTool({
       headline,
       details,
       confirm: { title: `Digite o id da duplicata (${duplicate}) para confirmar`, expected: duplicate },
+      touches: [survivor, duplicate],
+      merged: { duplicate, survivor },
       writes: [
         {
           ...write,
@@ -272,10 +274,12 @@ export const restorePerson = defineTool({
   input: Type.Object({ person_id: personIdField, reason: reasonField, preview: previewField }),
   run: async (args, ctx) => {
     const id = args.person_id;
+    const touches = [id];
     const state = await readPerson(ctx.http, id).then(
       () => null,
       (error: unknown) => {
         if (error instanceof MergedError) {
+          if (error.survivorId) touches.push(error.survivorId);
           const into = error.survivorId ?? "outra pessoa";
           return `Foi mesclada em ${into}; volta a existir separada, e o que foi copiado para ${into} continua lá.`;
         }
@@ -290,6 +294,7 @@ export const restorePerson = defineTool({
       headline: `Restaurar ${id}\n${state}`,
       details: `${state}\nDepois, confira as duas pessoas e remova o que não for de cada uma.`,
       writes: [restoreWrite(id)],
+      touches,
     };
     return runWritePlan(ctx, plan, {
       preview: args.preview,

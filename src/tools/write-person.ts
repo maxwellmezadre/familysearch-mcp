@@ -127,6 +127,7 @@ export const createPerson = defineTool({
           : []),
       ].join("\n"),
       writes: [createPersonWrite({ givenName: args.given_name, surname: args.surname, gender: args.gender, living, facts })],
+      touches: [], // a new person is in no cached family yet
       ...(strong.length > 0 ? { confirm: { title: "Digite criar para criar mesmo assim", expected: "criar" } } : {}),
     };
 
@@ -246,6 +247,7 @@ export const updatePerson = defineTool({
         ...(args.add_name ? [`* acrescentar o nome ${fullName(args.add_name.given_name, args.add_name.surname)}`] : []),
       ].join("\n"),
       writes,
+      touches: [args.person_id],
     };
 
     return runWritePlan(ctx, plan, {
@@ -319,6 +321,8 @@ export const addNote = defineTool({
       headline: `${headline}\nAssunto: ${args.subject}`,
       details: `${headline}\n\nAssunto: ${args.subject}\n\n${args.text}`,
       writes: [noteWrite(target, { subject: args.subject, text: args.text })],
+      // The cache keeps no notes; a relationship's people are not read here.
+      touches: target.kind === "person" ? [target.id] : [],
     };
 
     return runWritePlan(ctx, plan, {

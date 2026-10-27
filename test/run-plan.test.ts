@@ -1,4 +1,4 @@
-import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, expect, test } from "bun:test";
@@ -127,4 +127,61 @@ test("a 3xx is not applied: refused, no read-back, nothing after it sent", async
   expect(out.message).toContain("movido");
   expect(read).toBe(false);
   expect(fetch.calls).toHaveLength(1);
+});
+
+// DESIGN §11: a write makes the cached copies of the people it touched stale.
+const cached = (id: string) => ({
+  id, name: id, given: null, surname: null, gender: "female", living: false, lifespan: null,
+  birthDate: null, birthFormal: null, birthPlace: null, deathDate: null, deathFormal: null, deathPlace: null,
+  ascendancy: "1", generation: 0, raw: "{}",
+});
+function withCache(ctx: ReturnType<typeof setup>["ctx"]) {
+  const repo = ctx.cache(); // creates the file, as a sync would
+  for (const id of ["AAAA-AAA", "BBBB-BBB", "CCCC-CCC"]) {
+    repo.upsertPerson(cached(id));
+    repo.markDetails(id, { sources: 1, hints: 0, duplicates: 0 });
+  }
+  repo.setMeta("pedigree_at", "2026-01-01T00:00:00.000Z");
+  return repo;
+}
+const touching = (extra: Partial<WritePlan> = {}): WritePlan => ({ ...plan([w("/platform/a")]), touches: ["AAAA-AAA", "BBBB-BBB"], ...extra });
+
+test("a write never creates the cache file", async () => {
+  const { ctx } = setup([response({ status: 204 })]);
+  await runWritePlan(ctx, touching(), { readBack: okRead });
+  expect(existsSync(ctx.config.dbPath)).toBe(false);
+});
+
+test("preview and refusals leave the cache as it was", async () => {
+  const { ctx } = setup([], fakeApprover([{ approved: false, reason: "não" }]));
+  const repo = withCache(ctx);
+  await runWritePlan(ctx, touching(), { preview: true, readBack: okRead });
+  await runWritePlan(ctx, touching(), { readBack: okRead });
+  expect(repo.getMeta("pedigree_at")).not.toBeNull();
+  expect(repo.pendingDetails(10)).toEqual([]);
+});
+
+test("applied and uncertain writes send the touched people back to the next sync", async () => {
+  for (const answer of [response({ status: 204 }), response({ status: 503 })]) {
+    const { ctx } = setup([answer]);
+    const repo = withCache(ctx);
+    const out = await runWritePlan(ctx, touching(), { readBack: okRead });
+    expect(["applied", "uncertain"]).toContain(out.status);
+    expect(repo.getMeta("pedigree_at")).toBeNull();
+    expect(repo.pendingDetails(10).sort()).toEqual(["AAAA-AAA", "BBBB-BBB"]);
+  }
+});
+
+test("an applied merge marks the duplicate merged; an uncertain one leaves that to sync", async () => {
+  const merged = { duplicate: "BBBB-BBB", survivor: "AAAA-AAA" };
+  const applied = setup([response({ status: 204 })]);
+  const repo = withCache(applied.ctx);
+  await runWritePlan(applied.ctx, touching({ merged }), { readBack: okRead });
+  expect(repo.person("BBBB-BBB")?.mergedInto).toBe("AAAA-AAA");
+
+  const uncertain = setup([response({ status: 503 })]);
+  const other = withCache(uncertain.ctx);
+  await runWritePlan(uncertain.ctx, touching({ merged }), { readBack: okRead });
+  expect(other.person("BBBB-BBB")?.mergedInto).toBeNull();
+  expect(other.pendingDetails(10)).toContain("BBBB-BBB");
 });

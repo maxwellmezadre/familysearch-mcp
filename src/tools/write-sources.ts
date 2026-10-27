@@ -57,6 +57,7 @@ export const addSource = defineTool({
         .filter(Boolean)
         .join("\n"),
       writes: [create, attachSourceWrite(args.person_id)],
+      touches: [args.person_id],
     };
     return runWritePlan(ctx, plan, {
       preview: args.preview,
@@ -110,6 +111,7 @@ export const attachRecord = defineTool({
       headline: `Anexar o registro ${args.record_id} a ${who}\nFonte: "${title}"`,
       details: [`Pessoa: ${who}`, `Registro: ${about}`, `Título da fonte: ${title}`].join("\n"),
       writes: [createSourceWrite({ title, about }), attachSourceWrite(args.person_id)],
+      touches: [args.person_id],
     };
     return runWritePlan(ctx, plan, {
       preview: args.preview,
@@ -168,6 +170,7 @@ export const resolveSuggestion = defineTool({
           : `Marcar ${who} e ${args.target_id} como pessoas diferentes\nA sugestão de duplicata deixa de aparecer.`,
       details: `Pessoa: ${who}\n${write.summary}`,
       writes: [write],
+      touches: args.kind === "duplicate" ? [args.person_id, args.target_id] : [args.person_id],
     };
     return runWritePlan(ctx, plan, {
       preview: args.preview,

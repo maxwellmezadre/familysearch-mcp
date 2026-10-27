@@ -76,6 +76,7 @@ export const linkParents = defineTool({
       headline: `Ligar ${childLabel} como filho(a) de ${names.join(" e ")}\nO FamilySearch passa a mostrar essa família na árvore de todos os usuários.`,
       details: `Criar um relacionamento pais-filho.\nFilho(a): ${childLabel}\nPais: ${names.join(" e ")}`,
       writes: [linkParentsWrite(ctx.config.baseUrl, child, p1, p2)],
+      touches: [child, p1, p2].filter((x): x is string => !!x),
     };
     return runWritePlan(ctx, plan, {
       preview: args.preview,
@@ -131,6 +132,7 @@ export const linkSpouses = defineTool({
       headline: `Ligar ${first} e ${second} como casal${when}\nO FamilySearch passa a mostrar esse casal na árvore de todos os usuários.`,
       details: `Criar um relacionamento de casal.\nPessoa 1: ${first}\nPessoa 2: ${second}${when ? `\nCasamento:${when}` : ""}`,
       writes: [linkSpousesWrite(ctx.config.baseUrl, a, b, marriage)],
+      touches: [a, b],
     };
     return runWritePlan(ctx, plan, {
       preview: args.preview,
@@ -192,6 +194,7 @@ export const removeRelationship = defineTool({
       headline: `Remover a ligação de ${text}\nATENÇÃO: as pessoas continuam na árvore, mas deixam de estar ligadas.`,
       details: `Apagar o relacionamento ${id} (${kind === "couple" ? "casal" : "pais e filho"}).\nPessoas: ${labels.join("; ")}`,
       writes: [deleteRelationshipWrite(kind, id)],
+      touches: ids,
     };
     return runWritePlan(ctx, plan, {
       preview: args.preview,

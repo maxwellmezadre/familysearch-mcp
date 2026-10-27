@@ -152,8 +152,10 @@ Todo comando do CLI aceita `--json`. Os que escrevem aceitam `--preview`.
 - Dados sensíveis: parentes vivos aparecem só para quem os cadastrou. Não
   exporte com `include_living: true` nem repita dados de vivos sem o usuário
   pedir.
-- As escritas não atualizam o cache. Depois de escrever, `find_gaps` e `export`
-  só refletem a mudança após `sync {full: true}`.
+- Uma escrita não atualiza o cache, só marca como desatualizadas as pessoas que
+  ela tocou (e uma mesclagem aplicada marca a duplicata como mesclada). Depois
+  de escrever, `find_gaps` e `export` só refletem a mudança após um `sync`, que
+  relê a linhagem e essas pessoas.
 - `get_possible_duplicates` vazio não prova que não existe duplicata: o
   FamilySearch nem sempre sugere. Procure também com `search_persons`.
 - Com `FAMILYSEARCH_READ_ONLY=1`, as 14 tools que gravam algo (escritas,

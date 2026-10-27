@@ -129,7 +129,7 @@ function setup(route: (url: string, init: FetchInit) => FetchResponse, approver:
     const at = join(config.auditDir, "snapshots");
     return existsSync(at) ? readdirSync(at).map((name) => join(at, name)) : [];
   };
-  return { run, fetch, approver, writes, snapshots };
+  return { run, fetch, approver, writes, snapshots, ctx };
 }
 
 const merge = (extra: Record<string, unknown> = {}) => ({
@@ -355,6 +355,24 @@ describe("merge_persons", () => {
     const out = await run("merge_persons", merge({ take_from_duplicate: [`birth-${DUPLICATE}`] }));
     expect(out.readBack.ok).toBe(false);
     expect(out.message).toContain("não aparece na sobrevivente");
+  });
+
+  test("an applied merge sends both people back to sync and marks the duplicate merged", async () => {
+    const { run, ctx } = setup(world());
+    const repo = ctx.cache(); // an existing cache, as after a sync
+    for (const [id, ascendancy] of [[SURVIVOR, "1"], [DUPLICATE, "2"]] as const) {
+      repo.upsertPerson({
+        id, name: "Giulia Rossi", given: null, surname: null, gender: "female", living: false, lifespan: null,
+        birthDate: null, birthFormal: null, birthPlace: null, deathDate: null, deathFormal: null, deathPlace: null,
+        ascendancy, generation: Number(ascendancy) - 1, raw: "{}",
+      });
+      repo.markDetails(id, { sources: 0, hints: 0, duplicates: 1 });
+    }
+    repo.setMeta("pedigree_at", "2026-01-01T00:00:00.000Z");
+    await run("merge_persons", merge());
+    expect(repo.person(DUPLICATE)?.mergedInto).toBe(SURVIVOR);
+    expect(repo.pendingDetails(10)).toEqual([SURVIVOR]);
+    expect(repo.getMeta("pedigree_at")).toBeNull();
   });
 
   test("read-back reports a child that did not come along", async () => {
