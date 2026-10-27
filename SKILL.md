@@ -55,6 +55,8 @@ parâmetros em `TOOLS.md`, ao lado deste arquivo.
    foi escrito, e o `message` diz por quê. `exists` e `already_attached`: já
    estava lá, nada foi escrito. `partial` e `uncertain`: algo pode ter sido
    aplicado. Nunca repita uma escrita `uncertain`: releia a pessoa antes.
+   `refused`, `partial` e `uncertain` chegam como erro de tool (`isError`), com
+   o resultado completo no texto.
 10. Datas genealógicas vêm com `original` (como foi escrita) e `formal` (a forma
     padronizada do FamilySearch, ou `null`). Mostre o `original`; use o
     `formal` para comparar. Não invente dia nem mês que não estão lá.

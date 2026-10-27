@@ -114,3 +114,45 @@ test(
   },
   30_000,
 );
+
+// A write that did not happen (or may have) is an error for the caller: isError
+// in MCP, exit code 1 in the CLI, with the whole outcome still in the output.
+const noteOnRelationship = {
+  relationship_id: "RRRR-111",
+  relationship_kind: "couple",
+  subject: "Nota de teste",
+  text: "Texto da nota",
+  reason: "teste sem elicitation no cliente",
+};
+
+test(
+  "a refused write is isError and the refusal says why",
+  async () => {
+    // add_note on a relationship asks before any read: no session needed to reach the approver.
+    const { replies } = await talk([
+      ...handshake,
+      { jsonrpc: "2.0", id: 2, method: "tools/call", params: { name: "add_note", arguments: noteOnRelationship } },
+    ]);
+    const result = replies.find((reply) => reply.id === 2)?.result as { isError?: boolean; content: Array<{ text: string }> };
+    expect(result.isError).toBe(true);
+    const outcome = JSON.parse(result.content[0]?.text as string);
+    expect(outcome.status).toBe("refused");
+    expect(outcome.message).toContain("elicitation");
+  },
+  30_000,
+);
+
+test(
+  "the CLI exits 1 on a refused write and still prints it",
+  async () => {
+    // A blank reason is refused by the gate before any question: no dialog opens, nothing is sent.
+    const proc = Bun.spawn(
+      ["bun", "run", "src/bin.ts", "add-note", "--relationship", "RRRR-111", "--kind", "couple", "--subject", "s", "--text", "t", "--reason", `${" ".repeat(12)}x`],
+      { cwd: join(import.meta.dir, ".."), env: { ...process.env, FAMILYSEARCH_CONFIG_DIR: home }, stdout: "pipe", stderr: "pipe" },
+    );
+    const stdout = await new Response(proc.stdout).text();
+    expect(await proc.exited).toBe(1);
+    expect(stdout).toContain("refused:");
+  },
+  30_000,
+);

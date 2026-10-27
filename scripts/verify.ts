@@ -157,16 +157,9 @@ async function main(): Promise<void> {
     replies.find((reply) => reply.id === 8)?.result !== undefined,
   );
 
-  // No session and no elicitation: a write cannot happen, whatever shape the refusal takes.
+  // No session and no elicitation: a write cannot happen, and the caller sees an error.
   const note = replies.find((reply) => reply.id === 9)?.result as ToolResult | undefined;
-  const noteStatus = (() => {
-    try {
-      return (JSON.parse(note?.content[0]?.text ?? "") as { status?: string }).status;
-    } catch {
-      return undefined;
-    }
-  })();
-  check("add_note sem sessão nem aprovação não escreve", note?.isError === true || noteStatus === "refused");
+  check("add_note sem sessão nem aprovação não escreve e vira isError", note?.isError === true);
   check("o servidor continua respondendo depois da escrita recusada", replies.find((reply) => reply.id === 10)?.result !== undefined);
 
   console.log("\nmodo somente leitura:");

@@ -98,8 +98,9 @@ sem sessão gráfica, a escrita é recusada.
 O resultado vai para o stdout; erros, avisos e progresso vão para o stderr,
 então `familysearch gaps --json | jq` funciona. Sem `--json`, os comandos
 imprimem tabelas ou texto legível. Um erro sai com código 1. Uma escrita que
-você recusa, ou que não pôde ser perguntada, não é erro: sai com código 0 e o
-texto `refused` com o motivo.
+não aconteceu por inteiro também sai com código 1: recusada por você, sem como
+perguntar, aplicada só em parte ou com resultado incerto. O resultado é impresso
+mesmo assim, com o `status` (`refused`, `partial` ou `uncertain`) e o motivo.
 
 ## Exemplos
 

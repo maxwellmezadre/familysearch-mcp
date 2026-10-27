@@ -63,5 +63,7 @@ A pergunta é curta: o Claude Code corta mensagens longas, então ela leva um
 título de até 2 linhas e 200 caracteres, o caminho do plano completo e os
 detalhes, e o diálogo do macOS mostra até 900 caracteres de detalhe. Por isso a
 Skill manda mostrar a prévia no chat antes da chamada real. Clientes MCP sem
-elicitation ficam, na prática, somente leitura. Uma escrita recusada volta como
-resultado com `status: "refused"` e o motivo, não como erro de tool.
+elicitation ficam, na prática, somente leitura. Uma escrita que não aconteceu
+por inteiro (`status` `refused`, `partial` ou `uncertain`) volta como erro de
+tool (`isError`) no MCP e sai com código 1 no CLI, e o texto continua sendo o
+resultado completo, com o motivo e o que foi enviado.

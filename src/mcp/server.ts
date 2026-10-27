@@ -5,6 +5,7 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import type { Ctx } from "../context.js";
+import { isFailedWrite } from "../approval/run.js";
 import { createElicitationApprover } from "./elicit.js";
 import { runTool } from "../tools/define.js";
 import { activeTools } from "../tools/registry.js";
@@ -43,7 +44,8 @@ export async function startMcpServer(ctx: Ctx, version: string): Promise<void> {
     // crash: one bad call must not take the server down.
     try {
       const result = await runTool(tool, request.params.arguments ?? {}, ctx);
-      return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
+      const content = [{ type: "text" as const, text: JSON.stringify(result, null, 2) }];
+      return isFailedWrite(result) ? { isError: true, content } : { content };
     } catch (error) {
       return toolError(error instanceof Error ? error.message : String(error));
     }

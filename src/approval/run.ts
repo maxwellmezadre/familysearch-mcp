@@ -19,6 +19,14 @@ export type WriteOutcome = {
   message: string;
 };
 
+/**
+ * A write the caller must see as failed: nothing was applied, only part of it,
+ * or nobody knows. The MCP server answers isError and the CLI exits 1, both
+ * with the whole outcome as the text.
+ */
+export const isFailedWrite = (result: unknown): boolean =>
+  typeof result === "object" && result !== null && ["refused", "partial", "uncertain"].includes((result as { status?: unknown }).status as string);
+
 const errorText = (error: unknown) => (error instanceof Error ? error.message : String(error));
 
 export async function runWritePlan(

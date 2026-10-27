@@ -1,3 +1,4 @@
+import { isFailedWrite } from "../approval/run.js";
 import { loadConfig } from "../config.js";
 import { type Ctx, createContext } from "../context.js";
 import type { ToolDef } from "../tools/define.js";
@@ -78,6 +79,7 @@ export async function invoke(
       await write(
         options.json ? JSON.stringify(result, null, 2) : (options.format ?? formatHuman)(result),
       );
+      if (isFailedWrite(result)) process.exitCode = 1;
     });
   } catch (error) {
     console.error(error instanceof Error ? error.message : String(error));

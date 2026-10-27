@@ -153,7 +153,7 @@ Ou, à mão, em `~/.claude.json`:
 Use o caminho absoluto: clientes MCP não herdam o `PATH` do seu shell. As
 escritas precisam de um cliente com suporte a elicitation (a pergunta na tela);
 o Claude Code tem. Num cliente sem esse suporte, as leituras funcionam e toda
-escrita é recusada. Depois é só perguntar: "quem são os meus bisavós?", "essas
+escrita é recusada, como erro de tool. Depois é só perguntar: "quem são os meus bisavós?", "essas
 duas pessoas são a mesma?", "o que falta pesquisar na minha árvore?".
 
 ## Variáveis de ambiente
