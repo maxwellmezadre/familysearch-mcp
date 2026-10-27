@@ -2,13 +2,14 @@
 
 > Gerado por `bun run docs:tools` a partir de `src/tools/registry.ts`. Não edite à mão.
 
-O servidor expõe **25 tools**. Com `FAMILYSEARCH_READ_ONLY=1` as 10 que escrevem algo (conta, sessão, cache, arquivo) não são registradas.
+O servidor expõe **30 tools**. Com `FAMILYSEARCH_READ_ONLY=1` as 14 que escrevem algo (conta, sessão, cache, arquivo) não são registradas.
 
 | Tool | Tipo | O que faz |
 | --- | --- | --- |
 | [`auth_status`](#authstatus) | leitura | Diz se há uma sessão do FamilySearch salva, em qual ambiente (produção ou beta), de onde veio (Dia ou login no… |
 | [`login`](#login) | escrita | Entra no FamilySearch e guarda a sessão cifrada (a senha nunca passa por aqui). Na produção, importa a sessão … |
 | [`doctor`](#doctor) | leitura | Diagnóstico camada a camada: configuração, arquivo de sessão, token (ambiente certo), API (users/current), lei… |
+| [`sync`](#sync) | escrita | Preenche o cache local com a sua linhagem (ancestrais e cônjuges até 8 gerações) e, para cada pessoa, a famíli… |
 | [`search_persons`](#searchpersons) | leitura | Busca pessoas na árvore compartilhada do FamilySearch por nome, sexo, datas, lugares e nomes de pai, mãe ou cô… |
 | [`get_person`](#getperson) | leitura | Lê uma pessoa da árvore: nomes, sexo, se está viva, todos os fatos (nascimento, morte, residência...) com a da… |
 | [`get_family`](#getfamily) | leitura | Família direta de uma pessoa: pais (com o id do relacionamento pai/mãe e filho), cônjuges (com o casamento) e … |
@@ -21,6 +22,8 @@ O servidor expõe **25 tools**. Com `FAMILYSEARCH_READ_ONLY=1` as 10 que escreve
 | [`get_possible_duplicates`](#getpossibleduplicates) | leitura | Possíveis duplicatas de uma pessoa na árvore, segundo o FamilySearch, com a confiança (1 a 5) e o link de cada… |
 | [`search_places`](#searchplaces) | leitura | Busca lugares padronizados do FamilySearch pelo nome e devolve o nome completo (com município, estado e país),… |
 | [`compare_persons`](#comparepersons) | leitura | Compara duas pessoas da árvore lado a lado para decidir se são a mesma: fatos só de um lado, conflitos (ex.: d… |
+| [`find_gaps`](#findgaps) | leitura | Aponta o que falta na sua linhagem, lendo só o cache local (rode sync antes; não usa a rede): pai ou mãe fora … |
+| [`export`](#export) | escrita | Exporta o cache local (rode sync antes) para um arquivo em GEDCOM 5.5.1, JSON ou CSV, na pasta de exportação (… |
 | [`create_person`](#createperson) | escrita | Cria uma pessoa nova na árvore compartilhada do FamilySearch, com nome, sexo e, se houver, nascimento e faleci… |
 | [`update_person`](#updateperson) | escrita, destrutiva | Altera uma pessoa: acrescenta fatos (add_facts), altera fatos existentes (update_facts, por fact_id; o que não… |
 | [`add_note`](#addnote) | escrita | Acrescenta uma nota a uma pessoa (person_id) ou a um relacionamento (relationship_id com relationship_kind): e… |
@@ -30,6 +33,8 @@ O servidor expõe **25 tools**. Com `FAMILYSEARCH_READ_ONLY=1` as 10 que escreve
 | [`add_source`](#addsource) | escrita | Cria uma fonte (título, citação e endereço opcionais) e a anexa a uma pessoa. Pergunta ao usuário numa pergunt… |
 | [`attach_record`](#attachrecord) | escrita | Anexa um registro histórico a uma pessoa como fonte (título: nome principal e coleção; endereço: o link do reg… |
 | [`resolve_suggestion`](#resolvesuggestion) | escrita | Responde a uma sugestão do FamilySearch: aceita ou rejeita um registro sugerido (kind record) ou marca uma dup… |
+| [`merge_persons`](#mergepersons) | escrita, destrutiva | Mescla duas pessoas da árvore: a duplicata deixa de existir e o id dela passa a apontar para a sobrevivente. U… |
+| [`restore_person`](#restoreperson) | escrita, destrutiva | Restaura uma pessoa mesclada ou apagada: ela volta a existir separada, com o próprio id (desfaz merge_persons)… |
 | [`raw_get`](#rawget) | leitura | Faz um GET direto na API do FamilySearch (mesma sessão, mesmo ritmo), para redescobrir um endpoint quando o fo… |
 
 ## `auth_status`
@@ -61,6 +66,18 @@ Diagnóstico camada a camada: configuração, arquivo de sessão, token (ambient
 **Tipo:** leitura
 
 Sem parâmetros.
+
+## `sync`
+
+Preenche o cache local com a sua linhagem (ancestrais e cônjuges até 8 gerações) e, para cada pessoa, a família, o número de fontes, de sugestões de registros e de possíveis duplicatas. Retoma de onde parou: cada chamada gasta no máximo max_requests requisições (1 para a linhagem, 4 por pessoa); repita até done=true. Com full=true relê a linhagem e refaz o detalhe de todos. Grava só no seu computador.
+
+**Tipo:** escrita
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `max_requests` | integer (≥ 1, ≤ 200) | — | Requisições por chamada (1 a 200, default 60) |
+| `generations` | integer (≥ 1, ≤ 8) | — | Gerações (1 a 8, default 8) |
+| `full` | boolean | — | Relê a linhagem e o detalhe de todos (default false) |
 
 ## `search_persons`
 
@@ -205,6 +222,29 @@ Compara duas pessoas da árvore lado a lado para decidir se são a mesma: fatos 
 | `person_a` | string (`^[A-Z0-9]{4}-[A-Z0-9]{3,4}$`) | sim | Id da pessoa no FamilySearch, como aparece no link da página (ex.: KWCB-XXX) |
 | `person_b` | string (`^[A-Z0-9]{4}-[A-Z0-9]{3,4}$`) | sim | Id da pessoa no FamilySearch, como aparece no link da página (ex.: KWCB-XXX) |
 
+## `find_gaps`
+
+Aponta o que falta na sua linhagem, lendo só o cache local (rode sync antes; não usa a rede): pai ou mãe fora da árvore, nascimento ou falecimento sem data e lugar, pessoas sem fontes, sugestões de registros pendentes e possíveis duplicatas. Ordena por prioridade, com as gerações mais próximas de você primeiro.
+
+**Tipo:** leitura
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `limit` | integer (≥ 1, ≤ 200) | — | Quantas pessoas devolver (1 a 200, default 30) |
+| `kinds` | array | — | Só estes tipos de lacuna (default: todos) |
+
+## `export`
+
+Exporta o cache local (rode sync antes) para um arquivo em GEDCOM 5.5.1, JSON ou CSV, na pasta de exportação (FAMILYSEARCH_EXPORT_DIR). Por padrão exporta a linhagem; scope=all exporta todo o cache. Pessoas vivas saem sem datas nem lugares, com o nome 'Pessoa viva', a menos que include_living=true. Não usa a rede.
+
+**Tipo:** escrita
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `format` | `gedcom` \| `json` \| `csv` | sim | gedcom, json ou csv |
+| `scope` | `lineage` \| `all` | — | lineage (padrão) ou all |
+| `include_living` | boolean | — | Inclui dados de pessoas vivas (default false) |
+
 ## `create_person`
 
 Cria uma pessoa nova na árvore compartilhada do FamilySearch, com nome, sexo e, se houver, nascimento e falecimento. Informe death (ou deceased: true) para falecida, ou living: true para viva. Antes de planejar, busca pessoas parecidas: se achar candidatas fortes, a pergunta avisa e exige digitar 'criar'. Pergunta ao usuário numa pergunta na tela; nada é escrito sem aprovação. Custa 1 requisição de busca antes da escrita, mais 1 de releitura depois. Com preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
@@ -337,6 +377,34 @@ Responde a uma sugestão do FamilySearch: aceita ou rejeita um registro sugerido
 | `kind` | `record` \| `duplicate` | sim | record = registro sugerido; duplicate = possível duplicata |
 | `target_id` | string (`^[A-Za-z0-9][A-Za-z0-9._-]*$`) | sim | Id do registro (kind record) ou da outra pessoa (kind duplicate) |
 | `decision` | `accept` \| `reject` | sim |  |
+| `reason` | string (min 10 chars) | sim | Motivo da alteração, fica no histórico do FamilySearch |
+| `preview` | boolean | — | Mostra o que mudaria sem perguntar nem escrever |
+
+## `merge_persons`
+
+Mescla duas pessoas da árvore: a duplicata deixa de existir e o id dela passa a apontar para a sobrevivente. Use só depois de compare_persons, com o fingerprint que ele devolveu, e depois de mostrar os sinais de alerta ao usuário. Por padrão copia tudo o que só existe na duplicata (inclusive filhos, pais e cônjuges); take_from_duplicate escolhe, em cada conflito, a versão da duplicata, e skip_copy deixa itens de fora (os ids estão nos detalhes da prévia). Recusa pessoa viva, fingerprint desatualizado e a ordem que o FamilySearch não permite. Pede aprovação ao usuário numa pergunta na tela, que exige digitar o id da duplicata. Custa 14 requisições antes da pergunta. Logo antes de enviar, salva as duas pessoas num snapshot local; restore_person desfaz. preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
+
+**Tipo:** escrita, destrutiva
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `survivor_id` | string (`^[A-Z0-9]{4}-[A-Z0-9]{3,4}$`) | sim | Id da pessoa no FamilySearch, como aparece no link da página (ex.: KWCB-XXX) |
+| `duplicate_id` | string (`^[A-Z0-9]{4}-[A-Z0-9]{3,4}$`) | sim | Id da pessoa no FamilySearch, como aparece no link da página (ex.: KWCB-XXX) |
+| `fingerprint` | string (min 1 chars) | sim | O fingerprint devolvido por compare_persons para este par |
+| `reason` | string (min 10 chars) | sim | Motivo da alteração, fica no histórico do FamilySearch |
+| `take_from_duplicate` | array | — | Conflitos em que fica a versão da duplicata: id do recurso (ou a URI) de qualquer um dos lados |
+| `skip_copy` | array | — | Itens só da duplicata que NÃO devem ser copiados: id do recurso ou a URI |
+| `preview` | boolean | — | Mostra o que mudaria sem perguntar nem escrever |
+
+## `restore_person`
+
+Restaura uma pessoa mesclada ou apagada: ela volta a existir separada, com o próprio id (desfaz merge_persons). O que a mesclagem copiou para a sobrevivente continua lá. Pede aprovação ao usuário numa pergunta na tela. Custa 1 requisição antes da pergunta. preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
+
+**Tipo:** escrita, destrutiva
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `person_id` | string (`^[A-Z0-9]{4}-[A-Z0-9]{3,4}$`) | sim | Id da pessoa no FamilySearch, como aparece no link da página (ex.: KWCB-XXX) |
 | `reason` | string (min 10 chars) | sim | Motivo da alteração, fica no histórico do FamilySearch |
 | `preview` | boolean | — | Mostra o que mudaria sem perguntar nem escrever |
 

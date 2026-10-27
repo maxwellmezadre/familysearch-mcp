@@ -1,0 +1,46 @@
+name: Bug
+description: Algo não funciona como deveria
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Nunca cole `session.*.enc`, `session.key`, `cache.*.db`, o conteúdo de
+        `audit/`, os diretórios `browser-profile-*/`, um header
+        `Authorization` nem ids e nomes de pessoas da sua família. Eles são a
+        sua conta e os seus parentes.
+  - type: textarea
+    id: what
+    attributes:
+      label: O que aconteceu
+      description: E o que você esperava que acontecesse.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Como reproduzir
+      placeholder: |
+        1. familysearch sync
+        2. familysearch gaps --kind missing_father
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Saída de `familysearch doctor`
+      description: Ela diz qual camada quebrou. Censure ids, nomes e caminhos pessoais.
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: Versão
+      placeholder: familysearch --version
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Sistema, Bun, navegador e ambiente
+      placeholder: macOS 15 / Bun 1.3.14 / Dia / production

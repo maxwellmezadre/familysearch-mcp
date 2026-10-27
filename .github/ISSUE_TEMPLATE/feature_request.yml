@@ -1,0 +1,21 @@
+name: Ideia
+description: Sugerir uma melhoria
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Que problema isso resolve
+      description: A situação concreta, não a solução.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: O que você imagina
+  - type: markdown
+    attributes:
+      value: |
+        Algumas coisas estão fora de escopo por decisão de projeto: apagar
+        pessoas, mesclar em lote ou por regra automática, e qualquer escrita
+        que não passe pela pergunta de aprovação na tela.
