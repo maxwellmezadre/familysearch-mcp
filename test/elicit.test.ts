@@ -79,4 +79,11 @@ describe("elicitation approver", () => {
     expect(head).toContain("Mesclar A em B");
     expect(head.join("\n")).toContain("/tmp/approvals/x.md");
   });
+
+  test("only an explicit accept can approve", async () => {
+    for (const result of [{ action: "maybe", content: { approve: true } }, { action: "accept" }]) {
+      const { server } = fakeServer(result);
+      expect((await createElicitationApprover(server).ask(prompt())).approved).toBe(false);
+    }
+  });
 });

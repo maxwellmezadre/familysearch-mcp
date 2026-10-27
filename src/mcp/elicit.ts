@@ -39,7 +39,7 @@ export function createElicitationApprover(server: ElicitingServer): Approver {
           { timeout: ELICIT_TIMEOUT_MS },
         );
         if (result.action === "decline") return no("recusado pelo usuário");
-        if (result.action === "cancel") return no("cancelado pelo usuário");
+        if (result.action !== "accept") return no("cancelado pelo usuário");
         const content = result.content ?? {};
         if (content.approve !== true) return no("recusado pelo usuário");
         if (prompt.confirm && String(content.confirm ?? "").trim() !== prompt.confirm.expected) {
