@@ -19,19 +19,22 @@ function seg(id: string): string {
 
 export const personUri = (baseUrl: string, id: string) => `${baseUrl}${TREE}/persons/${seg(id)}`;
 
-// ponytail: the common GEDCOM X fact types; anything else becomes a custom `data:,` type.
-const KNOWN_FACTS = new Set(
+// ponytail: the common GEDCOM X fact types, by lower case so "birth" is Birth;
+// anything else becomes a custom `data:,` type.
+const KNOWN_FACTS = new Map(
   `Adoption AdultChristening Annulment Baptism BarMitzvah BatMitzvah Birth Blessing Burial Census
 Christening Circumcision Confirmation Cremation Death Divorce DivorceFiling Education Emigration
 Engagement Excommunication FirstCommunion Funeral Immigration Imprisonment LandTransaction Marriage
 MarriageBanns MarriageContract MarriageLicense MilitaryAward MilitaryDischarge MilitaryDraftRegistration
 MilitaryInduction MilitaryService Mission MoveFrom MoveTo Naturalization Nationality NobilityTitle
 Occupation Ordination Probate Property Residence Retirement Stillbirth Will`
-    .split(/\s+/),
+    .split(/\s+/)
+    .map((type) => [type.toLowerCase(), type]),
 );
 
 export function factType(short: string): string {
-  if (KNOWN_FACTS.has(short)) return `${GX}${short}`;
+  const known = KNOWN_FACTS.get(short.trim().toLowerCase());
+  if (known) return `${GX}${known}`;
   if (short.startsWith("http://") || short.startsWith("https://") || short.startsWith("data:,")) return short;
   return `data:,${encodeURIComponent(short)}`;
 }

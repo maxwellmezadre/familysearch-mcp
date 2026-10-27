@@ -13,6 +13,12 @@ test("personUri builds the tree URL", () => {
   expect(personUri(BASE, "AAAA-AAA")).toBe(`${BASE}/platform/tree/persons/AAAA-AAA`);
 });
 
+test("factType knows a GEDCOM X type in any case", () => {
+  expect(factType("birth")).toBe("http://gedcomx.org/Birth");
+  expect(factType("MILITARYSERVICE")).toBe("http://gedcomx.org/MilitaryService");
+  expect(factType(" Residence ")).toBe("http://gedcomx.org/Residence");
+});
+
 test("factType maps GEDCOM X types and encodes custom ones", () => {
   expect(factType("Birth")).toBe("http://gedcomx.org/Birth");
   expect(factType("Apelido de família")).toBe("data:,Apelido%20de%20fam%C3%ADlia");
