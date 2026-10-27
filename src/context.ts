@@ -1,3 +1,4 @@
+import type { Approver } from "./approval/gate.js";
 import { type Config, loadConfig } from "./config.js";
 import { type FetchLike, type Http, createHttp } from "./core/http.js";
 import { type Logger, createLogger } from "./core/logger.js";
@@ -17,6 +18,8 @@ export type ContextDeps = {
   log?: Logger;
   /** Overrides the browser re-import used on a 401 (null = re-imported, string = why not). */
   reauth?: () => Promise<string | null>;
+  /** Asks the user to approve a write plan; absent = no write is ever made. */
+  approver?: Approver;
 };
 
 export type Ctx = {
@@ -25,6 +28,8 @@ export type Ctx = {
   now: () => number;
   session: SessionStore;
   http: Http;
+  /** Mutable: the entry points (MCP server, CLI) fill it once they know how to ask. */
+  approver: Approver | null;
   /** Closes what was opened. Safe to call more than once. */
   dispose: () => void;
 };
@@ -75,7 +80,7 @@ export function createContext(config: Config, deps: ContextDeps = {}): Ctx {
     },
   );
 
-  const ctx: Ctx = { config, log, now, session, http, dispose: () => undefined };
+  const ctx: Ctx = { config, log, now, session, http, approver: deps.approver ?? null, dispose: () => undefined };
   return ctx;
 }
 

@@ -68,6 +68,10 @@ export const ConfigSchema = Type.Object({
   minIntervalMs: Type.Integer({ minimum: 0 }),
   jitterMs: Type.Integer({ minimum: 0 }),
   httpTimeoutMs: Type.Integer({ minimum: 1000 }),
+  /** Minimum gap between two writes: the tree is shared, writes go slowly on purpose. */
+  writeIntervalMs: Type.Integer({ minimum: 1000 }),
+  /** Write log, approval details and merge snapshots. Never leaves the machine. */
+  auditDir: Type.String({ minLength: 1 }),
 });
 
 export type Config = Static<typeof ConfigSchema>;
@@ -183,6 +187,8 @@ export function loadConfig(env: Env = process.env): Config {
     minIntervalMs: readInt(problems, env, "FAMILYSEARCH_MIN_INTERVAL_MS", 400, 0),
     jitterMs: readInt(problems, env, "FAMILYSEARCH_JITTER_MS", 200, 0),
     httpTimeoutMs: readInt(problems, env, "FAMILYSEARCH_HTTP_TIMEOUT_MS", 30_000, 1000),
+    writeIntervalMs: readInt(problems, env, "FAMILYSEARCH_WRITE_INTERVAL_MS", 2000, 1000),
+    auditDir: join(configDir, "audit"),
   };
 
   // Safety net: the parsed object must match the schema (catches any drift

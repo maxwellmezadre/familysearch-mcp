@@ -95,3 +95,27 @@ export class ParseError extends Error {
     this.name = "ParseError";
   }
 }
+
+/** The user declined, or no approval was possible: nothing was written. */
+export class ApprovalRefusedError extends Error {
+  constructor(
+    public readonly tool: string,
+    public readonly answer: string,
+  ) {
+    super(`Escrita não feita (${tool}): ${answer}`);
+    this.name = "ApprovalRefusedError";
+  }
+}
+
+/** A write got no clear answer (timeout, network, 5xx): it may or may not have been applied. */
+export class WriteUncertainError extends Error {
+  constructor(
+    public readonly label: string,
+    public readonly detail: string,
+  ) {
+    super(
+      `A escrita "${label}" pode ter sido aplicada (${detail}). Releia a pessoa no FamilySearch antes de repetir.`,
+    );
+    this.name = "WriteUncertainError";
+  }
+}

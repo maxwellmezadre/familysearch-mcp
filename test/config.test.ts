@@ -48,6 +48,18 @@ describe("loadConfig defaults", () => {
   });
 });
 
+describe("write pacing and audit", () => {
+  test("write interval defaults to 2000 and refuses less than 1000", () => {
+    expect(loadConfig(base).writeIntervalMs).toBe(2000);
+    expect(loadConfig({ ...base, FAMILYSEARCH_WRITE_INTERVAL_MS: "1500" }).writeIntervalMs).toBe(1500);
+    expect(() => loadConfig({ ...base, FAMILYSEARCH_WRITE_INTERVAL_MS: "999" })).toThrow(ConfigError);
+  });
+
+  test("auditDir lives under the config dir", () => {
+    expect(loadConfig(base).auditDir).toBe("/tmp/fs-test/audit");
+  });
+});
+
 describe("environments", () => {
   test("beta switches host, session file and browser profile", () => {
     const config = loadConfig({ ...base, FAMILYSEARCH_ENV: "beta" });
