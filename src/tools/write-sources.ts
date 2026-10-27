@@ -6,18 +6,12 @@ import { getJson, readRecordHints, readRecordPersona, readSources } from "../fam
 import type { GxDocument } from "../familysearch/gedcomx.js";
 import { attachSourceWrite, createSourceWrite, matchResolutionWrite, notAMatchWrite } from "../familysearch/writes.js";
 import { defineTool } from "./define.js";
-import { personIdField } from "./fields.js";
+import { errorText, idField, personIdField, previewField, reasonField } from "./fields.js";
 import { describeWrite } from "./write-status.js";
 
 // Sources and suggestions: attach a source to a person, attach a historical
 // record as a source, and answer FamilySearch's own suggestions (record hints
 // and "not the same person"). Merging duplicates is NOT here: see merge_persons.
-
-const reasonField = Type.String({ minLength: 10, description: "Motivo da alteração, fica no histórico do FamilySearch" });
-const previewField = Type.Optional(Type.Boolean({ description: "Mostra o que mudaria sem perguntar nem escrever" }));
-const idField = (description: string) => Type.String({ pattern: "^[A-Za-z0-9][A-Za-z0-9._-]*$", description });
-
-const errorText = (error: unknown) => (error instanceof Error ? error.message : String(error));
 
 export const addSource = defineTool({
   name: "add_source",

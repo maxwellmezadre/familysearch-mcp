@@ -8,17 +8,13 @@ import { getJson, readFamilies, readPerson } from "../familysearch/api.js";
 import type { GxDocument } from "../familysearch/gedcomx.js";
 import { deleteRelationshipWrite, linkParentsWrite, linkSpousesWrite } from "../familysearch/writes.js";
 import { defineTool } from "./define.js";
-import { personIdField } from "./fields.js";
+import { idField, personIdField, previewField, reasonField } from "./fields.js";
 import { describeWrite } from "./write-status.js";
 
 // Writes that connect or disconnect people: parents <-> child, spouses, and
 // removing either kind of relationship. Every one reads first (to refuse
 // duplicates and to name the people in the question), asks, writes, and reads
 // back through an independent request.
-
-const reasonField = Type.String({ minLength: 10, description: "Motivo da alteração, fica no histórico do FamilySearch" });
-const previewField = Type.Optional(Type.Boolean({ description: "Mostra o que mudaria sem perguntar nem escrever" }));
-const idField = Type.String({ pattern: "^[A-Za-z0-9][A-Za-z0-9._-]*$" });
 
 const label = (name: string | null, id: string) => `${name ?? "(sem nome)"} [${id}]`;
 
@@ -167,7 +163,7 @@ export const removeRelationship = defineTool({
   readOnly: false,
   destructive: true,
   input: Type.Object({
-    relationship_id: idField,
+    relationship_id: idField(),
     kind: Type.Union([Type.Literal("couple"), Type.Literal("parents")], { description: "couple (casal) ou parents (pais e filho)" }),
     reason: reasonField,
     preview: previewField,

@@ -12,7 +12,7 @@ import { readFamilies, readMergeAnalysis, readMergeConstraint, readPerson } from
 import { mergeWrite, restoreWrite } from "../familysearch/writes.js";
 import { loadBundle } from "./compare.js";
 import { type ToolDef, defineTool } from "./define.js";
-import { personIdField } from "./fields.js";
+import { errorText, personIdField, previewField, reasonField } from "./fields.js";
 import { describeWrite } from "./write-status.js";
 
 // The most dangerous operation in the project: a wrong merge damages other
@@ -20,11 +20,8 @@ import { describeWrite } from "./write-status.js";
 // so BEFORE the question, the question makes the user type the duplicate's id,
 // and the two persons are saved locally right before the POST.
 
-const reasonField = Type.String({ minLength: 10, description: "Motivo da alteração, fica no histórico do FamilySearch" });
-const previewField = Type.Optional(Type.Boolean({ description: "Mostra o que mudaria sem perguntar nem escrever" }));
 const idList = (description: string) => Type.Optional(Type.Array(Type.String({ minLength: 1 }), { description }));
 
-const errorText = (error: unknown) => (error instanceof Error ? error.message : String(error));
 const nameOf = (bundle: PersonBundle) => `${bundle.person.name ?? "(sem nome)"} [${bundle.person.id}]`;
 /** One line, at most 50 characters: the headline's second line (the warning) must survive any name. */
 const shortName = (bundle: PersonBundle) => {

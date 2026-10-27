@@ -14,15 +14,12 @@ import {
   createPersonWrite,
 } from "../familysearch/writes.js";
 import { defineTool } from "./define.js";
-import { personIdField } from "./fields.js";
+import { idField, personIdField, previewField, reasonField } from "./fields.js";
 import { describeWrite } from "./write-status.js";
 
 // Writes on people and notes. Everything that can be refused (bad arguments,
 // unknown fact ids) is refused BEFORE the approval question, from a read.
 
-const reasonField = Type.String({ minLength: 10, description: "Motivo da alteração, fica no histórico do FamilySearch" });
-const previewField = Type.Optional(Type.Boolean({ description: "Mostra o que mudaria sem perguntar nem escrever" }));
-const idField = Type.String({ pattern: "^[A-Za-z0-9][A-Za-z0-9._-]*$" });
 const text = (description: string) => Type.Optional(Type.String({ minLength: 1, description }));
 
 const eventField = (what: string) =>
@@ -35,7 +32,7 @@ const factFields = {
 };
 const newFact = Type.Object({ type: Type.String({ minLength: 1, description: "Tipo do fato: Residence, Occupation, Baptism..." }), ...factFields });
 const factChange = Type.Object({
-  fact_id: idField,
+  fact_id: idField(),
   type: text("Novo tipo; omitido mantém o atual"),
   ...factFields,
 });
@@ -157,7 +154,7 @@ const updateInput = Type.Object({
   person_id: personIdField,
   add_facts: Type.Optional(Type.Array(newFact, { description: "Fatos novos" })),
   update_facts: Type.Optional(Type.Array(factChange, { description: "Fatos existentes a alterar; só os campos dados mudam" })),
-  remove_fact_ids: Type.Optional(Type.Array(idField, { description: "Ids dos fatos a remover" })),
+  remove_fact_ids: Type.Optional(Type.Array(idField(), { description: "Ids dos fatos a remover" })),
   gender: Type.Optional(Type.Union([Type.Literal("male"), Type.Literal("female")], { description: "Novo sexo" })),
   add_name: Type.Optional(Type.Object({ given_name: Type.String({ minLength: 1 }), surname: Type.String({ minLength: 1 }) }, { description: "Nome alternativo a acrescentar" })),
   reason: reasonField,
@@ -275,7 +272,7 @@ const KIND_PATH = { couple: "couple-relationships", parents: "child-and-parents-
 
 const noteInput = Type.Object({
   person_id: Type.Optional(personIdField),
-  relationship_id: Type.Optional(Type.String({ pattern: idField.pattern, description: "Id do relacionamento (use com relationship_kind)" })),
+  relationship_id: Type.Optional(idField("Id do relacionamento (use com relationship_kind)")),
   relationship_kind: Type.Optional(Type.Union([Type.Literal("couple"), Type.Literal("parents")], { description: "couple (casal) ou parents (pais e filho)" })),
   subject: Type.String({ minLength: 1, description: "Título da nota" }),
   text: Type.String({ minLength: 1, description: "Texto da nota" }),
