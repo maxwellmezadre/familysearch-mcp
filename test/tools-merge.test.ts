@@ -27,7 +27,7 @@ afterAll(() => {
   for (const dir of dirs) rmSync(dir, { recursive: true, force: true });
 });
 
-type Who = { name?: string; gender?: "Male" | "Female"; living?: boolean; birth?: string };
+type Who = { name?: string; gender?: "Male" | "Female"; living?: boolean; birth?: string; birthId?: string };
 const personDoc = (id: string, name: string, who: Who = {}) => ({
   persons: [
     {
@@ -36,7 +36,7 @@ const personDoc = (id: string, name: string, who: Who = {}) => ({
       display: { name: who.name ?? name, gender: who.gender ?? "Female", lifespan: "1890-1950" },
       gender: { id: `gender-${id}`, type: `http://gedcomx.org/${who.gender ?? "Female"}` },
       names: [{ id: `name-${id}`, nameForms: [{ fullText: name }] }],
-      facts: [{ id: `birth-${id}`, type: "http://gedcomx.org/Birth", date: { original: who.birth ?? "1890", formal: `+${who.birth ?? "1890"}` } }],
+      facts: [{ id: who.birthId ?? `birth-${id}`, type: "http://gedcomx.org/Birth", date: { original: who.birth ?? "1890", formal: `+${who.birth ?? "1890"}` } }],
     },
   ],
 });
@@ -71,6 +71,8 @@ type World = {
   merge?: () => FetchResponse;
   /** Whether the survivor gained the duplicate's son after the merge. */
   childMoves?: boolean;
+  /** The survivor as it reads after the merge (a take_from_duplicate swap shows up here). */
+  survivorAfter?: Who;
 };
 
 /** A fake FamilySearch: before the merge both exist; after it the duplicate redirects to the survivor. */
@@ -90,6 +92,7 @@ function world(w: World = {}) {
     if (merged && id === DUPLICATE) {
       return response({ status: 301, headers: { location: `https://www.familysearch.org/platform/tree/persons/${SURVIVOR}` } });
     }
+    if (sub === "" && merged && w.survivorAfter && id === SURVIVOR) return jsonResponse(personDoc(id, "Giulia Rossi", w.survivorAfter));
     if (sub === "") return jsonResponse(personDoc(id!, "Giulia Rossi", id === DUPLICATE ? w.duplicate : w.survivor));
     if (sub === "families") {
       if (id === DUPLICATE) return jsonResponse(mother(DUPLICATE));
@@ -286,8 +289,8 @@ describe("merge_persons", () => {
     expect(refused.snapshots()).toHaveLength(0);
   });
 
-  test("read-back confirms the 301 and the copied children", async () => {
-    const { run, writes } = setup(world());
+  test("read-back confirms the 301, the copied children and the chosen birth", async () => {
+    const { run, writes } = setup(world({ duplicate: { birth: "1891" }, survivorAfter: { birth: "1891", birthId: "birth-copied" } }));
     const out = await run("merge_persons", merge({ take_from_duplicate: [`birth-${DUPLICATE}`] }));
     expect(writes()).toHaveLength(1);
     const post = writes()[0]!;
@@ -307,8 +310,29 @@ describe("merge_persons", () => {
     expect(out.readBack.ok).toBe(true);
     expect(out.readBack.checks.map((check: { detail: string }) => check.detail).join("\n")).toContain(`301 para ${SURVIVOR}`);
     expect(out.readBack.checks.some((check: { what: string }) => check.what.includes(CHILD))).toBe(true);
+    const whats = out.readBack.checks.map((check: { what: string }) => check.what);
+    expect(whats).toContain(`Birth: 1891 da duplicata em ${SURVIVOR}`);
+    expect(whats).toContain(`birth-${SURVIVOR} saiu de ${SURVIVOR}`);
     expect(out.undo).toContain(`restore_person(${DUPLICATE})`);
     expect(out.undo).toContain("continua");
+  });
+
+  test("read-back fails when a chosen swap did not land on the survivor", async () => {
+    // FamilySearch answered 2xx, but the survivor still has its own birth and not the duplicate's.
+    const { run } = setup(world({ duplicate: { birth: "1891" } }));
+    const out = await run("merge_persons", merge({ take_from_duplicate: [`birth-${DUPLICATE}`] }));
+    expect(out.status).toBe("applied");
+    expect(out.readBack.ok).toBe(false);
+    expect(out.message).toContain(`Birth: 1891 da duplicata em ${SURVIVOR} (não aparece na sobrevivente)`);
+    expect(out.message).toContain(`birth-${SURVIVOR} saiu de ${SURVIVOR} (continua na sobrevivente)`);
+  });
+
+  test("read-back fails a swap whose old value is gone but the new one never arrived", async () => {
+    // The survivor comes back with a birth that is neither its old one nor the duplicate's.
+    const { run } = setup(world({ duplicate: { birth: "1891" }, survivorAfter: { birth: "1777", birthId: "birth-other" } }));
+    const out = await run("merge_persons", merge({ take_from_duplicate: [`birth-${DUPLICATE}`] }));
+    expect(out.readBack.ok).toBe(false);
+    expect(out.message).toContain("não aparece na sobrevivente");
   });
 
   test("read-back reports a child that did not come along", async () => {

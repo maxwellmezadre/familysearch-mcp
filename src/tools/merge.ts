@@ -5,9 +5,19 @@ import { type ReadBack, runWritePlan } from "../approval/run.js";
 import type { Ctx } from "../context.js";
 import { DeletedError, MergedError } from "../core/errors.js";
 import { buildComparison } from "../domain/compare.js";
-import { buildMergeRequest, familiesOf, findRelationship, labelResource, resourceId } from "../domain/merge.js";
+import {
+  type MergeRequest,
+  buildMergeRequest,
+  conclusionText,
+  conclusionsOf,
+  familiesOf,
+  findRelationship,
+  labelResource,
+  resourceId,
+} from "../domain/merge.js";
 import { toFamily } from "../domain/normalize.js";
 import type { Family, PersonBundle } from "../domain/types.js";
+import type { GxPerson } from "../familysearch/gedcomx.js";
 import { readFamilies, readMergeAnalysis, readMergeConstraint, readPerson } from "../familysearch/api.js";
 import { mergeWrite, restoreWrite } from "../familysearch/writes.js";
 import { loadBundle } from "./compare.js";
@@ -32,15 +42,17 @@ const signs = (count: number) => `${count} ${count === 1 ? "sinal" : "sinais"} d
 const bullets = (title: string, items: string[]) => (items.length > 0 ? ["", title, ...items.map((item) => `- ${item}`)] : []);
 
 /**
- * The duplicate now redirects to the survivor, and every relationship copied
- * from the duplicate (as its family was before) shows up on the survivor.
+ * The duplicate now redirects to the survivor, every chosen swap left the
+ * duplicate's version on the survivor (and took the survivor's away), and every
+ * relationship copied from the duplicate (as its family was before) shows up on
+ * the survivor.
  */
 async function readBackMerge(
   ctx: Ctx,
   survivor: string,
   duplicate: string,
-  copied: string[],
-  duplicateFamily: Record<string, Family>,
+  request: MergeRequest,
+  before: { duplicatePerson: GxPerson; duplicateFamily: Record<string, Family> },
 ): Promise<ReadBack> {
   const checks: ReadBack["checks"] = [];
   const redirect = `${duplicate} redireciona para ${survivor}`;
@@ -56,14 +68,32 @@ async function readBackMerge(
     });
   }
 
-  const links = copied.filter((uri) => /relationships\//.test(uri)).map(resourceId);
+  if (request.chosen.length > 0) {
+    const document = await readPerson(ctx.http, survivor);
+    const now = conclusionsOf(document.persons?.find((person) => person.id === survivor) ?? { id: survivor });
+    for (const pair of request.chosen) {
+      // Compared by text: the copy may get a new id on the survivor.
+      const wanted = conclusionText(before.duplicatePerson, resourceId(pair.duplicate));
+      const arrived = wanted !== null && now.some((conclusion) => conclusion.text === wanted);
+      checks.push({
+        what: `${wanted ?? resourceId(pair.duplicate)} da duplicata em ${survivor}`,
+        ok: arrived,
+        detail: arrived ? "presente" : wanted === null ? "não deu para saber que dado era na duplicata" : "não aparece na sobrevivente",
+      });
+      const old = resourceId(pair.survivor);
+      const gone = !now.some((conclusion) => conclusion.id === old);
+      checks.push({ what: `${old} saiu de ${survivor}`, ok: gone, detail: gone ? "removido" : "continua na sobrevivente" });
+    }
+  }
+
+  const links = request.resourcesToCopy.filter((uri) => /relationships\//.test(uri)).map(resourceId);
   if (links.length === 0) return { ok: checks.every((check) => check.ok), checks };
   const after = toFamily(await readFamilies(ctx.http, survivor), survivor);
   const parents = new Set(after.parents.flatMap((entry) => [entry.parent1?.id, entry.parent2?.id]));
   const children = new Set(after.spouses.flatMap((entry) => entry.children.map((child) => child.id)));
   const spouses = new Set(after.spouses.map((entry) => entry.spouse?.id));
   for (const id of links) {
-    const found = findRelationship(duplicateFamily, id);
+    const found = findRelationship(before.duplicateFamily, id);
     if (!found) {
       checks.push({ what: `relacionamento ${id}`, ok: false, detail: "não estava na família da duplicata antes da mesclagem" });
     } else if (found.kind === "parents" && found.child !== duplicate) {
@@ -211,10 +241,11 @@ export const mergePersons = defineTool({
         },
       ],
     };
+    const duplicatePerson = before.duplicate.person.persons?.find((person) => person.id === duplicate) ?? { id: duplicate };
     const duplicateFamily = familiesOf([before.duplicate.families]);
     const outcome = await runWritePlan(ctx, plan, {
       preview: args.preview,
-      readBack: () => readBackMerge(ctx, survivor, duplicate, request.resourcesToCopy, duplicateFamily),
+      readBack: () => readBackMerge(ctx, survivor, duplicate, request, { duplicatePerson, duplicateFamily }),
     });
     // The undo hint only where the merge may have happened (a refused POST merged nothing).
     const mayHaveMerged = snapshot !== null && outcome.status !== "refused";

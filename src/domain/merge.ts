@@ -95,8 +95,8 @@ const who = (id: string, person: PersonSummary | null | undefined): string =>
 
 type Conclusion = { id?: string; nameForms?: Array<{ fullText?: string }>; type?: string };
 
-/** What one conclusion of a person is: a name, the sex or a fact. */
-function conclusionText(person: GxPerson, conclusionId: string): string {
+/** What one conclusion of a person is: a name, the sex or a fact; null when the person has no such id. */
+export function conclusionText(person: GxPerson, conclusionId: string): string | null {
   const byId = (item: Conclusion | undefined) => item?.id === conclusionId;
   const name = (person.names as Conclusion[] | undefined)?.find(byId);
   if (name) return `nome "${name.nameForms?.[0]?.fullText ?? "?"}"`;
@@ -109,7 +109,13 @@ function conclusionText(person: GxPerson, conclusionId: string): string {
     const { type, date, place, value } = toFact(fact);
     return `${type}: ${[date?.original, place, value].filter(Boolean).join(", ") || "-"}`;
   }
-  return "dado";
+  return null;
+}
+
+/** Every conclusion of a person (names, sex, facts) as id and text: what a merge read-back compares. */
+export function conclusionsOf(person: GxPerson): Array<{ id: string; text: string | null }> {
+  const all = [...((person.names ?? []) as Conclusion[]), person.gender as Conclusion | undefined, ...(person.facts ?? [])];
+  return all.flatMap((item) => (item?.id ? [{ id: item.id, text: conclusionText(person, item.id) }] : []));
 }
 
 /**
@@ -125,7 +131,7 @@ export function labelResource(uri: string, people: GxPerson[], families: Record<
   const [, personId = "", kind] = /\/persons\/([^/]+)\/(conclusions|source-references)\//.exec(uri) ?? [];
   if (kind) {
     const person = people.find((candidate) => candidate.id === personId);
-    const what = kind === "source-references" ? "fonte" : person ? conclusionText(person, id) : "dado";
+    const what = kind === "source-references" ? "fonte" : ((person && conclusionText(person, id)) ?? "dado");
     return `${what}, de ${who(personId, summary(personId))} (${id})`;
   }
   if (!/\/(child-and-parents-relationships|couple-relationships|relationships)\//.test(uri)) return uri;
