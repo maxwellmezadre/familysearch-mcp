@@ -19,7 +19,7 @@ import { personIdField } from "./fields.js";
 // writes; the merge itself lives behind the approval gate.
 
 /** Person, family, source count and change history of one side: 4 requests. */
-async function loadBundle(http: Http, id: string): Promise<PersonBundle> {
+export async function loadBundle(http: Http, id: string): Promise<PersonBundle> {
   const document = await readPerson(http, id);
   const person = document.persons?.find((candidate) => candidate.id === id) ?? document.persons?.[0];
   const family = toFamily(await readFamilies(http, id), id);
