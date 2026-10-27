@@ -99,8 +99,10 @@ async function main(): Promise<void> {
     callTool(6, "raw_get", { path: "https://evil.example/platform/users/current" }),
     callTool(7, "auth_status", { verify: "sim" }),
     { jsonrpc: "2.0", id: 8, method: "tools/list" },
+    // A note on a relationship asks before any read: with no session it still reaches the approval gate.
     callTool(9, "add_note", {
-      person_id: "KWCB-XXX",
+      relationship_id: "RRRR-111",
+      relationship_kind: "couple",
       subject: "Nota de verificação",
       text: "Texto da nota",
       reason: "verificação automática sem sessão",
@@ -157,9 +159,20 @@ async function main(): Promise<void> {
     replies.find((reply) => reply.id === 8)?.result !== undefined,
   );
 
-  // No session and no elicitation: a write cannot happen, and the caller sees an error.
+  // No elicitation in this client: the gate refuses, and the caller sees an error that says why.
   const note = replies.find((reply) => reply.id === 9)?.result as ToolResult | undefined;
-  check("add_note sem sessão nem aprovação não escreve e vira isError", note?.isError === true);
+  const refusal = (() => {
+    try {
+      return JSON.parse(note?.content[0]?.text ?? "") as { status?: string; message?: string };
+    } catch {
+      return {};
+    }
+  })();
+  check(
+    "escrita sem elicitation chega à aprovação, é recusada e vira isError",
+    note?.isError === true && refusal.status === "refused" && /elicitation/.test(refusal.message ?? ""),
+    refusal.message ?? note?.content[0]?.text,
+  );
   check("o servidor continua respondendo depois da escrita recusada", replies.find((reply) => reply.id === 10)?.result !== undefined);
 
   console.log("\nmodo somente leitura:");
