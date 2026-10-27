@@ -339,7 +339,7 @@ Remove uma ligação de casal ou de pais e filho (pelo id do relacionamento, que
 
 ## `add_source`
 
-Cria uma fonte (título, citação e endereço opcionais) e a anexa a uma pessoa. Pergunta ao usuário numa pergunta na tela antes de escrever. Custa 2 escritas, mais 1 requisição de releitura. Com preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
+Cria uma fonte (título, citação e endereço opcionais) e a anexa a uma pessoa. Pergunta ao usuário numa pergunta na tela antes de escrever. Custa 1 requisição de leitura antes, 2 escritas e 1 releitura. Com preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
 
 **Tipo:** escrita
 
@@ -354,7 +354,7 @@ Cria uma fonte (título, citação e endereço opcionais) e a anexa a uma pessoa
 
 ## `attach_record`
 
-Anexa um registro histórico a uma pessoa como fonte (título: nome principal e coleção; endereço: o link do registro). Se o registro já está anexado, avisa e não escreve. Pergunta ao usuário numa pergunta na tela antes de escrever. Custa 2 requisições de leitura antes, 2 escritas e 1 releitura. Com preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
+Anexa um registro histórico a uma pessoa como fonte (título: nome principal e coleção; endereço: o link do registro). Se o registro já está anexado, avisa e não escreve. Pergunta ao usuário numa pergunta na tela antes de escrever. Custa 3 requisições de leitura antes, 2 escritas e 1 releitura. Com preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
 
 **Tipo:** escrita
 
@@ -367,7 +367,7 @@ Anexa um registro histórico a uma pessoa como fonte (título: nome principal e 
 
 ## `resolve_suggestion`
 
-Responde a uma sugestão do FamilySearch: aceita ou rejeita um registro sugerido (kind record) ou marca uma duplicata sugerida como pessoa diferente (kind duplicate, só rejeitar). Para juntar duplicatas use compare_persons e merge_persons. Pergunta ao usuário numa pergunta na tela antes de escrever. Custa 1 escrita e 1 releitura. Com preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
+Responde a uma sugestão do FamilySearch: aceita ou rejeita um registro sugerido (kind record) ou marca uma duplicata sugerida como pessoa diferente (kind duplicate, só rejeitar). Para juntar duplicatas use compare_persons e merge_persons. Pergunta ao usuário numa pergunta na tela antes de escrever. Custa 1 requisição de leitura antes, 1 escrita e 1 releitura. Com preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
 
 **Tipo:** escrita
 
