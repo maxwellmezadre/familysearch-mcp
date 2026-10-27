@@ -5,6 +5,7 @@ import { loadConfig } from "../../src/config.js";
 import { type Ctx, createContext } from "../../src/context.js";
 import { DeletedError, MergedError, NotFoundError } from "../../src/core/errors.js";
 import type { PlannedWrite } from "../../src/core/ticket.js";
+import { resourceId } from "../../src/domain/merge.js";
 import { getJson, readPerson } from "../../src/familysearch/api.js";
 import { runTool } from "../../src/tools/define.js";
 import { toolByName } from "../../src/tools/registry.js";
@@ -198,12 +199,43 @@ gated("beta: every write", () => {
     expect(kids).toContain(c);
   }, TIMEOUT);
 
-  test("8. restore_person brings the step-6 duplicate back", async () => {
+  test("8. merge with take_from_duplicate: the survivor ends with the duplicate's birth", async () => {
+    const first = await create(`${tag}-conflito`, "Duplicata", "female", { birth: { date: "1 January 1900" } });
+    const second = await create(`${tag}-conflito`, "Duplicata", "female", { birth: { date: "2 February 1901" } });
+    const cmp = await call<{
+      fingerprint: string;
+      path: string;
+      suggestion: { survivorId: string; duplicateId: string } | null;
+      analysis: { conflicts: Array<{ survivor: string; duplicate: string }> } | null;
+    }>("compare_persons", { person_a: first, person_b: second });
+    expect(cmp.path).toBe("merge");
+    // FamilySearch decides the order it allows; the analysis is for that order.
+    const survivor = cmp.suggestion?.survivorId as string;
+    const duplicate = cmp.suggestion?.duplicateId as string;
+    const birthOf = async (id: string) => (await person(id)).facts.filter((f) => f.type === "Birth");
+    const [duplicateBirth] = await birthOf(duplicate);
+    expect(duplicateBirth?.id).toBeTruthy();
+    const conflict = cmp.analysis?.conflicts.find((pair) => resourceId(pair.duplicate) === duplicateBirth?.id);
+    expect(conflict).toBeTruthy();
+
+    await write("merge_persons", {
+      survivor_id: survivor,
+      duplicate_id: duplicate,
+      fingerprint: cmp.fingerprint,
+      take_from_duplicate: [duplicateBirth?.id],
+    });
+    await expect(person(duplicate)).rejects.toBeInstanceOf(MergedError);
+    mergedAway.add(duplicate);
+    // independent: only the duplicate's birth is left on the survivor
+    expect((await birthOf(survivor)).map((f) => f.date?.original)).toEqual([duplicateBirth?.date?.original as string]);
+  }, TIMEOUT);
+
+  test("9. restore_person brings the step-6 duplicate back", async () => {
     await write("restore_person", { person_id: b });
     expect((await person(b)).id).toBe(b);
   }, TIMEOUT);
 
-  test("9. remove_relationship on every relationship created", async () => {
+  test("10. remove_relationship on every relationship created", async () => {
     const couple = (await family(a)).spouses.find((x) => x.spouse?.id === s)?.relationshipId;
     expect(couple).toBeTruthy();
     const gone = async (kind: "couple" | "parents", id: string) => {
@@ -225,7 +257,7 @@ gated("beta: every write", () => {
     expect(childrenOf(after)).not.toContain(c);
   }, TIMEOUT);
 
-  // 10. cleanup: always runs, even when a step above failed
+  // 11. cleanup: always runs, even when a step above failed
   afterAll(async () => {
     const leftovers: string[] = [];
     try {
