@@ -91,7 +91,7 @@ export const attachRecord = defineTool({
   readOnly: false,
   input: Type.Object({
     person_id: personIdField,
-    record_id: idField("Id do registro (de search_records ou get_possible_record_matches)"),
+    record_id: idField("Id do registro (de search_records ou get_hints)"),
     reason: reasonField,
     preview: previewField,
   }),

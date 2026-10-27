@@ -361,7 +361,7 @@ Anexa um registro histórico a uma pessoa como fonte (título: nome principal e 
 | Parâmetro | Tipo | Obrigatório | Descrição |
 | --- | --- | --- | --- |
 | `person_id` | string (`^[A-Z0-9]{4}-[A-Z0-9]{3,4}$`) | sim | Id da pessoa no FamilySearch, como aparece no link da página (ex.: KWCB-XXX) |
-| `record_id` | string (`^[A-Za-z0-9][A-Za-z0-9._-]*$`) | sim | Id do registro (de search_records ou get_possible_record_matches) |
+| `record_id` | string (`^[A-Za-z0-9][A-Za-z0-9._-]*$`) | sim | Id do registro (de search_records ou get_hints) |
 | `reason` | string (min 10 chars) | sim | Motivo da alteração, fica no histórico do FamilySearch |
 | `preview` | boolean | — | Mostra o que mudaria sem perguntar nem escrever |
 
