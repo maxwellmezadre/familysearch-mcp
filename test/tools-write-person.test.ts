@@ -5,6 +5,7 @@ import { join } from "node:path";
 import type { Approver } from "../src/approval/gate.js";
 import { loadConfig } from "../src/config.js";
 import { createContext } from "../src/context.js";
+import { factChange } from "../src/cli/commands/write-person.js";
 import { runTool } from "../src/tools/define.js";
 import { addNote, createPerson, updatePerson } from "../src/tools/write-person.js";
 import { allTools } from "../src/tools/registry.js";
@@ -204,4 +205,11 @@ test("every write tool description says it is not proven in production yet", () 
   }
   expect(updatePerson.destructive).toBe(true);
   expect(allTools.map((t) => t.name)).toEqual(expect.arrayContaining(["create_person", "update_person", "add_note"]));
+});
+
+describe("update-person --update-fact", () => {
+  test("an empty type keeps the current one instead of sending an empty type", () => {
+    expect(factChange("F1||1 January 1951")).toEqual({ fact_id: "F1", type: undefined, date: "1 January 1951", place: undefined, value: undefined });
+    expect(factChange("F1|Burial|1951|Lugar|x")).toEqual({ fact_id: "F1", type: "Burial", date: "1951", place: "Lugar", value: "x" });
+  });
 });

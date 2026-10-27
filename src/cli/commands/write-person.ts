@@ -12,9 +12,11 @@ const fact = (value: string) => {
   const [type = "", date, place, text] = parts(value);
   return { type, date: orUndefined(date), place: orUndefined(place), value: orUndefined(text) };
 };
-const change = (value: string) => {
+/** "id|Tipo|data|lugar|valor": an empty part keeps the fact's current value, the type included. */
+export const factChange = (value: string) => {
   const [fact_id = "", ...rest] = parts(value);
-  return { fact_id, ...fact(rest.join("|")) };
+  const changed = fact(rest.join("|"));
+  return { fact_id, ...changed, type: orUndefined(changed.type) };
 };
 const event = (date?: string, place?: string) => (date || place ? { date, place } : undefined);
 
@@ -85,7 +87,7 @@ export function registerPersonWriteCommands(command: (signature: string) => Comm
         {
           person_id: id,
           add_facts: o.addFact?.map(fact),
-          update_facts: o.updateFact?.map(change),
+          update_facts: o.updateFact?.map(factChange),
           remove_fact_ids: o.removeFact,
           gender: o.gender,
           add_name: name ? { given_name: name[0], surname: name[1] ?? "" } : undefined,
