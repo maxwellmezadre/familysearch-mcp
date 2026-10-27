@@ -251,15 +251,19 @@ padrão. A aprovação vira um ticket de uso único que cobre exatamente as escr
 do plano, e a camada HTTP recusa qualquer escrita que não esteja nele.
 
 O que ela protege: nenhuma escrita acontece pelas tools do MCP ou pelos comandos
-do CLI deste projeto sem você responder à pergunta na tela, nem por excesso de
-iniciativa do modelo. Sessões sem interface (`claude -p`, um CLI fora do macOS
+do CLI deste projeto sem uma resposta à pergunta na tela, nem por erro ou
+excesso de iniciativa do modelo. Sessões sem interface (`claude -p`, um CLI fora do macOS
 ou sem sessão gráfica) cancelam a pergunta, e nada é escrito. Não existe
 variável nem opção que desligue a trava.
 
-O que ela não protege: quem tem acesso livre à sua máquina pode ler a sessão e
-chamar a API direto, sem passar por este projeto. Nenhuma tool consegue impedir
-isso. Hooks de `Elicitation` no Claude Code também poderiam responder no seu
-lugar; o `doctor` avisa quando encontra algum.
+O que ela não protege: um modelo decidido a contorná-la. Com Bash livre e um
+terminal com permissão de Acessibilidade no macOS, um `osascript` com System
+Events consegue clicar em "Aprovar" no diálogo e digitar o id pedido, e teclas
+enviadas ao terminal preenchem o formulário de elicitation. Quem tem acesso
+livre à sua máquina também pode ler a sessão e chamar a API direto, sem passar
+por este projeto. Hooks de `Elicitation` no Claude Code (nas configurações ou
+nos plugins) também poderiam responder no seu lugar; o `doctor` avisa quando
+encontra algum. Os detalhes estão no [`SECURITY.md`](SECURITY.md).
 
 ### O risco de termos de uso
 

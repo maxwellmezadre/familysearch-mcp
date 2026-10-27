@@ -1,12 +1,13 @@
 import { describe, expect, test } from "bun:test";
-import { mkdtempSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { loadConfig } from "../src/config.js";
 import { createContext } from "../src/context.js";
-import { elicitationHooks } from "../src/tools/doctor.js";
-import { runTool } from "../src/tools/define.js";
+// The registry first: doctor.ts imports it back, and loading doctor.ts first hits that cycle.
 import { toolByName } from "../src/tools/registry.js";
+import { MANAGED_SETTINGS, elicitationHooks, hookFiles, pluginHookFiles } from "../src/tools/doctor.js";
+import { runTool } from "../src/tools/define.js";
 import {
   fakeClock,
   fixture,
@@ -115,6 +116,35 @@ describe("doctor approval layer", () => {
       withHook,
       withResult,
     ]);
+  });
+});
+
+describe("doctor hook scan", () => {
+  test("covers managed settings and every installed plugin's hooks/hooks.json", () => {
+    const home = mkdtempSync(join(tmpdir(), "fs-home-"));
+    const hook = (dir: string, events: Record<string, unknown>) => {
+      const at = join(home, ".claude", "plugins", dir, "hooks");
+      mkdirSync(at, { recursive: true });
+      writeFileSync(join(at, "hooks.json"), JSON.stringify({ hooks: events }));
+      return join(at, "hooks.json");
+    };
+    const cached = hook("cache/market/answers/1.0.0", { Elicitation: [] });
+    const marketplace = hook("marketplaces/market/plugins/results", { ElicitationResult: [] });
+    hook("cache/market/harmless/2.0.0", { PreToolUse: [] });
+    const scan = hookFiles(home, home);
+    expect(scan.complete).toBe(true);
+    expect(scan.files).toContain(MANAGED_SETTINGS);
+    expect(scan.files).toContain(join(home, ".claude", "settings.json"));
+    expect(elicitationHooks(scan.files).sort()).toEqual([cached, marketplace].sort());
+  });
+
+  test("the plugin walk is bounded and says when it stopped early", () => {
+    const root = mkdtempSync(join(tmpdir(), "fs-plugins-"));
+    for (let i = 0; i < 5; i += 1) mkdirSync(join(root, `p${i}`, "hooks"), { recursive: true });
+    expect(pluginHookFiles(root, { depth: 6, dirs: 3 }).complete).toBe(false);
+    expect(pluginHookFiles(root).files).toHaveLength(5);
+    mkdirSync(join(root, "a", "b", "c", "d", "e", "f", "g", "hooks"), { recursive: true });
+    expect(pluginHookFiles(root).files.some((file) => file.includes("/g/"))).toBe(false);
   });
 });
 

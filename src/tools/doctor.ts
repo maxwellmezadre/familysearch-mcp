@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { type Dirent, readFileSync, readdirSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import { Type } from "@sinclair/typebox";
@@ -27,6 +27,52 @@ export function elicitationHooks(paths: string[]): string[] {
       return false;
     }
   });
+}
+
+/** Claude Code's machine-wide settings on macOS; hooks there apply to every session. */
+export const MANAGED_SETTINGS = "/Library/Application Support/ClaudeCode/managed-settings.json";
+
+/**
+ * Every `hooks/hooks.json` under the installed plugins. Bounded (depth and
+ * directories read) so a huge tree cannot stall the doctor; `complete: false`
+ * says the walk stopped early.
+ */
+export function pluginHookFiles(root: string, limits = { depth: 6, dirs: 5000 }): { files: string[]; complete: boolean } {
+  const files: string[] = [];
+  const queue: Array<[string, number]> = [[root, 0]];
+  for (let read = 0; queue.length > 0; read += 1) {
+    if (read >= limits.dirs) return { files, complete: false };
+    const [dir, depth] = queue.shift() as [string, number];
+    let entries: Dirent[];
+    try {
+      entries = readdirSync(dir, { withFileTypes: true });
+    } catch {
+      continue;
+    }
+    for (const entry of entries) {
+      // Symlinks are not followed (no loops), nor package or git internals.
+      if (!entry.isDirectory() || entry.name === "node_modules" || entry.name === ".git") continue;
+      const path = join(dir, entry.name);
+      if (entry.name === "hooks") files.push(join(path, "hooks.json"));
+      if (depth + 1 < limits.depth) queue.push([path, depth + 1]);
+    }
+  }
+  return { files, complete: true };
+}
+
+/** Every file where Claude Code may declare hooks for this user and this folder. */
+export function hookFiles(home: string, cwd: string): { files: string[]; complete: boolean } {
+  const plugins = pluginHookFiles(join(home, ".claude", "plugins"));
+  return {
+    files: [
+      join(home, ".claude", "settings.json"),
+      join(cwd, ".claude", "settings.json"),
+      join(cwd, ".claude", "settings.local.json"),
+      MANAGED_SETTINGS,
+      ...plugins.files,
+    ],
+    complete: plugins.complete,
+  };
 }
 
 const APPROVER_LABEL = {
@@ -89,14 +135,13 @@ export const doctor = defineTool({
     // Informational: never stops the diagnosis, never touches the network.
     await step("approval", () => {
       const kind = ctx.approver ? APPROVER_LABEL[ctx.approver.kind] : "nenhum: escritas desativadas";
-      const found = elicitationHooks([
-        join(homedir(), ".claude", "settings.json"),
-        join(process.cwd(), ".claude", "settings.json"),
-        join(process.cwd(), ".claude", "settings.local.json"),
-      ]);
-      return found.length
-        ? `${kind}. ATENÇÃO: hooks Elicitation/ElicitationResult em ${found.join(", ")} podem responder à pergunta sem você.`
-        : kind;
+      const scan = hookFiles(homedir(), process.cwd());
+      const found = elicitationHooks(scan.files);
+      const warning = found.length
+        ? ` ATENÇÃO: hooks Elicitation/ElicitationResult em ${found.join(", ")} podem responder à pergunta sem você.`
+        : "";
+      const partial = scan.complete ? "" : " A busca nos plugins (~/.claude/plugins) parou no limite: confira os hooks à mão.";
+      return `${kind}.${warning}${partial}`;
     });
     // Informational, no network: write tools still without a checked live run.
     await step("writes", () => {

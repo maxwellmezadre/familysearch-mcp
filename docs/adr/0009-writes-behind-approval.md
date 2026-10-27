@@ -54,10 +54,17 @@ comandos do CLI deste projeto sem a pessoa responder à pergunta na tela,
 inclusive por excesso de iniciativa do modelo. Sessões sem interface
 (`claude -p` responde `cancel` à elicitation na hora) nunca aprovam.
 
-O que ela não protege: quem tem acesso livre à máquina pode ler a sessão e
+O que ela não protege: a resposta sai do caminho do modelo, mas não da
+máquina. Com Bash livre e um terminal com permissão de Acessibilidade no macOS,
+um `osascript` com System Events clica em "Aprovar" no diálogo e digita o id
+pedido, e teclas enviadas ao terminal preenchem o formulário de elicitation do
+Claude Code. A trava segura erro e excesso de iniciativa, não um modelo decidido
+a contorná-la. Quem tem acesso livre à máquina também pode ler a sessão e
 chamar a API direto, e nenhuma tool consegue impedir isso. Um hook de
-`Elicitation` no Claude Code também poderia responder no lugar da pessoa; o
-`doctor` procura esses hooks e avisa.
+`Elicitation` no Claude Code poderia responder no lugar da pessoa; o `doctor`
+procura esses hooks nas configurações do usuário, da pasta atual, nas
+configurações gerenciadas do macOS e no `hooks/hooks.json` dos plugins
+instalados, e avisa.
 
 A pergunta é curta: o Claude Code corta mensagens longas, então ela leva um
 título de até 2 linhas e 200 caracteres, o caminho do plano completo e os

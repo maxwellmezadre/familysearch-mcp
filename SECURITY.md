@@ -27,21 +27,34 @@ resposta sua na tela.
 ### O que a trava de aprovação protege
 
 Nenhuma escrita acontece pelas tools do MCP ou pelos comandos do CLI deste
-projeto sem você responder à pergunta na tela. Isso vale também para o excesso
-de iniciativa do modelo: ele não consegue responder a uma elicitation, que vai
-do servidor para o cliente e volta, nem a um diálogo nativo do macOS. Sessões
-sem interface (`claude -p`, CLI fora do macOS ou sem sessão gráfica) cancelam a
-pergunta, e nada é escrito. Nenhuma variável de ambiente e nenhuma opção
-desligam a trava.
+projeto sem uma resposta à pergunta na tela. Isso segura o erro e o excesso de
+iniciativa do modelo: a chamada de tool não tem como se aprovar, porque a
+elicitation vai do servidor para o cliente e volta, e o diálogo nativo do macOS
+não lê a entrada padrão. Sessões sem interface (`claude -p`, CLI fora do macOS
+ou sem sessão gráfica) cancelam a pergunta, e nada é escrito. Nenhuma variável
+de ambiente e nenhuma opção desligam a trava.
 
 ### O que ela não protege
+
+A trava tira a resposta do caminho do modelo, mas não da máquina. Se o modelo
+tem Bash livre e o aplicativo de terminal tem permissão de Acessibilidade
+(Ajustes do Sistema, Privacidade e Segurança, Acessibilidade), um `osascript`
+com System Events consegue clicar em "Aprovar" no diálogo do macOS e digitar o
+id da duplicata. Teclas enviadas do mesmo jeito à janela do terminal podem
+preencher o formulário de elicitation do Claude Code. A trava não segura um
+modelo decidido a contorná-la. Se isso importa para você, tire a permissão de
+Acessibilidade do terminal onde o Claude Code roda, ou não deixe o Bash livre
+nas sessões que escrevem.
 
 Quem tem acesso livre à sua máquina pode ler a sessão (o arquivo cifrado e a
 chave ao lado) e chamar a API do FamilySearch direto, sem passar por este
 projeto. Nenhuma tool consegue impedir isso. Um hook de `Elicitation` ou
 `ElicitationResult` configurado no Claude Code também pode responder à pergunta
-no seu lugar; o `doctor` procura esses hooks em `~/.claude/settings.json` e no
-`.claude/` da pasta atual e avisa quando acha algum.
+no seu lugar. O `doctor` procura esses hooks em `~/.claude/settings.json`, no
+`.claude/` da pasta atual, em
+`/Library/Application Support/ClaudeCode/managed-settings.json` e no
+`hooks/hooks.json` de cada plugin em `~/.claude/plugins`, e avisa quando acha
+algum. Hooks declarados em outro lugar ficam fora dessa busca.
 
 ### Termos de uso
 
