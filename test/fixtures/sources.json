@@ -122,8 +122,8 @@
             ]
           },
           {
-            "description": "#4488-6LB",
-            "descriptionId": "4488-6LB",
+            "description": "#80XN-SXR",
+            "descriptionId": "80XN-SXR",
             "id": "11c4bff3-883a-4079-b925-d3f393ea4d3d",
             "links": {
               "source-reference": {
@@ -140,8 +140,8 @@
             ]
           },
           {
-            "description": "#4488-QQZ",
-            "descriptionId": "4488-QQZ",
+            "description": "#17PC-8Q3",
+            "descriptionId": "17PC-8Q3",
             "id": "ba1b2a6e-8d4c-48cc-a885-0dda41f3f062",
             "links": {
               "source-reference": {
@@ -681,11 +681,11 @@
             "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:CRRG-ZRJC : Sat Mar 09 03:37:36 UTC 2024), Lia Fausto, Rui Of Usa in entry for Davi Gilda Fausto, Sec Of War and Minister To Great Britian."
           }
         ],
-        "id": "4488-6LB",
+        "id": "80XN-SXR",
         "lang": "en",
         "links": {
           "description": {
-            "href": "https://www.familysearch.org/platform/sources/descriptions/4488-6LB?flag=fsh"
+            "href": "https://www.familysearch.org/platform/sources/descriptions/80XN-SXR?flag=fsh"
           }
         },
         "resourceType": "FSREADONLY",
@@ -702,11 +702,11 @@
             "value": "\"Utah, Obituaries from Utah Newspapers, 1850-2005\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:KXD5-T5T9 : Tue Mar 11 16:05:03 UTC 2025), Rui Fausto in entry for Mrs Hugo Gilda Fausto, 18 Jul 1882."
           }
         ],
-        "id": "4488-QQZ",
+        "id": "17PC-8Q3",
         "lang": "en",
         "links": {
           "description": {
-            "href": "https://www.familysearch.org/platform/sources/descriptions/4488-QQZ?flag=fsh"
+            "href": "https://www.familysearch.org/platform/sources/descriptions/17PC-8Q3?flag=fsh"
           }
         },
         "resourceType": "FSREADONLY",

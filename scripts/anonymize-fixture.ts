@@ -30,7 +30,20 @@ const SALT_FILE = join(ROOT, "task", "anonymize.salt");
 const SECRETS_FILE = join(ROOT, "task", "anonymize.secrets");
 
 // Lookarounds, not \b: ids also appear glued to "_" ("#sd_person_XXXX-XXX").
-const ID = /(?<![A-Z0-9])(?=[A-Z0-9]{0,3}[A-Z])[A-Z0-9]{4}-[A-Z0-9]{3,4}(?![A-Z0-9])/g;
+// A candidate is an id only when it has a letter somewhere ("1234-5BC" is an
+// id, "1809-1865" is a lifespan): see isId.
+const ID = /(?<![A-Z0-9])[A-Z0-9]{4}-[A-Z0-9]{3,4}(?![A-Z0-9])/g;
+const isId = (candidate: string): boolean => /[A-Z]/.test(candidate);
+
+/** Every FamilySearch id in a text. */
+export const idsIn = (text: string): string[] => [...new Set(text.match(ID) ?? [])].filter(isId);
+
+/** Swaps every id for its fake, including ids glued to a role prefix ("P1XXXX-XXX"). */
+export function replaceIds(text: string): string {
+  let output = text.replace(ID, (match) => (isId(match) ? fakeId(match) : match));
+  for (const [real, fake] of ids) output = output.split(real).join(fake);
+  return output;
+}
 const ID_ALPHABET = "BCDFGHJKLMNPQRSTVWXZ0123456789";
 const WORDS = [
   "Ana", "Bento", "Clara", "Davi", "Elisa", "Fausto", "Gilda", "Hugo", "Iara", "Joaquim",
@@ -55,11 +68,15 @@ let keepNames = false;
 /** Feeds cut to this many entries. */
 const MAX_ENTRIES = 12;
 
-if (!existsSync(SALT_FILE)) writeFileSync(SALT_FILE, randomBytes(24).toString("hex"));
-const salt = readFileSync(SALT_FILE, "utf8").trim();
+let salt = "";
+const ids = new Map<string, string>();
+/** Sets the HMAC salt and forgets earlier mappings (the script reads task/anonymize.salt). */
+export function setSalt(value: string): void {
+  salt = value;
+  ids.clear();
+}
 const hmac = (value: string) => createHmac("sha256", salt).update(value).digest();
 
-const ids = new Map<string, string>();
 function fakeId(real: string): string {
   const cached = ids.get(real);
   if (cached) return cached;
@@ -147,34 +164,35 @@ function anonymize(raw: string): string {
     warning: capture.warning ?? null,
     body,
   };
-  let text = JSON.stringify(result, null, 2).replace(ID, (match) => fakeId(match));
-  // Second pass: ids also appear glued to a role prefix ("P1XXXX-XXX" in
-  // relationship member ids), where the lookarounds cannot see them.
-  for (const [real, fake] of ids) text = text.split(real).join(fake);
+  let text = replaceIds(JSON.stringify(result, null, 2));
   for (const word of nameWords) {
     text = text.replace(new RegExp(`(?<!\\p{L})${RegExp.escape(word)}(?!\\p{L})`, "gu"), fakeWord(word));
   }
   return text;
 }
 
-mkdirSync(OUT, { recursive: true });
-const secrets = existsSync(SECRETS_FILE)
-  ? readFileSync(SECRETS_FILE, "utf8").split("\n").map((line) => line.trim()).filter(Boolean)
-  : [];
-let failed = false;
-for (const file of readdirSync(CAPTURES).filter((name) => name.endsWith(".json")).sort()) {
-  const raw = readFileSync(join(CAPTURES, file), "utf8");
-  dropSources = !KEEPS_SOURCES.has(file);
-  keepNames = NO_PEOPLE.has(file);
-  const output = anonymize(raw);
-  const leaked = [...new Set(raw.match(ID) ?? [])].filter((id) => output.includes(id));
-  const secret = secrets.filter((value) => output.includes(value));
-  if (leaked.length > 0 || secret.length > 0) {
-    console.error(`${file}: vazou ${[...leaked, ...secret].join(", ")}`);
-    failed = true;
-    continue;
+if (import.meta.main) {
+  if (!existsSync(SALT_FILE)) writeFileSync(SALT_FILE, randomBytes(24).toString("hex"));
+  setSalt(readFileSync(SALT_FILE, "utf8").trim());
+  mkdirSync(OUT, { recursive: true });
+  const secrets = existsSync(SECRETS_FILE)
+    ? readFileSync(SECRETS_FILE, "utf8").split("\n").map((line) => line.trim()).filter(Boolean)
+    : [];
+  let failed = false;
+  for (const file of readdirSync(CAPTURES).filter((name) => name.endsWith(".json")).sort()) {
+    const raw = readFileSync(join(CAPTURES, file), "utf8");
+    dropSources = !KEEPS_SOURCES.has(file);
+    keepNames = NO_PEOPLE.has(file);
+    const output = anonymize(raw);
+    const leaked = idsIn(raw).filter((id) => output.includes(id));
+    const secret = secrets.filter((value) => output.includes(value));
+    if (leaked.length > 0 || secret.length > 0) {
+      console.error(`${file}: vazou ${[...leaked, ...secret].join(", ")}`);
+      failed = true;
+      continue;
+    }
+    writeFileSync(join(OUT, file), `${output}\n`);
+    console.log(`${file}: ${Math.round(output.length / 1024)} KB`);
   }
-  writeFileSync(join(OUT, file), `${output}\n`);
-  console.log(`${file}: ${Math.round(output.length / 1024)} KB`);
+  if (failed) process.exit(1);
 }
-if (failed) process.exit(1);

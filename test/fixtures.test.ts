@@ -1,4 +1,5 @@
 import { describe, expect, test } from "bun:test";
+import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
@@ -46,8 +47,21 @@ describe("committed fixtures", () => {
     for (const real of ["LZJW-C31", "LZJW-C61", "G1CF-DLV", "Lincoln", "Abraham"]) expect(blob).not.toContain(real);
   });
 
-  test.skipIf(!existsSync(SECRETS))("contain none of the values in task/anonymize.secrets", () => {
+});
+
+// task/anonymize.secrets (outside the repo) lists the user's own family: ids,
+// names, places. None of it may appear in ANY tracked file, code and tests
+// included, not just the fixtures.
+describe.skipIf(!existsSync(SECRETS))("tracked files", () => {
+  test("contain none of the values in task/anonymize.secrets", () => {
+    const root = join(import.meta.dir, "..");
+    const tracked = spawnSync("git", ["ls-files", "-z"], { cwd: root, encoding: "utf8" }).stdout.split("\0").filter(Boolean);
     const secrets = readFileSync(SECRETS, "utf8").split("\n").map((line) => line.trim()).filter(Boolean);
-    for (const secret of secrets) expect(blob).not.toContain(secret);
+    const leaks: string[] = [];
+    for (const file of tracked) {
+      const text = readFileSync(join(root, file), "utf8");
+      for (const secret of secrets) if (text.includes(secret)) leaks.push(`${file}: ${secret}`);
+    }
+    expect(leaks).toEqual([]);
   });
 });
