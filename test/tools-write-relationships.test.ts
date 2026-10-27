@@ -182,6 +182,21 @@ describe("remove_relationship", () => {
     expect(fetch.calls.at(-1)!.url).toEndWith(`/platform/tree/couple-relationships/${REL}`);
   });
 
+  test("a merged or deleted person is labelled, not a failure: the link can still be removed", async () => {
+    const { run, approver } = setup([
+      jsonResponse({ relationships: [{ id: REL, type: "http://gedcomx.org/Couple", person1: ref(CHILD), person2: ref(DAD) }] }),
+      response({ status: 301, headers: { location: `https://www.familysearch.org/platform/tree/persons/${MOM}` } }),
+      response({ status: 410 }),
+      response({ status: 204 }),
+      notFound(),
+    ]);
+    const out = await run("remove_relationship", { relationship_id: REL, kind: "couple", reason });
+    const headline = (approver as any).prompts[0].headline as string;
+    expect(headline).toContain(`(pessoa mesclada/apagada) [${CHILD}]`);
+    expect(headline).toContain(`(pessoa mesclada/apagada) [${DAD}]`);
+    expect(out.status).toBe("applied");
+  });
+
   test("a 410 after the delete is also success, a 200 is a failed check", async () => {
     const rel = jsonResponse({ childAndParentsRelationships: [{ id: REL, parent1: ref(DAD), child: ref(CHILD) }], persons: [person(CHILD, "Rui Lia"), person(DAD, "Pai Lia")] });
     const gone = setup([rel, response({ status: 204 }), response({ status: 410 })]);

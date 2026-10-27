@@ -2,7 +2,7 @@ import { Type } from "@sinclair/typebox";
 import type { WritePlan } from "../approval/gate.js";
 import { type ReadBack, runWritePlan } from "../approval/run.js";
 import type { Ctx } from "../context.js";
-import { DeletedError, HttpError, NotFoundError } from "../core/errors.js";
+import { DeletedError, HttpError, MergedError, NotFoundError } from "../core/errors.js";
 import { toFamily, toPersonSummary } from "../domain/normalize.js";
 import { getJson, readFamilies, readPerson } from "../familysearch/api.js";
 import type { GxDocument } from "../familysearch/gedcomx.js";
@@ -144,6 +144,15 @@ export const linkSpouses = defineTool({
   },
 });
 
+/** remove_relationship may be cleaning up after a merge: a person gone from the tree is a label, not an error. */
+const nameOrGone = (ctx: Ctx, id: string): Promise<string> =>
+  nameOf(ctx, id).catch((error: unknown) => {
+    if (error instanceof MergedError || error instanceof DeletedError || error instanceof NotFoundError) {
+      return label("(pessoa mesclada/apagada)", id);
+    }
+    throw error;
+  });
+
 // api.ts has no reader for a single relationship, so the two this tool needs live here.
 const RELATIONSHIP_PATH = { couple: "couple-relationships", parents: "child-and-parents-relationships" } as const;
 const readRelationship = (ctx: Ctx, kind: keyof typeof RELATIONSHIP_PATH, id: string) =>
@@ -185,7 +194,7 @@ export const removeRelationship = defineTool({
     const labels: string[] = [];
     for (const personId of ids) {
       const known = nameIn(document, personId);
-      labels.push(known || reads >= 2 ? label(known, personId) : (reads++, await nameOf(ctx, personId)));
+      labels.push(known || reads >= 2 ? label(known, personId) : (reads++, await nameOrGone(ctx, personId)));
     }
     const text = kind === "couple" ? `o casal ${labels.join(" e ")}` : `os pais ${labels.slice(0, -1).join(" e ")} do(a) filho(a) ${labels.at(-1)}`;
     const plan: WritePlan = {
