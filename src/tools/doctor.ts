@@ -75,6 +75,9 @@ export function hookFiles(home: string, cwd: string): { files: string[]; complet
   };
 }
 
+/** Not readOnly because they persist local files (session, cache, export), not because they write to the account. */
+const LOCAL_WRITERS = new Set(["login", "sync", "export"]);
+
 const APPROVER_LABEL = {
   elicitation: "elicitation (cliente MCP)",
   dialog: "diálogo do macOS (CLI)",
@@ -143,10 +146,10 @@ export const doctor = defineTool({
       const partial = scan.complete ? "" : " A busca nos plugins (~/.claude/plugins) parou no limite: confira os hooks à mão.";
       return `${kind}.${warning}${partial}`;
     });
-    // Informational, no network: write tools still without a checked live run.
+    // Informational, no network: account writes still without a checked live run.
     await step("writes", () => {
       const unproven = allTools
-        .filter((tool) => !tool.readOnly && tool.name !== "login" && !PRODUCTION_PROVEN.has(tool.name))
+        .filter((tool) => !tool.readOnly && !LOCAL_WRITERS.has(tool.name) && !PRODUCTION_PROVEN.has(tool.name))
         .map((tool) => tool.name);
       return unproven.length ? `ainda não provadas em produção: ${unproven.join(", ")}` : "todas as escritas já foram provadas em produção";
     });

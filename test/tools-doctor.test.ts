@@ -93,6 +93,15 @@ describe("doctor", () => {
     ]);
     expect(fetch.calls).toHaveLength(3);
   });
+
+  test("the writes layer lists only tools that write to the account", async () => {
+    const { run } = setup({ script: [response({ status: 401 })] });
+    const detail = ((await run("doctor")) as Report).layers.find((layer) => layer.layer === "writes")!.detail;
+    expect(detail).toContain("create_person");
+    expect(detail).toContain("merge_persons");
+    // These persist local files (session, cache, export), not the shared tree.
+    for (const local of ["login", "sync", "export"]) expect(detail.split(/[:,]\s*/)).not.toContain(local);
+  });
 });
 
 describe("doctor approval layer", () => {
