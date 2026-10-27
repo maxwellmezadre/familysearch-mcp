@@ -5,6 +5,8 @@ import { Type } from "@sinclair/typebox";
 import { readPerson, searchTree } from "../familysearch/api.js";
 import type { SessionData } from "../session/store.js";
 import { defineTool } from "./define.js";
+import { allTools } from "./registry.js";
+import { PRODUCTION_PROVEN } from "./write-status.js";
 
 // Layer-by-layer diagnosis. Each layer runs only when the one below it is
 // healthy, so the first failure IS the answer: which layer broke, and what
@@ -95,6 +97,13 @@ export const doctor = defineTool({
       return found.length
         ? `${kind}. ATENÇÃO: hooks Elicitation/ElicitationResult em ${found.join(", ")} podem responder à pergunta sem você.`
         : kind;
+    });
+    // Informational, no network: write tools still without a checked live run.
+    await step("writes", () => {
+      const unproven = allTools
+        .filter((tool) => !tool.readOnly && tool.name !== "login" && !PRODUCTION_PROVEN.has(tool.name))
+        .map((tool) => tool.name);
+      return unproven.length ? `ainda não provadas em produção: ${unproven.join(", ")}` : "todas as escritas já foram provadas em produção";
     });
     if (
       !(await step("api", async () => {

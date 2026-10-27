@@ -99,6 +99,14 @@ async function main(): Promise<void> {
     callTool(6, "raw_get", { path: "https://evil.example/platform/users/current" }),
     callTool(7, "auth_status", { verify: "sim" }),
     { jsonrpc: "2.0", id: 8, method: "tools/list" },
+    callTool(9, "add_note", {
+      person_id: "KWCB-XXX",
+      subject: "Nota de verificação",
+      text: "Texto da nota",
+      reason: "verificação automática sem sessão",
+      preview: false,
+    }),
+    { jsonrpc: "2.0", id: 10, method: "tools/list" },
   ]);
 
   const lines = stdout.split("\n").filter((line) => line.trim() !== "");
@@ -148,6 +156,18 @@ async function main(): Promise<void> {
     "o servidor continua respondendo depois dos erros",
     replies.find((reply) => reply.id === 8)?.result !== undefined,
   );
+
+  // No session and no elicitation: a write cannot happen, whatever shape the refusal takes.
+  const note = replies.find((reply) => reply.id === 9)?.result as ToolResult | undefined;
+  const noteStatus = (() => {
+    try {
+      return (JSON.parse(note?.content[0]?.text ?? "") as { status?: string }).status;
+    } catch {
+      return undefined;
+    }
+  })();
+  check("add_note sem sessão nem aprovação não escreve", note?.isError === true || noteStatus === "refused");
+  check("o servidor continua respondendo depois da escrita recusada", replies.find((reply) => reply.id === 10)?.result !== undefined);
 
   console.log("\nmodo somente leitura:");
   const readOnly = await talk([...handshake, { jsonrpc: "2.0", id: 2, method: "tools/list" }], {

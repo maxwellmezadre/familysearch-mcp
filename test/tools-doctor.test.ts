@@ -85,6 +85,7 @@ describe("doctor", () => {
       "session_file",
       "token",
       "approval",
+      "writes",
       "api",
       "tree_read",
       "search",
