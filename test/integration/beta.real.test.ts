@@ -48,7 +48,7 @@ type Family = {
   parents: Array<{ relationshipId: string; parent1: { id: string } | null; parent2: { id: string } | null }>;
   spouses: Array<{ relationshipId: string | null; spouse: { id: string } | null; children: Array<{ id: string }> }>;
 };
-type Person = { id: string; facts: Array<{ id: string | null; type: string; date: { original: string } | null }> };
+type Person = { id: string; facts: Array<{ id: string | null; type: string; date: { original: string; formal: string | null } | null }> };
 
 gated("beta: every write", () => {
   const ctx: Ctx = createContext(loadConfig(), { approver: autoApprove() });
@@ -66,7 +66,7 @@ gated("beta: every write", () => {
     const out = await call<Outcome>(name, { reason: `${tag} prova da suíte beta`, ...args });
     // Track a created person BEFORE asserting: a failed read-back must not leak it.
     if (name === "create_person" && out.person_id) created.add(out.person_id);
-    expect(out.message).toContain("conferida");
+    expect(out.message).toContain("conferid");
     expect(out.status).toBe("applied");
     expect(out.readBack?.ok).toBe(true);
     return out;
@@ -122,6 +122,7 @@ gated("beta: every write", () => {
     await write("update_person", { person_id: a, add_facts: [{ type: "Residence", date: "1 January 1950", place: "Salt Lake City, Utah" }] });
     const added = await residence();
     expect(added?.date?.original).toBe("1 January 1950");
+    expect(added?.date?.formal).toBeTruthy(); // standardized by FamilySearch, not left as free text
 
     await write("update_person", { person_id: a, update_facts: [{ fact_id: added?.id, date: "1 January 1951" }] });
     expect((await residence())?.date?.original).toBe("1 January 1951");
