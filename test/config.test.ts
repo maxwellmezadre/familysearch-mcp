@@ -22,7 +22,7 @@ describe("loadConfig defaults", () => {
     expect(config.configDir).toBe("/tmp/fs-test");
     expect(config.sessionPath).toBe("/tmp/fs-test/session.production.enc");
     expect(config.keyPath).toBe("/tmp/fs-test/session.key");
-    expect(config.dbPath).toBe("/tmp/fs-test/cache.db");
+    expect(config.dbPath).toBe("/tmp/fs-test/cache.production.db");
     expect(config.browserProfileDir).toBe("/tmp/fs-test/browser-profile-production");
   });
 

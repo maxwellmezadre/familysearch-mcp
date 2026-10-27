@@ -14,6 +14,9 @@ import {
   formatRecords,
   formatSearch,
 } from "./format.js";
+import { registerAnalysisCommands } from "./commands/analysis.js";
+import { registerExportCommands } from "./commands/export.js";
+import { registerSyncCommands } from "./commands/sync.js";
 import { registerMergeCommands } from "./commands/merge.js";
 import { registerPersonWriteCommands } from "./commands/write-person.js";
 import { registerRelationshipWriteCommands } from "./commands/write-relationships.js";
@@ -221,6 +224,10 @@ export async function runCli(argv: string[], version: string): Promise<void> {
     .action((a: string, b: string, options) =>
       invoke("compare_persons", { person_a: a, person_b: b }, { json: options.json ?? false, format: formatComparison }),
     );
+
+  registerAnalysisCommands(command);
+  registerExportCommands(command);
+  registerSyncCommands(command);
 
   // ---- rediscovery ------------------------------------------------------------
 

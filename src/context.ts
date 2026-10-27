@@ -1,4 +1,7 @@
+import type { Database } from "bun:sqlite";
 import type { Approver } from "./approval/gate.js";
+import { openCache } from "./cache/db.js";
+import { type CacheRepo, createCacheRepo } from "./cache/repo.js";
 import { type Config, loadConfig } from "./config.js";
 import { type FetchLike, type Http, createHttp } from "./core/http.js";
 import { type Logger, createLogger } from "./core/logger.js";
@@ -20,6 +23,8 @@ export type ContextDeps = {
   reauth?: () => Promise<string | null>;
   /** Asks the user to approve a write plan; absent = no write is ever made. */
   approver?: Approver;
+  /** An already open database (tests); the context then never closes it. */
+  db?: Database;
 };
 
 export type Ctx = {
@@ -30,6 +35,8 @@ export type Ctx = {
   http: Http;
   /** Mutable: the entry points (MCP server, CLI) fill it once they know how to ask. */
   approver: Approver | null;
+  /** The lineage cache, opened on first use: a tool that never touches it never creates the file. */
+  cache: () => CacheRepo;
   /** Closes what was opened. Safe to call more than once. */
   dispose: () => void;
 };
@@ -81,7 +88,30 @@ export function createContext(config: Config, deps: ContextDeps = {}): Ctx {
     },
   );
 
-  const ctx: Ctx = { config, log, now, session, http, approver: deps.approver ?? null, dispose: () => undefined };
+  let db: Database | undefined;
+  let repo: CacheRepo | undefined;
+  const cache = (): CacheRepo => {
+    if (!repo) {
+      db = deps.db ?? openCache(config.dbPath);
+      repo = createCacheRepo(db, now);
+    }
+    return repo;
+  };
+
+  const ctx: Ctx = {
+    config,
+    log,
+    now,
+    session,
+    http,
+    approver: deps.approver ?? null,
+    cache,
+    dispose: () => {
+      if (deps.db === undefined) db?.close();
+      db = undefined;
+      repo = undefined;
+    },
+  };
   return ctx;
 }
 

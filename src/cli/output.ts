@@ -9,7 +9,7 @@ import { activeTools, allTools } from "../tools/registry.js";
 // registry the MCP server uses, run it through the same `runTool`, print JSON
 // or a human rendering. Commands themselves live in index.ts.
 
-function resolveTool(readOnly: boolean, name: string): ToolDef {
+export function resolveTool(readOnly: boolean, name: string): ToolDef {
   const tool = activeTools({ readOnly }).find((candidate) => candidate.name === name);
   if (tool) return tool;
   const exists = allTools.some((candidate) => candidate.name === name);
@@ -46,7 +46,7 @@ export function printTable<T>(rows: T[], columns: Array<[string, (row: T) => str
   return [line(header), line(widths.map((width) => "-".repeat(width))), ...body.map(line)].join("\n");
 }
 
-async function withContext<T>(fn: (ctx: Ctx) => Promise<T> | T): Promise<T> {
+export async function withContext<T>(fn: (ctx: Ctx) => Promise<T> | T): Promise<T> {
   const ctx = createContext(loadConfig());
   ctx.approver = createDialogApprover();
   try {
@@ -56,7 +56,7 @@ async function withContext<T>(fn: (ctx: Ctx) => Promise<T> | T): Promise<T> {
   }
 }
 
-async function write(text: string): Promise<void> {
+export async function write(text: string): Promise<void> {
   // Await the write: a large result piped to a slow reader is truncated when
   // the process exits before stdout drains.
   await new Promise<void>((resolve, reject) => {

@@ -167,7 +167,7 @@ export function loadConfig(env: Env = process.env): Config {
     baseUrl: BASE_URLS[fsEnv],
     sessionPath: join(configDir, `session.${fsEnv}.enc`),
     keyPath: join(configDir, "session.key"),
-    dbPath: join(configDir, "cache.db"),
+    dbPath: join(configDir, `cache.${fsEnv}.db`),
     browserProfileDir: join(configDir, `browser-profile-${fsEnv}`),
     exportDir: expandHome(
       readOptional(env, "FAMILYSEARCH_EXPORT_DIR") ??

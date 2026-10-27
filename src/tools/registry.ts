@@ -1,11 +1,14 @@
 import type { Config } from "../config.js";
+import { analysisTools } from "./analysis.js";
 import { authStatus } from "./auth.js";
 import { comparePersons } from "./compare.js";
 import { doctor } from "./doctor.js";
 import type { ToolDef } from "./define.js";
+import { exportTools } from "./export.js";
 import { login } from "./login.js";
 import { mergeTools } from "./merge.js";
 import { rawGet } from "./raw.js";
+import { sync } from "./sync.js";
 import { getHints, getPossibleDuplicates, getRecord, searchPlaces, searchRecords } from "./research.js";
 import { personWriteTools } from "./write-person.js";
 import { relationshipWriteTools } from "./write-relationships.js";
@@ -27,6 +30,8 @@ export const allTools: ToolDef[] = [
   authStatus,
   login,
   doctor,
+  // Cache
+  sync,
   // Family Tree
   searchPersons,
   getPerson,
@@ -42,6 +47,8 @@ export const allTools: ToolDef[] = [
   searchPlaces,
   // Analysis
   comparePersons,
+  ...analysisTools,
+  ...exportTools,
   // Writes
   ...personWriteTools,
   ...relationshipWriteTools,
