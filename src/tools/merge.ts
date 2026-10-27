@@ -150,8 +150,8 @@ export const mergePersons = defineTool({
       throw new Error(`${nameOf(living)} está marcada como viva: pessoa viva não é mesclada; use link_parents e remove_relationship.`);
     }
     const [a, b] = [s.lastChangeId, d.lastChangeId];
-    // compare_persons writes "null" for an empty history, which would always match: refuse instead.
-    const unread = a === null ? survivor : b === null ? duplicate : null;
+    // compare_persons writes "null" (or "") for an unreadable history, which would always match: refuse instead.
+    const unread = !a ? survivor : !b ? duplicate : null;
     if (unread) {
       throw new Error(
         `Mesclagem recusada: não consegui ler o histórico de alterações de ${unread}; não dá para garantir que nada mudou desde a comparação.`,

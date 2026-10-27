@@ -66,6 +66,8 @@ type World = {
   analysis?: typeof analysis;
   /** A person whose change history comes back empty. */
   emptyHistory?: string;
+  /** A person whose last change comes back without an id. */
+  idlessHistory?: string;
   options?: FetchResponse;
   /** Answers the POST; the duplicate turns into a 301 only when it is 2xx. */
   merge?: () => FetchResponse;
@@ -101,6 +103,7 @@ function world(w: World = {}) {
     if (sub === "sources") return response({ status: 204 });
     if (sub === "changes") {
       if (id === w.emptyHistory) return jsonResponse({ entries: [] });
+      if (id === w.idlessHistory) return jsonResponse({ entries: [{ title: "Birth Added" }] });
       return jsonResponse({ entries: [{ id: id === SURVIVOR ? "chg-a" : "chg-b", title: "Birth Added" }] });
     }
     throw new Error(`rota não prevista: ${init.method} ${url}`);
@@ -236,6 +239,16 @@ describe("merge_persons", () => {
     // "null" is what compare_persons puts in the fingerprint for an empty history: it must not pass.
     await expect(run("merge_persons", merge({ fingerprint: "chg-a|null" }))).rejects.toThrow(
       `não consegui ler o histórico de alterações de ${DUPLICATE}; não dá para garantir que nada mudou desde a comparação`,
+    );
+    expect(approver.prompts).toHaveLength(0);
+    expect(writes()).toHaveLength(0);
+  });
+
+  test("a last change without an id is refused like an empty history", async () => {
+    const { run, approver, writes } = setup(world({ idlessHistory: DUPLICATE }));
+    // compare_persons would hand out "chg-a|" here, which would always match.
+    await expect(run("merge_persons", merge({ fingerprint: "chg-a|" }))).rejects.toThrow(
+      `não consegui ler o histórico de alterações de ${DUPLICATE}`,
     );
     expect(approver.prompts).toHaveLength(0);
     expect(writes()).toHaveLength(0);
