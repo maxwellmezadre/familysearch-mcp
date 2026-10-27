@@ -99,3 +99,43 @@ export type RecordQuery = {
   collectionId?: string;
   limit?: number;
 };
+
+// ---- comparison and merge ----------------------------------------------------
+
+export type MergeConstraint = "allowed" | "other-order-only" | "not-allowed";
+/** FamilySearch's answer to "can X survive a merge with Y?", with its own reason when it says no. */
+export type MergeCheck = { constraint: MergeConstraint; reason: string | null };
+
+/** Resource URIs exactly as FamilySearch lists them: a merge request sends them back verbatim. */
+export type MergeAnalysis = {
+  survivorResources: string[];
+  duplicateResources: string[];
+  conflicts: Array<{ survivor: string; duplicate: string }>;
+};
+
+export type PersonBundle = {
+  person: PersonDetail;
+  family: Family;
+  sourceCount: number;
+  changeCount: number;
+  lastChangeId: string | null;
+};
+
+export type Suggestion = { survivorId: string; duplicateId: string; why: string };
+
+export type Comparison = {
+  a: PersonBundle;
+  b: PersonBundle;
+  onlyA: Fact[];
+  onlyB: Fact[];
+  conflicts: Array<{ type: string; a: Fact; b: Fact }>;
+  /** Signs that the two are NOT the same person. Each one is a reason to stop and look. */
+  redFlags: string[];
+  /** merge: FamilySearch can merge them; relink: one is living; blocked: FamilySearch refuses. */
+  path: "merge" | "relink" | "blocked";
+  pathReason: string;
+  suggestion: Suggestion | null;
+  analysis: MergeAnalysis | null;
+  /** The last change of each person; a merge checks that nothing changed since the comparison. */
+  fingerprint: string;
+};

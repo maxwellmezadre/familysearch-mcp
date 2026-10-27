@@ -14,15 +14,22 @@ describe("committed fixtures", () => {
   test("the expected captures are all present", () => {
     expect(files.sort()).toEqual([
       "ancestry.json",
+      "changes-b.json",
       "changes.json",
       "descendancy.json",
+      "families-b.json",
       "families.json",
       "matches.json",
+      "merge-analysis.json",
+      "merge-options-reverse.json",
+      "merge-options.json",
+      "person-b.json",
       "person-merged.json",
       "person.json",
       "places.json",
       "record-search.json",
       "record.json",
+      "sources-b.json",
       "sources.json",
       "tree-search.json",
     ]);
@@ -36,7 +43,7 @@ describe("committed fixtures", () => {
   });
 
   test("were anonymized: the public subject's real id and name are gone", () => {
-    for (const real of ["LZJW-C31", "LZJW-C61", "Lincoln", "Abraham"]) expect(blob).not.toContain(real);
+    for (const real of ["LZJW-C31", "LZJW-C61", "G1CF-DLV", "Lincoln", "Abraham"]) expect(blob).not.toContain(real);
   });
 
   test.skipIf(!existsSync(SECRETS))("contain none of the values in task/anonymize.secrets", () => {

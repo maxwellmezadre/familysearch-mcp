@@ -1,6 +1,8 @@
 {
   "status": 200,
   "location": null,
+  "allow": null,
+  "warning": null,
   "body": {
     "entries": [
       {

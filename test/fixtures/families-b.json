@@ -1,0 +1,158 @@
+{
+  "status": 200,
+  "location": null,
+  "allow": null,
+  "warning": null,
+  "body": {
+    "description": "#sd_person_1HH8-PZG",
+    "links": {
+      "person": {
+        "href": "https://www.familysearch.org/platform/tree/persons/1HH8-PZG?flag=fsh"
+      },
+      "collection": {
+        "href": "https://www.familysearch.org/platform/collections/tree?flag=fsh"
+      },
+      "portrait": {
+        "href": "https://www.familysearch.org/platform/tree/persons/1HH8-PZG/portrait?flag=fsh"
+      }
+    },
+    "persons": [
+      {
+        "display": {
+          "ascendancyNumber": "1",
+          "birthDate": "1865",
+          "birthPlace": "Kentucky, United States",
+          "descendancyNumber": "1",
+          "gender": "Male",
+          "lifespan": "1865-Deceased",
+          "name": "Lia Fausto"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1865",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1865"
+                }
+              ],
+              "original": "1865"
+            },
+            "id": "4818a733-2a2d-459e-9993-10a6ee2c8c2e",
+            "place": {
+              "description": "#354",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Kentucky, United States"
+                }
+              ],
+              "original": "Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "id": "3be5301c-6a44-47e4-9842-9fbfb560ca44",
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "date": {
+              "formal": "+1880",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1880"
+                }
+              ],
+              "original": "1880"
+            },
+            "id": "17245561-794e-4d98-95fc-5fcb3c8f2f92",
+            "place": {
+              "description": "#4050324",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Evansville, Knight Township, Vanderburgh, Indiana, United States"
+                }
+              ],
+              "original": "Evansville, Perry Township, Vanderburgh, Indiana, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          }
+        ],
+        "gender": {
+          "id": "8a27c8ea-88d0-44eb-ac10-0d8c5047603a",
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "1HH8-PZG",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/1HH8-PZG?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "950a6bba-1268-4c58-bf38-2ec057adb6b3",
+            "nameForms": [
+              {
+                "fullText": "Lia Fausto",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Lia"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      }
+    ],
+    "places": [
+      {
+        "id": "354",
+        "latitude": 37.5,
+        "longitude": -85.25,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Kentucky, United States"
+          }
+        ]
+      },
+      {
+        "id": "4050324",
+        "latitude": 37.9747,
+        "longitude": -87.5558,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Evansville, Knight Township, Vanderburgh, Indiana, United States"
+          }
+        ]
+      }
+    ]
+  }
+}

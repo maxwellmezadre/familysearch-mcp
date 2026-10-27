@@ -1,5 +1,7 @@
 {
   "status": 204,
   "location": null,
+  "allow": null,
+  "warning": null,
   "body": null
 }

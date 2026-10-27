@@ -4,6 +4,7 @@ import { createContext } from "../context.js";
 import {
   formatCandidates,
   formatChanges,
+  formatComparison,
   formatFamily,
   formatPedigree,
   formatPerson,
@@ -202,6 +203,14 @@ export async function runCli(argv: string[], version: string): Promise<void> {
         { name, limit: options.limit ? Number(options.limit) : undefined },
         { json: options.json ?? false, format: formatPlaces },
       ),
+    );
+
+  // ---- analysis -------------------------------------------------------------
+
+  command("compare <a> <b>")
+    .description("Compara duas pessoas lado a lado (só lê): conflitos, sinais de alerta, se podem ser mescladas")
+    .action((a: string, b: string, options) =>
+      invoke("compare_persons", { person_a: a, person_b: b }, { json: options.json ?? false, format: formatComparison }),
     );
 
   // ---- server ---------------------------------------------------------------

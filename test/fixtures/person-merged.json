@@ -1,6 +1,8 @@
 {
   "status": 301,
   "location": "https://www.familysearch.org/platform/tree/persons/T2SD-CF4",
+  "allow": null,
+  "warning": null,
   "body": {
     "description": "#sd_person_5TKK-FR3",
     "persons": [

@@ -1,0 +1,386 @@
+{
+  "status": 200,
+  "location": null,
+  "allow": null,
+  "warning": null,
+  "body": {
+    "entries": [
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "593da0c0-a4bd-11ef-ac60-e5f6d4b030ec_0_01707697582.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Esteves",
+            "uri": "https://www.familysearch.org/platform/users/agents/1234-5BC"
+          }
+        ],
+        "id": "593da0c0-a4bd-11ef-ac60-e5f6d4b030ec_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/1234-5BC?flag=fsh"
+          }
+        },
+        "title": "Person Source Reference Added",
+        "updated": 1731831862476,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/SourceReference",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#593da0c0-a4bd-11ef-ac60-e5f6d4b030ec_0_01707697582.resulting",
+              "resourceId": "593da0c0-a4bd-11ef-ac60-e5f6d4b030ec_0_01707697582.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1880",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1880"
+                        }
+                      ],
+                      "original": "1880"
+                    },
+                    "id": "17245561-794e-4d98-95fc-5fcb3c8f2f92",
+                    "place": {
+                      "description": "#4050324",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Evansville, Knight Township, Vanderburgh, Indiana, United States"
+                        }
+                      ],
+                      "original": "Evansville, Perry Township, Vanderburgh, Indiana, United States"
+                    },
+                    "type": "http://gedcomx.org/Residence"
+                  }
+                ],
+                "id": "591a1330-a4bd-11ef-a730-bdd930362e3a_0_01707697582.resulting"
+              }
+            ],
+            "places": [
+              {
+                "id": "4050324",
+                "latitude": 37.9747,
+                "longitude": -87.5558,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Evansville, Knight Township, Vanderburgh, Indiana, United States"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Esteves",
+            "uri": "https://www.familysearch.org/platform/users/agents/1234-5BC"
+          }
+        ],
+        "id": "591a1330-a4bd-11ef-a730-bdd930362e3a_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/1234-5BC?flag=fsh"
+          }
+        },
+        "title": "Residence Added",
+        "updated": 1731831862243,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Residence",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#591a1330-a4bd-11ef-a730-bdd930362e3a_0_01707697582.resulting",
+              "resourceId": "591a1330-a4bd-11ef-a730-bdd930362e3a_0_01707697582.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "facts": [
+                  {
+                    "id": "3be5301c-6a44-47e4-9842-9fbfb560ca44",
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "id": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_41707697582.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Esteves",
+            "uri": "https://www.familysearch.org/platform/users/agents/1234-5BC"
+          }
+        ],
+        "id": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_4",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/1234-5BC?flag=fsh"
+          }
+        },
+        "title": "Death Added",
+        "updated": 1731831859197,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Death",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#57494ad0-a4bd-11ef-a527-b991faa4a0be_0_41707697582.resulting",
+              "resourceId": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_41707697582.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1865",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1865"
+                        }
+                      ],
+                      "original": "1865"
+                    },
+                    "id": "4818a733-2a2d-459e-9993-10a6ee2c8c2e",
+                    "place": {
+                      "description": "#354",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Kentucky, United States"
+                        }
+                      ],
+                      "original": "Kentucky, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  }
+                ],
+                "id": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_31707697582.resulting"
+              }
+            ],
+            "places": [
+              {
+                "id": "354",
+                "latitude": 37.5,
+                "longitude": -85.25,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Kentucky, United States"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Esteves",
+            "uri": "https://www.familysearch.org/platform/users/agents/1234-5BC"
+          }
+        ],
+        "id": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_3",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/1234-5BC?flag=fsh"
+          }
+        },
+        "title": "Birth Added",
+        "updated": 1731831859197,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Birth",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#57494ad0-a4bd-11ef-a527-b991faa4a0be_0_31707697582.resulting",
+              "resourceId": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_31707697582.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "gender": {
+                  "id": "8a27c8ea-88d0-44eb-ac10-0d8c5047603a",
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_21707697582.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Esteves",
+            "uri": "https://www.familysearch.org/platform/users/agents/1234-5BC"
+          }
+        ],
+        "id": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_2",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/1234-5BC?flag=fsh"
+          }
+        },
+        "title": "Gender Added",
+        "updated": 1731831859197,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Gender",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#57494ad0-a4bd-11ef-a527-b991faa4a0be_0_21707697582.resulting",
+              "resourceId": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_21707697582.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_11707697582.resulting",
+                "names": [
+                  {
+                    "id": "950a6bba-1268-4c58-bf38-2ec057adb6b3",
+                    "nameForms": [
+                      {
+                        "fullText": "Lia Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Lia"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ],
+                        "nameFormInfo": [
+                          {
+                            "order": "http://familysearch.org/v1/Eurotypic"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Esteves",
+            "uri": "https://www.familysearch.org/platform/users/agents/1234-5BC"
+          }
+        ],
+        "id": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_1",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/1234-5BC?flag=fsh"
+          }
+        },
+        "title": "Birth Name Added",
+        "updated": 1731831859197,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/BirthName",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#57494ad0-a4bd-11ef-a527-b991faa4a0be_0_11707697582.resulting",
+              "resourceId": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_11707697582.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_01707697582.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Esteves",
+            "uri": "https://www.familysearch.org/platform/users/agents/1234-5BC"
+          }
+        ],
+        "id": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/1234-5BC?flag=fsh"
+          }
+        },
+        "title": "Person Created",
+        "updated": 1731831859197,
+        "changeInfo": [
+          {
+            "objectType": "http://gedcomx.org/Person",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#57494ad0-a4bd-11ef-a527-b991faa4a0be_0_01707697582.resulting",
+              "resourceId": "57494ad0-a4bd-11ef-a527-b991faa4a0be_0_01707697582.resulting"
+            }
+          }
+        ]
+      }
+    ],
+    "links": {
+      "person": {
+        "href": "https://www.familysearch.org/platform/tree/persons/1HH8-PZG?flag=fsh"
+      },
+      "self": {
+        "href": "https://www.familysearch.org/platform/tree/persons/1HH8-PZG/changes?flag=fsh"
+      }
+    },
+    "updated": 1731831862476
+  }
+}

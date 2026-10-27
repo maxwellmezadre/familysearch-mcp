@@ -119,7 +119,7 @@ describe("feeds", () => {
     expect(changes[0]).toEqual({
       id: "58ce84d0-a843-11f0-a38b-f75680295105_0_0",
       at: new Date(1760366765469).toISOString(),
-      who: "Teodoro",
+      who: "FamilySearch",
       what: "Person Source Reference Removed",
     });
   });

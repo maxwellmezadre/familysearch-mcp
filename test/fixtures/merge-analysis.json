@@ -1,0 +1,15 @@
+{
+  "status": 400,
+  "location": null,
+  "allow": null,
+  "warning": "400 FamilySearch \"407 tf \"CANNOT_MERGE_ANY_ORDER_RESTRICTED_PERSON\"\", 400 FamilySearch \"{\"error\":\"CANNOT_MERGE_ANY_ORDER_RESTRICTED_PERSON\"}\", 400 FamilySearch \"Failure in upstream call: Person is gone. (upstream 400)\"",
+  "body": {
+    "errors": [
+      {
+        "code": 400,
+        "label": "Bad Request",
+        "message": "Failure in upstream call: Person is gone. (upstream 400)"
+      }
+    ]
+  }
+}

@@ -1,6 +1,8 @@
 {
   "status": 200,
   "location": null,
+  "allow": null,
+  "warning": null,
   "body": {
     "description": "#sd_p_105038009996",
     "id": "r_106515605212",
@@ -172,7 +174,7 @@
         "about": "https://www.familysearch.org/ark:/61903/1:2:SJ1H-GLTL",
         "citations": [
           {
-            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2 : Sun Jul 26 11:23:16 UTC 2026), Entry for Lia Fausto and Lia Fausto, 14 Apr 1887."
+            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2 : Sun Jul 26 11:23:16 UTC 2026), Entry for Lia Fausto and Lia Fausto, 14 Apr 1887."
           }
         ],
         "componentOf": {
@@ -341,7 +343,7 @@
         "about": "https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2",
         "citations": [
           {
-            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2 : Sun Jul 26 11:23:16 UTC 2026), Lia Fausto, 14 Apr 1887."
+            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2 : Sun Jul 26 11:23:16 UTC 2026), Lia Fausto, 14 Apr 1887."
           }
         ],
         "componentOf": {
@@ -367,7 +369,7 @@
         "about": "https://www.familysearch.org/ark:/61903/1:1:D33R-JNMG",
         "citations": [
           {
-            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:D33R-JNMG : Sun Jul 26 11:23:16 UTC 2026), Lia Fausto in entry for Lia Fausto, 14 Apr 1887."
+            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:D33R-JNMG : Sun Jul 26 11:23:16 UTC 2026), Lia Fausto in entry for Lia Fausto, 14 Apr 1887."
           }
         ],
         "componentOf": {

@@ -1,5 +1,6 @@
 import type { Config } from "../config.js";
 import { authStatus } from "./auth.js";
+import { comparePersons } from "./compare.js";
 import type { ToolDef } from "./define.js";
 import { login } from "./login.js";
 import { getHints, getPossibleDuplicates, getRecord, searchPlaces, searchRecords } from "./research.js";
@@ -32,6 +33,8 @@ export const allTools: ToolDef[] = [
   getHints,
   getPossibleDuplicates,
   searchPlaces,
+  // Analysis
+  comparePersons,
 ];
 
 /**

@@ -47,7 +47,7 @@ const FREE_TEXT: Record<string, string> = {
 /** Keys dropped: bulky, irrelevant to the parsers, and (attribution) about contributors. */
 const DROPPED = new Set(["evidence", "sortKey", "identifiers", "attribution", "fields"]);
 /** Only these captures keep their sources and source descriptions (the parsers read them there). */
-const KEEPS_SOURCES = new Set(["sources.json", "record-search.json", "record.json"]);
+const KEEPS_SOURCES = new Set(["sources.json", "sources-b.json", "record-search.json", "record.json"]);
 let dropSources = false;
 /** Captures with no people in them: their `name` fields are place names, left alone. */
 const NO_PEOPLE = new Set(["places.json"]);
@@ -82,8 +82,11 @@ function fakeWord(word: string): string {
 }
 /** Every word seen in a name, so the same words are also swapped in titles and citations. */
 const nameWords = new Set<string>();
+/** Not people: FamilySearch's own system account signs automated changes. */
+const NOT_NAMES = new Set(["FamilySearch"]);
 const fakeName = (name: string): string =>
   name.replace(/\p{L}[\p{L}'’.-]*/gu, (word) => {
+    if (NOT_NAMES.has(word)) return word;
     // Only capitalised, letters-only words: never "http" or a domain that ended up in a name field.
     if (/^\p{Lu}\p{L}{2,}$/u.test(word)) nameWords.add(word);
     return fakeWord(word);
@@ -129,9 +132,21 @@ function walk(node: Json, key = "", parent: { [key: string]: Json } | null = nul
 }
 
 function anonymize(raw: string): string {
-  const capture = JSON.parse(raw) as { status: number; location: string | null; body: Json };
+  const capture = JSON.parse(raw) as {
+    status: number;
+    location: string | null;
+    allow?: string | null;
+    warning?: string | null;
+    body: Json;
+  };
   const body = walk(capture.body);
-  const result = { status: capture.status, location: capture.location, body };
+  const result = {
+    status: capture.status,
+    location: capture.location,
+    allow: capture.allow ?? null,
+    warning: capture.warning ?? null,
+    body,
+  };
   let text = JSON.stringify(result, null, 2).replace(ID, (match) => fakeId(match));
   // Second pass: ids also appear glued to a role prefix ("P1XXXX-XXX" in
   // relationship member ids), where the lookarounds cannot see them.

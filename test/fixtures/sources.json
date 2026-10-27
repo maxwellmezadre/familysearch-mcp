@@ -1,6 +1,8 @@
 {
   "status": 200,
   "location": null,
+  "allow": null,
+  "warning": null,
   "body": {
     "persons": [
       {
@@ -634,7 +636,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:8RZW-M7ZD",
         "citations": [
           {
-            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:8RZW-M7ZD : Sun Jul 26 12:53:58 UTC 2026), Lia Fausto, 12 Feb 1924."
+            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:8RZW-M7ZD : Sun Jul 26 12:53:58 UTC 2026), Lia Fausto, 12 Feb 1924."
           }
         ],
         "id": "1KXR-52T",
@@ -655,7 +657,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:WB04-GD0P",
         "citations": [
           {
-            "value": "\"Illinois, Soldier Burial Places, 1774-1974\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:WB04-GD0P : Fri Mar 08 15:40:35 UTC 2024), Lia Fausto."
+            "value": "\"Illinois, Soldier Burial Places, 1774-1974\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:WB04-GD0P : Fri Mar 08 15:40:35 UTC 2024), Lia Fausto."
           }
         ],
         "id": "B8VK-GV1",
@@ -676,7 +678,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:CRRG-ZRJC",
         "citations": [
           {
-            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:CRRG-ZRJC : Sat Mar 09 03:37:36 UTC 2024), Lia Fausto, Rui Of Usa in entry for Davi Gilda Fausto, Sec Of War and Minister To Great Britian."
+            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:CRRG-ZRJC : Sat Mar 09 03:37:36 UTC 2024), Lia Fausto, Rui Of Usa in entry for Davi Gilda Fausto, Sec Of War and Minister To Great Britian."
           }
         ],
         "id": "4488-6LB",
@@ -697,7 +699,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:KXD5-T5T9",
         "citations": [
           {
-            "value": "\"Utah, Obituaries from Utah Newspapers, 1850-2005\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:KXD5-T5T9 : Tue Mar 11 16:05:03 UTC 2025), Rui Fausto in entry for Mrs Hugo Gilda Fausto, 18 Jul 1882."
+            "value": "\"Utah, Obituaries from Utah Newspapers, 1850-2005\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:KXD5-T5T9 : Tue Mar 11 16:05:03 UTC 2025), Rui Fausto in entry for Mrs Hugo Gilda Fausto, 18 Jul 1882."
           }
         ],
         "id": "4488-QQZ",
@@ -718,7 +720,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:F0Q1-PB4N",
         "citations": [
           {
-            "value": "\"United States, GenealogyBank Obituaries, Births, and Marriages, 1980-2015\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:F0Q1-PB4N : Tue Jan 21 08:24:33 UTC 2025), Rui Lia Fausto in entry for Mauro Henriques Or Teodoro Fausto, 20 Feb 2012."
+            "value": "\"United States, GenealogyBank Obituaries, Births, and Marriages, 1980-2015\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:F0Q1-PB4N : Tue Jan 21 08:24:33 UTC 2025), Rui Lia Fausto in entry for Mauro Henriques Or Teodoro Fausto, 20 Feb 2012."
           }
         ],
         "id": "KPQ0-SP7",
@@ -739,7 +741,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:92WW-JH0N",
         "citations": [
           {
-            "value": "\"Find a Grave Index\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:92WW-JH0N : Sun Oct 04 19:03:58 UTC 2026), Lia Fausto."
+            "value": "\"Find a Grave Index\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:92WW-JH0N : Sun Oct 04 19:03:58 UTC 2026), Lia Fausto."
           }
         ],
         "id": "0C23-30G",
@@ -760,7 +762,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:LPS8-23HT",
         "citations": [
           {
-            "value": "\"BillionGraves Index\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:LPS8-23HT : Thu Sep 24 18:05:07 UTC 2026), Lia Fausto."
+            "value": "\"BillionGraves Index\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:LPS8-23HT : Thu Sep 24 18:05:07 UTC 2026), Lia Fausto."
           }
         ],
         "id": "HFX7-MBS",
@@ -797,7 +799,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:16ZM-WJH",
         "citations": [
           {
-            "value": "\"New York, Church and Civil Deaths, 1797-1963\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:16ZM-WJH : Thu Jan 16 22:04:43 UTC 2025), Lia Fausto, 15 Apr 1865."
+            "value": "\"New York, Church and Civil Deaths, 1797-1963\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:16ZM-WJH : Thu Jan 16 22:04:43 UTC 2025), Lia Fausto, 15 Apr 1865."
           }
         ],
         "id": "QTB0-2T1",
@@ -914,7 +916,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:94XP-W9SB",
         "citations": [
           {
-            "value": "\"Iowa, Grand Army of the Republic Membership Records, 1861-1949\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:94XP-W9SB : Mon Jan 20 07:27:08 UTC 2025), Lia Fausto, 1861-1949."
+            "value": "\"Iowa, Grand Army of the Republic Membership Records, 1861-1949\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:94XP-W9SB : Mon Jan 20 07:27:08 UTC 2025), Lia Fausto, 1861-1949."
           }
         ],
         "id": "J38B-FK1",
@@ -935,7 +937,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:N5XW-0GN",
         "citations": [
           {
-            "value": "\"Wisconsin, Marriages, 1836-1930\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:N5XW-0GN : Mon Oct 19 20:29:53 UTC 2026), Lia Fausto in entry for Farias Henriques Campos, 10 Nov 1897."
+            "value": "\"Wisconsin, Marriages, 1836-1930\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:N5XW-0GN : Mon Oct 19 20:29:53 UTC 2026), Lia Fausto in entry for Farias Henriques Campos, 10 Nov 1897."
           }
         ],
         "id": "Z54V-TS7",
@@ -956,7 +958,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:J751-371",
         "citations": [
           {
-            "value": "\"Vermont, Vital Records, 1760-1954\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:J751-371 : Sat Mar 09 10:46:06 UTC 2024), Lia Fausto in entry for Davi Gilda Fausto, 26 Jul 1926."
+            "value": "\"Vermont, Vital Records, 1760-1954\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:J751-371 : Sat Mar 09 10:46:06 UTC 2024), Lia Fausto in entry for Davi Gilda Fausto, 26 Jul 1926."
           }
         ],
         "id": "PQNV-5LQ",
@@ -997,7 +999,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:7KZ8-B1ZT",
         "citations": [
           {
-            "value": "\"United States, GenealogyBank Obituaries, Births, and Marriages, 1980-2015\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:7KZ8-B1ZT : Mon Oct 13 04:11:13 UTC 2025), Rui Lia Fausto, 07 Sep 2006."
+            "value": "\"United States, GenealogyBank Obituaries, Births, and Marriages, 1980-2015\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:7KZ8-B1ZT : Mon Oct 13 04:11:13 UTC 2025), Rui Lia Fausto, 07 Sep 2006."
           }
         ],
         "id": "6546-46Q",
@@ -1018,7 +1020,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:GDHM-DXW",
         "citations": [
           {
-            "value": "\"United States, Census, 1860\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:GDHM-DXW : Mon Jul 08 05:36:32 UTC 2024), Lia Fausto, 1860."
+            "value": "\"United States, Census, 1860\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:GDHM-DXW : Mon Jul 08 05:36:32 UTC 2024), Lia Fausto, 1860."
           }
         ],
         "id": "0MR5-1HM",
@@ -1039,7 +1041,7 @@
         "about": "https://familysearch.org/ark:/61903/1:1:Q9C0-TBM",
         "citations": [
           {
-            "value": "\"United States, Census, 1850\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:Q9C0-TBM : Wed Oct 22 23:57:38 UTC 2025), Abram Fausto, 1850."
+            "value": "\"United States, Census, 1850\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q9C0-TBM : Wed Oct 22 23:57:38 UTC 2025), Abram Fausto, 1850."
           }
         ],
         "id": "FFGZ-MGT",

@@ -1,5 +1,6 @@
 import type {
   ChangeEntry,
+  Comparison,
   Fact,
   Family,
   GenEvent,
@@ -126,3 +127,39 @@ export const formatPlaces = (result: unknown): string =>
     ["TIPO", (row) => row.type ?? "-"],
     ["NOME COMPLETO", (row) => row.fullName],
   ]);
+
+const factText = (fact: Fact): string =>
+  `${fact.type}: ${[fact.date?.original, fact.place, fact.value].filter(Boolean).join(", ") || "-"}`;
+
+export const formatComparison = (result: unknown): string => {
+  const c = result as Comparison;
+  const column = (bundle: Comparison["a"]) => [
+    `${bundle.person.name ?? "(sem nome)"} [${bundle.person.id}]${bundle.person.living ? " (viva)" : ""}`,
+    `vida: ${bundle.person.lifespan ?? "-"}`,
+    `fontes: ${bundle.sourceCount}   alterações: ${bundle.changeCount}`,
+    `pais: ${bundle.family.parents.flatMap((p) => [p.parent1?.name, p.parent2?.name]).filter(Boolean).join(" + ") || "-"}`,
+    `cônjuges: ${bundle.family.spouses.map((s) => s.spouse?.name).filter(Boolean).join(", ") || "-"}`,
+    `filhos: ${bundle.family.spouses.reduce((total, s) => total + s.children.length, 0)}`,
+  ];
+  const left = column(c.a);
+  const right = column(c.b);
+  const width = Math.max(...left.map((line) => line.length)) + 4;
+  const lines = left.map((line, index) => `${line.padEnd(width)}${right[index] ?? ""}`);
+  lines.push("");
+  if (c.conflicts.length > 0) {
+    lines.push("conflitos:");
+    for (const conflict of c.conflicts) lines.push(`  ${factText(conflict.a)}   x   ${factText(conflict.b)}`);
+  }
+  if (c.onlyA.length > 0) lines.push(`só em ${c.a.person.id}:`, ...c.onlyA.map((fact) => `  ${factText(fact)}`));
+  if (c.onlyB.length > 0) lines.push(`só em ${c.b.person.id}:`, ...c.onlyB.map((fact) => `  ${factText(fact)}`));
+  lines.push("", c.redFlags.length > 0 ? "SINAIS DE QUE NÃO SÃO A MESMA PESSOA:" : "nenhum sinal de alerta.");
+  for (const flag of c.redFlags) lines.push(`  ! ${flag}`);
+  lines.push("", `caminho: ${c.path}. ${c.pathReason}`);
+  if (c.suggestion) lines.push(`sugestão: fica ${c.suggestion.survivorId}, sai ${c.suggestion.duplicateId}. ${c.suggestion.why}`);
+  if (c.analysis) {
+    lines.push(
+      `a mesclagem levaria ${c.analysis.duplicateResources.length} item(ns) só da duplicata e tem ${c.analysis.conflicts.length} conflito(s) a decidir.`,
+    );
+  }
+  return lines.join("\n");
+};

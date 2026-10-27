@@ -1,6 +1,8 @@
 {
   "status": 200,
   "location": null,
+  "allow": null,
+  "warning": null,
   "body": {
     "results": 548172,
     "index": 0,
@@ -178,7 +180,7 @@
               {
                 "citations": [
                   {
-                    "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2 : Sun Jul 26 11:23:16 UTC 2026), Entry for Lia Fausto and Lia Fausto, 14 Apr 1887."
+                    "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2 : Sun Jul 26 11:23:16 UTC 2026), Entry for Lia Fausto and Lia Fausto, 14 Apr 1887."
                   }
                 ],
                 "sources": [
@@ -454,7 +456,7 @@
               {
                 "citations": [
                   {
-                    "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:GRLH-W42Q : Sun Jul 26 11:29:32 UTC 2026), Entry for Lia Fausto, 25 Feb 1889."
+                    "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:GRLH-W42Q : Sun Jul 26 11:29:32 UTC 2026), Entry for Lia Fausto, 25 Feb 1889."
                   }
                 ],
                 "sources": [
@@ -813,7 +815,7 @@
               {
                 "citations": [
                   {
-                    "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:VGDW-QFL1 : Sat Jul 25 17:36:04 UTC 2026), Entry for J Iara Barros and Lia Fausto, 09 Jan 1896."
+                    "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VGDW-QFL1 : Sat Jul 25 17:36:04 UTC 2026), Entry for J Iara Barros and Lia Fausto, 09 Jan 1896."
                   }
                 ],
                 "sources": [

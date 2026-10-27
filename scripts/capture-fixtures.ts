@@ -21,6 +21,8 @@ const ATOM = "application/x-gedcomx-atom+json";
 const PERSON = "LZJW-C31";
 /** An old id FamilySearch merged into another person: answers 301. */
 const MERGED = "LZJW-C61";
+/** Another "Abraham Lincoln" born in Kentucky in 1809: the other half of a comparison. */
+const OTHER = "G1CF-DLV";
 /** A newspaper obituary of the same person, from the record search. */
 const RECORD = "Q5SN-NK1T";
 
@@ -59,6 +61,16 @@ const CAPTURES: Capture[] = [
       accept: "application/json",
     },
   },
+  { name: "person-b", request: { method: "GET", path: `/platform/tree/persons/${OTHER}` } },
+  { name: "families-b", request: { method: "GET", path: `/platform/tree/persons/${OTHER}/families` } },
+  { name: "sources-b", request: { method: "GET", path: `/platform/tree/persons/${OTHER}/sources` } },
+  { name: "changes-b", request: { method: "GET", path: `/platform/tree/persons/${OTHER}/changes`, accept: ATOM } },
+  { name: "merge-options", request: { method: "OPTIONS", path: `/platform/tree/persons/${PERSON}/merges/${OTHER}` } },
+  {
+    name: "merge-options-reverse",
+    request: { method: "OPTIONS", path: `/platform/tree/persons/${OTHER}/merges/${PERSON}` },
+  },
+  { name: "merge-analysis", request: { method: "GET", path: `/platform/tree/persons/${PERSON}/merges/${OTHER}` } },
   { name: "record", request: { method: "GET", path: `/platform/records/personas/${RECORD}` } },
   {
     name: "places",
@@ -79,6 +91,8 @@ for (const capture of CAPTURES.filter((item) => only.size === 0 || only.has(item
       {
         status: response.status,
         location: response.headers.get("location"),
+        allow: response.headers.get("allow"),
+        warning: response.headers.get("warning"),
         body: response.body ? JSON.parse(response.body) : null,
       },
       null,

@@ -1,0 +1,64 @@
+{
+  "status": 200,
+  "location": null,
+  "allow": null,
+  "warning": null,
+  "body": {
+    "persons": [
+      {
+        "id": "1HH8-PZG",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/1HH8-PZG?flag=fsh"
+          }
+        },
+        "sources": [
+          {
+            "description": "#SCJN-FS8",
+            "descriptionId": "SCJN-FS8",
+            "id": "c4fd05c3-361b-4760-baab-a8c84babdb30",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/1HH8-PZG/source-references/c4fd05c3-361b-4760-baab-a8c84babdb30?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Birth"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sourceDescriptions": [
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:NDHZ-8P9",
+        "citations": [
+          {
+            "value": "\"United States, Census, 1880\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:NDHZ-8P9 : Wed Sep 09 15:54:35 UTC 2026), Lia Fausto in entry for Richard Rice, 1880."
+          }
+        ],
+        "id": "SCJN-FS8",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/SCJN-FS8?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto, \"United States, Census, 1880\""
+          }
+        ]
+      }
+    ]
+  }
+}
