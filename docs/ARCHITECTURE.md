@@ -78,7 +78,8 @@
 5. Data genealógica é texto original mais forma padronizada, nunca um `Date`
    (ADR-0007).
 6. Toda escrita passa pelo gate e por um ticket de uso único (ADR-0009). Só
-   `src/approval/gate.ts` emite tickets, e `test/architecture.test.ts` garante.
+   `src/approval/gate.ts` emite tickets e só `src/approval/run.ts` chama
+   `Http.write`, e `test/architecture.test.ts` garante as duas coisas.
    `Http.send` recusa qualquer método que não seja GET, HEAD ou OPTIONS.
 7. stdout é do JSON-RPC. Log só no stderr, com o token redigido.
 8. Falha de tool vira `isError`, nunca crash. Um argumento ruim não pode
