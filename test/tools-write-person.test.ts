@@ -108,6 +108,13 @@ describe("update_person", () => {
     ]);
   });
 
+  test("update merges the raw place, not the standardized one", async () => {
+    const raw = { id: "f1", type: "http://gedcomx.org/Residence", date: { original: "1950" }, place: { original: "Vila Nova", normalized: [{ value: "Vila Nova, Estado, País" }] } };
+    const { ctx, fetch } = setup([person([raw]), response({ status: 204 }), person([fact("f1", "Residence", "1960")])]);
+    await runTool(updatePerson, { ...base, update_facts: [{ fact_id: "f1", date: "1960" }] }, ctx);
+    expect(body(fetch.calls[1]).persons[0].facts[0].place).toEqual({ original: "Vila Nova" });
+  });
+
   test("read-back reports a fact that was not removed", async () => {
     const { ctx } = setup([person([fact("f2", "Occupation")]), response({ status: 204 }), person([fact("f2", "Occupation")])]);
     const out = (await runTool(updatePerson, { ...base, remove_fact_ids: ["f2"] }, ctx)) as { readBack: { ok: boolean } };

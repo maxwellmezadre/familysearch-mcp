@@ -4,6 +4,7 @@ import type { WritePlan } from "../approval/gate.js";
 import { type ReadBack, runWritePlan } from "../approval/run.js";
 import { toPersonDetail, toSearchHits } from "../domain/normalize.js";
 import type { Fact, PersonDetail } from "../domain/types.js";
+import type { GxFact } from "../familysearch/gedcomx.js";
 import { getJson, readNotes, readPerson, searchTree } from "../familysearch/api.js";
 import {
   type FactInput,
@@ -184,23 +185,30 @@ export const updatePerson = defineTool({
       throw new Error("Nada para alterar: informe add_facts, update_facts, remove_fact_ids, gender ou add_name.");
     }
 
-    const person = await loadPerson(ctx, args.person_id);
+    const document = await readPerson(ctx.http, args.person_id);
+    const raw = document.persons?.find((p) => p.id === args.person_id) ?? document.persons?.[0] ?? { id: args.person_id };
+    const person = toPersonDetail(raw);
     const byId = new Map(person.facts.flatMap((f) => (f.id ? [[f.id, f] as const] : [])));
     const unknown = [...changes.map((c) => c.fact_id), ...removes].filter((id) => !byId.has(id));
     if (unknown.length > 0) {
       throw new Error(`Fato(s) que ${person.id} não tem: ${unknown.join(", ")}. Nada foi alterado; leia a pessoa para ver os ids.`);
     }
 
-    // An update replaces the whole conclusion on FamilySearch: start from the current fact.
+    // An update replaces the whole conclusion on FamilySearch: start from the RAW current
+    // fact (original date/place as the contributor wrote them), never the normalized one.
     // ponytail: a custom type is rebuilt from its decoded label, so it may be re-encoded differently.
+    const rawFacts = new Map((raw.facts ?? []).flatMap((f) => (f.id ? [[f.id, f] as const] : [])));
     const merged = changes.map((c) => {
-      const cur = byId.get(c.fact_id) as Fact;
+      const cur = rawFacts.get(c.fact_id) as GxFact;
+      const date = c.date ?? cur.date?.original;
+      const place = c.place ?? cur.place?.original;
+      const value = c.value ?? cur.value;
       return {
         factId: c.fact_id,
-        type: c.type ?? cur.type,
-        ...(c.date ?? cur.date?.original ? { date: (c.date ?? cur.date?.original) as string } : {}),
-        ...(c.place ?? cur.place ? { place: (c.place ?? cur.place) as string } : {}),
-        ...(c.value ?? cur.value ? { value: (c.value ?? cur.value) as string } : {}),
+        type: c.type ?? (byId.get(c.fact_id) as Fact).type,
+        ...(date ? { date } : {}),
+        ...(place ? { place } : {}),
+        ...(value ? { value } : {}),
       };
     });
 
