@@ -1,0 +1,130 @@
+import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { afterEach, expect, test } from "bun:test";
+import { runWritePlan } from "../src/approval/run.js";
+import type { WritePlan } from "../src/approval/gate.js";
+import { loadConfig } from "../src/config.js";
+import { createContext } from "../src/context.js";
+import type { Approver } from "../src/approval/gate.js";
+import { autoApprove, fakeApprover } from "./approvers.js";
+import { fakeClock, memorySession, response, scriptedFetch, sessionFixture, silentLogger } from "./helpers.js";
+
+const dirs: string[] = [];
+afterEach(() => { for (const d of dirs.splice(0)) rmSync(d, { recursive: true, force: true }); });
+
+function setup(script: Parameters<typeof scriptedFetch>[0], approver: Approver = autoApprove()) {
+  const dir = mkdtempSync(join(tmpdir(), "fs-run-"));
+  dirs.push(dir);
+  const clock = fakeClock();
+  const fetch = scriptedFetch(script);
+  const config = loadConfig({ FAMILYSEARCH_CONFIG_DIR: dir });
+  const ctx = createContext(config, { fetch, session: memorySession(sessionFixture()), log: silentLogger(), now: clock.now, sleep: clock.sleep, approver, reauth: async () => "no" });
+  const audit = () => { try { return readFileSync(join(config.auditDir, `writes.${config.env}.jsonl`), "utf8").trim().split("\n").filter(Boolean).map((l) => JSON.parse(l)); } catch { return []; } };
+  return { ctx, fetch, audit };
+}
+
+const plan = (writes: WritePlan["writes"]): WritePlan => ({ tool: "test_tool", reason: "corrigir um dado errado", headline: "Alterar", details: "d", writes });
+const w = (path: string, over = {}) => ({ method: "POST" as const, path, label: `w ${path}`, summary: `faz ${path}`, ...over });
+const okRead = async () => ({ ok: true, checks: [] });
+
+test("preview never asks and never writes", async () => {
+  const approver = fakeApprover([]);
+  const { ctx, fetch, audit } = setup([], approver);
+  const out = await runWritePlan(ctx, plan([w("/platform/a"), w("/platform/b")]), { preview: true, readBack: okRead });
+  expect(out.status).toBe("preview");
+  expect(out.message).toContain("faz /platform/a");
+  expect(out.message).toContain("faz /platform/b");
+  expect(approver.prompts).toHaveLength(0);
+  expect(fetch.calls).toHaveLength(0);
+  expect(audit()).toHaveLength(0);
+});
+
+test("a refusal writes nothing and is audited once", async () => {
+  const { ctx, fetch, audit } = setup([], fakeApprover([{ approved: false, reason: "não" }]));
+  const out = await runWritePlan(ctx, plan([w("/platform/a")]), { readBack: okRead });
+  expect(out.status).toBe("refused");
+  expect(out.message).toContain("não");
+  expect(fetch.calls).toHaveLength(0);
+  expect(audit()).toHaveLength(1);
+});
+
+test("applies in order, reads back and audits one entry", async () => {
+  const { ctx, fetch, audit } = setup([
+    response({ status: 201, headers: { "X-ENTITY-ID": "NEW-001" } }),
+    response({ status: 204 }),
+  ]);
+  const out = await runWritePlan(ctx, plan([w("/platform/a", { body: { x: 1 } }), w("/platform/b")]), {
+    readBack: async (r) => ({ ok: r[0]?.entityId === "NEW-001", checks: [] }),
+  });
+  expect(out.status).toBe("applied");
+  expect(out.writes.map((r) => r.status)).toEqual([201, 204]);
+  expect(out.writes[0]?.entityId).toBe("NEW-001");
+  expect(fetch.calls[0]?.init.body).toBe('{"x":1}');
+  const lines = audit();
+  expect(lines).toHaveLength(1);
+  expect(lines[0]).toMatchObject({ approved: true, outcome: "applied", tool: "test_tool" });
+});
+
+test("calling the same plan twice asks twice", async () => {
+  const approver = autoApprove();
+  const { ctx } = setup([response({ status: 204 }), response({ status: 204 })], approver);
+  const p = plan([w("/platform/a")]);
+  await runWritePlan(ctx, p, { readBack: okRead });
+  await runWritePlan(ctx, p, { readBack: okRead });
+  expect(approver.prompts).toHaveLength(2);
+});
+
+test("stops at the first failing write and reports partial", async () => {
+  const { ctx, fetch, audit } = setup([response({ status: 201 }), response({ status: 409, headers: { Warning: "199 - conflito" } })]);
+  const out = await runWritePlan(ctx, plan([w("/platform/a"), w("/platform/b"), w("/platform/c")]), { readBack: okRead });
+  expect(out.status).toBe("partial");
+  expect(out.message).toContain("conflito");
+  expect(fetch.calls).toHaveLength(2);
+  expect(audit()[0]).toMatchObject({ outcome: "partial" });
+});
+
+test("a failing first write is refused and carries the Warning", async () => {
+  const { ctx } = setup([response({ status: 400, headers: { Warning: "199 - nome inválido" } })]);
+  const out = await runWritePlan(ctx, plan([w("/platform/a")]), { readBack: okRead });
+  expect(out.status).toBe("refused");
+  expect(out.message).toContain("nome inválido");
+});
+
+test("a later write's body receives the earlier Location", async () => {
+  const { ctx, fetch } = setup([response({ status: 201, headers: { Location: "https://fs/sd/9" } }), response({ status: 204 })]);
+  await runWritePlan(ctx, plan([w("/platform/a"), w("/platform/b", { body: (prior: any[]) => ({ d: prior[0].location }) })]), { readBack: okRead });
+  expect(fetch.calls[1]?.init.body).toBe('{"d":"https://fs/sd/9"}');
+});
+
+test("an uncertain write is reported as uncertain, nothing after it is sent", async () => {
+  const { ctx, fetch, audit } = setup([response({ status: 503 })]);
+  const out = await runWritePlan(ctx, plan([w("/platform/a"), w("/platform/b")]), { readBack: okRead });
+  expect(out.status).toBe("uncertain");
+  expect(out.message).toContain("pode ter sido aplicada");
+  expect(fetch.calls).toHaveLength(1);
+  expect(audit()[0]).toMatchObject({ outcome: "uncertain" });
+});
+
+test("read-back failure keeps status applied and explains the mismatch", async () => {
+  const { ctx } = setup([response({ status: 204 })]);
+  const out = await runWritePlan(ctx, plan([w("/platform/a")]), {
+    readBack: async () => ({ ok: false, checks: [{ what: "nascimento", ok: false, detail: "veio 1901" }] }),
+  });
+  expect(out.status).toBe("applied");
+  expect(out.message).toContain("nascimento");
+  expect(out.message).toContain("Nada foi refeito");
+});
+
+test("a 3xx is not applied: refused, no read-back, nothing after it sent", async () => {
+  const { ctx, fetch } = setup([response({ status: 301, headers: { Warning: "199 - movido" } })]);
+  let read = false;
+  const out = await runWritePlan(ctx, plan([w("/platform/a"), w("/platform/b")]), {
+    readBack: async () => { read = true; return { ok: true, checks: [] }; },
+  });
+  expect(out.status).toBe("refused");
+  expect(out.message).toContain("301");
+  expect(out.message).toContain("movido");
+  expect(read).toBe(false);
+  expect(fetch.calls).toHaveLength(1);
+});

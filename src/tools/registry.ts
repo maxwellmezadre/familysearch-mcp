@@ -4,8 +4,12 @@ import { comparePersons } from "./compare.js";
 import { doctor } from "./doctor.js";
 import type { ToolDef } from "./define.js";
 import { login } from "./login.js";
+import { mergeTools } from "./merge.js";
 import { rawGet } from "./raw.js";
 import { getHints, getPossibleDuplicates, getRecord, searchPlaces, searchRecords } from "./research.js";
+import { personWriteTools } from "./write-person.js";
+import { relationshipWriteTools } from "./write-relationships.js";
+import { sourceWriteTools } from "./write-sources.js";
 import {
   getAncestors,
   getChangeHistory,
@@ -38,6 +42,12 @@ export const allTools: ToolDef[] = [
   searchPlaces,
   // Analysis
   comparePersons,
+  // Writes
+  ...personWriteTools,
+  ...relationshipWriteTools,
+  ...sourceWriteTools,
+  // Merge
+  ...mergeTools,
   // Escape hatch
   rawGet,
 ];

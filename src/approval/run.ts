@@ -1,0 +1,116 @@
+import type { Ctx } from "../context.js";
+import { ApprovalRefusedError, WriteUncertainError } from "../core/errors.js";
+import type { WriteResult } from "../core/ticket.js";
+import { appendAudit } from "./audit.js";
+import { type WritePlan, requestApproval } from "./gate.js";
+
+// Turns a WritePlan into: approval -> writes in order -> read-back -> audit.
+// Nothing here repeats a write: a failure stops the run and says what happened.
+
+export type ReadBack = { ok: boolean; checks: Array<{ what: string; ok: boolean; detail: string }> };
+
+export type WriteOutcome = {
+  status: "preview" | "refused" | "applied" | "partial" | "uncertain";
+  tool: string;
+  headline: string;
+  detailsPath: string | null;
+  writes: WriteResult[];
+  readBack: ReadBack | null;
+  message: string;
+};
+
+const errorText = (error: unknown) => (error instanceof Error ? error.message : String(error));
+
+export async function runWritePlan(
+  ctx: Ctx,
+  plan: WritePlan,
+  opts: { preview?: boolean; readBack: (results: WriteResult[]) => Promise<ReadBack> },
+): Promise<WriteOutcome> {
+  const base = { tool: plan.tool, headline: plan.headline, detailsPath: null, writes: [], readBack: null };
+
+  if (opts.preview) {
+    return {
+      ...base,
+      status: "preview",
+      message: `Pré-visualização, nada foi enviado:\n${plan.writes.map((w) => `- ${w.summary}`).join("\n")}`,
+    };
+  }
+
+  let ticket: Awaited<ReturnType<typeof requestApproval>>;
+  try {
+    ticket = await requestApproval(ctx, plan); // audits its own refusals
+  } catch (error) {
+    if (error instanceof ApprovalRefusedError) return { ...base, status: "refused", message: error.message };
+    throw error;
+  }
+
+  const results: WriteResult[] = [];
+  let status: WriteOutcome["status"] = "applied";
+  let message = "";
+  for (const write of plan.writes) {
+    try {
+      const body = typeof write.body === "function" ? write.body(results) : write.body;
+      const res = await ctx.http.write(
+        {
+          method: write.method,
+          path: write.path,
+          ...(write.query ? { query: write.query } : {}),
+          ...(body !== undefined ? { body } : {}),
+          reason: plan.reason,
+          label: write.label,
+        },
+        ticket,
+      );
+      results.push({
+        label: write.label,
+        status: res.status,
+        entityId: res.headers.get("x-entity-id"),
+        location: res.headers.get("location"),
+      });
+      if (res.status < 200 || res.status >= 300) {
+        const warning = res.headers.get("warning");
+        message = `O FamilySearch recusou "${write.summary}" (HTTP ${res.status})${warning ? `: ${warning}` : ""}.`;
+        status = "partial";
+        break;
+      }
+    } catch (error) {
+      results.push({ label: write.label, status: null, entityId: null, location: null });
+      status = error instanceof WriteUncertainError ? "uncertain" : "partial";
+      message = errorText(error);
+      break;
+    }
+  }
+
+  if (status !== "applied") {
+    const applied = results.filter((r) => r.status !== null && r.status >= 200 && r.status < 300).length;
+    // Nothing applied and a clear refusal: it is a refusal, not a partial run.
+    if (status === "partial" && applied === 0) status = "refused";
+    message += status === "partial" ? ` ${applied} de ${plan.writes.length} escritas foram aplicadas; nada foi refeito.` : "";
+  }
+
+  let readBack: ReadBack | null = null;
+  if (status === "applied") {
+    try {
+      readBack = await opts.readBack(results);
+    } catch (error) {
+      readBack = { ok: false, checks: [{ what: "releitura", ok: false, detail: errorText(error) }] };
+    }
+    message = readBack.ok
+      ? "Aplicado e conferido na releitura."
+      : `Aplicado, mas a releitura não bateu: ${readBack.checks.filter((c) => !c.ok).map((c) => `${c.what} (${c.detail})`).join("; ")}. Nada foi refeito.`;
+  }
+
+  appendAudit(ctx.config, {
+    at: new Date(ctx.now()).toISOString(),
+    env: ctx.config.env,
+    tool: plan.tool,
+    reason: plan.reason,
+    headline: plan.headline,
+    approved: true,
+    answer: "aprovado",
+    writes: results,
+    outcome: status,
+  });
+
+  return { ...base, status, writes: results, readBack, message };
+}

@@ -14,6 +14,10 @@ import {
   formatRecords,
   formatSearch,
 } from "./format.js";
+import { registerMergeCommands } from "./commands/merge.js";
+import { registerPersonWriteCommands } from "./commands/write-person.js";
+import { registerRelationshipWriteCommands } from "./commands/write-relationships.js";
+import { registerSourceWriteCommands } from "./commands/write-sources.js";
 import { invoke } from "./output.js";
 
 // The CLI is a thin argv → tool-args mapper: one command per tool, every
@@ -231,6 +235,13 @@ export async function runCli(argv: string[], version: string): Promise<void> {
         { json: true },
       ),
     );
+
+  // ---- writes ---------------------------------------------------------------
+
+  registerPersonWriteCommands(command);
+  registerRelationshipWriteCommands(command);
+  registerSourceWriteCommands(command);
+  registerMergeCommands(command);
 
   // ---- server ---------------------------------------------------------------
 
