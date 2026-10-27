@@ -161,6 +161,38 @@ describe("http.write", () => {
     expect(s.fetch.calls[1]?.init.body).toBe(s.fetch.calls[0]?.init.body);
   });
 
+  test("a query hidden in the path is refused with no fetch", async () => {
+    const { http, fetch } = setup([created()]);
+    const ticket = await ticketFor([planned()]);
+    await expect(http.write(req({ path: `${NOTES}?evil=1` }), ticket)).rejects.toThrow(/query/);
+    expect(fetch.calls).toHaveLength(0);
+    expect(ticket.remaining()).toBe(1);
+  });
+
+  test("a body that fails to read after a 2xx is WriteUncertainError", async () => {
+    const broken = { ...response({ status: 201 }), text: async () => Promise.reject(new Error("socket closed")) };
+    const { http, fetch } = setup([broken]);
+    const error = await http.write(req(), await ticketFor([planned()])).catch((e: unknown) => e);
+    expect(error).toBeInstanceOf(WriteUncertainError);
+    expect(fetch.calls).toHaveLength(1);
+  });
+
+  test("an unserializable body is a plain error, nothing sent, ticket still unused", async () => {
+    const { http, fetch } = setup([created()]);
+    const ticket = await ticketFor([planned()]);
+    const error = await http.write(req({ body: { n: 1n } }), ticket).catch((e: unknown) => e);
+    expect(error).toBeInstanceOf(Error);
+    expect(error).not.toBeInstanceOf(WriteUncertainError);
+    expect(fetch.calls).toHaveLength(0);
+    expect(ticket.remaining()).toBe(1);
+  });
+
+  test("x-reason is sent as ASCII", async () => {
+    const { http, fetch } = setup([created()]);
+    await http.write(req({ reason: "Mesclagem — avó confirmada\nok" }), await ticketFor([planned()]));
+    expect(fetch.calls[0]?.init.headers["x-reason"]).toBe("Mesclagem ? avo confirmada ok");
+  });
+
   test("reads still refuse POST and DELETE", async () => {
     const { http, fetch } = setup([created()]);
     // biome-ignore lint/suspicious/noExplicitAny: proving the runtime guard

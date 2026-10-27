@@ -137,6 +137,14 @@ export function toPath(href: string): string {
   return url.pathname + url.search;
 }
 
+/** Header-safe reason: accents stripped, other non-ASCII becomes "?", CR/LF a space. The original stays everywhere else. */
+const asciiHeader = (text: string): string =>
+  text
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/[\r\n]+/g, " ")
+    .replace(/[^\x20-\x7e]/g, "?");
+
 export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
   const fetchImpl = deps.fetch ?? realFetch;
   const sleep = deps.sleep ?? realSleep;
@@ -310,6 +318,17 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
   async function writeOnce(request: WriteRequest, ticket: WriteTicket): Promise<HttpResponse> {
     // Before anything else: no cover, no request. The entry is consumed once;
     // the 401 retry below reuses this same resolved request.
+    // Everything that can fail locally is built BEFORE take, so a bad request
+    // consumes no approval and is never reported as "may have been applied".
+    if (request.path.includes("?")) {
+      throw new Error(`Escrita recusada em ${request.label}: parâmetros vão em "query", não no caminho.`);
+    }
+    const hasBody = request.body !== undefined;
+    const payload = hasBody ? JSON.stringify(request.body) : undefined;
+    if (hasBody && payload === undefined) {
+      throw new Error(`Escrita recusada em ${request.label}: o corpo não é serializável em JSON.`);
+    }
+    const reasonHeader = asciiHeader(request.reason);
     const approved = ticket.take(request.method, request.path);
     if (request.query !== undefined && !sameQuery(request.query, approved.query)) {
       throw new Error(
@@ -318,7 +337,6 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
     }
     let { current, reauthed } = await freshSession(request.label);
     const url = buildUrl({ path: request.path, ...(approved.query ? { query: approved.query } : {}) });
-    const hasBody = request.body !== undefined;
     const started = now();
 
     for (;;) {
@@ -331,11 +349,11 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
             authorization: `Bearer ${current.token}`,
             "user-agent": current.userAgent,
             accept: request.accept ?? DEFAULT_ACCEPT,
-            "x-reason": request.reason,
+            "x-reason": reasonHeader,
             ...(hasBody ? { "content-type": DEFAULT_ACCEPT } : {}),
           },
           redirect: "manual",
-          ...(hasBody ? { body: JSON.stringify(request.body) } : {}),
+          ...(payload !== undefined ? { body: payload } : {}),
           signal: AbortSignal.timeout(opts.timeoutMs),
         });
       } catch (error) {
@@ -364,7 +382,12 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
       }
       if (status >= 500) throw new WriteUncertainError(request.label, `HTTP ${status}`);
 
-      const body = await response.text();
+      let body: string;
+      try {
+        body = await response.text();
+      } catch (error) {
+        throw new WriteUncertainError(request.label, error instanceof Error ? error.message : String(error));
+      }
       log.debug(`${request.label} ${status} ${now() - started}ms`);
       return { status, headers: response.headers, body };
     }
