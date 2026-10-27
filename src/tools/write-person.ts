@@ -2,7 +2,7 @@ import { type Static, Type } from "@sinclair/typebox";
 import type { Ctx } from "../context.js";
 import type { WritePlan } from "../approval/gate.js";
 import { type ReadBack, runWritePlan } from "../approval/run.js";
-import { toPersonDetail, toSearchHits } from "../domain/normalize.js";
+import { shortType, toPersonDetail, toSearchHits } from "../domain/normalize.js";
 import type { Fact, PersonDetail } from "../domain/types.js";
 import type { GxFact } from "../familysearch/gedcomx.js";
 import { getJson, readNotes, readPerson, searchTree } from "../familysearch/api.js";
@@ -205,7 +205,7 @@ export const updatePerson = defineTool({
       const value = c.value ?? cur.value;
       return {
         factId: c.fact_id,
-        type: c.type ?? (byId.get(c.fact_id) as Fact).type,
+        type: c.type ?? (cur.type as string), // raw: factType passes http(s):// and data:, through untouched
         ...(date ? { date } : {}),
         ...(place ? { place } : {}),
         ...(value ? { value } : {}),
@@ -259,7 +259,7 @@ export const updatePerson = defineTool({
           ...adds.map((f) => check(`fato ${f.type} presente`, hasFact(after.facts, f), factText(f))),
           ...merged.map((m) => {
             const now = after.facts.find((f) => f.id === m.factId);
-            return check(`fato ${m.factId} alterado`, !!now && same(now.type, m.type) && (!m.date || same(now.date?.original, m.date)), factText(m));
+            return check(`fato ${m.factId} alterado`, !!now && same(now.type, shortType(m.type)) && (!m.date || same(now.date?.original, m.date)), factText(m));
           }),
           ...removes.map((id) => check(`fato ${id} removido`, !after.facts.some((f) => f.id === id), id)),
         ];

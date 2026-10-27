@@ -115,6 +115,13 @@ describe("update_person", () => {
     expect(body(fetch.calls[1]).persons[0].facts[0].place).toEqual({ original: "Vila Nova" });
   });
 
+  test.each(["http://familysearch.org/types/facts/Foo", "data:,Apelido+de+fam%C3%ADlia"])("update keeps the raw type %s", async (type) => {
+    const raw = { id: "f1", type, date: { original: "1950" } };
+    const { ctx, fetch } = setup([person([raw]), response({ status: 204 }), person([raw])]);
+    await runTool(updatePerson, { ...base, update_facts: [{ fact_id: "f1", date: "1960" }] }, ctx);
+    expect(body(fetch.calls[1]).persons[0].facts[0].type).toBe(type);
+  });
+
   test("read-back reports a fact that was not removed", async () => {
     const { ctx } = setup([person([fact("f2", "Occupation")]), response({ status: 204 }), person([fact("f2", "Occupation")])]);
     const out = (await runTool(updatePerson, { ...base, remove_fact_ids: ["f2"] }, ctx)) as { readBack: { ok: boolean } };
