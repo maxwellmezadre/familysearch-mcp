@@ -17,6 +17,9 @@ export type AuditEntry = {
   answer: string;
   writes: WriteResult[];
   outcome: string;
+  /** The approval details file (approvals/...md). */
+  detailsPath?: string;
+  /** What was saved before a merge (snapshots/...json). */
   snapshot?: string;
 };
 

@@ -1,5 +1,4 @@
 import { Type } from "@sinclair/typebox";
-import { saveSnapshot } from "../approval/audit.js";
 import type { WritePlan } from "../approval/gate.js";
 import { type ReadBack, runWritePlan } from "../approval/run.js";
 import type { Ctx } from "../context.js";
@@ -228,8 +227,6 @@ export const mergePersons = defineTool({
       `Logo antes de enviar, as duas pessoas são salvas num snapshot local. ${undo}`,
     ].join("\n");
 
-    let snapshot = null as string | null;
-    const write = mergeWrite(survivor, duplicate, request);
     const plan: WritePlan = {
       tool: "merge_persons",
       reason: args.reason,
@@ -238,16 +235,8 @@ export const mergePersons = defineTool({
       confirm: { title: `Digite o id da duplicata (${duplicate}) para confirmar`, expected: duplicate },
       touches: [survivor, duplicate],
       merged: { duplicate, survivor },
-      writes: [
-        {
-          ...write,
-          // Runs only after the "yes", right before the POST.
-          body: () => {
-            snapshot = saveSnapshot(ctx.config, `${survivor}-${duplicate}`, before, ctx.now());
-            return write.body;
-          },
-        },
-      ],
+      writes: [mergeWrite(survivor, duplicate, request)],
+      snapshot: { name: `${survivor}-${duplicate}`, data: before },
     };
     const duplicatePerson = before.duplicate.person.persons?.find((person) => person.id === duplicate) ?? { id: duplicate };
     const duplicateFamily = familiesOf([before.duplicate.families]);
@@ -256,8 +245,8 @@ export const mergePersons = defineTool({
       readBack: () => readBackMerge(ctx, survivor, duplicate, request, { duplicatePerson, duplicateFamily }),
     });
     // The undo hint only where the merge may have happened (a refused POST merged nothing).
-    const mayHaveMerged = snapshot !== null && outcome.status !== "refused";
-    return { ...outcome, details, request, ...(snapshot ? { snapshot } : {}), ...(mayHaveMerged ? { undo } : {}) };
+    const mayHaveMerged = outcome.snapshot !== undefined && outcome.status !== "refused";
+    return { ...outcome, details, request, ...(mayHaveMerged ? { undo } : {}) };
   },
 });
 

@@ -307,12 +307,14 @@ describe("merge_persons", () => {
         return { approved: true, reason: "ok" };
       },
     };
-    const { run, snapshots } = setup(route, approver);
+    const { run, snapshots, ctx } = setup(route, approver);
     const out = await run("merge_persons", merge());
     expect(atQuestion!).toEqual([]);
     expect(atPost!).toHaveLength(1);
     expect(atPost![0]).toEndWith(`-${SURVIVOR}-${DUPLICATE}.json`);
     expect(out.snapshot).toBe(atPost![0]);
+    const entry = JSON.parse(readFileSync(join(ctx.config.auditDir, "writes.production.jsonl"), "utf8").trim());
+    expect(entry.snapshot).toBe(out.snapshot);
     const saved = JSON.parse(readFileSync(out.snapshot, "utf8"));
     expect(saved.duplicate.person.persons[0].id).toBe(DUPLICATE);
     expect(saved.duplicate.families.childAndParentsRelationships[0].id).toBe(CHILD_LINK);

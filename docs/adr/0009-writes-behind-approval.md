@@ -41,7 +41,8 @@ Toda escrita exige um motivo de pelo menos 10 caracteres, enviado em `X-Reason`
 guardado completo no registro local. Toda escrita tem `preview: true`, que
 devolve o plano sem perguntar. O plano completo vai para
 `audit/approvals/` antes da pergunta, e cada tentativa, aprovada ou não, vai
-para `audit/writes.<env>.jsonl`. Escrita nunca é repetida sozinha: só um 401,
+para `audit/writes.<env>.jsonl`, com o caminho desse plano e, numa mesclagem, o
+do snapshot. Escrita nunca é repetida sozinha: só um 401,
 que prova que nada foi aplicado, é repetido depois de reimportar a sessão.
 Depois de aplicar, a tool relê o estado por outra leitura.
 

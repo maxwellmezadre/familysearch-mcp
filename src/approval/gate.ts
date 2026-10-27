@@ -33,6 +33,8 @@ export type WritePlan = {
   touches?: string[];
   /** A merge: once applied, the cache marks the duplicate as merged into the survivor. */
   merged?: { duplicate: string; survivor: string };
+  /** Saved locally after the "yes" and before the first write; no snapshot, no write. */
+  snapshot?: { name: string; data: unknown };
 };
 
 const MIN_REASON = 10;
@@ -42,7 +44,10 @@ const MAX_HEADLINE_CHARS = 200;
 const cutHeadline = (headline: string) =>
   headline.split("\n").slice(0, MAX_HEADLINE_LINES).join("\n").slice(0, MAX_HEADLINE_CHARS);
 
-export async function requestApproval(ctx: Ctx, plan: WritePlan): Promise<WriteTicket> {
+/** The ticket for the approved writes, and the file with everything the user was shown. */
+export type Approval = { ticket: WriteTicket; detailsPath: string };
+
+export async function requestApproval(ctx: Ctx, plan: WritePlan): Promise<Approval> {
   if (plan.reason.trim().length < MIN_REASON) {
     throw new ApprovalRefusedError(
       plan.tool,
@@ -85,8 +90,9 @@ export async function requestApproval(ctx: Ctx, plan: WritePlan): Promise<WriteT
       answer: answer.reason,
       writes: [],
       outcome: "refused",
+      detailsPath,
     });
     throw new ApprovalRefusedError(plan.tool, answer.reason || "o usuário não aprovou.");
   }
-  return issueTicket(plan.writes, at);
+  return { ticket: issueTicket(plan.writes, at), detailsPath };
 }

@@ -1,4 +1,4 @@
-import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, expect, test } from "bun:test";
@@ -184,4 +184,30 @@ test("an applied merge marks the duplicate merged; an uncertain one leaves that 
   await runWritePlan(uncertain.ctx, touching({ merged }), { readBack: okRead });
   expect(other.person("BBBB-BBB")?.mergedInto).toBeNull();
   expect(other.pendingDetails(10)).toContain("BBBB-BBB");
+});
+
+test("the outcome and the audit entry point at the approval details", async () => {
+  const { ctx, audit } = setup([response({ status: 204 })]);
+  const out = await runWritePlan(ctx, plan([w("/platform/a")]), { readBack: okRead });
+  expect(out.detailsPath).toStartWith(join(ctx.config.auditDir, "approvals"));
+  expect(existsSync(out.detailsPath as string)).toBe(true);
+  expect(audit()[0].detailsPath).toBe(out.detailsPath);
+});
+
+test("a snapshot is saved after the yes, recorded in the audit, and without it nothing is sent", async () => {
+  const snapshot = { name: "AAAA-AAA-BBBB-BBB", data: { before: true } };
+  const { ctx, audit } = setup([response({ status: 204 })]);
+  const out = await runWritePlan(ctx, { ...plan([w("/platform/a")]), snapshot }, { readBack: okRead });
+  expect(out.snapshot).toStartWith(join(ctx.config.auditDir, "snapshots"));
+  expect(JSON.parse(readFileSync(out.snapshot as string, "utf8"))).toEqual({ before: true });
+  expect(audit()[0].snapshot).toBe(out.snapshot);
+
+  // A snapshot that cannot be saved stops the run before the first write.
+  const broken = setup([]);
+  mkdirSync(broken.ctx.config.auditDir, { recursive: true });
+  writeFileSync(join(broken.ctx.config.auditDir, "snapshots"), "not a directory");
+  const refused = await runWritePlan(broken.ctx, { ...plan([w("/platform/a")]), snapshot }, { readBack: okRead });
+  expect(refused.status).toBe("refused");
+  expect(refused.message).toContain("snapshot");
+  expect(broken.fetch.calls).toHaveLength(0);
 });

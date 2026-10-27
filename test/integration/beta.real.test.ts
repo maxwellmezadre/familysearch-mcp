@@ -285,7 +285,7 @@ gated("beta: every write", () => {
             summary: `Apagar a pessoa de teste ${id}`,
           };
           const reason = `${tag} limpeza da suíte beta`;
-          const ticket = await requestApproval(ctx, { tool: "beta_cleanup", reason, headline: del.summary, details: del.summary, writes: [del] });
+          const { ticket } = await requestApproval(ctx, { tool: "beta_cleanup", reason, headline: del.summary, details: del.summary, writes: [del] });
           await ctx.http.write({ method: "DELETE", path: del.path, reason, label: del.label }, ticket);
           if (!(await isGone(id))) leftovers.push(id);
         } catch (error) {

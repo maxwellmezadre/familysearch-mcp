@@ -33,13 +33,14 @@ async function ticketFor(writes: PlannedWrite[]) {
     approver: autoApprove(),
     now: () => 1_757_000_000_000,
   });
-  return requestApproval(ctx, {
+  const { ticket } = await requestApproval(ctx, {
     tool: "t",
     reason: "corrigir a data de batismo",
     headline: "h",
     details: "d",
     writes,
   });
+  return ticket;
 }
 
 function setup(script: Parameters<typeof scriptedFetch>[0], reauth?: () => Promise<string | null>) {

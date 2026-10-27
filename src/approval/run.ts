@@ -2,7 +2,7 @@ import { existsSync } from "node:fs";
 import type { Ctx } from "../context.js";
 import { ApprovalRefusedError, WriteUncertainError } from "../core/errors.js";
 import type { WriteResult } from "../core/ticket.js";
-import { appendAudit } from "./audit.js";
+import { appendAudit, saveSnapshot } from "./audit.js";
 import { type WritePlan, requestApproval } from "./gate.js";
 
 // Turns a WritePlan into: approval -> writes in order -> read-back -> audit.
@@ -18,6 +18,8 @@ export type WriteOutcome = {
   writes: WriteResult[];
   readBack: ReadBack | null;
   message: string;
+  /** Where the data was saved before the writes, when the plan asked for a snapshot. */
+  snapshot?: string;
 };
 
 /**
@@ -64,18 +66,28 @@ export async function runWritePlan(
     };
   }
 
-  let ticket: Awaited<ReturnType<typeof requestApproval>>;
+  let approval: Awaited<ReturnType<typeof requestApproval>>;
   try {
-    ticket = await requestApproval(ctx, plan); // audits its own refusals
+    approval = await requestApproval(ctx, plan); // audits its own refusals
   } catch (error) {
     if (error instanceof ApprovalRefusedError) return { ...base, status: "refused", message: error.message };
     throw error;
   }
+  const { ticket, detailsPath } = approval;
 
   const results: WriteResult[] = [];
   let status: WriteOutcome["status"] = "applied";
   let message = "";
-  for (const write of plan.writes) {
+  let snapshot: string | undefined;
+  if (plan.snapshot) {
+    try {
+      snapshot = saveSnapshot(ctx.config, plan.snapshot.name, plan.snapshot.data, ctx.now());
+    } catch (error) {
+      status = "refused";
+      message = `Nada foi enviado: não consegui salvar o snapshot local (${errorText(error)}).`;
+    }
+  }
+  for (const write of status === "applied" ? plan.writes : []) {
     try {
       const body = typeof write.body === "function" ? write.body(results) : write.body;
       const res = await ctx.http.write(
@@ -140,7 +152,9 @@ export async function runWritePlan(
     answer: "aprovado",
     writes: results,
     outcome: status,
+    detailsPath,
+    ...(snapshot ? { snapshot } : {}),
   });
 
-  return { ...base, status, writes: results, readBack, message };
+  return { ...base, detailsPath, status, writes: results, readBack, message, ...(snapshot ? { snapshot } : {}) };
 }

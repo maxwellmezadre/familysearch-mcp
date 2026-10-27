@@ -86,6 +86,7 @@ describe("requestApproval", () => {
     const line = readFileSync(join(ctx.config.auditDir, "writes.production.jsonl"), "utf8").trim();
     const entry = JSON.parse(line);
     expect(entry).toMatchObject({ approved: false, tool: "add_note", answer: "não", env: "production" });
+    expect(entry.detailsPath).toStartWith(join(ctx.config.auditDir, "approvals"));
   });
 
   test("an approver that throws counts as a refusal", async () => {
@@ -100,7 +101,7 @@ describe("requestApproval", () => {
 
   test("an approved answer returns a ticket covering exactly the planned writes", async () => {
     const { ctx } = setup();
-    const ticket = await requestApproval(ctx, plan([note]));
+    const { ticket } = await requestApproval(ctx, plan([note]));
     expect(ticket.remaining()).toBe(1);
     expect(ticket.take("POST", "/platform/tree/persons/AAAA-AAA/notes?x=1").label).toBeString();
     expect(() => ticket.take("POST", "/platform/tree/persons/AAAA-AAA/notes")).toThrow(/já usada/);
