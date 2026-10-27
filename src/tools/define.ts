@@ -15,6 +15,8 @@ export type ToolDef<S extends TObject = TObject> = {
    * registering: unavailable, not "checked at call time".
    */
   readOnly: boolean;
+  /** Advertised as `destructiveHint`: the write can overwrite or remove data. */
+  destructive?: boolean;
   input: S;
   run: (args: Static<S>, ctx: Ctx) => Promise<unknown> | unknown;
 };

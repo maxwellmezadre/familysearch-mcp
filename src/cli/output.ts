@@ -2,6 +2,7 @@ import { loadConfig } from "../config.js";
 import { type Ctx, createContext } from "../context.js";
 import type { ToolDef } from "../tools/define.js";
 import { compactObject, runTool } from "../tools/define.js";
+import { createDialogApprover } from "./dialog.js";
 import { activeTools, allTools } from "../tools/registry.js";
 
 // The plumbing every CLI command shares: resolve the tool from the same
@@ -47,6 +48,7 @@ export function printTable<T>(rows: T[], columns: Array<[string, (row: T) => str
 
 async function withContext<T>(fn: (ctx: Ctx) => Promise<T> | T): Promise<T> {
   const ctx = createContext(loadConfig());
+  ctx.approver = createDialogApprover();
   try {
     return await fn(ctx);
   } finally {

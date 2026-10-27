@@ -1,6 +1,10 @@
 import { describe, expect, test } from "bun:test";
+import { mkdtempSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { loadConfig } from "../src/config.js";
 import { createContext } from "../src/context.js";
+import { elicitationHooks } from "../src/tools/doctor.js";
 import { runTool } from "../src/tools/define.js";
 import { toolByName } from "../src/tools/registry.js";
 import {
@@ -80,11 +84,36 @@ describe("doctor", () => {
       "config",
       "session_file",
       "token",
+      "approval",
       "api",
       "tree_read",
       "search",
     ]);
     expect(fetch.calls).toHaveLength(3);
+  });
+});
+
+describe("doctor approval layer", () => {
+  test("reports the approver kind and warns about Elicitation hooks", async () => {
+    const { run } = setup({ script: [response({ status: 401 })] });
+    const report = (await run("doctor")) as Report;
+    const layer = report.layers.find((l) => l.layer === "approval")!;
+    expect(layer.ok).toBe(true);
+    expect(layer.detail).toContain("nenhum: escritas desativadas");
+    expect(report.layers.map((l) => l.layer).indexOf("approval")).toBeLessThan(
+      report.layers.map((l) => l.layer).indexOf("api"),
+    );
+
+    const dir = mkdtempSync(join(tmpdir(), "fs-hooks-"));
+    const write = (name: string, content: string) => (writeFileSync(join(dir, name), content), join(dir, name));
+    const withHook = write("a.json", JSON.stringify({ hooks: { Elicitation: [] } }));
+    const withResult = write("b.json", JSON.stringify({ hooks: { ElicitationResult: [] } }));
+    const other = write("c.json", JSON.stringify({ hooks: { PreToolUse: [] } }));
+    const broken = write("d.json", "{nope");
+    expect(elicitationHooks([withHook, withResult, other, broken, join(dir, "missing.json")])).toEqual([
+      withHook,
+      withResult,
+    ]);
   });
 });
 

@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { homedir } from "node:os";
+import { join } from "node:path";
 import { Type } from "@sinclair/typebox";
 import { readPerson, searchTree } from "../familysearch/api.js";
 import type { SessionData } from "../session/store.js";
@@ -8,6 +11,27 @@ import { defineTool } from "./define.js";
 // to do about it. At most 3 requests (api, tree_read, search).
 
 export type DoctorLayer = { layer: string; ok: boolean; detail: string };
+
+/**
+ * Settings files that declare Elicitation/ElicitationResult hooks: those can
+ * answer an approval question without the human. Unreadable files are skipped.
+ */
+export function elicitationHooks(paths: string[]): string[] {
+  return paths.filter((path) => {
+    try {
+      const hooks = JSON.parse(readFileSync(path, "utf8"))?.hooks;
+      return Boolean(hooks && (hooks.Elicitation || hooks.ElicitationResult));
+    } catch {
+      return false;
+    }
+  });
+}
+
+const APPROVER_LABEL = {
+  elicitation: "elicitation (cliente MCP)",
+  dialog: "diálogo do macOS (CLI)",
+  test: "teste",
+} as const;
 
 const message = (error: unknown): string => (error instanceof Error ? error.message : String(error));
 
@@ -60,6 +84,18 @@ export const doctor = defineTool({
     ) {
       return report();
     }
+    // Informational: never stops the diagnosis, never touches the network.
+    await step("approval", () => {
+      const kind = ctx.approver ? APPROVER_LABEL[ctx.approver.kind] : "nenhum: escritas desativadas";
+      const found = elicitationHooks([
+        join(homedir(), ".claude", "settings.json"),
+        join(process.cwd(), ".claude", "settings.json"),
+        join(process.cwd(), ".claude", "settings.local.json"),
+      ]);
+      return found.length
+        ? `${kind}. ATENÇÃO: hooks Elicitation/ElicitationResult em ${found.join(", ")} podem responder à pergunta sem você.`
+        : kind;
+    });
     if (
       !(await step("api", async () => {
         const response = await ctx.http.send({ method: "GET", path: "/platform/users/current", label: "users/current" });

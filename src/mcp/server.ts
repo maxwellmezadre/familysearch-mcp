@@ -5,6 +5,7 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import type { Ctx } from "../context.js";
+import { createElicitationApprover } from "./elicit.js";
 import { runTool } from "../tools/define.js";
 import { activeTools } from "../tools/registry.js";
 
@@ -25,10 +26,10 @@ export async function startMcpServer(ctx: Ctx, version: string): Promise<void> {
       description: tool.description,
       inputSchema: tool.input as { type: "object" },
       annotations: {
-        // Nothing here writes to the account yet; `readOnly` false means the
-        // tool persists local state (session, cache, files).
+        // `readOnly` false means the tool persists local state (session, cache,
+        // files) or writes to the FamilySearch account (always after approval).
         readOnlyHint: tool.readOnly,
-        destructiveHint: false,
+        destructiveHint: tool.destructive ?? false,
         idempotentHint: tool.readOnly,
         openWorldHint: true,
       },
@@ -47,6 +48,8 @@ export async function startMcpServer(ctx: Ctx, version: string): Promise<void> {
       return toolError(error instanceof Error ? error.message : String(error));
     }
   });
+
+  ctx.approver = createElicitationApprover(server);
 
   await server.connect(new StdioServerTransport());
   // stderr only: stdout is 100% JSON-RPC.
