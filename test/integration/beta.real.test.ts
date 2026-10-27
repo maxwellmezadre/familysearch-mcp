@@ -1,11 +1,11 @@
-import { afterAll, describe, expect, test } from "bun:test";
+import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import { existsSync } from "node:fs";
 import { requestApproval } from "../../src/approval/gate.js";
 import { loadConfig } from "../../src/config.js";
 import { type Ctx, createContext } from "../../src/context.js";
 import { DeletedError, MergedError, NotFoundError } from "../../src/core/errors.js";
 import type { PlannedWrite } from "../../src/core/ticket.js";
-import { readPerson } from "../../src/familysearch/api.js";
+import { getJson, readPerson } from "../../src/familysearch/api.js";
 import { runTool } from "../../src/tools/define.js";
 import { toolByName } from "../../src/tools/registry.js";
 import { autoApprove } from "../approvers.js";
@@ -43,11 +43,6 @@ if (!enabled) {
   );
 }
 
-// Before ANY network call: refuse to run against anything but beta.
-if (enabled && (config?.env !== "beta" || config.baseUrl !== BETA_URL)) {
-  throw new Error(`suíte beta abortada: env=${config?.env} baseUrl=${config?.baseUrl}; só roda em ${BETA_URL}`);
-}
-
 type Outcome = { status: string; readBack: { ok: boolean; checks: unknown[] } | null; message: string; person_id?: string | null };
 type Family = {
   parents: Array<{ relationshipId: string; parent1: { id: string } | null; parent2: { id: string } | null }>;
@@ -69,6 +64,8 @@ gated("beta: every write", () => {
   /** A write tool that applied and whose own read-back matched. */
   const write = async (name: string, args: Record<string, unknown>): Promise<Outcome> => {
     const out = await call<Outcome>(name, { reason: `${tag} prova da suíte beta`, ...args });
+    // Track a created person BEFORE asserting: a failed read-back must not leak it.
+    if (name === "create_person" && out.person_id) created.add(out.person_id);
     expect(out.message).toContain("conferida");
     expect(out.status).toBe("applied");
     expect(out.readBack?.ok).toBe(true);
@@ -87,11 +84,11 @@ gated("beta: every write", () => {
       ...extra,
     });
     expect(out.person_id).toBeTruthy();
-    created.add(out.person_id as string);
     return out.person_id as string;
   };
 
   // ids filled in order by the tests below
+  const mergedAway = new Set<string>(); // ids known to redirect after a proven merge
   let a = "", b = "", c = "", s = "", d = "", e = "";
 
   const isGone = async (id: string): Promise<boolean> => {
@@ -105,9 +102,11 @@ gated("beta: every write", () => {
     }
   };
 
-  test("environment is beta", () => {
-    expect(ctx.config.env).toBe("beta");
-    expect(ctx.config.baseUrl).toBe(BETA_URL);
+  // Before ANY network call: refuse to run against anything but beta.
+  beforeAll(() => {
+    if (ctx.config.env !== "beta" || ctx.config.baseUrl !== BETA_URL) {
+      throw new Error(`suíte beta abortada: env=${ctx.config.env} baseUrl=${ctx.config.baseUrl}; só roda em ${BETA_URL}`);
+    }
   });
 
   test("1. create two identical deceased people and a deceased child", async () => {
@@ -149,6 +148,12 @@ gated("beta: every write", () => {
     const couple = (await family(a)).spouses.find((x) => x.spouse?.id === s)?.relationshipId;
     expect(couple).toBeTruthy();
     await write("add_note", { relationship_id: couple, relationship_kind: "couple", subject: `${tag} nota do casal`, text: "nota de teste do casal" });
+    const doc = await getJson<{ relationships?: Array<{ notes?: Array<{ subject?: string }> }> }>(
+      ctx.http,
+      { method: "GET", path: `/platform/tree/couple-relationships/${couple}/notes`, label: "couple notes" },
+      couple as string,
+    );
+    expect((doc?.relationships?.[0]?.notes ?? []).some((n) => n.subject === `${tag} nota do casal`)).toBe(true);
   }, TIMEOUT);
 
   test("5. add_source and attach_record", async () => {
@@ -159,7 +164,7 @@ gated("beta: every write", () => {
     const found = await call<{ records: Array<{ id: string; url: string }> }>("search_records", { given_name: "John", surname: "Smith", limit: 5 });
     const record = found.records[0];
     if (!record) {
-      console.error("beta sem registros para search_records: attach_record pulado");
+      console.error("ATENÇÃO: beta sem registros em search_records; attach_record NÃO foi provado nesta execução");
       return;
     }
     await write("attach_record", { person_id: a, record_id: record.id });
@@ -186,6 +191,7 @@ gated("beta: every write", () => {
     expect(cmp.path).toBe("merge");
     await write("merge_persons", { survivor_id: a, duplicate_id: d, fingerprint: cmp.fingerprint });
     await expect(person(d)).rejects.toBeInstanceOf(MergedError);
+    mergedAway.add(d);
     const kids = childrenOf(await family(a));
     expect(kids).toContain(e);
     expect(kids).toContain(c);
@@ -199,10 +205,17 @@ gated("beta: every write", () => {
   test("9. remove_relationship on every relationship created", async () => {
     const couple = (await family(a)).spouses.find((x) => x.spouse?.id === s)?.relationshipId;
     expect(couple).toBeTruthy();
+    const gone = async (kind: "couple" | "parents", id: string) => {
+      const path = kind === "couple" ? "couple-relationships" : "child-and-parents-relationships";
+      const res = await ctx.http.send({ method: "GET", path: `/platform/tree/${path}/${encodeURIComponent(id)}`, label: "removed relationship" });
+      expect([404, 410]).toContain(res.status);
+    };
     await write("remove_relationship", { relationship_id: couple, kind: "couple" });
+    await gone("couple", couple as string);
     for (const child of [c, e]) {
       for (const rel of (await family(child)).parents) {
         await write("remove_relationship", { relationship_id: rel.relationshipId, kind: "parents" });
+        await gone("parents", rel.relationshipId);
       }
       expect((await family(child)).parents).toHaveLength(0);
     }
@@ -217,7 +230,12 @@ gated("beta: every write", () => {
     try {
       for (const id of created) {
         try {
-          if (await isGone(id)) continue; // merged ids redirect; their survivor is in the set
+          try {
+            await readPerson(ctx.http, id); // must exist before cleanup
+          } catch (error) {
+            if (error instanceof MergedError && mergedAway.has(id)) continue; // expected: its survivor is in the set
+            throw new Error(`pessoa ${id} deveria existir antes da limpeza: ${error instanceof Error ? error.message : error}`);
+          }
           // leftover relationships first, through the tool
           const fam = await family(id);
           const rels = [

@@ -18,5 +18,15 @@ export function fakeApprover(answers: ApprovalAnswer[]): Approver & { prompts: A
   };
 }
 
-export const autoApprove = (): Approver & { prompts: ApprovalPrompt[] } =>
-  fakeApprover(Array.from({ length: 50 }, () => ({ approved: true, reason: "ok" })));
+/** Approves every prompt, with no cap (cleanup after a failed run may need many). */
+export const autoApprove = (): Approver & { prompts: ApprovalPrompt[] } => {
+  const prompts: ApprovalPrompt[] = [];
+  return {
+    kind: "test",
+    prompts,
+    async ask(prompt) {
+      prompts.push(prompt);
+      return { approved: true, reason: "ok" };
+    },
+  };
+};
