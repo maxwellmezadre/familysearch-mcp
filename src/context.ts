@@ -67,6 +67,7 @@ export function createContext(config: Config, deps: ContextDeps = {}): Ctx {
       session,
       baseUrl: config.baseUrl,
       minIntervalMs: config.minIntervalMs,
+      writeIntervalMs: config.writeIntervalMs,
       jitterMs: config.jitterMs,
       timeoutMs: config.httpTimeoutMs,
       log,

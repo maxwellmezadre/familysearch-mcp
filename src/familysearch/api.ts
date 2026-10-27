@@ -39,7 +39,7 @@ export function survivorFrom(location: string | null): string | null {
  * id (FamilySearch answers 400 to a malformed one); on a search it is the
  * API's own complaint and keeps its Warning text.
  */
-function checkStatus(response: HttpResponse, about: string, label: string): void {
+export function checkStatus(response: HttpResponse, about: string, label: string): void {
   if (response.status === 301) throw new MergedError(about, survivorFrom(response.headers.get("location")));
   if ((response.status === 400 || response.status === 404) && PERSON_ID.test(about)) {
     throw new NotFoundError(about);

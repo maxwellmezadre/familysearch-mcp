@@ -29,6 +29,7 @@ function setup(
       session,
       baseUrl: BASE,
       minIntervalMs: 400,
+      writeIntervalMs: 2000,
       jitterMs: 200,
       timeoutMs: 30_000,
       log,

@@ -1,6 +1,7 @@
 import type { SessionData, SessionStore } from "../session/store.js";
-import { AuthError, HttpError, RateLimitError } from "./errors.js";
+import { AuthError, HttpError, RateLimitError, WriteUncertainError } from "./errors.js";
 import type { Logger } from "./logger.js";
+import type { WriteMethod, WriteTicket } from "./ticket.js";
 
 // The single funnel to FamilySearch. It exists to enforce, in ONE place:
 //   - strictly serial requests, even from concurrent tool calls;
@@ -12,8 +13,11 @@ import type { Logger } from "./logger.js";
 //     again, but every later call tries the re-import first (the user may
 //     have logged in on the browser in the meantime);
 //   - the token goes to FamilySearch hosts only;
-//   - read-only: any method other than GET/HEAD/OPTIONS is refused here, so
-//     no tool can write by accident. Writes arrive with the approval gate.
+//   - `send` is read-only: any method other than GET/HEAD/OPTIONS is refused.
+//     `write` is the only way to POST/DELETE and needs a WriteTicket: the
+//     request must match an approved write, is never retried on its own
+//     (timeout, network error and 5xx are "may have been applied"), and only
+//     a 401 (proof nothing was applied) is retried, after a re-import.
 // Redirects are not followed: a 301 is how FamilySearch says "merged into",
 // and the caller has to see it. Every temporal collaborator is injectable.
 
@@ -27,6 +31,7 @@ export type FetchInit = {
   method: string;
   headers: Record<string, string>;
   redirect: "manual";
+  body?: string;
   signal?: AbortSignal;
 };
 export type FetchLike = (url: string, init: FetchInit) => Promise<FetchResponse>;
@@ -50,6 +55,19 @@ export type HttpRequest = {
   label: string;
 };
 
+export type WriteRequest = {
+  method: WriteMethod;
+  path: string;
+  /** Must equal the approved write's query when given; the approved one is what is sent. */
+  query?: Record<string, string | number | undefined>;
+  /** The resolved body (a plan's body function has already run). */
+  body?: unknown;
+  accept?: string;
+  /** Sent as X-Reason. */
+  reason: string;
+  label: string;
+};
+
 export type HttpResponse = {
   status: number;
   headers: { get(name: string): string | null };
@@ -60,6 +78,7 @@ export type HttpState = { requests: number; authDead: boolean; reauths: number }
 
 export type Http = {
   send(request: HttpRequest): Promise<HttpResponse>;
+  write(request: WriteRequest, ticket: WriteTicket): Promise<HttpResponse>;
   state(): HttpState;
   /** Forget a rejected token, e.g. after an in-process login. */
   resetSession(): void;
@@ -69,6 +88,8 @@ export type HttpOptions = {
   session: SessionStore;
   baseUrl: string;
   minIntervalMs: number;
+  /** Minimum gap before a write; the larger of this and minIntervalMs applies. */
+  writeIntervalMs: number;
   jitterMs: number;
   timeoutMs: number;
   log: Logger;
@@ -167,15 +188,15 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
     return reauthFailure === null && loadSession().token !== deadToken;
   }
 
-  async function gap(): Promise<void> {
-    const wait = lastRequestAt + opts.minIntervalMs + random() * opts.jitterMs - now();
+  async function gap(minIntervalMs = opts.minIntervalMs): Promise<void> {
+    const wait = lastRequestAt + minIntervalMs + random() * opts.jitterMs - now();
     if (wait > 0) await sleep(wait);
     lastRequestAt = now();
   }
 
   const origin = new URL(opts.baseUrl).origin;
 
-  function buildUrl(request: HttpRequest): string {
+  function buildUrl(request: Pick<HttpRequest, "path" | "query">): string {
     const url = new URL(toPath(request.path), opts.baseUrl);
     // The last word on where the token goes: URL parsing turns paths like
     // "/\\host" into another host, so the resolved origin is checked, not the string.
@@ -188,19 +209,21 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
     return url.toString();
   }
 
+  /** The session to use now; a token already rejected is replaced by a re-import first. */
+  async function freshSession(label: string): Promise<{ current: SessionData; reauthed: boolean }> {
+    const current = loadSession();
+    if (current.token !== deadToken) return { current, reauthed: false };
+    if (!(await reimport(label))) throw authError();
+    return { current: loadSession(), reauthed: true };
+  }
+
   async function sendOnce(request: HttpRequest): Promise<HttpResponse> {
     if (!READ_METHODS.has(request.method)) {
       throw new Error(
         `Método ${request.method} recusado: neste ponto o familysearch-mcp só lê a árvore. Escritas passam pela trava de aprovação.`,
       );
     }
-    let current = loadSession();
-    let reauthed = false;
-    if (current.token === deadToken) {
-      reauthed = true;
-      if (!(await reimport(request.label))) throw authError();
-      current = loadSession();
-    }
+    let { current, reauthed } = await freshSession(request.label);
     const url = buildUrl(request);
     const started = now();
 
@@ -273,7 +296,82 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
     }
   }
 
+  const sameQuery = (a: WriteRequest["query"], b: WriteRequest["query"]): boolean => {
+    const norm = (q: WriteRequest["query"]) =>
+      JSON.stringify(
+        Object.entries(q ?? {})
+          .filter(([, v]) => v !== undefined)
+          .map(([k, v]) => [k, String(v)])
+          .sort(([x], [y]) => (x as string).localeCompare(y as string)),
+      );
+    return norm(a) === norm(b);
+  };
+
+  async function writeOnce(request: WriteRequest, ticket: WriteTicket): Promise<HttpResponse> {
+    // Before anything else: no cover, no request. The entry is consumed once;
+    // the 401 retry below reuses this same resolved request.
+    const approved = ticket.take(request.method, request.path);
+    if (request.query !== undefined && !sameQuery(request.query, approved.query)) {
+      throw new Error(
+        `Escrita não aprovada: ${request.method} ${request.label} usa parâmetros diferentes dos que o usuário aprovou.`,
+      );
+    }
+    let { current, reauthed } = await freshSession(request.label);
+    const url = buildUrl({ path: request.path, ...(approved.query ? { query: approved.query } : {}) });
+    const hasBody = request.body !== undefined;
+    const started = now();
+
+    for (;;) {
+      await gap(Math.max(opts.minIntervalMs, opts.writeIntervalMs));
+      let response: FetchResponse;
+      try {
+        response = await fetchImpl(url, {
+          method: request.method,
+          headers: {
+            authorization: `Bearer ${current.token}`,
+            "user-agent": current.userAgent,
+            accept: request.accept ?? DEFAULT_ACCEPT,
+            "x-reason": request.reason,
+            ...(hasBody ? { "content-type": DEFAULT_ACCEPT } : {}),
+          },
+          redirect: "manual",
+          ...(hasBody ? { body: JSON.stringify(request.body) } : {}),
+          signal: AbortSignal.timeout(opts.timeoutMs),
+        });
+      } catch (error) {
+        requests += 1;
+        throw new WriteUncertainError(request.label, error instanceof Error ? error.message : String(error));
+      }
+      requests += 1;
+      const { status } = response;
+
+      if (status === 401) {
+        deadToken = current.token;
+        if (!reauthed) {
+          reauthed = true;
+          if (await reimport(request.label)) {
+            current = loadSession();
+            continue; // a 401 proves nothing was applied, so this is the one safe retry
+          }
+        }
+        throw authError();
+      }
+      if (status === 429) {
+        throw new RateLimitError(
+          1,
+          `O FamilySearch pediu para diminuir o ritmo (HTTP 429) em ${request.label}. Nada foi aplicado; espere e tente de novo.`,
+        );
+      }
+      if (status >= 500) throw new WriteUncertainError(request.label, `HTTP ${status}`);
+
+      const body = await response.text();
+      log.debug(`${request.label} ${status} ${now() - started}ms`);
+      return { status, headers: response.headers, body };
+    }
+  }
+
   return {
+    write: (request, ticket) => serial(() => writeOnce(request, ticket)),
     send: (request) => serial(() => sendOnce(request)),
     state: () => ({ requests, authDead: deadToken !== null, reauths }),
     resetSession: () => {
