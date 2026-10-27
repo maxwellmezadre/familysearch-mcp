@@ -5,6 +5,7 @@ import {
   formatCandidates,
   formatChanges,
   formatComparison,
+  formatDoctor,
   formatFamily,
   formatPedigree,
   formatPerson,
@@ -54,6 +55,10 @@ export async function runCli(argv: string[], version: string): Promise<void> {
         { json: options.json ?? false },
       ),
     );
+
+  command("doctor")
+    .description("Diagnóstico camada a camada da sessão e da API")
+    .action((options) => invoke("doctor", {}, { json: options.json ?? false, format: formatDoctor }));
 
   // ---- family tree ----------------------------------------------------------
 
@@ -211,6 +216,20 @@ export async function runCli(argv: string[], version: string): Promise<void> {
     .description("Compara duas pessoas lado a lado (só lê): conflitos, sinais de alerta, se podem ser mescladas")
     .action((a: string, b: string, options) =>
       invoke("compare_persons", { person_a: a, person_b: b }, { json: options.json ?? false, format: formatComparison }),
+    );
+
+  // ---- rediscovery ------------------------------------------------------------
+
+  command("raw <path>")
+    .description("GET direto na API (/platform/... ou /service/search/...), para redescobrir endpoints")
+    .option("--accept <type>", "cabeçalho Accept")
+    .option("--max-bytes <n>", "corta a resposta neste tamanho")
+    .action((path: string, options) =>
+      invoke(
+        "raw_get",
+        { path, accept: options.accept, max_bytes: options.maxBytes ? Number(options.maxBytes) : undefined },
+        { json: true },
+      ),
     );
 
   // ---- server ---------------------------------------------------------------

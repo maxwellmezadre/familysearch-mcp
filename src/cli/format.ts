@@ -163,3 +163,10 @@ export const formatComparison = (result: unknown): string => {
   }
   return lines.join("\n");
 };
+
+export const formatDoctor = (result: unknown): string => {
+  const report = result as { ok: boolean; layers: Array<{ layer: string; ok: boolean; detail: string }> };
+  const lines = report.layers.map((layer) => `${layer.ok ? "  ok " : "  ERR"} ${layer.layer.padEnd(13)} ${layer.detail}`);
+  lines.push("", report.ok ? "tudo certo" : "parou na primeira camada com problema (acima)");
+  return lines.join("\n");
+};

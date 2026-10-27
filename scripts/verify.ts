@@ -95,6 +95,8 @@ async function main(): Promise<void> {
     { jsonrpc: "2.0", id: 2, method: "tools/list" },
     callTool(3, "auth_status"),
     callTool(4, "does_not_exist"),
+    callTool(5, "raw_get", { path: "/ident/cis-web/oauth2/v3/token" }),
+    callTool(6, "raw_get", { path: "https://evil.example/platform/users/current" }),
     callTool(7, "auth_status", { verify: "sim" }),
     { jsonrpc: "2.0", id: 8, method: "tools/list" },
   ]);
@@ -134,6 +136,8 @@ async function main(): Promise<void> {
 
   for (const [id, label] of [
     [4, "tool desconhecida vira isError"],
+    [5, "raw_get recusa caminho fora da API"],
+    [6, "raw_get recusa host fora do FamilySearch"],
     [7, "argumento inválido vira isError"],
   ] as const) {
     const result = replies.find((reply) => reply.id === id)?.result as ToolResult | undefined;

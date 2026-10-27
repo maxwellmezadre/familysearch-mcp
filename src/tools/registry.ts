@@ -1,8 +1,10 @@
 import type { Config } from "../config.js";
 import { authStatus } from "./auth.js";
 import { comparePersons } from "./compare.js";
+import { doctor } from "./doctor.js";
 import type { ToolDef } from "./define.js";
 import { login } from "./login.js";
+import { rawGet } from "./raw.js";
 import { getHints, getPossibleDuplicates, getRecord, searchPlaces, searchRecords } from "./research.js";
 import {
   getAncestors,
@@ -20,6 +22,7 @@ export const allTools: ToolDef[] = [
   // Session and diagnosis
   authStatus,
   login,
+  doctor,
   // Family Tree
   searchPersons,
   getPerson,
@@ -35,6 +38,8 @@ export const allTools: ToolDef[] = [
   searchPlaces,
   // Analysis
   comparePersons,
+  // Escape hatch
+  rawGet,
 ];
 
 /**
