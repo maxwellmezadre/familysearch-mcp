@@ -1,0 +1,979 @@
+{
+  "status": 200,
+  "location": null,
+  "body": {
+    "results": 548172,
+    "index": 0,
+    "links": {
+      "next": {
+        "href": "https://www.familysearch.org/service/search/hr/v2/personas?q.givenName=Lia&q.surname=Fausto&q.birthLikeDate.from=1809&offset=3&count=3"
+      }
+    },
+    "entries": [
+      {
+        "confidence": 5,
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "principal": true,
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "names": [
+                  {
+                    "preferred": false,
+                    "nameForms": [
+                      {
+                        "fullText": "Lia Fausto",
+                        "parts": [
+                          {
+                            "id": "0603ef26-29b4-4664-b5cc-eee6b1f09f2b",
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          },
+                          {
+                            "id": "3ea67f3c-b134-459c-9fde-f9f47ea29e91",
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Lia"
+                          }
+                        ]
+                      }
+                    ],
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "facts": [
+                  {
+                    "date": {
+                      "original": "14 Apr 1865",
+                      "formal": "+1865-04-14",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "14 April 1865"
+                        }
+                      ],
+                      "id": "cbd9b4b1-19df-4578-b37b-78d77f689977"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "original": "12 Feb 1809",
+                      "formal": "+1809-02-12",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "12 February 1809"
+                        }
+                      ],
+                      "id": "2e78709a-d566-49cb-8d2d-b39de0c7530d"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "original": "14 Apr 1887",
+                      "formal": "+1887-04-14",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "14 April 1887"
+                        }
+                      ],
+                      "id": "cf57ab8f-42d4-468d-b21a-f2e1e9a6f07b"
+                    },
+                    "place": {
+                      "original": "Canton, Ohio",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Canton, Stark, Ohio, United States"
+                        }
+                      ],
+                      "description": "#4813889",
+                      "id": "4813889"
+                    },
+                    "primary": true,
+                    "type": "http://gedcomx.org/Obituary"
+                  },
+                  {
+                    "date": {
+                      "original": "14 Apr 1887",
+                      "formal": "+1887-04-14",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "14 April 1887"
+                        }
+                      ],
+                      "id": "5c923560-bbb0-454d-8b86-9152e14081e7"
+                    },
+                    "type": "http://gedcomx.org/Residence"
+                  }
+                ],
+                "display": {
+                  "birthDate": "12 February 1809",
+                  "deathDate": "14 April 1865",
+                  "gender": "Male",
+                  "name": "Lia Fausto",
+                  "role": "Principal"
+                },
+                "extracted": true,
+                "id": "p_105038009996",
+                "sources": [
+                  {
+                    "description": "#sd_da1",
+                    "descriptionId": "sd_da1"
+                  }
+                ]
+              },
+              {
+                "principal": false,
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "names": [
+                  {
+                    "preferred": false,
+                    "nameForms": [
+                      {
+                        "fullText": "Lia Fausto",
+                        "parts": [
+                          {
+                            "id": "1031885d-ee30-4657-bed1-978876b89573",
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          },
+                          {
+                            "id": "bf9c27f6-d7c0-40af-ad70-0991acff4166",
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Lia"
+                          }
+                        ]
+                      }
+                    ],
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "display": {
+                  "gender": "Male",
+                  "name": "Lia Fausto",
+                  "role": "Other"
+                },
+                "extracted": true,
+                "id": "p_105038009997",
+                "sources": [
+                  {
+                    "description": "#sd_da1",
+                    "descriptionId": "sd_da1"
+                  }
+                ]
+              }
+            ],
+            "sourceDescriptions": [
+              {
+                "citations": [
+                  {
+                    "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2 : Sun Jul 26 11:23:16 UTC 2026), Entry for Lia Fausto and Lia Fausto, 14 Apr 1887."
+                  }
+                ],
+                "sources": [
+                  {
+                    "description": "#sd_da1",
+                    "descriptionId": "sd_da1",
+                    "qualifiers": [
+                      {
+                        "name": "http://gedcomx.org/RectangleRegion",
+                        "value": "0.059140,0.036160,0.213360,0.382310"
+                      }
+                    ]
+                  }
+                ],
+                "componentOf": {
+                  "description": "#sd_c_2860782",
+                  "descriptionId": "sd_c_2860782"
+                },
+                "titles": [
+                  {
+                    "lang": "en",
+                    "value": "Entry for Lia Fausto, \"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\""
+                  }
+                ],
+                "created": "2020-07-29T19:22:05.195Z",
+                "modified": "2026-07-26T11:23:16.970Z",
+                "coverage": [
+                  {
+                    "recordType": "http://gedcomx.org/Obituary",
+                    "spatial": {
+                      "original": "Canton, Stark, Ohio, United States",
+                      "description": "#4813889",
+                      "id": "4813889"
+                    },
+                    "temporal": {
+                      "original": "14 Apr 1887",
+                      "formal": "+1887-04-14"
+                    }
+                  }
+                ],
+                "descriptor": {
+                  "resource": "https://www.familysearch.org/service/cds/recapi/collections/2860782?arkName=1:2:SJ1H-GLTL"
+                },
+                "statuses": [
+                  "http://gedcomx.org/Published"
+                ],
+                "about": "https://www.familysearch.org/ark:/61903/1:2:SJ1H-GLTL",
+                "id": "src_r_106515605212",
+                "mediaType": "image/jpeg",
+                "resourceType": "http://gedcomx.org/Record"
+              },
+              {
+                "titles": [
+                  {
+                    "lang": "en-US",
+                    "value": "United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013"
+                  }
+                ],
+                "created": "2018-05-16T03:27:59.250Z",
+                "modified": "2026-06-18T15:41:17.765Z",
+                "coverage": [
+                  {
+                    "recordType": "http://gedcomx.org/Obituary",
+                    "spatial": {
+                      "original": "United States",
+                      "description": "#1",
+                      "id": "1"
+                    },
+                    "temporal": {
+                      "original": "1815/2013",
+                      "formal": "+1815/+2013"
+                    }
+                  }
+                ],
+                "about": "https://www.familysearch.org/service/cds/recapi/collections/2860782",
+                "id": "sd_c_2860782",
+                "resourceType": "http://gedcomx.org/Collection"
+              },
+              {
+                "componentOf": {
+                  "description": "#sd_c_2860782",
+                  "descriptionId": "sd_c_2860782"
+                },
+                "coverage": [
+                  {
+                    "recordType": "http://gedcomx.org/Newspaper",
+                    "spatial": {
+                      "original": "title:United States, Ohio, Stark, Canton",
+                      "description": "#4813889",
+                      "id": "4813889"
+                    },
+                    "temporal": {
+                      "original": "1884–1890",
+                      "formal": "+1884-01-01T00:00:00Z/+1890-12-31T23:59:59Z"
+                    }
+                  }
+                ],
+                "descriptor": {
+                  "resource": "https://www.familysearch.org/service/cds/recapi/collections/2860782?arkName=3:1:GTZ4-RH5H-J93C-H"
+                },
+                "about": "https://www.familysearch.org/ark:/61903/3:1:GTZ4-RH5H-J93C-H",
+                "id": "sd_da1",
+                "mediaType": "image/jpeg",
+                "resourceType": "http://gedcomx.org/DigitalArtifact"
+              },
+              {
+                "titles": [
+                  {
+                    "value": "United States, Ohio, Biographies, from 7 January 1066 to 2012"
+                  }
+                ],
+                "coverage": [
+                  {
+                    "spatial": {
+                      "description": "https://www.familysearch.org/platform/places/description/357"
+                    },
+                    "temporal": {
+                      "formal": "+1066-01-07T00:00:00Z/+2012-12-31T23:59:59Z"
+                    }
+                  }
+                ],
+                "id": "sd_auto_M7LT-PW8",
+                "resourceType": "http://familysearch.org/types/collection/auto"
+              },
+              {
+                "componentOf": {
+                  "description": "#src_r_106515605212"
+                },
+                "created": "2020-07-29T19:22:05.195Z",
+                "modified": "2026-07-26T11:23:16.970Z",
+                "about": "#p_105038009996",
+                "id": "src_p_p_105038009996",
+                "resourceType": "http://gedcomx.org/Person"
+              }
+            ],
+            "places": [
+              {
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Canton, Stark, Ohio, United States"
+                  }
+                ],
+                "latitude": 40.7988,
+                "longitude": -81.3763,
+                "id": "4813889"
+              }
+            ],
+            "description": "#src_p_p_105038009996",
+            "lang": "en",
+            "links": {
+              "self": {
+                "href": "https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2"
+              }
+            }
+          }
+        },
+        "id": "LHQL-RJL2",
+        "score": 4.1236
+      },
+      {
+        "confidence": 5,
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "principal": true,
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "names": [
+                  {
+                    "preferred": false,
+                    "nameForms": [
+                      {
+                        "fullText": "Lia Fausto",
+                        "parts": [
+                          {
+                            "id": "b8013199-14aa-4b4f-bc9b-9b91f5a7eccf",
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Lia"
+                          },
+                          {
+                            "id": "1a405561-e711-4278-a552-15950502eeb2",
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "facts": [
+                  {
+                    "value": "Rui",
+                    "type": "http://gedcomx.org/Occupation"
+                  },
+                  {
+                    "date": {
+                      "original": "About 25 Feb 1889",
+                      "formal": "A+1889-02-25",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "about 25 February 1889"
+                        }
+                      ],
+                      "id": "f371efda-1a50-4109-a255-ad8a17ef7a96"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "original": "25 Feb 1889",
+                      "formal": "+1889-02-25",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "25 February 1889"
+                        }
+                      ],
+                      "id": "3fb2fc0d-59c7-46a3-92f1-312d842b12f9"
+                    },
+                    "place": {
+                      "original": "Muskegon, Michigan",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Muskegon, Michigan, United States"
+                        }
+                      ],
+                      "description": "#392787",
+                      "id": "392787"
+                    },
+                    "primary": true,
+                    "type": "http://gedcomx.org/Obituary"
+                  },
+                  {
+                    "date": {
+                      "original": "1809",
+                      "formal": "+1809",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1809"
+                        }
+                      ],
+                      "id": "f4c21c2f-38d7-48d7-94f6-a6683ad9eef1"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  }
+                ],
+                "display": {
+                  "birthDate": "1809",
+                  "deathDate": "about 25 February 1889",
+                  "gender": "Male",
+                  "name": "Lia Fausto",
+                  "role": "Principal"
+                },
+                "extracted": true,
+                "id": "p_105109280781",
+                "sources": [
+                  {
+                    "description": "#sd_da1",
+                    "descriptionId": "sd_da1"
+                  }
+                ]
+              }
+            ],
+            "sourceDescriptions": [
+              {
+                "citations": [
+                  {
+                    "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:GRLH-W42Q : Sun Jul 26 11:29:32 UTC 2026), Entry for Lia Fausto, 25 Feb 1889."
+                  }
+                ],
+                "sources": [
+                  {
+                    "description": "#sd_da1",
+                    "descriptionId": "sd_da1",
+                    "qualifiers": [
+                      {
+                        "name": "http://gedcomx.org/RectangleRegion",
+                        "value": "0.341410,0.306580,0.501030,0.365630"
+                      }
+                    ]
+                  }
+                ],
+                "componentOf": {
+                  "description": "#sd_c_2860782",
+                  "descriptionId": "sd_c_2860782"
+                },
+                "titles": [
+                  {
+                    "lang": "en",
+                    "value": "Entry for Lia Fausto, \"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\""
+                  }
+                ],
+                "created": "2020-07-29T19:56:52.193Z",
+                "modified": "2026-07-26T11:29:32.704Z",
+                "coverage": [
+                  {
+                    "recordType": "http://gedcomx.org/Obituary",
+                    "spatial": {
+                      "original": "Muskegon, Michigan, United States",
+                      "description": "#392787",
+                      "id": "392787"
+                    },
+                    "temporal": {
+                      "original": "25 Feb 1889",
+                      "formal": "+1889-02-25"
+                    }
+                  }
+                ],
+                "descriptor": {
+                  "resource": "https://www.familysearch.org/service/cds/recapi/collections/2860782?arkName=1:2:THZ5-HVQ9"
+                },
+                "statuses": [
+                  "http://gedcomx.org/Published"
+                ],
+                "about": "https://www.familysearch.org/ark:/61903/1:2:THZ5-HVQ9",
+                "id": "src_r_106528823931",
+                "mediaType": "image/jpeg",
+                "resourceType": "http://gedcomx.org/Record"
+              },
+              {
+                "titles": [
+                  {
+                    "lang": "en-US",
+                    "value": "United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013"
+                  }
+                ],
+                "created": "2018-05-16T03:27:59.250Z",
+                "modified": "2026-06-18T15:41:17.765Z",
+                "coverage": [
+                  {
+                    "recordType": "http://gedcomx.org/Obituary",
+                    "spatial": {
+                      "original": "United States",
+                      "description": "#1",
+                      "id": "1"
+                    },
+                    "temporal": {
+                      "original": "1815/2013",
+                      "formal": "+1815/+2013"
+                    }
+                  }
+                ],
+                "about": "https://www.familysearch.org/service/cds/recapi/collections/2860782",
+                "id": "sd_c_2860782",
+                "resourceType": "http://gedcomx.org/Collection"
+              },
+              {
+                "componentOf": {
+                  "description": "#sd_c_2860782",
+                  "descriptionId": "sd_c_2860782"
+                },
+                "coverage": [
+                  {
+                    "recordType": "http://gedcomx.org/Newspaper",
+                    "spatial": {
+                      "original": "Muskegon",
+                      "description": "#392787",
+                      "id": "392787"
+                    },
+                    "temporal": {
+                      "original": "1887-1890",
+                      "formal": "+1887-01-01T00:00:00Z/+1890-12-31T23:59:59Z"
+                    }
+                  }
+                ],
+                "descriptor": {
+                  "resource": "https://www.familysearch.org/service/cds/recapi/collections/2860782?arkName=3:1:HPVH-MC1X-JQ89-X"
+                },
+                "about": "https://www.familysearch.org/ark:/61903/3:1:HPVH-MC1X-JQ89-X",
+                "id": "sd_da1",
+                "mediaType": "image/jpeg",
+                "resourceType": "http://gedcomx.org/DigitalArtifact"
+              },
+              {
+                "titles": [
+                  {
+                    "value": "United States, Michigan, Biographies, from 1387 to 2015"
+                  }
+                ],
+                "coverage": [
+                  {
+                    "spatial": {
+                      "description": "https://www.familysearch.org/platform/places/description/332"
+                    },
+                    "temporal": {
+                      "formal": "+1387-01-01T00:00:00Z/+2015-12-31T23:59:59Z"
+                    }
+                  }
+                ],
+                "id": "sd_auto_TB8R-S66",
+                "resourceType": "http://familysearch.org/types/collection/auto"
+              },
+              {
+                "componentOf": {
+                  "description": "#src_r_106528823931"
+                },
+                "created": "2020-07-29T19:56:52.193Z",
+                "modified": "2026-07-26T11:29:32.704Z",
+                "about": "#p_105109280781",
+                "id": "src_p_p_105109280781",
+                "resourceType": "http://gedcomx.org/Person"
+              }
+            ],
+            "places": [
+              {
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Muskegon, Michigan, United States"
+                  }
+                ],
+                "latitude": 43.289,
+                "longitude": -86.078998,
+                "id": "392787"
+              }
+            ],
+            "description": "#src_p_p_105109280781",
+            "lang": "en",
+            "links": {
+              "self": {
+                "href": "https://www.familysearch.org/ark:/61903/1:1:GRLH-W42Q"
+              }
+            }
+          }
+        },
+        "id": "GRLH-W42Q",
+        "score": 4.1236
+      },
+      {
+        "confidence": 5,
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "principal": true,
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "names": [
+                  {
+                    "preferred": false,
+                    "nameForms": [
+                      {
+                        "fullText": "Lia Fausto",
+                        "parts": [
+                          {
+                            "id": "4c73aa77-b8b9-4262-a96d-d9ab6c8065d2",
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          },
+                          {
+                            "id": "cb8e4ce2-5b0f-4d54-8260-51d7fcadc6d2",
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Lia"
+                          }
+                        ]
+                      }
+                    ],
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "facts": [
+                  {
+                    "date": {
+                      "original": "14 Apr 1865",
+                      "formal": "+1865-04-14",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "14 April 1865"
+                        }
+                      ],
+                      "id": "85d9cdd3-4816-46ea-8670-e333e0fdde18"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "original": "09 Jan 1896",
+                      "formal": "+1896-01-09",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "9 January 1896"
+                        }
+                      ],
+                      "id": "6904ed33-ff8b-4f51-a444-367f95adf90a"
+                    },
+                    "place": {
+                      "original": "Rockford, Illinois",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Rockford, Winnebago, Illinois, United States"
+                        }
+                      ],
+                      "description": "#8248588",
+                      "id": "8248588"
+                    },
+                    "primary": true,
+                    "type": "http://gedcomx.org/Obituary"
+                  },
+                  {
+                    "date": {
+                      "original": "about 1809",
+                      "formal": "A+1809",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "about 1809"
+                        }
+                      ],
+                      "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=92&fieldScorerVersion=1.0.0",
+                      "id": "5aba63b2-a2c0-4d0c-b8fa-23f1477ab289"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  }
+                ],
+                "display": {
+                  "birthDate": "about 1809",
+                  "deathDate": "14 April 1865",
+                  "gender": "Male",
+                  "name": "Lia Fausto",
+                  "role": "Principal"
+                },
+                "extracted": true,
+                "id": "p_104960840667",
+                "sources": [
+                  {
+                    "description": "#sd_da1",
+                    "descriptionId": "sd_da1"
+                  }
+                ]
+              },
+              {
+                "principal": true,
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "names": [
+                  {
+                    "preferred": false,
+                    "nameForms": [
+                      {
+                        "fullText": "MAURO Iara Barros",
+                        "parts": [
+                          {
+                            "id": "5aa9dcd5-94ff-4ded-8b3b-529768c2ed12",
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Barros"
+                          },
+                          {
+                            "id": "ed2bb2cf-443a-4c23-9117-a7039f033b4e",
+                            "type": "http://gedcomx.org/Given",
+                            "value": "MAURO Iara"
+                          }
+                        ]
+                      }
+                    ],
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "facts": [
+                  {
+                    "date": {
+                      "original": "09 Jan 1896",
+                      "formal": "+1896-01-09",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "9 January 1896"
+                        }
+                      ],
+                      "id": "e7d5c3b6-fae0-4072-a8c9-98bd6ad74c61"
+                    },
+                    "place": {
+                      "original": "Rockford, Illinois",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Rockford, Winnebago, Illinois, United States"
+                        }
+                      ],
+                      "description": "#8248588",
+                      "id": "8248588"
+                    },
+                    "primary": true,
+                    "type": "http://gedcomx.org/Obituary"
+                  },
+                  {
+                    "date": {
+                      "original": "About 09 Jan 1896",
+                      "formal": "A+1896-01-09",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "about 9 January 1896"
+                        }
+                      ],
+                      "id": "aa13ebab-acb4-4787-b9bc-7ef6979087b1"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "display": {
+                  "deathDate": "about 9 January 1896",
+                  "gender": "Male",
+                  "name": "MAURO Iara Barros",
+                  "role": "Other"
+                },
+                "extracted": true,
+                "id": "p_104960840668",
+                "sources": [
+                  {
+                    "description": "#sd_da1",
+                    "descriptionId": "sd_da1"
+                  }
+                ]
+              }
+            ],
+            "sourceDescriptions": [
+              {
+                "citations": [
+                  {
+                    "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:VGDW-QFL1 : Sat Jul 25 17:36:04 UTC 2026), Entry for J Iara Barros and Lia Fausto, 09 Jan 1896."
+                  }
+                ],
+                "sources": [
+                  {
+                    "description": "#sd_da1",
+                    "descriptionId": "sd_da1",
+                    "qualifiers": [
+                      {
+                        "name": "http://gedcomx.org/RectangleRegion",
+                        "value": "0.492040,0.436960,0.611630,0.456630"
+                      }
+                    ]
+                  }
+                ],
+                "componentOf": {
+                  "description": "#sd_c_2860782",
+                  "descriptionId": "sd_c_2860782"
+                },
+                "titles": [
+                  {
+                    "lang": "en",
+                    "value": "Entry for J Iara Barros and Lia Fausto, \"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\""
+                  }
+                ],
+                "created": "2020-04-15T20:52:10.413Z",
+                "modified": "2026-07-25T17:36:04.096Z",
+                "coverage": [
+                  {
+                    "recordType": "http://gedcomx.org/Obituary",
+                    "spatial": {
+                      "original": "Rockford Township, Winnebago, Illinois, United States",
+                      "description": "#4035175",
+                      "id": "4035175"
+                    },
+                    "temporal": {
+                      "original": "09 Jan 1896",
+                      "formal": "+1896-01-09"
+                    }
+                  }
+                ],
+                "descriptor": {
+                  "resource": "https://www.familysearch.org/service/cds/recapi/collections/2860782?arkName=1:2:XJ97-FR9W"
+                },
+                "statuses": [
+                  "http://gedcomx.org/Published"
+                ],
+                "about": "https://www.familysearch.org/ark:/61903/1:2:XJ97-FR9W",
+                "id": "src_r_106502338650",
+                "mediaType": "image/jpeg",
+                "resourceType": "http://gedcomx.org/Record"
+              },
+              {
+                "titles": [
+                  {
+                    "lang": "en-US",
+                    "value": "United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013"
+                  }
+                ],
+                "created": "2018-05-16T03:27:59.250Z",
+                "modified": "2026-06-18T15:41:17.765Z",
+                "coverage": [
+                  {
+                    "recordType": "http://gedcomx.org/Obituary",
+                    "spatial": {
+                      "original": "United States",
+                      "description": "#1",
+                      "id": "1"
+                    },
+                    "temporal": {
+                      "original": "1815/2013",
+                      "formal": "+1815/+2013"
+                    }
+                  }
+                ],
+                "about": "https://www.familysearch.org/service/cds/recapi/collections/2860782",
+                "id": "sd_c_2860782",
+                "resourceType": "http://gedcomx.org/Collection"
+              },
+              {
+                "componentOf": {
+                  "description": "#sd_c_2860782",
+                  "descriptionId": "sd_c_2860782"
+                },
+                "coverage": [
+                  {
+                    "recordType": "http://gedcomx.org/Newspaper",
+                    "spatial": {
+                      "original": "United States, Illinois, Winnebago, Rockford",
+                      "description": "#8248588",
+                      "id": "8248588"
+                    },
+                    "temporal": {
+                      "original": "1895-1899",
+                      "formal": "+1895-01-01T00:00:00Z/+1899-12-31T23:59:59Z"
+                    }
+                  }
+                ],
+                "descriptor": {
+                  "resource": "https://www.familysearch.org/service/cds/recapi/collections/2860782?arkName=3:1:X1RC-WQHT-7QCX"
+                },
+                "about": "https://www.familysearch.org/ark:/61903/3:1:X1RC-WQHT-7QCX",
+                "id": "sd_da1",
+                "mediaType": "image/jpeg",
+                "resourceType": "http://gedcomx.org/DigitalArtifact"
+              },
+              {
+                "titles": [
+                  {
+                    "value": "United States, Illinois, Biographies, from 1027 to 2010"
+                  }
+                ],
+                "coverage": [
+                  {
+                    "spatial": {
+                      "description": "https://www.familysearch.org/platform/places/description/330"
+                    },
+                    "temporal": {
+                      "formal": "+1027-01-01T00:00:00Z/+2010-12-31T23:59:59Z"
+                    }
+                  }
+                ],
+                "id": "sd_auto_PMRT-2P3",
+                "resourceType": "http://familysearch.org/types/collection/auto"
+              },
+              {
+                "componentOf": {
+                  "description": "#src_r_106502338650"
+                },
+                "created": "2020-04-15T20:52:10.413Z",
+                "modified": "2026-07-25T17:36:04.096Z",
+                "about": "#p_104960840667",
+                "id": "src_p_p_104960840667",
+                "resourceType": "http://gedcomx.org/Person"
+              }
+            ],
+            "places": [
+              {
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Rockford, Winnebago, Illinois, United States"
+                  }
+                ],
+                "latitude": 42.2711,
+                "longitude": -89.0939,
+                "id": "8248588"
+              }
+            ],
+            "description": "#src_p_p_104960840667",
+            "lang": "en",
+            "links": {
+              "self": {
+                "href": "https://www.familysearch.org/ark:/61903/1:1:KGDT-83WB"
+              }
+            }
+          }
+        },
+        "id": "KGDT-83WB",
+        "score": 4.1236
+      }
+    ]
+  }
+}

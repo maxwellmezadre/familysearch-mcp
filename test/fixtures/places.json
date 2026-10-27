@@ -1,0 +1,301 @@
+{
+  "status": 200,
+  "location": null,
+  "body": {
+    "entries": [
+      {
+        "content": {
+          "gedcomx": {
+            "places": [
+              {
+                "display": {
+                  "fullName": "Zeca, Kingston, Jamaica",
+                  "name": "Zeca",
+                  "type": "Neighborhood or suburb"
+                },
+                "id": "12243341",
+                "jurisdiction": {
+                  "resource": "https://www.familysearch.org/platform/places/description/3323",
+                  "resourceId": "3323"
+                },
+                "lang": "en",
+                "latitude": 17.9712,
+                "links": {
+                  "description": {
+                    "href": "https://www.familysearch.org/platform/places/description/12243341?flag=fsh"
+                  }
+                },
+                "longitude": -76.7561,
+                "names": [
+                  {
+                    "lang": "en",
+                    "value": "Zeca, Kingston, Jamaica"
+                  }
+                ],
+                "type": "https://www.familysearch.org/platform/places/types/308",
+                "placeDescriptionInfo": [
+                  {
+                    "zoomLevel": 13
+                  }
+                ]
+              },
+              {
+                "id": "3323",
+                "jurisdiction": {
+                  "resource": "#90",
+                  "resourceId": "90"
+                },
+                "lang": "en",
+                "links": {
+                  "place-type": {
+                    "href": "https://www.familysearch.org/platform/places/types/312?flag=fsh"
+                  },
+                  "description": {
+                    "href": "https://www.familysearch.org/platform/places/description/3323?flag=fsh"
+                  }
+                },
+                "names": [
+                  {
+                    "lang": "en",
+                    "value": "Kingston"
+                  }
+                ],
+                "place": {
+                  "resource": "https://www.familysearch.org/platform/places/1927213",
+                  "resourceId": "1927213"
+                },
+                "type": "https://www.familysearch.org/platform/places/types/312"
+              },
+              {
+                "id": "90",
+                "lang": "en",
+                "links": {
+                  "place-type": {
+                    "href": "https://www.familysearch.org/platform/places/types/580?flag=fsh"
+                  },
+                  "description": {
+                    "href": "https://www.familysearch.org/platform/places/description/90?flag=fsh"
+                  }
+                },
+                "names": [
+                  {
+                    "lang": "en",
+                    "value": "Jamaica"
+                  }
+                ],
+                "place": {
+                  "resource": "https://www.familysearch.org/platform/places/1927006",
+                  "resourceId": "1927006"
+                },
+                "type": "https://www.familysearch.org/platform/places/types/580"
+              }
+            ]
+          }
+        },
+        "id": "12243341",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/places/description/12243341?flag=fsh"
+          }
+        },
+        "score": 75
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "places": [
+              {
+                "display": {
+                  "fullName": "Zeca, Saint Elizabeth, Jamaica",
+                  "name": "Zeca",
+                  "type": "Village"
+                },
+                "id": "12216949",
+                "jurisdiction": {
+                  "resource": "https://www.familysearch.org/platform/places/description/3328",
+                  "resourceId": "3328"
+                },
+                "lang": "en",
+                "latitude": 18.1725,
+                "links": {
+                  "description": {
+                    "href": "https://www.familysearch.org/platform/places/description/12216949?flag=fsh"
+                  }
+                },
+                "longitude": -77.8722,
+                "names": [
+                  {
+                    "lang": "en",
+                    "value": "Zeca, Saint Elizabeth, Jamaica"
+                  }
+                ],
+                "type": "https://www.familysearch.org/platform/places/types/391",
+                "placeDescriptionInfo": [
+                  {
+                    "zoomLevel": 13
+                  }
+                ]
+              },
+              {
+                "id": "3328",
+                "jurisdiction": {
+                  "resource": "#90",
+                  "resourceId": "90"
+                },
+                "lang": "en",
+                "links": {
+                  "place-type": {
+                    "href": "https://www.familysearch.org/platform/places/types/312?flag=fsh"
+                  },
+                  "description": {
+                    "href": "https://www.familysearch.org/platform/places/description/3328?flag=fsh"
+                  }
+                },
+                "names": [
+                  {
+                    "lang": "en",
+                    "value": "Saint Elizabeth"
+                  }
+                ],
+                "place": {
+                  "resource": "https://www.familysearch.org/platform/places/1927207",
+                  "resourceId": "1927207"
+                },
+                "type": "https://www.familysearch.org/platform/places/types/312"
+              },
+              {
+                "id": "90",
+                "lang": "en",
+                "links": {
+                  "place-type": {
+                    "href": "https://www.familysearch.org/platform/places/types/580?flag=fsh"
+                  },
+                  "description": {
+                    "href": "https://www.familysearch.org/platform/places/description/90?flag=fsh"
+                  }
+                },
+                "names": [
+                  {
+                    "lang": "en",
+                    "value": "Jamaica"
+                  }
+                ],
+                "place": {
+                  "resource": "https://www.familysearch.org/platform/places/1927006",
+                  "resourceId": "1927006"
+                },
+                "type": "https://www.familysearch.org/platform/places/types/580"
+              }
+            ]
+          }
+        },
+        "id": "12216949",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/places/description/12216949?flag=fsh"
+          }
+        },
+        "score": 75
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "places": [
+              {
+                "display": {
+                  "fullName": "Zeca, Saint James, Jamaica",
+                  "name": "Zeca",
+                  "type": "Village"
+                },
+                "id": "12174926",
+                "jurisdiction": {
+                  "resource": "https://www.familysearch.org/platform/places/description/3329",
+                  "resourceId": "3329"
+                },
+                "lang": "en",
+                "latitude": 18.3744,
+                "links": {
+                  "description": {
+                    "href": "https://www.familysearch.org/platform/places/description/12174926?flag=fsh"
+                  }
+                },
+                "longitude": -77.8439,
+                "names": [
+                  {
+                    "lang": "en",
+                    "value": "Zeca, Saint James, Jamaica"
+                  }
+                ],
+                "type": "https://www.familysearch.org/platform/places/types/391",
+                "placeDescriptionInfo": [
+                  {
+                    "zoomLevel": 13
+                  }
+                ]
+              },
+              {
+                "id": "3329",
+                "jurisdiction": {
+                  "resource": "#90",
+                  "resourceId": "90"
+                },
+                "lang": "en",
+                "links": {
+                  "place-type": {
+                    "href": "https://www.familysearch.org/platform/places/types/312?flag=fsh"
+                  },
+                  "description": {
+                    "href": "https://www.familysearch.org/platform/places/description/3329?flag=fsh"
+                  }
+                },
+                "names": [
+                  {
+                    "lang": "en",
+                    "value": "Saint James"
+                  }
+                ],
+                "place": {
+                  "resource": "https://www.familysearch.org/platform/places/1927206",
+                  "resourceId": "1927206"
+                },
+                "type": "https://www.familysearch.org/platform/places/types/312"
+              },
+              {
+                "id": "90",
+                "lang": "en",
+                "links": {
+                  "place-type": {
+                    "href": "https://www.familysearch.org/platform/places/types/580?flag=fsh"
+                  },
+                  "description": {
+                    "href": "https://www.familysearch.org/platform/places/description/90?flag=fsh"
+                  }
+                },
+                "names": [
+                  {
+                    "lang": "en",
+                    "value": "Jamaica"
+                  }
+                ],
+                "place": {
+                  "resource": "https://www.familysearch.org/platform/places/1927006",
+                  "resourceId": "1927006"
+                },
+                "type": "https://www.familysearch.org/platform/places/types/580"
+              }
+            ]
+          }
+        },
+        "id": "12174926",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/places/description/12174926?flag=fsh"
+          }
+        },
+        "score": 75
+      }
+    ],
+    "subtitle": "Results of searching for places.",
+    "title": "Place Search Results"
+  }
+}

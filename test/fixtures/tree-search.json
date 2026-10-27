@@ -1,0 +1,4412 @@
+{
+  "status": 200,
+  "location": null,
+  "body": {
+    "entries": [
+      {
+        "confidence": 4,
+        "content": {
+          "gedcomx": {
+            "description": "#sdp_X8MM-G4S",
+            "persons": [
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "12 February 1809",
+                  "birthPlace": "Hardin, Kentucky, United States",
+                  "deathDate": "15 April 1865",
+                  "deathPlace": "Washington, District of Columbia, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Male",
+                  "name": "Rui Lia Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1809-02-12",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "12 February 1809"
+                        }
+                      ],
+                      "original": "12 February 1809"
+                    },
+                    "place": {
+                      "description": "#394157",
+                      "id": "394157",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Hardin, Kentucky, United States"
+                        }
+                      ],
+                      "original": "Sinking Spring Farm, Hardin, Kentucky, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1865-04-15",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "15 April 1865"
+                        }
+                      ],
+                      "original": "15 April 1865"
+                    },
+                    "place": {
+                      "description": "#396903",
+                      "id": "396903",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Washington, District of Columbia, United States"
+                        }
+                      ],
+                      "original": "Washington, District of Columbia, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1840",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1840"
+                        }
+                      ],
+                      "original": "1840"
+                    },
+                    "place": {
+                      "description": "#4033952",
+                      "id": "4033952",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Residence",
+                    "value": ""
+                  },
+                  {
+                    "date": {
+                      "formal": "+1850",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1850"
+                        }
+                      ],
+                      "original": "1850"
+                    },
+                    "place": {
+                      "description": "#4033952",
+                      "id": "4033952",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Residence",
+                    "value": ""
+                  },
+                  {
+                    "date": {
+                      "formal": "+1860",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1860"
+                        }
+                      ],
+                      "original": "1860"
+                    },
+                    "place": {
+                      "description": "#4033952",
+                      "id": "4033952",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Residence",
+                    "value": ""
+                  },
+                  {
+                    "date": {
+                      "formal": "+1865-05-04",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "4 May 1865"
+                        }
+                      ],
+                      "original": "4 May 1865"
+                    },
+                    "place": {
+                      "description": "#5797317",
+                      "id": "5797317",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Occupation",
+                    "value": "Rui of the United States"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "X8MM-G4S",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Rui Lia Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Prefix",
+                            "value": "Rui"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Lia"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "10 March 1846",
+                  "birthPlace": "Zeca, Sangamon, Illinois, United States",
+                  "deathDate": "1 February 1850",
+                  "deathPlace": "Zeca, Sangamon, Illinois, United States",
+                  "gender": "Male",
+                  "name": "Joaquim Almeida Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1846-03-10",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "10 March 1846"
+                        }
+                      ],
+                      "original": "10 March 1846"
+                    },
+                    "place": {
+                      "description": "#4033952",
+                      "id": "4033952",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1850-02-01",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1 February 1850"
+                        }
+                      ],
+                      "original": "1 February 1850"
+                    },
+                    "place": {
+                      "description": "#4033952",
+                      "id": "4033952",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "place": {
+                      "description": "#5797317",
+                      "id": "5797317",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "BN5M-W2H",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/BN5M-W2H?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/BN5M-W2H/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Joaquim Almeida Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Joaquim Almeida"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Joaquim Almeida Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Joaquim Almeida"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Almeida Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Almeida"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/Nickname"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "21 December 1850",
+                  "birthPlace": "Zeca, Sangamon, Illinois, United States",
+                  "deathDate": "20 February 1862",
+                  "deathPlace": "Washington, District of Columbia, United States",
+                  "gender": "Male",
+                  "name": "Mauro Henriques Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1850-12-21",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "21 December 1850"
+                        }
+                      ],
+                      "original": "21 December 1850"
+                    },
+                    "place": {
+                      "description": "#4033952",
+                      "id": "4033952",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1862-02-20",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "20 February 1862"
+                        }
+                      ],
+                      "original": "20 February 1862"
+                    },
+                    "place": {
+                      "description": "#396903",
+                      "id": "396903",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Washington, District of Columbia, United States"
+                        }
+                      ],
+                      "original": "Washington, District of Columbia, District of Colombia, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "place": {
+                      "description": "#5797317",
+                      "id": "5797317",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "70CN-RXW",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/70CN-RXW?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/70CN-RXW/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Mauro Henriques Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Mauro Henriques"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Mauro Henriques Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Mauro Henriques"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Teodoro Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Teodoro"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/Nickname"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "5 February 1784",
+                  "birthPlace": "Hampshire, Virginia, United States",
+                  "deathDate": "5 October 1818",
+                  "deathPlace": "Gentryville, Spencer, Indiana, United States",
+                  "gender": "Female",
+                  "name": "Nina Hugo",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1784-02-05",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "5 February 1784"
+                        }
+                      ],
+                      "original": "5 February 1784"
+                    },
+                    "place": {
+                      "description": "#396171",
+                      "id": "396171",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Hampshire, Virginia, United States"
+                        }
+                      ],
+                      "original": "Hampshire, Virginia, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1818-10-05",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "5 October 1818"
+                        }
+                      ],
+                      "original": "5 October 1818"
+                    },
+                    "place": {
+                      "description": "#11827005",
+                      "id": "11827005",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Gentryville, Spencer, Indiana, United States"
+                        }
+                      ],
+                      "original": "Gentryville, Spencer, Indiana, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1818-10-07",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "7 October 1818"
+                        }
+                      ],
+                      "original": "7 October 1818"
+                    },
+                    "place": {
+                      "description": "#12208427",
+                      "id": "12208427",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Fausto Boyhood National Memorial, Fausto City, Carter Township, Spencer, Indiana, United States"
+                        }
+                      ],
+                      "original": "Fausto Boyhood National Memorial, Fausto City, Carter Township, Spencer, Indiana, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Female"
+                },
+                "id": "SH88-N7M",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/SH88-N7M?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/SH88-N7M/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Nina Hugo",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Nina"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Hugo"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Nina Teodoro",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Nina"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Teodoro"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/AlsoKnownAs"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Nina Hugo Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Nina Hugo"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/MarriedName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Nina Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Nina"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/AlsoKnownAs"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": true,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "1 August 1843",
+                  "birthPlace": "Zeca, Sangamon, Illinois, United States",
+                  "deathDate": "26 July 1926",
+                  "deathPlace": "Manchester, Bennington, Vermont, United States",
+                  "gender": "Male",
+                  "name": "Davi Gilda Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1843-08-01",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1 August 1843"
+                        }
+                      ],
+                      "original": "1 August 1843"
+                    },
+                    "place": {
+                      "description": "#4033952",
+                      "id": "4033952",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1926",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1926"
+                        }
+                      ],
+                      "original": "1926"
+                    },
+                    "place": {
+                      "description": "#5405273",
+                      "id": "5405273",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Arlington National Cemetery, Arlington, Virginia, United States"
+                        }
+                      ],
+                      "original": "Arlington National Cemetery, Arlington, Virginia, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1926-07-26",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "26 July 1926"
+                        }
+                      ],
+                      "original": "26 July 1926"
+                    },
+                    "place": {
+                      "description": "#5405463",
+                      "id": "5405463",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Manchester, Bennington, Vermont, United States"
+                        }
+                      ],
+                      "original": "Manchester, Bennington, Vermont, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "D24P-M3D",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/D24P-M3D?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/D24P-M3D/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Davi Gilda Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Davi Gilda"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Davi Gilda Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Davi Gilda"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Davi MAURO Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Davi MAURO"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/AlsoKnownAs"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "6 January 1778",
+                  "birthPlace": "Rockingham, Virginia, United States",
+                  "deathDate": "17 January 1851",
+                  "deathPlace": "Goosenest Prairie, Coles, Illinois, United States",
+                  "gender": "Male",
+                  "name": "Mauro Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1778-01-06",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "6 January 1778"
+                        }
+                      ],
+                      "original": "6 January 1778"
+                    },
+                    "place": {
+                      "description": "#395050",
+                      "id": "395050",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Rockingham, Virginia, United States"
+                        }
+                      ],
+                      "original": "Rockingham, Virginia, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1851-01-17",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "17 January 1851"
+                        }
+                      ],
+                      "original": "17 January 1851"
+                    },
+                    "place": {
+                      "description": "#8644373",
+                      "id": "8644373",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Goosenest Prairie, Coles, Illinois, United States"
+                        }
+                      ],
+                      "original": "Goosenest Prairie, Coles, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1780-01-20",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "20 January 1780"
+                        }
+                      ],
+                      "original": "20 January 1780"
+                    },
+                    "place": {
+                      "description": "#4193566",
+                      "id": "4193566",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Harding, Union, Kentucky, United States"
+                        }
+                      ],
+                      "original": "Harding, Union, Kentucky, United States"
+                    },
+                    "type": "http://gedcomx.org/Christening"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1851-01",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "January 1851"
+                        }
+                      ],
+                      "original": "January 1851"
+                    },
+                    "place": {
+                      "description": "#5837478",
+                      "id": "5837478",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Mauro Lincoin Cemetery, Pleasant Grove Township, Coles, Illinois, United States"
+                        }
+                      ],
+                      "original": "Mauro Fausto Cemetery, Pleasant Grove Township, Coles, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "R0PS-M65",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/R0PS-M65?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/R0PS-M65/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Mauro Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Mauro"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": true,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "4 April 1853",
+                  "birthPlace": "Zeca, Sangamon, Illinois, United States",
+                  "deathDate": "15 July 1871",
+                  "deathPlace": "Chicago, Cook, Illinois, United States",
+                  "gender": "Male",
+                  "name": "Mauro Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1853-04-04",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "4 April 1853"
+                        }
+                      ],
+                      "original": "4 April 1853"
+                    },
+                    "place": {
+                      "description": "#4033952",
+                      "id": "4033952",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1871",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1871"
+                        }
+                      ],
+                      "original": "1871"
+                    },
+                    "place": {
+                      "description": "#5797317",
+                      "id": "5797317",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1871-07-15",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "15 July 1871"
+                        }
+                      ],
+                      "original": "15 July 1871"
+                    },
+                    "place": {
+                      "description": "#4035838",
+                      "id": "4035838",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Chicago, Cook, Illinois, United States"
+                        }
+                      ],
+                      "original": "Chicago, Cook, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "NN96-LKX",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/NN96-LKX?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/NN96-LKX/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Mauro Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Mauro"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Teodoro Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Teodoro"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/Nickname"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Almeida",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Almeida"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/Nickname"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Mauro Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Mauro"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "13 December 1818",
+                  "birthPlace": "Lexington, Fayette, Kentucky, United States",
+                  "deathDate": "16 July 1882",
+                  "deathPlace": "Zeca, Sangamon, Illinois, United States",
+                  "gender": "Female",
+                  "name": "Hugo Otávio Gilda",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1818-12-13",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "13 December 1818"
+                        }
+                      ],
+                      "original": "13 December 1818"
+                    },
+                    "place": {
+                      "description": "#4136395",
+                      "id": "4136395",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Lexington, Fayette, Kentucky, United States"
+                        }
+                      ],
+                      "original": "Lexington, Fayette, Kentucky, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1882-07",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "July 1882"
+                        }
+                      ],
+                      "original": "July 1882"
+                    },
+                    "place": {
+                      "description": "#5797317",
+                      "id": "5797317",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1882-07-16",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "16 July 1882"
+                        }
+                      ],
+                      "original": "16 July 1882"
+                    },
+                    "place": {
+                      "description": "#4033952",
+                      "id": "4033952",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Female"
+                },
+                "id": "ZMCV-S02",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/ZMCV-S02?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/ZMCV-S02/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Hugo Otávio Gilda",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Hugo Otávio"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Gilda"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Hugo Otávio \" Paula\" Gilda",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Hugo Otávio \" Paula\""
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Gilda"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Hugo PAULA Gilda",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Hugo PAULA"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Gilda"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              }
+            ],
+            "places": [
+              {
+                "id": "11827005",
+                "latitude": 38.1042,
+                "longitude": -87.0331,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Gentryville, Spencer, Indiana, United States"
+                  }
+                ]
+              },
+              {
+                "id": "12208427",
+                "latitude": 38.1157,
+                "longitude": -86.9959,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Fausto Boyhood National Memorial, Fausto City, Carter Township, Spencer, Indiana, United States"
+                  }
+                ]
+              },
+              {
+                "id": "394157",
+                "latitude": 37.7,
+                "longitude": -85.966668,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Hardin, Kentucky, United States"
+                  }
+                ]
+              },
+              {
+                "id": "395050",
+                "latitude": 38.516669,
+                "longitude": -78.88333,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Rockingham, Virginia, United States"
+                  }
+                ]
+              },
+              {
+                "id": "396171",
+                "latitude": 39.333328,
+                "longitude": -78.599997,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Hampshire, Virginia, United States"
+                  }
+                ]
+              },
+              {
+                "id": "396903",
+                "latitude": 38.895,
+                "longitude": -77.0367,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Washington, District of Columbia, United States"
+                  }
+                ]
+              },
+              {
+                "id": "4033952",
+                "latitude": 39.8017,
+                "longitude": -89.6436,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Zeca, Sangamon, Illinois, United States"
+                  }
+                ]
+              },
+              {
+                "id": "4035838",
+                "latitude": 41.8853,
+                "longitude": -87.6338,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Chicago, Cook, Illinois, United States"
+                  }
+                ]
+              },
+              {
+                "id": "4136395",
+                "latitude": 38.04216,
+                "longitude": -84.50498,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Lexington, Fayette, Kentucky, United States"
+                  }
+                ]
+              },
+              {
+                "id": "4193566",
+                "latitude": 37.64806,
+                "longitude": -87.98556,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Harding, Union, Kentucky, United States"
+                  }
+                ]
+              },
+              {
+                "id": "5405273",
+                "latitude": 38.8792,
+                "longitude": -77.0739,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Arlington National Cemetery, Arlington, Virginia, United States"
+                  }
+                ]
+              },
+              {
+                "id": "5405463",
+                "latitude": 43.16167,
+                "longitude": -73.07194,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Manchester, Bennington, Vermont, United States"
+                  }
+                ]
+              },
+              {
+                "id": "5797317",
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                  }
+                ]
+              },
+              {
+                "id": "5837478",
+                "latitude": 39.387819,
+                "longitude": -88.23659,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Mauro Lincoin Cemetery, Pleasant Grove Township, Coles, Illinois, United States"
+                  }
+                ]
+              },
+              {
+                "id": "8644373",
+                "latitude": 39.3847,
+                "longitude": -88.2022,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Goosenest Prairie, Coles, Illinois, United States"
+                  }
+                ]
+              }
+            ],
+            "relationships": [
+              {
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1842-11-04",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "4 November 1842"
+                        }
+                      ],
+                      "original": "4 November 1842"
+                    },
+                    "place": {
+                      "description": "#4033952",
+                      "id": "4033952",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Zeca, Sangamon, Illinois, United States"
+                        }
+                      ],
+                      "original": "Zeca, Sangamon, Illinois, United States"
+                    },
+                    "type": "http://gedcomx.org/Marriage"
+                  }
+                ],
+                "person1": {
+                  "resource": "#X8MM-G4S",
+                  "resourceId": "X8MM-G4S"
+                },
+                "person2": {
+                  "resource": "#ZMCV-S02",
+                  "resourceId": "ZMCV-S02"
+                },
+                "type": "http://gedcomx.org/Couple"
+              },
+              {
+                "person1": {
+                  "resource": "#R0PS-M65",
+                  "resourceId": "R0PS-M65"
+                },
+                "person2": {
+                  "resource": "#X8MM-G4S",
+                  "resourceId": "X8MM-G4S"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#SH88-N7M",
+                  "resourceId": "SH88-N7M"
+                },
+                "person2": {
+                  "resource": "#X8MM-G4S",
+                  "resourceId": "X8MM-G4S"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#X8MM-G4S",
+                  "resourceId": "X8MM-G4S"
+                },
+                "person2": {
+                  "resource": "#D24P-M3D",
+                  "resourceId": "D24P-M3D"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZMCV-S02",
+                  "resourceId": "ZMCV-S02"
+                },
+                "person2": {
+                  "resource": "#D24P-M3D",
+                  "resourceId": "D24P-M3D"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#X8MM-G4S",
+                  "resourceId": "X8MM-G4S"
+                },
+                "person2": {
+                  "resource": "#BN5M-W2H",
+                  "resourceId": "BN5M-W2H"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZMCV-S02",
+                  "resourceId": "ZMCV-S02"
+                },
+                "person2": {
+                  "resource": "#BN5M-W2H",
+                  "resourceId": "BN5M-W2H"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#X8MM-G4S",
+                  "resourceId": "X8MM-G4S"
+                },
+                "person2": {
+                  "resource": "#70CN-RXW",
+                  "resourceId": "70CN-RXW"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZMCV-S02",
+                  "resourceId": "ZMCV-S02"
+                },
+                "person2": {
+                  "resource": "#70CN-RXW",
+                  "resourceId": "70CN-RXW"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#X8MM-G4S",
+                  "resourceId": "X8MM-G4S"
+                },
+                "person2": {
+                  "resource": "#NN96-LKX",
+                  "resourceId": "NN96-LKX"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZMCV-S02",
+                  "resourceId": "ZMCV-S02"
+                },
+                "person2": {
+                  "resource": "#NN96-LKX",
+                  "resourceId": "NN96-LKX"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              }
+            ]
+          }
+        },
+        "id": "X8MM-G4S",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S?flag=fsh"
+          }
+        },
+        "score": 4.1236,
+        "title": "Person X8MM-G4S (Rui Lia Fausto)",
+        "matchInfo": [
+          {
+            "collection": "https://familysearch.org/platform/collections/tree"
+          }
+        ]
+      },
+      {
+        "confidence": 4,
+        "content": {
+          "gedcomx": {
+            "description": "#SD-ZBGH-GF6",
+            "id": "ark:/61903/4:1:ZBGH-GF6",
+            "persons": [
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "1810",
+                  "birthPlace": "Fausto, North Carolina, United States",
+                  "deathPlace": "Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Male",
+                  "name": "Lia Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1810",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1810"
+                        }
+                      ],
+                      "original": "1810"
+                    },
+                    "place": {
+                      "description": "#393068",
+                      "id": "393068",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Fausto, North Carolina, United States"
+                        }
+                      ],
+                      "original": "Fausto County, North Carolina, USA"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "place": {
+                      "description": "#352",
+                      "id": "352",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Missouri, United States"
+                        }
+                      ],
+                      "original": "Missouri, USA"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1860",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1860"
+                        }
+                      ],
+                      "original": "1860"
+                    },
+                    "place": {
+                      "description": "#4371169",
+                      "id": "4371169",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Castor Township, Stoddard, Missouri, United States"
+                        }
+                      ],
+                      "original": "Castor Township, Stoddard, Missouri, United States"
+                    },
+                    "type": "http://gedcomx.org/Residence"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "ZBGH-GF6",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/ZBGH-GF6?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/ZBGH-GF6/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Lia Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Lia"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "1859",
+                  "birthPlace": "Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Male",
+                  "name": "Elisa Rui Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1859",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1859"
+                        }
+                      ],
+                      "original": "1859"
+                    },
+                    "place": {
+                      "description": "#352",
+                      "id": "352",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Missouri, United States"
+                        }
+                      ],
+                      "original": "Missouri, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "2DB5-8BD",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/2DB5-8BD?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/2DB5-8BD/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Elisa Rui Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Elisa Rui"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Elisa Rui Hugo",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Elisa Rui"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Hugo"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Elisa PAULA Fausto",
+                        "lang": "x-Latn",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Elisa PAULA"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "1846",
+                  "birthPlace": "Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Female",
+                  "name": "Elisa Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1846",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1846"
+                        }
+                      ],
+                      "original": "1846"
+                    },
+                    "place": {
+                      "description": "#352",
+                      "id": "352",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Missouri, United States"
+                        }
+                      ],
+                      "original": "Missouri, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Female"
+                },
+                "id": "5KX7-VLF",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/5KX7-VLF?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/5KX7-VLF/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Elisa Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Elisa"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "1850",
+                  "birthPlace": "Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Male",
+                  "name": "Nina Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1850",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1850"
+                        }
+                      ],
+                      "original": "1850"
+                    },
+                    "place": {
+                      "description": "#352",
+                      "id": "352",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Missouri, United States"
+                        }
+                      ],
+                      "original": "Missouri, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "071J-DTN",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/071J-DTN?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/071J-DTN/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Nina Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Nina"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "1848",
+                  "birthPlace": "Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Male",
+                  "name": "Lima IARA Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1848",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1848"
+                        }
+                      ],
+                      "original": "1848"
+                    },
+                    "place": {
+                      "description": "#352",
+                      "id": "352",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Missouri, United States"
+                        }
+                      ],
+                      "original": "Missouri, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "PGZR-TTN",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/PGZR-TTN?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/PGZR-TTN/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Lima IARA Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Lima IARA"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "1854",
+                  "birthPlace": "Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Female",
+                  "name": "Hugo Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1854",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1854"
+                        }
+                      ],
+                      "original": "1854"
+                    },
+                    "place": {
+                      "description": "#352",
+                      "id": "352",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Missouri, United States"
+                        }
+                      ],
+                      "original": "Missouri"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Female"
+                },
+                "id": "S8NM-2JM",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/S8NM-2JM?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/S8NM-2JM/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Hugo Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Hugo"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "1852",
+                  "birthPlace": "Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Male",
+                  "name": "Dias ALMEIDA Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1852",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1852"
+                        }
+                      ],
+                      "original": "1852"
+                    },
+                    "place": {
+                      "description": "#352",
+                      "id": "352",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Missouri, United States"
+                        }
+                      ],
+                      "original": "Missouri, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "6NFT-CH1",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/6NFT-CH1?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/6NFT-CH1/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Dias ALMEIDA Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Dias ALMEIDA"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "1822",
+                  "birthPlace": "Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Female",
+                  "name": "Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1822",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1822"
+                        }
+                      ],
+                      "original": "1822"
+                    },
+                    "place": {
+                      "description": "#352",
+                      "id": "352",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Missouri, United States"
+                        }
+                      ],
+                      "original": "Missouri, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Female"
+                },
+                "id": "CW4D-58P",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/CW4D-58P?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/CW4D-58P/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "1844",
+                  "birthPlace": "Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Male",
+                  "name": "Elisa Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1844",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1844"
+                        }
+                      ],
+                      "original": "1844"
+                    },
+                    "place": {
+                      "description": "#352",
+                      "id": "352",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Missouri, United States"
+                        }
+                      ],
+                      "original": "Missouri"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "JVDX-B9K",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/JVDX-B9K?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/JVDX-B9K/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Elisa Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Elisa"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "1842",
+                  "birthPlace": "Missouri, United States",
+                  "deathDate": "21 March 1911",
+                  "descendancyNumber": "1",
+                  "gender": "Male",
+                  "name": "Fausto FAUSTO Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1842",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1842"
+                        }
+                      ],
+                      "original": "1842"
+                    },
+                    "place": {
+                      "description": "#352",
+                      "id": "352",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Missouri, United States"
+                        }
+                      ],
+                      "original": "Missouri, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1911-03-21",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "21 March 1911"
+                        }
+                      ],
+                      "original": "21 Mar 1911"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "VXP9-2N1",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/VXP9-2N1?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/VXP9-2N1/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Fausto FAUSTO Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Fausto FAUSTO"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "about 1787",
+                  "birthPlace": "North Carolina, United States",
+                  "deathDate": "1852",
+                  "deathPlace": "Glenallen, Bollinger, Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Male",
+                  "name": "Mauro Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "A+1787",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "about 1787"
+                        }
+                      ],
+                      "original": "about 1787"
+                    },
+                    "place": {
+                      "description": "#337",
+                      "id": "337",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "North Carolina, United States"
+                        }
+                      ],
+                      "original": "North Carolina, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1852",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1852"
+                        }
+                      ],
+                      "original": "1852"
+                    },
+                    "place": {
+                      "description": "#4322574",
+                      "id": "4322574",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Glenallen, Bollinger, Missouri, United States"
+                        }
+                      ],
+                      "original": "Glenallen, Bollinger, Missouri, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "R3NW-JQV",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/R3NW-JQV?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/R3NW-JQV/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Mauro Fausto",
+                        "lang": "en",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Mauro"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "about 1780",
+                  "birthPlace": "Fausto, North Carolina, United States",
+                  "deathDate": "about 1836",
+                  "deathPlace": "Glenallen, Bollinger, Missouri, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Female",
+                  "name": "Paula Almeida",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "A+1780",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "about 1780"
+                        }
+                      ],
+                      "original": "about 1780"
+                    },
+                    "place": {
+                      "description": "#393068",
+                      "id": "393068",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Fausto, North Carolina, United States"
+                        }
+                      ],
+                      "original": "Fausto, North Carolina, USA"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "A+1836",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "about 1836"
+                        }
+                      ],
+                      "original": "Abt 1836"
+                    },
+                    "place": {
+                      "description": "#4322574",
+                      "id": "4322574",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Glenallen, Bollinger, Missouri, United States"
+                        }
+                      ],
+                      "original": "Glenallen, Bollinger County, Missouri, United States of America"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Female"
+                },
+                "id": "F7SR-GBL",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/F7SR-GBL?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/F7SR-GBL/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Paula Almeida",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Paula"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Almeida"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Teodoro Almeida",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Teodoro"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Almeida"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Henriques Almeida",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Henriques"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Almeida"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Paula Teodoro Almeida",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Paula Teodoro"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Almeida"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Paula Almeida",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Paula"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Almeida"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": false,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              }
+            ],
+            "places": [
+              {
+                "id": "337",
+                "latitude": 35.5,
+                "longitude": -80,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "North Carolina, United States"
+                  }
+                ]
+              },
+              {
+                "id": "352",
+                "latitude": 38.2503,
+                "longitude": -92.5003,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Missouri, United States"
+                  }
+                ]
+              },
+              {
+                "id": "393068",
+                "latitude": 35.48333,
+                "longitude": -81.25,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Fausto, North Carolina, United States"
+                  }
+                ]
+              },
+              {
+                "id": "4322574",
+                "latitude": 37.3178,
+                "longitude": -90.0278,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Glenallen, Bollinger, Missouri, United States"
+                  }
+                ]
+              },
+              {
+                "id": "4371169",
+                "latitude": 36.88667,
+                "longitude": -89.93139,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Castor Township, Stoddard, Missouri, United States"
+                  }
+                ]
+              }
+            ],
+            "relationships": [
+              {
+                "person1": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "person2": {
+                  "resource": "#CW4D-58P",
+                  "resourceId": "CW4D-58P"
+                },
+                "type": "http://gedcomx.org/Couple"
+              },
+              {
+                "person1": {
+                  "resource": "#R3NW-JQV",
+                  "resourceId": "R3NW-JQV"
+                },
+                "person2": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#F7SR-GBL",
+                  "resourceId": "F7SR-GBL"
+                },
+                "person2": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "person2": {
+                  "resource": "#071J-DTN",
+                  "resourceId": "071J-DTN"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#CW4D-58P",
+                  "resourceId": "CW4D-58P"
+                },
+                "person2": {
+                  "resource": "#071J-DTN",
+                  "resourceId": "071J-DTN"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "person2": {
+                  "resource": "#VXP9-2N1",
+                  "resourceId": "VXP9-2N1"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#CW4D-58P",
+                  "resourceId": "CW4D-58P"
+                },
+                "person2": {
+                  "resource": "#VXP9-2N1",
+                  "resourceId": "VXP9-2N1"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "person2": {
+                  "resource": "#S8NM-2JM",
+                  "resourceId": "S8NM-2JM"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#CW4D-58P",
+                  "resourceId": "CW4D-58P"
+                },
+                "person2": {
+                  "resource": "#S8NM-2JM",
+                  "resourceId": "S8NM-2JM"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "person2": {
+                  "resource": "#6NFT-CH1",
+                  "resourceId": "6NFT-CH1"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#CW4D-58P",
+                  "resourceId": "CW4D-58P"
+                },
+                "person2": {
+                  "resource": "#6NFT-CH1",
+                  "resourceId": "6NFT-CH1"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "person2": {
+                  "resource": "#JVDX-B9K",
+                  "resourceId": "JVDX-B9K"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#CW4D-58P",
+                  "resourceId": "CW4D-58P"
+                },
+                "person2": {
+                  "resource": "#JVDX-B9K",
+                  "resourceId": "JVDX-B9K"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "person2": {
+                  "resource": "#PGZR-TTN",
+                  "resourceId": "PGZR-TTN"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#CW4D-58P",
+                  "resourceId": "CW4D-58P"
+                },
+                "person2": {
+                  "resource": "#PGZR-TTN",
+                  "resourceId": "PGZR-TTN"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "person2": {
+                  "resource": "#5KX7-VLF",
+                  "resourceId": "5KX7-VLF"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#CW4D-58P",
+                  "resourceId": "CW4D-58P"
+                },
+                "person2": {
+                  "resource": "#5KX7-VLF",
+                  "resourceId": "5KX7-VLF"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#ZBGH-GF6",
+                  "resourceId": "ZBGH-GF6"
+                },
+                "person2": {
+                  "resource": "#2DB5-8BD",
+                  "resourceId": "2DB5-8BD"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#CW4D-58P",
+                  "resourceId": "CW4D-58P"
+                },
+                "person2": {
+                  "resource": "#2DB5-8BD",
+                  "resourceId": "2DB5-8BD"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#R3NW-JQV",
+                  "resourceId": "R3NW-JQV"
+                },
+                "person2": {
+                  "resource": "#F7SR-GBL",
+                  "resourceId": "F7SR-GBL"
+                },
+                "type": "http://gedcomx.org/Couple"
+              }
+            ]
+          }
+        },
+        "id": "ZBGH-GF6",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/ZBGH-GF6?flag=fsh"
+          }
+        },
+        "score": 4.1136003,
+        "title": "Person ZBGH-GF6 (Lia Fausto)",
+        "matchInfo": [
+          {
+            "collection": "https://familysearch.org/platform/collections/tree"
+          }
+        ]
+      },
+      {
+        "confidence": 4,
+        "content": {
+          "gedcomx": {
+            "description": "#sdp_F8WN-SRZ",
+            "persons": [
+              {
+                "display": {
+                  "ascendancyNumber": "1",
+                  "birthDate": "12 July 1812",
+                  "birthPlace": "Pennsylvania, United States",
+                  "deathDate": "11 February 1900",
+                  "deathPlace": "Caernarvon Township, Lancaster, Pennsylvania, United States",
+                  "descendancyNumber": "1",
+                  "gender": "Male",
+                  "name": "Lia Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1812-07-12",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "12 July 1812"
+                        }
+                      ],
+                      "original": "12 July 1812"
+                    },
+                    "place": {
+                      "description": "#338",
+                      "id": "338",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1900-02-11",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "11 February 1900"
+                        }
+                      ],
+                      "original": "11 February 1900"
+                    },
+                    "place": {
+                      "description": "#10939440",
+                      "id": "10939440",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1850",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1850"
+                        }
+                      ],
+                      "original": "1850"
+                    },
+                    "place": {
+                      "description": "#10939440",
+                      "id": "10939440",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Residence"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1860",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1860"
+                        }
+                      ],
+                      "original": "1860"
+                    },
+                    "place": {
+                      "description": "#10939440",
+                      "id": "10939440",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Residence"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1870",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1870"
+                        }
+                      ],
+                      "original": "1870"
+                    },
+                    "place": {
+                      "description": "#10939440",
+                      "id": "10939440",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Residence"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1880",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1880"
+                        }
+                      ],
+                      "original": "1880"
+                    },
+                    "place": {
+                      "description": "#10939440",
+                      "id": "10939440",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Caernarvon, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Residence"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1900",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1900"
+                        }
+                      ],
+                      "original": "1900"
+                    },
+                    "place": {
+                      "description": "#8552743",
+                      "id": "8552743",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Occupation",
+                    "value": "Farmer"
+                  },
+                  {
+                    "place": {
+                      "description": "#10578684",
+                      "id": "10578684",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Caernarfonshire, Wales, United Kingdom"
+                        }
+                      ],
+                      "original": "Caernarvon, Lanc"
+                    },
+                    "type": "http://gedcomx.org/Residence"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "F8WN-SRZ",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/F8WN-SRZ?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/F8WN-SRZ/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Lia Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Lia"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Lia ( Ana ELISA) Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Lia ( Ana ELISA)"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": true,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "10 November 1840",
+                  "birthPlace": "Lancaster, Pennsylvania, United States",
+                  "gender": "Female",
+                  "name": "Hugo Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1840-11-10",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "10 November 1840"
+                        }
+                      ],
+                      "original": "10 November 1840"
+                    },
+                    "place": {
+                      "description": "#395814",
+                      "id": "395814",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "place": {
+                      "description": "#8552743",
+                      "id": "8552743",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Female"
+                },
+                "id": "GB64-M3L",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/GB64-M3L?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/GB64-M3L/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Hugo Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Hugo"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Hugo Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Hugo"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": true,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "5 May 1767",
+                  "birthPlace": "Berks, Pennsylvania, British Colonial America",
+                  "deathDate": "11 December 1860",
+                  "deathPlace": "Caernarvon Township, Berks, Pennsylvania, United States",
+                  "gender": "Male",
+                  "name": "Elisa Henriques Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1767-05-05",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "5 May 1767"
+                        }
+                      ],
+                      "original": "5 May 1767"
+                    },
+                    "place": {
+                      "description": "#395694",
+                      "id": "395694",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Berks, Pennsylvania, British Colonial America"
+                        }
+                      ],
+                      "original": "Berks, Pennsylvania, British Colonial America"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1860-12-11",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "11 December 1860"
+                        }
+                      ],
+                      "original": "11 December 1860"
+                    },
+                    "place": {
+                      "description": "#4839927",
+                      "id": "4839927",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Caernarvon Township, Berks, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Caernarvon Township, Berks, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1860-12",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "December 1860"
+                        }
+                      ],
+                      "original": "December 1860"
+                    },
+                    "place": {
+                      "description": "#10775780",
+                      "id": "10775780",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Saint Mauro Episcopal Church Cemetery, Morgantown, Caernarvon Township, Berks, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "St Mauro Episcopal Church Cemetery, Morgantown, Berks, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Male"
+                },
+                "id": "D1XJ-85P",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/D1XJ-85P?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/D1XJ-85P/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Elisa Henriques Fausto",
+                        "lang": "x-Latn",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Elisa Henriques"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": true,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "23 June 1819",
+                  "birthPlace": "Pennsylvania, United States",
+                  "deathDate": "17 February 1900",
+                  "deathPlace": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States",
+                  "gender": "Female",
+                  "name": "Hugo MAURO Esteves",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1819-06-23",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "23 June 1819"
+                        }
+                      ],
+                      "original": "23 Jun 1819"
+                    },
+                    "place": {
+                      "description": "#338",
+                      "id": "338",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1900-02-17",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "17 February 1900"
+                        }
+                      ],
+                      "original": "17 February 1900"
+                    },
+                    "place": {
+                      "description": "#8552743",
+                      "id": "8552743",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1900",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1900"
+                        }
+                      ],
+                      "original": "1900"
+                    },
+                    "place": {
+                      "description": "#8552743",
+                      "id": "8552743",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Female"
+                },
+                "id": "49PT-63V",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/49PT-63V?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/49PT-63V/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Hugo HENRIQUES Esteves",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Hugo HENRIQUES"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Esteves"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Hugo Lia Esteves",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Hugo Lia"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Esteves"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Hugo PAULA Esteves",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Hugo PAULA"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Esteves"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Hugo MAURO Esteves",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Hugo MAURO"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Esteves"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": true,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "11 August 1771",
+                  "birthPlace": "Caernarvon Township, Lancaster, Pennsylvania, United States",
+                  "deathDate": "28 December 1829",
+                  "deathPlace": "Caernarvon Township, Berks, Pennsylvania, United States",
+                  "gender": "Female",
+                  "name": "Paula Fausto Lia",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1771-08-11",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "11 August 1771"
+                        }
+                      ],
+                      "original": "11 August 1771"
+                    },
+                    "place": {
+                      "description": "#10939440",
+                      "id": "10939440",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1829-12-28",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "28 December 1829"
+                        }
+                      ],
+                      "original": "28 December 1829"
+                    },
+                    "place": {
+                      "description": "#4839927",
+                      "id": "4839927",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Caernarvon Township, Berks, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Caernarvon Township, Berks, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "place": {
+                      "description": "#10775780",
+                      "id": "10775780",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Saint Mauro Episcopal Church Cemetery, Morgantown, Caernarvon Township, Berks, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Saint Mauro Episcopal Church Cemetery, Morgantown, Berks, Pennsylvania, United States of America"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Female"
+                },
+                "id": "510B-9H9",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/510B-9H9?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/510B-9H9/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Fausto MAURO",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Fausto MAURO"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Paula Fausto Lia",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Paula Fausto"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Lia"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": true,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              },
+              {
+                "display": {
+                  "birthDate": "10 November 1840",
+                  "birthPlace": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States",
+                  "deathDate": "26 June 1904",
+                  "deathPlace": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States",
+                  "gender": "Female",
+                  "name": "Fausto Fausto",
+                  "role": "Other"
+                },
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1840-11-10",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "10 November 1840"
+                        }
+                      ],
+                      "original": "10 November 1840"
+                    },
+                    "place": {
+                      "description": "#8552743",
+                      "id": "8552743",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Birth"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1904-06-26",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "26 June 1904"
+                        }
+                      ],
+                      "original": "26 June 1904"
+                    },
+                    "place": {
+                      "description": "#8552743",
+                      "id": "8552743",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Death"
+                  },
+                  {
+                    "date": {
+                      "formal": "+1904",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "1904"
+                        }
+                      ],
+                      "original": "1904"
+                    },
+                    "place": {
+                      "description": "#10781789",
+                      "id": "10781789",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Bangor Episcopal Cemetery, Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Bangor Episcopal Cemetery, Churchtown, Lancaster, Pennsylvania, United States of America"
+                    },
+                    "type": "http://gedcomx.org/Burial"
+                  }
+                ],
+                "gender": {
+                  "type": "http://gedcomx.org/Female"
+                },
+                "id": "BBTM-SD0",
+                "links": {
+                  "person": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/BBTM-SD0?flag=fsh"
+                  },
+                  "portrait": {
+                    "href": "https://www.familysearch.org/platform/tree/persons/BBTM-SD0/portrait?flag=fsh"
+                  }
+                },
+                "living": false,
+                "names": [
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Fausto Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Fausto"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": true,
+                    "type": "http://gedcomx.org/BirthName"
+                  },
+                  {
+                    "nameForms": [
+                      {
+                        "fullText": "Fausto Fausto",
+                        "parts": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "value": "Fausto"
+                          },
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "value": "Fausto"
+                          }
+                        ]
+                      }
+                    ],
+                    "preferred": false,
+                    "type": "http://gedcomx.org/BirthName"
+                  }
+                ],
+                "personInfo": [
+                  {
+                    "canUserEdit": true,
+                    "visibleToAll": true,
+                    "visibleToAllWhenUsingFamilySearchApps": true
+                  }
+                ]
+              }
+            ],
+            "places": [
+              {
+                "id": "10578684",
+                "latitude": 53.1065,
+                "longitude": -4.2305,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Caernarfonshire, Wales, United Kingdom"
+                  }
+                ]
+              },
+              {
+                "id": "10775780",
+                "latitude": 40.1575,
+                "longitude": -75.8902,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Saint Mauro Episcopal Church Cemetery, Morgantown, Caernarvon Township, Berks, Pennsylvania, United States"
+                  }
+                ]
+              },
+              {
+                "id": "10781789",
+                "latitude": 40.1338,
+                "longitude": -75.9615,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Bangor Episcopal Cemetery, Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                  }
+                ]
+              },
+              {
+                "id": "10939440",
+                "latitude": 40.1369,
+                "longitude": -75.9583,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Caernarvon Township, Lancaster, Pennsylvania, United States"
+                  }
+                ]
+              },
+              {
+                "id": "338",
+                "latitude": 40.75,
+                "longitude": -77.75,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Pennsylvania, United States"
+                  }
+                ]
+              },
+              {
+                "id": "395694",
+                "latitude": 40.418,
+                "longitude": -75.904,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Berks, Pennsylvania, British Colonial America"
+                  }
+                ]
+              },
+              {
+                "id": "395814",
+                "latitude": 40.038,
+                "longitude": -76.227,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Lancaster, Pennsylvania, United States"
+                  }
+                ]
+              },
+              {
+                "id": "4839927",
+                "latitude": 40.1672,
+                "longitude": -75.8786,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Caernarvon Township, Berks, Pennsylvania, United States"
+                  }
+                ]
+              },
+              {
+                "id": "4839929",
+                "latitude": 40.2542,
+                "longitude": -76.0083,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Brecknock Township, Berks, Pennsylvania, United States"
+                  }
+                ]
+              },
+              {
+                "id": "8552743",
+                "latitude": 40.1331,
+                "longitude": -75.965,
+                "names": [
+                  {
+                    "lang": "en-US",
+                    "value": "Churchtown, Caernarvon Township, Lancaster, Pennsylvania, United States"
+                  }
+                ]
+              }
+            ],
+            "relationships": [
+              {
+                "facts": [
+                  {
+                    "date": {
+                      "formal": "+1839-12-19",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "19 December 1839"
+                        }
+                      ],
+                      "original": "19 Dec 1839"
+                    },
+                    "place": {
+                      "description": "#4839929",
+                      "id": "4839929",
+                      "normalized": [
+                        {
+                          "lang": "en-US",
+                          "value": "Brecknock Township, Berks, Pennsylvania, United States"
+                        }
+                      ],
+                      "original": "Brecknock Township, Berks, Pennsylvania, United States"
+                    },
+                    "type": "http://gedcomx.org/Marriage"
+                  }
+                ],
+                "person1": {
+                  "resource": "#F8WN-SRZ",
+                  "resourceId": "F8WN-SRZ"
+                },
+                "person2": {
+                  "resource": "#49PT-63V",
+                  "resourceId": "49PT-63V"
+                },
+                "type": "http://gedcomx.org/Couple"
+              },
+              {
+                "person1": {
+                  "resource": "#D1XJ-85P",
+                  "resourceId": "D1XJ-85P"
+                },
+                "person2": {
+                  "resource": "#F8WN-SRZ",
+                  "resourceId": "F8WN-SRZ"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#510B-9H9",
+                  "resourceId": "510B-9H9"
+                },
+                "person2": {
+                  "resource": "#F8WN-SRZ",
+                  "resourceId": "F8WN-SRZ"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#F8WN-SRZ",
+                  "resourceId": "F8WN-SRZ"
+                },
+                "person2": {
+                  "resource": "#BBTM-SD0",
+                  "resourceId": "BBTM-SD0"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#49PT-63V",
+                  "resourceId": "49PT-63V"
+                },
+                "person2": {
+                  "resource": "#BBTM-SD0",
+                  "resourceId": "BBTM-SD0"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#F8WN-SRZ",
+                  "resourceId": "F8WN-SRZ"
+                },
+                "person2": {
+                  "resource": "#GB64-M3L",
+                  "resourceId": "GB64-M3L"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              },
+              {
+                "person1": {
+                  "resource": "#49PT-63V",
+                  "resourceId": "49PT-63V"
+                },
+                "person2": {
+                  "resource": "#GB64-M3L",
+                  "resourceId": "GB64-M3L"
+                },
+                "type": "http://gedcomx.org/ParentChild"
+              }
+            ]
+          }
+        },
+        "id": "F8WN-SRZ",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/F8WN-SRZ?flag=fsh"
+          }
+        },
+        "score": 4.0936003,
+        "title": "Person F8WN-SRZ (Lia Fausto)",
+        "matchInfo": [
+          {
+            "collection": "https://familysearch.org/platform/collections/tree"
+          }
+        ]
+      }
+    ],
+    "index": 0,
+    "links": {
+      "next": {
+        "href": "https://www.familysearch.org/platform/tree/search?q.givenName=Lia&q.surname=Fausto&q.birthLikeDate=1809&offset=3&count=3&flag=fsh"
+      },
+      "self": {
+        "href": "https://www.familysearch.org/platform/tree/search?q.givenName=Lia&q.surname=Fausto&q.birthLikeDate=1809&offset=0&count=3&flag=fsh"
+      },
+      "collection": {
+        "href": "https://www.familysearch.org/platform/collections/tree?flag=fsh"
+      }
+    },
+    "results": 56517
+  }
+}

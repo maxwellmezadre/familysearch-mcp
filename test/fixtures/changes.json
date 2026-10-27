@@ -1,0 +1,457 @@
+{
+  "status": 200,
+  "location": null,
+  "body": {
+    "entries": [
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "58ce84d0-a843-11f0-a38b-f75680295105_0_0-219137937.removed"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "58ce84d0-a843-11f0-a38b-f75680295105_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Source Reference Removed",
+        "updated": 1760366765469,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/SourceReference",
+            "operation": "http://familysearch.org/v1/Delete",
+            "removed": {
+              "resource": "#58ce84d0-a843-11f0-a38b-f75680295105_0_0-219137937.removed",
+              "resourceId": "58ce84d0-a843-11f0-a38b-f75680295105_0_0-219137937.removed"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "6d51c270-5982-11ef-aaec-25a02fdc756c_0_0-219137937.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "6d51c270-5982-11ef-aaec-25a02fdc756c_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Created",
+        "updated": 1723560218647,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Person",
+            "operation": "http://familysearch.org/v1/Create",
+            "reason": "Motivo de teste.",
+            "resulting": {
+              "resource": "#6d51c270-5982-11ef-aaec-25a02fdc756c_0_0-219137937.resulting",
+              "resourceId": "6d51c270-5982-11ef-aaec-25a02fdc756c_0_0-219137937.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "686cdc40-5982-11ef-947d-555ee0dba923_0_0-219137937.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "686cdc40-5982-11ef-947d-555ee0dba923_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Created",
+        "updated": 1723560210436,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Person",
+            "operation": "http://familysearch.org/v1/Create",
+            "reason": "Motivo de teste.",
+            "resulting": {
+              "resource": "#686cdc40-5982-11ef-947d-555ee0dba923_0_0-219137937.resulting",
+              "resourceId": "686cdc40-5982-11ef-947d-555ee0dba923_0_0-219137937.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "613be330-5982-11ef-947d-555ee0dba923_0_0-219137937.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "613be330-5982-11ef-947d-555ee0dba923_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Created",
+        "updated": 1723560198371,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Person",
+            "operation": "http://familysearch.org/v1/Create",
+            "reason": "Motivo de teste.",
+            "resulting": {
+              "resource": "#613be330-5982-11ef-947d-555ee0dba923_0_0-219137937.resulting",
+              "resourceId": "613be330-5982-11ef-947d-555ee0dba923_0_0-219137937.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "5b440660-5982-11ef-b052-059c42299bff_0_0-219137937.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "5b440660-5982-11ef-b052-059c42299bff_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Created",
+        "updated": 1723560188358,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Person",
+            "operation": "http://familysearch.org/v1/Create",
+            "reason": "Motivo de teste.",
+            "resulting": {
+              "resource": "#5b440660-5982-11ef-b052-059c42299bff_0_0-219137937.resulting",
+              "resourceId": "5b440660-5982-11ef-b052-059c42299bff_0_0-219137937.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "5393f240-5982-11ef-8adf-e3f5eeaa8367_0_0-219137937.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "5393f240-5982-11ef-8adf-e3f5eeaa8367_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Created",
+        "updated": 1723560175460,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Person",
+            "operation": "http://familysearch.org/v1/Create",
+            "reason": "Motivo de teste.",
+            "resulting": {
+              "resource": "#5393f240-5982-11ef-8adf-e3f5eeaa8367_0_0-219137937.resulting",
+              "resourceId": "5393f240-5982-11ef-8adf-e3f5eeaa8367_0_0-219137937.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "4f50a340-5982-11ef-b052-059c42299bff_0_0-219137937.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "4f50a340-5982-11ef-b052-059c42299bff_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Created",
+        "updated": 1723560168308,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Person",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#4f50a340-5982-11ef-b052-059c42299bff_0_0-219137937.resulting",
+              "resourceId": "4f50a340-5982-11ef-b052-059c42299bff_0_0-219137937.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "4b500290-5982-11ef-89db-c35a972efc67_0_0-219137937.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "4b500290-5982-11ef-89db-c35a972efc67_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Created",
+        "updated": 1723560161593,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/Person",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#4b500290-5982-11ef-89db-c35a972efc67_0_0-219137937.resulting",
+              "resourceId": "4b500290-5982-11ef-89db-c35a972efc67_0_0-219137937.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "38b596e0-5982-11ef-9ecb-f98fe3218c8f_0_0-219137937.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "38b596e0-5982-11ef-9ecb-f98fe3218c8f_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Source Reference Added",
+        "updated": 1723560130382,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/SourceReference",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#38b596e0-5982-11ef-9ecb-f98fe3218c8f_0_0-219137937.resulting",
+              "resourceId": "38b596e0-5982-11ef-9ecb-f98fe3218c8f_0_0-219137937.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "d84af8e0-5981-11ef-89db-c35a972efc67_0_0-219137937.resulting"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "d84af8e0-5981-11ef-89db-c35a972efc67_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Source Reference Added",
+        "updated": 1723559968622,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/SourceReference",
+            "operation": "http://familysearch.org/v1/Create",
+            "resulting": {
+              "resource": "#d84af8e0-5981-11ef-89db-c35a972efc67_0_0-219137937.resulting",
+              "resourceId": "d84af8e0-5981-11ef-89db-c35a972efc67_0_0-219137937.resulting"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "a8f9c850-5981-11ef-9954-b77ee454aaeb_0_0-219137937.removed"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "a8f9c850-5981-11ef-9954-b77ee454aaeb_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Source Reference Removed",
+        "updated": 1723559889237,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/SourceReference",
+            "operation": "http://familysearch.org/v1/Delete",
+            "removed": {
+              "resource": "#a8f9c850-5981-11ef-9954-b77ee454aaeb_0_0-219137937.removed",
+              "resourceId": "a8f9c850-5981-11ef-9954-b77ee454aaeb_0_0-219137937.removed"
+            }
+          }
+        ]
+      },
+      {
+        "content": {
+          "gedcomx": {
+            "persons": [
+              {
+                "id": "0b6e3580-5981-11ef-832f-c727e07294d0_0_0-219137937.removed"
+              }
+            ]
+          }
+        },
+        "contributors": [
+          {
+            "name": "Teodoro",
+            "uri": "https://www.familysearch.org/platform/users/agents/DDRM-B3V"
+          }
+        ],
+        "id": "0b6e3580-5981-11ef-832f-c727e07294d0_0_0",
+        "links": {
+          "agent": {
+            "href": "https://www.familysearch.org/platform/users/agents/DDRM-B3V?flag=fsh"
+          }
+        },
+        "title": "Person Source Reference Removed",
+        "updated": 1723559624920,
+        "changeInfo": [
+          {
+            "objectModifier": "http://gedcomx.org/Person",
+            "objectType": "http://gedcomx.org/SourceReference",
+            "operation": "http://familysearch.org/v1/Delete",
+            "removed": {
+              "resource": "#0b6e3580-5981-11ef-832f-c727e07294d0_0_0-219137937.removed",
+              "resourceId": "0b6e3580-5981-11ef-832f-c727e07294d0_0_0-219137937.removed"
+            }
+          }
+        ]
+      }
+    ],
+    "links": {
+      "next": {
+        "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/changes?flag=fsh&from=1080f0c0-ca9e-11e9-9005-df97022a889c_2_6"
+      },
+      "person": {
+        "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S?flag=fsh"
+      },
+      "self": {
+        "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/changes?flag=fsh"
+      }
+    },
+    "updated": 1760366765469
+  }
+}

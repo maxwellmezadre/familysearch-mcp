@@ -1,0 +1,4953 @@
+{
+  "status": 200,
+  "location": null,
+  "body": {
+    "childAndParentsRelationships": [
+      {
+        "child": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "id": "RNNZ-LF8",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/RNNZ-LF8?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "parent2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        }
+      },
+      {
+        "child": {
+          "resource": "#D24P-M3D",
+          "resourceId": "D24P-M3D"
+        },
+        "id": "ZHZX-Q6G",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/ZHZX-Q6G?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "parent1Facts": [
+          {
+            "id": "c6d0fbeb-3b96-4aa9-9185-4ed5f4287e6e",
+            "type": "http://gedcomx.org/BiologicalParent"
+          }
+        ],
+        "parent2": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "parent2Facts": [
+          {
+            "id": "ff640a2a-0d4a-463f-bfc5-d2385ae92bf3",
+            "type": "http://gedcomx.org/BiologicalParent"
+          }
+        ]
+      },
+      {
+        "child": {
+          "resource": "#BN5M-W2H",
+          "resourceId": "BN5M-W2H"
+        },
+        "id": "H3VL-X6L",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/H3VL-X6L?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "parent1Facts": [
+          {
+            "id": "39e77d65-f58b-47ef-b5e6-9053e70e3b29",
+            "type": "http://gedcomx.org/BiologicalParent"
+          }
+        ],
+        "parent2": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "parent2Facts": [
+          {
+            "id": "e538e2bb-d561-4e41-bc6a-719549ab0dc9",
+            "type": "http://gedcomx.org/BiologicalParent"
+          }
+        ]
+      },
+      {
+        "child": {
+          "resource": "#70CN-RXW",
+          "resourceId": "70CN-RXW"
+        },
+        "id": "1MJ0-BTB",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/1MJ0-BTB?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "parent1Facts": [
+          {
+            "id": "295fe0b5-2622-433d-9c0f-c55507c0ac2e",
+            "type": "http://gedcomx.org/BiologicalParent"
+          }
+        ],
+        "parent2": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "parent2Facts": [
+          {
+            "id": "42772c6e-980a-4849-9a43-7a9bab93e8a5",
+            "type": "http://gedcomx.org/BiologicalParent"
+          }
+        ]
+      },
+      {
+        "child": {
+          "resource": "#NN96-LKX",
+          "resourceId": "NN96-LKX"
+        },
+        "id": "GR96-4CZ",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/GR96-4CZ?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "parent2": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        }
+      },
+      {
+        "child": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "id": "TT90-HJ4",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/TT90-HJ4?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/R5XG-88N",
+          "resourceId": "R5XG-88N"
+        },
+        "parent2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/J2B5-FFZ",
+          "resourceId": "J2B5-FFZ"
+        }
+      },
+      {
+        "child": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "id": "QV4G-3Z4",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/QV4G-3Z4?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/9DGR-LDZ",
+          "resourceId": "9DGR-LDZ"
+        },
+        "parent2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/7QNB-P6R",
+          "resourceId": "7QNB-P6R"
+        }
+      },
+      {
+        "child": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "id": "GLMG-MXQ",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/GLMG-MXQ?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/W7LR-NJ6",
+          "resourceId": "W7LR-NJ6"
+        },
+        "parent2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/16DJ-5VV",
+          "resourceId": "16DJ-5VV"
+        }
+      },
+      {
+        "child": {
+          "resource": "#C9FR-JWG",
+          "resourceId": "C9FR-JWG"
+        },
+        "id": "HR05-0R5",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/HR05-0R5?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "parent2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        }
+      },
+      {
+        "child": {
+          "resource": "#JP0G-PZX",
+          "resourceId": "JP0G-PZX"
+        },
+        "id": "S063-R3Z",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/S063-R3Z?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "parent2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        }
+      },
+      {
+        "child": {
+          "resource": "#DGC1-H0P",
+          "resourceId": "DGC1-H0P"
+        },
+        "id": "L27N-K1B",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/L27N-K1B?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "parent2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        }
+      },
+      {
+        "child": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/Q0R2-8JS",
+          "resourceId": "Q0R2-8JS"
+        },
+        "id": "W973-QJH",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/W973-QJH?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#D24P-M3D",
+          "resourceId": "D24P-M3D"
+        },
+        "parent2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/GNJV-79X",
+          "resourceId": "GNJV-79X"
+        }
+      },
+      {
+        "child": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/80JK-SCH",
+          "resourceId": "80JK-SCH"
+        },
+        "id": "NKQV-49J",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/NKQV-49J?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#D24P-M3D",
+          "resourceId": "D24P-M3D"
+        },
+        "parent2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/GNJV-79X",
+          "resourceId": "GNJV-79X"
+        }
+      },
+      {
+        "child": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/3JS1-1KZ",
+          "resourceId": "3JS1-1KZ"
+        },
+        "id": "MHHL-SK6",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/MHHL-SK6?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#D24P-M3D",
+          "resourceId": "D24P-M3D"
+        },
+        "parent2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/GNJV-79X",
+          "resourceId": "GNJV-79X"
+        }
+      },
+      {
+        "child": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "id": "Z8KS-162",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/Z8KS-162?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/PQ3D-FMR",
+          "resourceId": "PQ3D-FMR"
+        },
+        "parent2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/Z660-VGD",
+          "resourceId": "Z660-VGD"
+        }
+      },
+      {
+        "child": {
+          "resource": "#HFGG-15P",
+          "resourceId": "HFGG-15P"
+        },
+        "id": "QW8P-1HD",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/QW8P-1HD?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "parent2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/MHHK-51V",
+          "resourceId": "MHHK-51V"
+        }
+      },
+      {
+        "child": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "id": "QXR3-MK2",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/child-and-parents-relationships/QXR3-MK2?flag=fsh"
+          }
+        },
+        "parent1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/DW99-PVP",
+          "resourceId": "DW99-PVP"
+        },
+        "parent2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/7TPK-L11",
+          "resourceId": "7TPK-L11"
+        }
+      }
+    ],
+    "description": "#sd_person_X8MM-G4S",
+    "links": {
+      "person": {
+        "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S?flag=fsh"
+      },
+      "collection": {
+        "href": "https://www.familysearch.org/platform/collections/tree?flag=fsh"
+      },
+      "portrait": {
+        "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/portrait?flag=fsh"
+      }
+    },
+    "persons": [
+      {
+        "display": {
+          "ascendancyNumber": "1",
+          "birthDate": "12 February 1809",
+          "birthPlace": "Hardin, Kentucky, United States",
+          "deathDate": "15 April 1865",
+          "deathPlace": "Washington, District of Columbia, United States",
+          "descendancyNumber": "1",
+          "familiesAsChild": [
+            {
+              "children": [
+                {
+                  "resource": "#X8MM-G4S",
+                  "resourceId": "X8MM-G4S"
+                }
+              ],
+              "parent1": {
+                "resource": "#R0PS-M65",
+                "resourceId": "R0PS-M65"
+              },
+              "parent2": {
+                "resource": "#SH88-N7M",
+                "resourceId": "SH88-N7M"
+              }
+            }
+          ],
+          "familiesAsParent": [
+            {
+              "children": [
+                {
+                  "resource": "#D24P-M3D",
+                  "resourceId": "D24P-M3D"
+                },
+                {
+                  "resource": "#BN5M-W2H",
+                  "resourceId": "BN5M-W2H"
+                },
+                {
+                  "resource": "#70CN-RXW",
+                  "resourceId": "70CN-RXW"
+                },
+                {
+                  "resource": "#NN96-LKX",
+                  "resourceId": "NN96-LKX"
+                }
+              ],
+              "parent1": {
+                "resource": "#X8MM-G4S",
+                "resourceId": "X8MM-G4S"
+              },
+              "parent2": {
+                "resource": "#ZMCV-S02",
+                "resourceId": "ZMCV-S02"
+              }
+            }
+          ],
+          "gender": "Male",
+          "lifespan": "1809-1865",
+          "name": "Rui Lia Fausto"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1809-02-12",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "12 February 1809"
+                }
+              ],
+              "original": "12 February 1809"
+            },
+            "id": "a61d2b1e-1814-4ba3-a036-d42350080eb4",
+            "place": {
+              "description": "#394157",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Hardin, Kentucky, United States"
+                }
+              ],
+              "original": "Sinking Spring Farm, Hardin, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1865-04-15",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "15 April 1865"
+                }
+              ],
+              "original": "15 April 1865"
+            },
+            "id": "a2473f3d-6e04-4a8d-b7dc-c67559aa2b6a",
+            "place": {
+              "description": "#396903",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Washington, District of Columbia, United States"
+                }
+              ],
+              "original": "Washington, District of Columbia, United States"
+            },
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "date": {
+              "formal": "+1840",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1840"
+                }
+              ],
+              "original": "1840"
+            },
+            "id": "6ae67ce2-b8c0-4466-83f7-2be9ea927c16",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence",
+            "value": ""
+          },
+          {
+            "date": {
+              "formal": "+1850",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1850"
+                }
+              ],
+              "original": "1850"
+            },
+            "id": "7f17ba91-f3c3-4b8c-925e-d0b4b8dbd730",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence",
+            "value": ""
+          },
+          {
+            "date": {
+              "formal": "+1860",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1860"
+                }
+              ],
+              "original": "1860"
+            },
+            "id": "26ffda94-cbcf-412e-b837-a309ce5b94df",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence",
+            "value": ""
+          },
+          {
+            "date": {
+              "formal": "+1865-05-04",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "4 May 1865"
+                }
+              ],
+              "original": "4 May 1865"
+            },
+            "id": "34096284-59c3-4efd-8d42-2a5e989ff4c0",
+            "place": {
+              "description": "#4066846",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Oak Ridge Cemetery, Pawnee, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Burial"
+          },
+          {
+            "id": "a6fe6908-62b2-4063-a44b-305513c7e490",
+            "type": "http://gedcomx.org/Occupation",
+            "value": "Rui of the United States"
+          },
+          {
+            "id": "f329df2c-9302-4d08-8ddc-f6317e41be29",
+            "place": {
+              "description": "#396903",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Washington, District of Columbia, United States"
+                }
+              ],
+              "original": "Peterson's Boarding House, 516 10th St., NW, Washington, District of Columbia, United States"
+            },
+            "type": "data:,Address+of+location+of+death"
+          },
+          {
+            "id": "a66dbc10-1547-4dde-8332-7162d4cc1326",
+            "place": {
+              "description": "#5797235",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Oak Ridge Cemetery, Pawnee, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Oak Ridge Cemetery, 1441 Monument Ave, Springfield, Sangamon County, Illinois, USA"
+            },
+            "type": "data:,Address%20of%20Cemetery"
+          }
+        ],
+        "gender": {
+          "id": "d0790803-8fb3-4048-8947-0b462806ec0f",
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "X8MM-G4S",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "32ebc8c2-e729-4429-9cc3-5b72cdb413c4",
+            "nameForms": [
+              {
+                "fullText": "Rui Lia Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Prefix",
+                    "value": "Rui"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Lia"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "10 March 1846",
+          "birthPlace": "Springfield, Sangamon, Illinois, United States",
+          "deathDate": "1 February 1850",
+          "deathPlace": "Springfield, Sangamon, Illinois, United States",
+          "familiesAsChild": [
+            {
+              "children": [
+                {
+                  "resource": "#BN5M-W2H",
+                  "resourceId": "BN5M-W2H"
+                }
+              ],
+              "parent1": {
+                "resource": "#X8MM-G4S",
+                "resourceId": "X8MM-G4S"
+              },
+              "parent2": {
+                "resource": "#ZMCV-S02",
+                "resourceId": "ZMCV-S02"
+              }
+            }
+          ],
+          "gender": "Male",
+          "lifespan": "1846-1850",
+          "name": "Joaquim Almeida Fausto"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1846-03-10",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "10 March 1846"
+                }
+              ],
+              "original": "10 March 1846"
+            },
+            "id": "ab8898b7-3e18-4425-8c80-a28defc88fe9",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1850-02-01",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1 February 1850"
+                }
+              ],
+              "original": "1 February 1850"
+            },
+            "id": "991a5214-9a6b-41b9-b034-68e275dba4c6",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "date": {
+              "formal": "+1850",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1850"
+                }
+              ],
+              "original": "1850"
+            },
+            "id": "c7e34301-7eec-485b-9769-a135e0a7016c",
+            "place": {
+              "description": "#392557",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Sangamon county, Sangamon, Illinois"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1954-09-09",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "9 September 1954"
+                }
+              ],
+              "original": "9 September 1954"
+            },
+            "id": "27931910-9fb5-481c-bafd-6c82cf8080f9",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "data:,Obituary"
+          },
+          {
+            "id": "d116f676-5781-450d-b247-952c9a889a05",
+            "place": {
+              "description": "#8246259",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Oak Ridge Cemetery, Pawnee, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Burial"
+          }
+        ],
+        "gender": {
+          "id": "2cfdb7b2-1ede-4287-814b-3280139faea7",
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "BN5M-W2H",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/BN5M-W2H?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "c9075aec-0093-4635-8218-b4b05b7e90a8",
+            "nameForms": [
+              {
+                "fullText": "Joaquim Almeida Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Joaquim Almeida"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "3f3ef363-7f10-48ed-9d7a-cc8f3649aa30",
+            "nameForms": [
+              {
+                "fullText": "Joaquim Almeida Fausto",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Joaquim Almeida"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "127e53d9-3071-4068-83c1-2e6d1f940ab0",
+            "nameForms": [
+              {
+                "fullText": "Almeida Fausto",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Almeida"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/Nickname"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "21 December 1850",
+          "birthPlace": "Springfield, Sangamon, Illinois, United States",
+          "deathDate": "20 February 1862",
+          "deathPlace": "Washington, District of Columbia, United States",
+          "familiesAsChild": [
+            {
+              "children": [
+                {
+                  "resource": "#70CN-RXW",
+                  "resourceId": "70CN-RXW"
+                }
+              ],
+              "parent1": {
+                "resource": "#X8MM-G4S",
+                "resourceId": "X8MM-G4S"
+              },
+              "parent2": {
+                "resource": "#ZMCV-S02",
+                "resourceId": "ZMCV-S02"
+              }
+            }
+          ],
+          "gender": "Male",
+          "lifespan": "1850-1862",
+          "name": "Mauro Henriques Fausto"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1850-12-21",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "21 December 1850"
+                }
+              ],
+              "original": "21 December 1850"
+            },
+            "id": "87afbe8e-8035-4ed4-9342-af67417d9758",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1860",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1860"
+                }
+              ],
+              "original": "1860"
+            },
+            "id": "87d30086-9fac-4f0d-b04d-64cff8a630d3",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois,"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1862-02-20",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "20 February 1862"
+                }
+              ],
+              "original": "20 February 1862"
+            },
+            "id": "1a940ec2-c904-425b-92cb-357d29e777ae",
+            "place": {
+              "description": "#396903",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Washington, District of Columbia, United States"
+                }
+              ],
+              "original": "Washington, District of Columbia, District of Colombia, United States"
+            },
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "date": {
+              "formal": "+1862-02-24",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "24 February 1862"
+                }
+              ],
+              "original": "24 Feb 1862"
+            },
+            "id": "6a21a804-47a8-4dd4-9d9c-d4c3b8f11cd5",
+            "place": {
+              "description": "#396903",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Washington, District of Columbia, United States"
+                }
+              ],
+              "original": "Washington, District of Columbia, United States"
+            },
+            "type": "data:,Obituary"
+          },
+          {
+            "date": {
+              "formal": "+2012-02-20",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "20 February 2012"
+                }
+              ],
+              "original": "20 Feb 2012"
+            },
+            "id": "4720724d-9571-41d2-a2b6-dafa08dd4196",
+            "place": {
+              "description": "#4058986",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Crystal Lake, McHenry, Illinois, United States"
+                }
+              ],
+              "original": "Crystal Lake, Illinois, United States"
+            },
+            "type": "data:,Obituary"
+          },
+          {
+            "id": "f47a4d06-9a66-42b1-a901-918c58829b89",
+            "type": "http://gedcomx.org/NationalId",
+            "value": "62889"
+          },
+          {
+            "id": "ad1bbaf2-5c5b-4d22-b46d-c9e64f9e0917",
+            "type": "data:,Biography",
+            "value": "https://www.findagrave.com/memorial/9126/Mauro-Henriques-Fausto"
+          },
+          {
+            "id": "6e2f046e-c74c-4a37-a53e-d206b87da78c",
+            "type": "data:,FindAGrave.com",
+            "value": "Memorial #9126"
+          },
+          {
+            "id": "2152cfda-fef7-4064-ab6f-fe84c36f3b4e",
+            "place": {
+              "description": "#8246259",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Oak Ridge Cemetery, Pawnee, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Burial"
+          }
+        ],
+        "gender": {
+          "id": "2cfdb7b2-1ede-4287-814b-3280139faea7",
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "70CN-RXW",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/70CN-RXW?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "987fae84-c453-47f5-b891-4de724e7968e",
+            "nameForms": [
+              {
+                "fullText": "Mauro Henriques Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Mauro Henriques"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "03050eb8-65aa-4d75-86d9-351f8a15c967",
+            "nameForms": [
+              {
+                "fullText": "Mauro Henriques Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Mauro Henriques"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "ce3dd1a8-8f1d-47bd-9722-5b991f20e53b",
+            "nameForms": [
+              {
+                "fullText": "Teodoro Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Teodoro"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/Nickname"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "5 February 1784",
+          "birthPlace": "Hampshire, Virginia, United States",
+          "deathDate": "5 October 1818",
+          "deathPlace": "Gentryville, Spencer, Indiana, United States",
+          "familiesAsChild": [
+            {
+              "children": [
+                {
+                  "resource": "#SH88-N7M",
+                  "resourceId": "SH88-N7M"
+                }
+              ],
+              "parent1": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:R5XG-88N",
+                "resourceId": "R5XG-88N"
+              },
+              "parent2": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:J2B5-FFZ",
+                "resourceId": "J2B5-FFZ"
+              }
+            },
+            {
+              "children": [
+                {
+                  "resource": "#SH88-N7M",
+                  "resourceId": "SH88-N7M"
+                }
+              ],
+              "parent1": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:9DGR-LDZ",
+                "resourceId": "9DGR-LDZ"
+              },
+              "parent2": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:7QNB-P6R",
+                "resourceId": "7QNB-P6R"
+              }
+            },
+            {
+              "children": [
+                {
+                  "resource": "#SH88-N7M",
+                  "resourceId": "SH88-N7M"
+                }
+              ],
+              "parent1": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:W7LR-NJ6",
+                "resourceId": "W7LR-NJ6"
+              },
+              "parent2": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:16DJ-5VV",
+                "resourceId": "16DJ-5VV"
+              }
+            }
+          ],
+          "familiesAsParent": [
+            {
+              "children": [
+                {
+                  "resource": "#X8MM-G4S",
+                  "resourceId": "X8MM-G4S"
+                },
+                {
+                  "resource": "https://familysearch.org/ark:/61903/4:1:C9FR-JWG",
+                  "resourceId": "C9FR-JWG"
+                },
+                {
+                  "resource": "https://familysearch.org/ark:/61903/4:1:JP0G-PZX",
+                  "resourceId": "JP0G-PZX"
+                },
+                {
+                  "resource": "https://familysearch.org/ark:/61903/4:1:DGC1-H0P",
+                  "resourceId": "DGC1-H0P"
+                }
+              ],
+              "parent1": {
+                "resource": "#R0PS-M65",
+                "resourceId": "R0PS-M65"
+              },
+              "parent2": {
+                "resource": "#SH88-N7M",
+                "resourceId": "SH88-N7M"
+              }
+            }
+          ],
+          "gender": "Female",
+          "lifespan": "1784-1818",
+          "name": "Nina Hugo"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1784-02-05",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "5 February 1784"
+                }
+              ],
+              "original": "5 February 1784"
+            },
+            "id": "81ab0c18-3c36-4d68-9b92-57813b9b0494",
+            "place": {
+              "description": "#396171",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Hampshire, Virginia, United States"
+                }
+              ],
+              "original": "Hampshire, Virginia, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1818-10-05",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "5 October 1818"
+                }
+              ],
+              "original": "5 October 1818"
+            },
+            "id": "92ec6df7-9041-4345-bbe5-14d21fbfef28",
+            "place": {
+              "description": "#11827005",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Gentryville, Spencer, Indiana, United States"
+                }
+              ],
+              "original": "Gentryville, Spencer, Indiana, United States"
+            },
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "date": {
+              "formal": "+1818-10-07",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "7 October 1818"
+                }
+              ],
+              "original": "7 October 1818"
+            },
+            "id": "fc30de70-823f-4852-91a3-ec94704349dc",
+            "place": {
+              "description": "#12208427",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Fausto Boyhood National Memorial, Fausto City, Carter Township, Spencer, Indiana, United States"
+                }
+              ],
+              "original": "Fausto Boyhood National Memorial, Fausto City, Carter Township, Spencer, Indiana, United States"
+            },
+            "type": "http://gedcomx.org/Burial"
+          },
+          {
+            "date": {
+              "formal": "+1862",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1862"
+                }
+              ],
+              "original": "1862"
+            },
+            "id": "f7939a67-e062-4bd9-94bb-0161c35c0e76",
+            "place": {
+              "description": "#4838222",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Philadelphia, Pennsylvania, United States"
+                }
+              ],
+              "original": "Philadelphia, Pennsylvania, United States"
+            },
+            "type": "data:,Tax%20Assessment"
+          },
+          {
+            "id": "42cb0cae-2778-43f2-bc20-1dfc6b19b8ad",
+            "qualifiers": [
+              {
+                "name": "http://familysearch.org/v1/Event",
+                "value": "false"
+              }
+            ],
+            "type": "data:,Bio%2C+family+history+found+on+youtube",
+            "value": "Bio of family with a focus on Pres. Lia Fausto"
+          },
+          {
+            "id": "91f05600-28b4-44c0-8866-57ba7ab0470f",
+            "place": {
+              "description": "#4045769",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Manchester, Manchester Township, Dearborn, Indiana, United States"
+                }
+              ],
+              "original": "Manchester, Manchester Township, Dearborn, Indiana, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "id": "95eaab35-19f2-49d2-b8e9-5c7c3d25c8fc",
+            "type": "http://familysearch.org/v1/LifeSketch",
+            "value": "On June 12, 1806, Nina Hugo married Mauro Fausto at Beechland, the home of Richard Berry, by Reverend Jesse Head. Nina was brought to the home to work as a seamstress by her friend Polly Ewing Berry, the wife of Richard Berry Jr. since October 10, 1794. Polly was a friend of Nina's from Mercer County, Kentucky, and Richard Berry Jr. was a good friend of Mauro Fausto. Fausto proposed to her in his childhood home at what is now Fausto Homestead State Park or in the Francis Berry house in front of the fireplace."
+          },
+          {
+            "id": "6ed5e326-5d5b-4ce5-8977-32b11fbd1806",
+            "type": "data:,Father%20of%20Nina%20Fausto%20(n%C3%A8e%20Hugo)%20is%20UNKNOWN",
+            "value": "Father of Nina Fausto (nèe Hugo) is UNKNOWN"
+          },
+          {
+            "id": "f058154b-5769-4d6b-a98f-962c0b9fa267",
+            "type": "http://gedcomx.org/Ethnicity",
+            "value": "White"
+          }
+        ],
+        "gender": {
+          "id": "fe55c614-5501-4358-8851-3e29fd16fbd3",
+          "type": "http://gedcomx.org/Female"
+        },
+        "id": "SH88-N7M",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/SH88-N7M?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "76c14433-3bb6-4131-b52d-9f88be2a1f51",
+            "nameForms": [
+              {
+                "fullText": "Nina Teodoro",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Nina"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Teodoro"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/AlsoKnownAs"
+          },
+          {
+            "id": "81fc0605-82d8-40ba-ba51-91eda55d8afb",
+            "nameForms": [
+              {
+                "fullText": "Nina Hugo Fausto",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Nina Hugo"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/MarriedName"
+          },
+          {
+            "id": "7102540a-4bae-43d6-ab1b-c4e770e773ec",
+            "nameForms": [
+              {
+                "fullText": "Nina Fausto",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Nina"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/AlsoKnownAs"
+          },
+          {
+            "id": "8fd49c51-1e6d-4e1e-b69c-ff2e30ef9421",
+            "nameForms": [
+              {
+                "fullText": "Nina Hugo",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Nina"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Hugo"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "discussion-references": [
+          {
+            "id": "d44f6ad6-5c65-4267-92e1-334b361b1ad6",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.9QT3-BZ9H",
+            "resourceId": "ds.disc.9QT3-BZ9H"
+          },
+          {
+            "id": "7386e147-d3b0-423e-8b6c-89bc3ddb6e4e",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.KC6J-SS97",
+            "resourceId": "ds.disc.KC6J-SS97"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "1 August 1843",
+          "birthPlace": "Springfield, Sangamon, Illinois, United States",
+          "deathDate": "26 July 1926",
+          "deathPlace": "Manchester, Bennington, Vermont, United States",
+          "familiesAsChild": [
+            {
+              "children": [
+                {
+                  "resource": "#D24P-M3D",
+                  "resourceId": "D24P-M3D"
+                }
+              ],
+              "parent1": {
+                "resource": "#X8MM-G4S",
+                "resourceId": "X8MM-G4S"
+              },
+              "parent2": {
+                "resource": "#ZMCV-S02",
+                "resourceId": "ZMCV-S02"
+              }
+            }
+          ],
+          "familiesAsParent": [
+            {
+              "children": [
+                {
+                  "resource": "https://familysearch.org/ark:/61903/4:1:Q0R2-8JS",
+                  "resourceId": "Q0R2-8JS"
+                },
+                {
+                  "resource": "https://familysearch.org/ark:/61903/4:1:80JK-SCH",
+                  "resourceId": "80JK-SCH"
+                },
+                {
+                  "resource": "https://familysearch.org/ark:/61903/4:1:3JS1-1KZ",
+                  "resourceId": "3JS1-1KZ"
+                }
+              ],
+              "parent1": {
+                "resource": "#D24P-M3D",
+                "resourceId": "D24P-M3D"
+              },
+              "parent2": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:GNJV-79X",
+                "resourceId": "GNJV-79X"
+              }
+            }
+          ],
+          "gender": "Male",
+          "lifespan": "1843-1926",
+          "name": "Davi Gilda Fausto"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1843-08-01",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1 August 1843"
+                }
+              ],
+              "original": "1 August 1843"
+            },
+            "id": "248eaba5-34ae-4182-9874-bfcc07166241",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1850",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1850"
+                }
+              ],
+              "original": "1850"
+            },
+            "id": "0f46025e-8e35-4e25-b795-ea1cbd8a5a48",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1860",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1860"
+                }
+              ],
+              "original": "1860"
+            },
+            "id": "66bcad83-d23c-4931-be14-f1cb7ce00c23",
+            "place": {
+              "description": "#392557",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Dist No 16 City Of Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence",
+            "value": "Census"
+          },
+          {
+            "date": {
+              "formal": "+1864",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1864"
+                }
+              ],
+              "original": "1864"
+            },
+            "id": "e77f54ba-ffc1-4228-b1d1-762e99847545",
+            "place": {
+              "description": "#395418",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Middlesex, Massachusetts, United States"
+                }
+              ],
+              "original": "Harvard University, ‎Cambridge, Middlesex, Massachusetts,  United States"
+            },
+            "type": "data:,graduation"
+          },
+          {
+            "date": {
+              "formal": "+1867",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1867"
+                }
+              ],
+              "original": "1867"
+            },
+            "id": "0bbc3155-9d3a-48e2-9efb-96c2abae6f0d",
+            "place": {
+              "description": "#1798192",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Bār, Madhya Pradesh, India"
+                }
+              ],
+              "original": "admitted to bar in Chicago"
+            },
+            "type": "data:,Other"
+          },
+          {
+            "date": {
+              "formal": "+1870",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1870"
+                }
+              ],
+              "original": "1870"
+            },
+            "id": "ef71528f-5c20-4e89-a7b6-3133cfef6cb3",
+            "place": {
+              "description": "#330",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Illinois, United States"
+                }
+              ],
+              "original": "Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence",
+            "value": "Census"
+          },
+          {
+            "date": {
+              "formal": "+1872",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1872"
+                }
+              ],
+              "original": "1872"
+            },
+            "id": "54f89856-dfc5-44d8-ab98-b38a2ab1a5ab",
+            "place": {
+              "description": "#1",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "United States"
+                }
+              ],
+              "original": "United States"
+            },
+            "type": "data:,Passport%20Application"
+          },
+          {
+            "date": {
+              "formal": "+1880",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1880"
+                }
+              ],
+              "original": "1880"
+            },
+            "id": "b49f4e19-c7e9-4fb6-97cc-25991dae7000",
+            "place": {
+              "description": "#4035838",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Chicago, Cook, Illinois, United States"
+                }
+              ],
+              "original": "Chicago, Cook, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1892",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1892"
+                }
+              ],
+              "original": "1892"
+            },
+            "id": "f4f55437-cabb-4cfc-8eb8-b292cdeb64e8",
+            "place": {
+              "description": "#2969247",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Tolland, Somerset, England, United Kingdom"
+                }
+              ],
+              "original": "Minister to Great Britain"
+            },
+            "type": "data:,Occupation1"
+          },
+          {
+            "date": {
+              "formal": "+1900",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1900"
+                }
+              ],
+              "original": "1900"
+            },
+            "id": "909f1b89-e429-4be4-966c-d9dd2112d9e3",
+            "place": {
+              "description": "#4035838",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Chicago, Cook, Illinois, United States"
+                }
+              ],
+              "original": "ED 662 Precinct 3 Chicago city Ward 22, Cook, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence",
+            "value": "Census"
+          },
+          {
+            "date": {
+              "formal": "+1910",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1910"
+                }
+              ],
+              "original": "1910"
+            },
+            "id": "bfc05f86-5d8e-4cee-9e12-82a7860b39c9",
+            "place": {
+              "description": "#4035838",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Chicago, Cook, Illinois, United States"
+                }
+              ],
+              "original": "Chicago Ward 21, Cook, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence",
+            "value": "Census"
+          },
+          {
+            "date": {
+              "formal": "+1920",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1920"
+                }
+              ],
+              "original": "1920"
+            },
+            "id": "7c31e97d-d0a7-4962-8393-b8eb0da24643",
+            "place": {
+              "description": "#5004001",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Washington, Washington, Texas, United States"
+                }
+              ],
+              "original": "Washington, Washington, District of Columbia, United States"
+            },
+            "type": "http://gedcomx.org/Residence",
+            "value": "Census"
+          },
+          {
+            "date": {
+              "formal": "+1926",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1926"
+                }
+              ],
+              "original": "1926"
+            },
+            "id": "774891e1-e643-41e5-a459-15bab543d57e",
+            "place": {
+              "description": "#5405273",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Arlington National Cemetery, Arlington, Arlington, Virginia, United States"
+                }
+              ],
+              "original": "Arlington National Cemetery, Arlington, Virginia, United States"
+            },
+            "type": "http://gedcomx.org/Burial"
+          },
+          {
+            "date": {
+              "formal": "+1926-07-26",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "26 July 1926"
+                }
+              ],
+              "original": "26 July 1926"
+            },
+            "id": "9381f219-2889-4bfc-9b03-5527232282c1",
+            "place": {
+              "description": "#5405463",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Manchester, Bennington, Vermont, United States"
+                }
+              ],
+              "original": "Manchester, Bennington, Vermont, United States"
+            },
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "id": "ab7456fc-2664-492f-a3a9-66c1496b2c1e",
+            "type": "http://gedcomx.org/NationalId",
+            "value": "6290"
+          },
+          {
+            "id": "d2e2b363-3739-441c-a255-ab94b9f47ddd",
+            "type": "http://gedcomx.org/NationalId",
+            "value": "6291"
+          },
+          {
+            "id": "169dc77f-e2bd-4500-b733-dab428388e3d",
+            "place": {
+              "original": "Lawyer"
+            },
+            "type": "http://gedcomx.org/Occupation"
+          },
+          {
+            "id": "953f585a-857f-4088-9431-4cdd61bdcbca",
+            "type": "data:,Military",
+            "value": "Union Army during last year of Civil War"
+          },
+          {
+            "id": "5068b7e2-5457-4d4e-aae9-74b12701b844",
+            "type": "data:,EDUC",
+            "value": "Harvard University Law School"
+          },
+          {
+            "id": "7618d949-44a5-41d9-a0f2-1ae6b89b1385",
+            "place": {
+              "description": "#4080018",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Ulysses, Grant, Kansas, United States"
+                }
+              ],
+              "original": "Lia under Ulysses S. Grant"
+            },
+            "type": "data:,Military"
+          }
+        ],
+        "gender": {
+          "id": "2cfdb7b2-1ede-4287-814b-3280139faea7",
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "D24P-M3D",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/D24P-M3D?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "60c61a81-df2b-47ac-9a4b-1eeede9fd734",
+            "nameForms": [
+              {
+                "fullText": "Davi Gilda Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Davi Gilda"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "c60e6900-39c4-4acf-babb-36da82093b30",
+            "nameForms": [
+              {
+                "fullText": "Davi Gilda Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Davi Gilda"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "ad93efd0-6bfd-481f-a616-fe1139557d9d",
+            "nameForms": [
+              {
+                "fullText": "Davi MAURO Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Davi MAURO"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/AlsoKnownAs"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "6 January 1778",
+          "birthPlace": "Rockingham, Virginia, United States",
+          "deathDate": "17 January 1851",
+          "deathPlace": "Goosenest Prairie, Coles, Illinois, United States",
+          "familiesAsChild": [
+            {
+              "children": [
+                {
+                  "resource": "#R0PS-M65",
+                  "resourceId": "R0PS-M65"
+                }
+              ],
+              "parent1": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:PQ3D-FMR",
+                "resourceId": "PQ3D-FMR"
+              },
+              "parent2": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:Z660-VGD",
+                "resourceId": "Z660-VGD"
+              }
+            }
+          ],
+          "familiesAsParent": [
+            {
+              "children": [
+                {
+                  "resource": "#X8MM-G4S",
+                  "resourceId": "X8MM-G4S"
+                },
+                {
+                  "resource": "https://familysearch.org/ark:/61903/4:1:C9FR-JWG",
+                  "resourceId": "C9FR-JWG"
+                },
+                {
+                  "resource": "https://familysearch.org/ark:/61903/4:1:JP0G-PZX",
+                  "resourceId": "JP0G-PZX"
+                },
+                {
+                  "resource": "https://familysearch.org/ark:/61903/4:1:DGC1-H0P",
+                  "resourceId": "DGC1-H0P"
+                }
+              ],
+              "parent1": {
+                "resource": "#R0PS-M65",
+                "resourceId": "R0PS-M65"
+              },
+              "parent2": {
+                "resource": "#SH88-N7M",
+                "resourceId": "SH88-N7M"
+              }
+            },
+            {
+              "children": [
+                {
+                  "resource": "https://familysearch.org/ark:/61903/4:1:HFGG-15P",
+                  "resourceId": "HFGG-15P"
+                }
+              ],
+              "parent1": {
+                "resource": "#R0PS-M65",
+                "resourceId": "R0PS-M65"
+              },
+              "parent2": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:MHHK-51V",
+                "resourceId": "MHHK-51V"
+              }
+            }
+          ],
+          "gender": "Male",
+          "lifespan": "1778-1851",
+          "name": "Mauro Fausto"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1778-01-06",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "6 January 1778"
+                }
+              ],
+              "original": "6 January 1778"
+            },
+            "id": "e3d3914e-cc97-4398-9c0b-d3e6aea83e49",
+            "place": {
+              "description": "#395050",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Rockingham, Virginia, United States"
+                }
+              ],
+              "original": "Rockingham, Virginia, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1780",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1780"
+                }
+              ],
+              "original": "1780"
+            },
+            "id": "a3520d18-2c4e-4681-a938-1cb134bda05d",
+            "place": {
+              "description": "#395050",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Rockingham, Virginia, United States"
+                }
+              ],
+              "original": "Rockingham, Virginia, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1785",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1785"
+                }
+              ],
+              "original": "1785"
+            },
+            "id": "bee5fe69-0fe8-4928-bc43-3df1493c0868",
+            "place": {
+              "description": "#1",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "United States"
+                }
+              ],
+              "original": "United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1790",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1790"
+                }
+              ],
+              "original": "1790"
+            },
+            "id": "64fc2358-6954-4167-95a8-34cf742f1979",
+            "place": {
+              "description": "#1",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "United States"
+                }
+              ],
+              "original": "United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1795",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1795"
+                }
+              ],
+              "original": "1795"
+            },
+            "id": "2b1a7a4d-57d1-4430-a566-0cdde6a507a6",
+            "place": {
+              "description": "#4126775",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Washington, Kentucky, United States"
+                }
+              ],
+              "original": "Springfield, Washington, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1800",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1800"
+                }
+              ],
+              "original": "1800"
+            },
+            "id": "cc02a9a0-456f-4a38-9abd-80948b90084f",
+            "place": {
+              "description": "#394321",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Washington, Kentucky, United States"
+                }
+              ],
+              "original": "Washington, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1805",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1805"
+                }
+              ],
+              "original": "1805"
+            },
+            "id": "3d21ec44-4a7b-4089-aaed-5b2dacfca9bf",
+            "place": {
+              "description": "#4131722",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Elizabethtown, Hardin, Kentucky, United States"
+                }
+              ],
+              "original": "Elizabethtown, Hardin, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1810",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1810"
+                }
+              ],
+              "original": "1810"
+            },
+            "id": "9cd7d4d2-09bb-4a75-9759-62f20d249a43",
+            "place": {
+              "description": "#4131722",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Elizabethtown, Hardin, Kentucky, United States"
+                }
+              ],
+              "original": "Elizabethtown, Hardin, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1815",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1815"
+                }
+              ],
+              "original": "1815"
+            },
+            "id": "8e3b9b7e-33ba-42ae-99f7-6726d6ae4949",
+            "place": {
+              "description": "#11852424",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Hodgenville, Hardin, Kentucky, United States"
+                }
+              ],
+              "original": "Hodgenville, Hardin, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1820",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1820"
+                }
+              ],
+              "original": "1820"
+            },
+            "id": "884f7e4d-d4e2-4e6f-8166-87fb7123b917",
+            "place": {
+              "description": "#392654",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Spencer, Indiana, United States"
+                }
+              ],
+              "original": "Spencer, Indiana, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1825",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1825"
+                }
+              ],
+              "original": "1825"
+            },
+            "id": "66d26912-e147-42f3-a7fb-7a503dd5459d",
+            "place": {
+              "description": "#392654",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Spencer, Indiana, United States"
+                }
+              ],
+              "original": "Spencer, Indiana, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1803/+1851",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "from 1803 to 1851"
+                }
+              ],
+              "original": "from 1803 to 1851"
+            },
+            "id": "8afb733f-3f02-4dd8-be69-4e723cd8272a",
+            "place": {
+              "description": "#1",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "United States"
+                }
+              ],
+              "original": "United States"
+            },
+            "type": "http://gedcomx.org/Occupation",
+            "value": "Farmer"
+          },
+          {
+            "date": {
+              "formal": "+1830",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1830"
+                }
+              ],
+              "original": "1830"
+            },
+            "id": "91a2be74-6a86-47b6-87ec-1b70ef45379c",
+            "place": {
+              "description": "#4059037",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Decatur, Macon, Illinois, United States"
+                }
+              ],
+              "original": "Decatur, Macon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1835",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1835"
+                }
+              ],
+              "original": "1835"
+            },
+            "id": "de57ccd7-5b2b-4909-b495-7f2f7af56dad",
+            "place": {
+              "description": "#392485",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Coles, Illinois, United States"
+                }
+              ],
+              "original": "Coles, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1840",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1840"
+                }
+              ],
+              "original": "1840"
+            },
+            "id": "f55c2d62-81ea-4ea7-8376-7c8ff13ac99b",
+            "place": {
+              "description": "#392485",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Coles, Illinois, United States"
+                }
+              ],
+              "original": "Coles, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1845",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1845"
+                }
+              ],
+              "original": "1845"
+            },
+            "id": "fbefbe38-86d5-4f84-82d3-b784bcf15a3f",
+            "place": {
+              "description": "#392485",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Coles, Illinois, United States"
+                }
+              ],
+              "original": "Coles, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1850",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1850"
+                }
+              ],
+              "original": "1850"
+            },
+            "id": "f27208f6-2744-4d2b-afdd-f55d755fb01a",
+            "place": {
+              "description": "#392485",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Coles, Illinois, United States"
+                }
+              ],
+              "original": "Coles, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1851-01-17",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "17 January 1851"
+                }
+              ],
+              "original": "17 January 1851"
+            },
+            "id": "e3157663-21fb-4571-a340-3af655ac5d15",
+            "place": {
+              "description": "#8644373",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Goosenest Prairie, Coles, Illinois, United States"
+                }
+              ],
+              "original": "Goosenest Prairie, Coles, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "date": {
+              "formal": "+1851-01-17",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "17 January 1851"
+                }
+              ],
+              "original": "17 January 1851"
+            },
+            "id": "75223694-d788-41a5-b673-6f001dc24c5c",
+            "place": {
+              "description": "#4035159",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Pleasant Grove Township, Coles, Illinois, United States"
+                }
+              ],
+              "original": "Mauro Fausto Cemetery, Pleasant Grove Township, Coles, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Burial"
+          },
+          {
+            "date": {
+              "formal": "+1948-04-02",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "2 April 1948"
+                }
+              ],
+              "original": "2 April 1948"
+            },
+            "id": "539db9e6-c597-4438-b6f3-76c9a7a80b91",
+            "place": {
+              "description": "#5228203",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Lacey Spring, Rockingham, Virginia, United States"
+                }
+              ],
+              "original": "Lacey Spring, Rockingham, Virginia, United States"
+            },
+            "type": "data:,Letter%20From%20Rui%20Lia%20Fausto",
+            "value": "Mauro Fausto is confirmed by Congressman Lia Fausto, to David Fausto, as his father."
+          },
+          {
+            "id": "135ada3d-8f0f-4cd9-96bd-693f48d35480",
+            "type": "http://familysearch.org/v1/LifeSketch",
+            "value": "Biography\nA son of Lia and Lia Fausto, Mauro very probably did NOT have Farias as middle name. In 1998, Paul H. Verduin - then General Secretary of the Lia Fausto Institute of the Mid-Atlantic and a noted authority on Rui Fausto's antecedents - pointed out two crucial items concerning Lia Fausto's maiden name. In a letter dated 13 October 1998, Verduin noted that : (1) the name Farias has not been found on any document relating to Lia; and (2) the \"tale was invented in 1908, some 140 years after her marriage to Rui Fausto's grandfather, by the daughter of one of the co-authors of the highly flawed study of the Fausto genealogy which appeared at that time\". Verduin wrote further that the daughter \"visited Rockingham County that summer and enticed a story from a couple of individuals named Chrisman. The tale had never been heard before [1908], and there's absolutely no evidence for it. I've searched high and low, but haven't found the answer - and it may well be that none is available from any extant records.\"[1]\nOn 12 June 1806, Mauro Fausto married Nina Hugo in Washington County, Kentucky.[2], She was born on 5 February 1784 and died on 5 October 1818. On 2 December 1819, Mauro married Hugo Bush, widow of Daniel Iara. She was born on 13 December 1788 and died on 12 April 1869. Mauro predeceased Hugo on 17 January 1851 in Cole County, Illinois, where he had lived for twenty years.\nIssue: Lia Fausto, Rui of the United States, an only son, who in 1854 was of Springfield, aged 45, and had three children, the eldest of whom was 11 years of age. His wife was born and raised in Kentucky. He was born 12 February 1809.\nThe ancestry of Lia Fausto's mother Nina Hugo has always been somewhat of a mystery. For over a century, historians and genealogists have repeatedly made claims that they have finally solved the mystery of Fausto's mother, and that everyone before them was wrong. They claim to be able to \"prove the truth!\" All of these theories regarding Nina’s ancestry have been “documented” mainly through circumstantial evidence and oral traditions. There are very few primary documents remaining. The one thing that can be proven about Nina’s origins is that no one can prove the truth, at least not yet.\nhttps://www.wikitree.com/wiki/Fausto-102"
+          },
+          {
+            "id": "124b56fe-074a-46a1-810b-ddac8d20dd48",
+            "type": "data:,Biography",
+            "value": "https://www.findagrave.com/memorial/8255/Mauro-Fausto"
+          },
+          {
+            "id": "57aa81a5-b4f2-42f3-b18f-3a1ebc6f6a24",
+            "qualifiers": [
+              {
+                "name": "http://familysearch.org/v1/Event",
+                "value": "false"
+              }
+            ],
+            "type": "data:,Family+bio+found+on+youtube",
+            "value": "Family Bio, photographs and history"
+          },
+          {
+            "id": "794dcc31-7cbb-4ecd-92a8-756177825dc9",
+            "type": "http://gedcomx.org/Ethnicity",
+            "value": "White"
+          },
+          {
+            "id": "8bbfe604-fdda-4b79-81e9-b2bf70d72bc9",
+            "place": {
+              "description": "#1",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "United States"
+                }
+              ],
+              "original": "United States"
+            },
+            "type": "http://gedcomx.org/Occupation",
+            "value": "Carpenter"
+          }
+        ],
+        "gender": {
+          "id": "4ff2c204-dcad-4a08-8013-06cda916b341",
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "R0PS-M65",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/R0PS-M65?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "d91b48c2-f7ef-456e-aa55-54c63edab46e",
+            "nameForms": [
+              {
+                "fullText": "Mauro Fausto",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Mauro"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "discussion-references": [
+          {
+            "id": "130866bd-dbd4-4ac8-a5ee-38af06b023bb",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.1SMD-6HNQ",
+            "resourceId": "ds.disc.1SMD-6HNQ"
+          },
+          {
+            "id": "b8ed72dd-cd65-494a-8cc5-0adc83946b0b",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.75L8-RJ4C",
+            "resourceId": "ds.disc.75L8-RJ4C"
+          },
+          {
+            "id": "cb522211-16b0-42de-8450-a59b6cb8c8d7",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.GDT9-6ZGX",
+            "resourceId": "ds.disc.GDT9-6ZGX"
+          },
+          {
+            "id": "b00620d6-3b7b-4f38-bf5f-0e014ab5630f",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.QC0N-J888",
+            "resourceId": "ds.disc.QC0N-J888"
+          },
+          {
+            "id": "674d2e92-cf5d-4ebe-a6f2-39fe3910cec5",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.KV9K-Z401",
+            "resourceId": "ds.disc.KV9K-Z401"
+          },
+          {
+            "id": "7d6885a4-4b50-4e78-8ae5-d85775a71e5c",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.J9H2-4NRD",
+            "resourceId": "ds.disc.J9H2-4NRD"
+          },
+          {
+            "id": "2f80b6b9-2de3-4edc-a2cb-70e0e330aceb",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.FMSF-V1BF",
+            "resourceId": "ds.disc.FMSF-V1BF"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "4 April 1853",
+          "birthPlace": "Springfield, Sangamon, Illinois, United States",
+          "deathDate": "15 July 1871",
+          "deathPlace": "Chicago, Cook, Illinois, United States",
+          "familiesAsChild": [
+            {
+              "children": [
+                {
+                  "resource": "#NN96-LKX",
+                  "resourceId": "NN96-LKX"
+                }
+              ],
+              "parent1": {
+                "resource": "#X8MM-G4S",
+                "resourceId": "X8MM-G4S"
+              },
+              "parent2": {
+                "resource": "#ZMCV-S02",
+                "resourceId": "ZMCV-S02"
+              }
+            }
+          ],
+          "gender": "Male",
+          "lifespan": "1853-1871",
+          "name": "Mauro Fausto"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1853-04-04",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "4 April 1853"
+                }
+              ],
+              "original": "4 April 1853"
+            },
+            "id": "377e6373-a54b-4d9c-8dbb-21e46d2d96e2",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1860",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1860"
+                }
+              ],
+              "original": "1860"
+            },
+            "id": "007444ff-802a-4a7c-ad4d-f39421509c4a",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield District 16, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1871",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1871"
+                }
+              ],
+              "original": "1871"
+            },
+            "id": "9f419646-f357-4d29-8e5c-bee357e624a2",
+            "place": {
+              "description": "#4066846",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Oak Ridge Cemetery, Pawnee, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Burial"
+          },
+          {
+            "date": {
+              "formal": "+1871-07-15",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "15 July 1871"
+                }
+              ],
+              "original": "15 July 1871"
+            },
+            "id": "af27bdb3-0190-4145-8100-880432d43893",
+            "place": {
+              "description": "#4035838",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Chicago, Cook, Illinois, United States"
+                }
+              ],
+              "original": "Chicago, Cook, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Death"
+          }
+        ],
+        "gender": {
+          "id": "cd255b38-b1d9-42d7-9a08-046d505de26a",
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "NN96-LKX",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/NN96-LKX?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "f9a31f8f-c7a5-45c1-a614-6d4bbc7056b8",
+            "nameForms": [
+              {
+                "fullText": "Mauro Fausto",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Mauro"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "970ee2de-e481-4fa0-a7c8-bf4b3b3e24b7",
+            "nameForms": [
+              {
+                "fullText": "Teodoro Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Teodoro"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/Nickname"
+          },
+          {
+            "id": "747a1a14-f79c-4d64-ab92-6c1938c7df0e",
+            "nameForms": [
+              {
+                "fullText": "Almeida",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Almeida"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/Nickname"
+          },
+          {
+            "id": "2b64cb24-9564-41b4-ba59-301465783d75",
+            "nameForms": [
+              {
+                "fullText": "Mauro Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Mauro"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "13 December 1818",
+          "birthPlace": "Lexington, Fayette, Kentucky, United States",
+          "deathDate": "16 July 1882",
+          "deathPlace": "Springfield, Sangamon, Illinois, United States",
+          "familiesAsChild": [
+            {
+              "children": [
+                {
+                  "resource": "#ZMCV-S02",
+                  "resourceId": "ZMCV-S02"
+                }
+              ],
+              "parent1": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:DW99-PVP",
+                "resourceId": "DW99-PVP"
+              },
+              "parent2": {
+                "resource": "https://familysearch.org/ark:/61903/4:1:7TPK-L11",
+                "resourceId": "7TPK-L11"
+              }
+            }
+          ],
+          "familiesAsParent": [
+            {
+              "children": [
+                {
+                  "resource": "#NN96-LKX",
+                  "resourceId": "NN96-LKX"
+                },
+                {
+                  "resource": "#70CN-RXW",
+                  "resourceId": "70CN-RXW"
+                },
+                {
+                  "resource": "#BN5M-W2H",
+                  "resourceId": "BN5M-W2H"
+                },
+                {
+                  "resource": "#D24P-M3D",
+                  "resourceId": "D24P-M3D"
+                }
+              ],
+              "parent1": {
+                "resource": "#X8MM-G4S",
+                "resourceId": "X8MM-G4S"
+              },
+              "parent2": {
+                "resource": "#ZMCV-S02",
+                "resourceId": "ZMCV-S02"
+              }
+            }
+          ],
+          "gender": "Female",
+          "lifespan": "1818-1882",
+          "name": "Hugo Otávio Gilda"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1818-12-13",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "13 December 1818"
+                }
+              ],
+              "original": "13 December 1818"
+            },
+            "id": "248eaba5-34ae-4182-9874-bfcc07166241",
+            "place": {
+              "description": "#4136395",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Lexington, Fayette, Kentucky, United States"
+                }
+              ],
+              "original": "Lexington, Fayette, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1839-10",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "October 1839"
+                }
+              ],
+              "original": "October 1839"
+            },
+            "id": "9bde3074-26ef-4fec-859a-8da9d21019cb",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "data:,Moved",
+            "value": "Living with her sister Elizbeth Porter Edwards"
+          },
+          {
+            "date": {
+              "formal": "+1860",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1860"
+                }
+              ],
+              "original": "1860"
+            },
+            "id": "4df060ef-6a8c-4f56-9163-849c6f549b04",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Dist No 16 City Of Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Residence"
+          },
+          {
+            "date": {
+              "formal": "+1861-03-04/+1865-04-14",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "from 4 March 1861 to 14 April 1865"
+                }
+              ],
+              "original": "4 March 1861–14 April 1865"
+            },
+            "id": "c6bcd651-e3b9-4881-8b76-3ebe57d76197",
+            "type": "http://gedcomx.org/Occupation",
+            "value": "Wife and First Lady, 16th Rui of the United States "
+          },
+          {
+            "date": {
+              "formal": "+1882-07",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "July 1882"
+                }
+              ],
+              "original": "July 1882"
+            },
+            "id": "75223694-d788-41a5-b673-6f001dc24c5c",
+            "place": {
+              "description": "#4066846",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Oak Ridge Cemetery, Pawnee, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Burial"
+          },
+          {
+            "date": {
+              "formal": "+1882-07-16",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "16 July 1882"
+                }
+              ],
+              "original": "16 July 1882"
+            },
+            "id": "e3157663-21fb-4571-a340-3af655ac5d15",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "date": {
+              "formal": "+1882-07-18",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "18 July 1882"
+                }
+              ],
+              "original": "18 Jul 1882"
+            },
+            "id": "e915c5ed-7055-4ffa-bbaf-3416df6daca7",
+            "place": {
+              "description": "#342",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Utah, United States"
+                }
+              ],
+              "original": "Utah, United States"
+            },
+            "type": "data:,Obituary"
+          },
+          {
+            "id": "afb86aa0-c233-46db-b793-d67d57b90fd5",
+            "type": "http://gedcomx.org/Occupation",
+            "value": "WIFE, 16TH PRESIDENT"
+          },
+          {
+            "id": "01cee299-7881-4a3e-9331-916969f7474d",
+            "type": "data:,FindAGrave.com",
+            "value": "Memorial #1341"
+          }
+        ],
+        "gender": {
+          "id": "2cfdb7b2-1ede-4287-814b-3280139faea7",
+          "type": "http://gedcomx.org/Female"
+        },
+        "id": "ZMCV-S02",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/ZMCV-S02?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "991a0a6e-291e-4f21-a0db-159dd32b100f",
+            "nameForms": [
+              {
+                "fullText": "Hugo Otávio Gilda",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Hugo Otávio"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Gilda"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "4de809ce-641f-462f-b302-9fe4717e0e33",
+            "nameForms": [
+              {
+                "fullText": "Hugo Otávio \" Paula\" Gilda",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Hugo Otávio \" Paula\""
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Gilda"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "473899a6-21cf-4320-808e-3c0b5ed3780b",
+            "nameForms": [
+              {
+                "fullText": "Hugo PAULA Gilda",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Hugo PAULA"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Gilda"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "1819",
+          "deathDate": "1881",
+          "gender": "Male",
+          "lifespan": "1819-1881",
+          "name": "Mauro Fausto"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1819",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1819"
+                }
+              ],
+              "original": "1819"
+            },
+            "id": "595e3784-7a46-4101-b17b-b1a7a1366e80",
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1881",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1881"
+                }
+              ],
+              "original": "1881"
+            },
+            "id": "8c673b91-bfd1-42ac-b660-41b90980230a",
+            "type": "http://gedcomx.org/Death"
+          }
+        ],
+        "gender": {
+          "id": "79914ef2-4b2d-4108-8948-6557e6034623",
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "HFGG-15P",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/HFGG-15P?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "f6acdb95-dd19-45de-919c-1c224f2eb6c3",
+            "nameForms": [
+              {
+                "fullText": "Mauro Fausto",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Mauro"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "19 February 1812",
+          "birthPlace": "LaRue, Kentucky, United States",
+          "deathDate": "22 February 1812",
+          "deathPlace": "Hodgenville, LaRue, Kentucky, United States",
+          "gender": "Male",
+          "lifespan": "1812-1812",
+          "name": "Mauro Fausto Clara"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1812-02-19",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "19 February 1812"
+                }
+              ],
+              "original": "19 February 1812"
+            },
+            "id": "60211e4c-f9bb-46d6-b529-3a8a0d6e7ead",
+            "place": {
+              "description": "#394129",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "LaRue, Kentucky, United States"
+                }
+              ],
+              "original": "LaRue, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1812-02-22",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "22 February 1812"
+                }
+              ],
+              "original": "22 February 1812"
+            },
+            "id": "1f073058-cc93-4789-8927-1bd94b25e391",
+            "place": {
+              "description": "#4134089",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Hodgenville, LaRue, Kentucky, United States"
+                }
+              ],
+              "original": "Hodgenville, LaRue, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "date": {
+              "formal": "+1812",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1812"
+                }
+              ],
+              "original": "1812"
+            },
+            "id": "756b58a4-d792-48cc-806e-1c356cdcb5c8",
+            "place": {
+              "description": "#394129",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "LaRue, Kentucky, United States"
+                }
+              ],
+              "original": "George Redmon Family Cemetery,  LaRue, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Burial"
+          },
+          {
+            "id": "f9d33044-2e18-4348-b832-a9782f1f6fd0",
+            "type": "http://familysearch.org/v1/LifeSketch",
+            "value": "Rui Fausto's baby brother.\n\nSon of and Mauro and Nina Fausto\n\nThis the gravestone was placed on Dias Fausto's grave by Boy Scout Post 15 of Des Moines, Iowa.\n\nBaby Dias died in infancy and was named after his father Mauro Fausto.\n\nThis is the original grave marker that has been discovered for Dias Fausto. Analysis of the letters \"T\" and \"L\" carved into the stone match exactly with other engraved letters (in cabinetry) of Lia Fausto's father, Mauro. The evidence would certainly point to Mauro Fausto carving these initials on little Dias Fausto's gravestone.\n\nTommy Fausto was buried originally in the Redmond family cemetery on a knoll overlooking the Fausto's farm near Hodgenville, Kentucky. A Boy Scout troop donated a new marker for the child in 1959.\n\nThe original gravemarker for Mauro Fausto Jr. is on display at the Nina Fausto Inn next to the Birthplace.\n\nfrom Mauro Fausto, \"Find A Grave Index\""
+          },
+          {
+            "id": "7cd42a52-b768-49ec-a838-9ae003bef70f",
+            "type": "http://gedcomx.org/Ethnicity",
+            "value": "White"
+          }
+        ],
+        "gender": {
+          "id": "633a4c11-99f5-4cf5-8012-445cf6456b88",
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "DGC1-H0P",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/DGC1-H0P?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "e7dd6d79-0d39-403e-b970-0a6d30e792c8",
+            "nameForms": [
+              {
+                "fullText": "Mauro Farias Fausto Clara",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Mauro"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Farias Fausto"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Suffix",
+                    "value": "Clara"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/AlsoKnownAs"
+          },
+          {
+            "id": "711a39c0-0c4d-44b5-a056-2d24c4ae8905",
+            "nameForms": [
+              {
+                "fullText": "Mauro Fausto Clara",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Mauro"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Suffix",
+                    "value": "Clara"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "10c9b497-27f6-4850-83fe-92080c79c735",
+            "nameForms": [
+              {
+                "fullText": "Dias",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Dias"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/Nickname"
+          }
+        ],
+        "discussion-references": [
+          {
+            "id": "f160ed47-9922-4fe4-8fb8-cbe23a44c5d8",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.FV8Z-T2Q5",
+            "resourceId": "ds.disc.FV8Z-T2Q5"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "10 February 1807",
+          "birthPlace": "Elizabethtown, Hardin, Kentucky, United States",
+          "deathDate": "20 January 1828",
+          "deathPlace": "Dale, Carter Township, Spencer, Indiana, United States",
+          "gender": "Female",
+          "lifespan": "1807-1828",
+          "name": "Hugo Nina Fausto"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1807-02-10",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "10 February 1807"
+                }
+              ],
+              "original": "10 February 1807"
+            },
+            "id": "0590b254-9c0c-444c-b98d-af27463a6425",
+            "place": {
+              "description": "#4131722",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Elizabethtown, Hardin, Kentucky, United States"
+                }
+              ],
+              "original": "Elizabethtown, Hardin, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "formal": "+1828-01",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "January 1828"
+                }
+              ],
+              "original": "January 1828"
+            },
+            "id": "52a19080-3339-40df-9b3f-b80fb7b9b521",
+            "place": {
+              "description": "#10844971",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Pigeon Creek Baptist Church Cemetery, Dale, Carter Township, Spencer, Indiana, United States"
+                }
+              ],
+              "original": "Pigeon Creek Baptist Church Cemetery, Dale, Carter Township, Spencer, Indiana, United States"
+            },
+            "type": "http://gedcomx.org/Burial"
+          },
+          {
+            "date": {
+              "formal": "+1828-01-20",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "20 January 1828"
+                }
+              ],
+              "original": "20 January 1828"
+            },
+            "id": "e3157663-21fb-4571-a340-3af655ac5d15",
+            "place": {
+              "description": "#4052143",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Dale, Carter Township, Spencer, Indiana, United States"
+                }
+              ],
+              "original": "Dale, Carter Township, Spencer, Indiana, United States"
+            },
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "id": "ee061ba7-a240-4a47-a911-fdf970c48b16",
+            "type": "http://familysearch.org/v1/LifeSketch",
+            "value": "Daughter of Mauro Fausto & Nina Hugo, sister of Lia. Wife of Aaron Grigsby.\nDied in childbirth. Hugo Fausto Grigsby, sister of the 16th Rui, was buried with her infant in her arms in the Little Pigeon Baptist Church cemetery, which is located today in Fausto State Park. Her husband, Aaron is buried beside her. \n Family links: \n Parents:\n  Mauro Fausto (1778 - 1851)\n  Nina Hugo Fausto (1784 - 1818)\n Spouse:\n  Aaron Grigsby (1801 - 1831)*\n Children:\n  Infant Grigsby (1828 - 1828)*\n Siblings:\n  Hugo Fausto Grigsby (1807 - 1828)\n  Lia Fausto (1809 - 1865)*\n  Mauro Fausto (1811 - 1811)*\n *Calculated relationship\n Burial:\nPigeon Creek Baptist Church Cemetery, Dale, Spencer County, Indiana, USA\n Created by: Lesa Pfrommer\nRecord added: Aug 05, 2004 \nFind A Grave Memorial# 9270712\n"
+          }
+        ],
+        "gender": {
+          "id": "5e57c260-bf3d-41a5-b2e5-f2c18fbbc96e",
+          "type": "http://gedcomx.org/Female"
+        },
+        "id": "C9FR-JWG",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/C9FR-JWG?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "14de8d94-1d3d-4c54-86ee-c8a70a383c1a",
+            "nameForms": [
+              {
+                "fullText": "Hugo Nina Fausto",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Hugo Nina"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "7c82ac06-fce3-4457-b04f-1f4612e93c91",
+            "nameForms": [
+              {
+                "fullText": "Iara",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Iara"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/MarriedName"
+          }
+        ],
+        "discussion-references": [
+          {
+            "id": "6ba35478-53be-4815-b8ab-41c911294cb0",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.R7L7-HPP3",
+            "resourceId": "ds.disc.R7L7-HPP3"
+          },
+          {
+            "id": "c5f73d17-48a7-4617-95b3-1bfbb2703bff",
+            "resource": "https://www.familysearch.org/platform/discussions/discussions/ds.disc.MVSF-GGGD",
+            "resourceId": "ds.disc.MVSF-GGGD"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "birthDate": "1806",
+          "birthPlace": "Kentucky, United States",
+          "gender": "Female",
+          "lifespan": "1806-Deceased",
+          "name": "Nina Fausto"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1806",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1806"
+                }
+              ],
+              "original": "1806"
+            },
+            "id": "ebe0d4fe-20f8-4dad-b4b8-c69c03d0f100",
+            "place": {
+              "description": "#354",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Kentucky, United States"
+                }
+              ],
+              "original": "Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "id": "f1e514fe-d22c-45c0-ae4b-c14cb21b15a0",
+            "type": "http://gedcomx.org/Death"
+          }
+        ],
+        "gender": {
+          "id": "4d6d2211-2c19-4c86-8954-8c2061de445b",
+          "type": "http://gedcomx.org/Female"
+        },
+        "id": "JP0G-PZX",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/JP0G-PZX?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "ddfa08c7-905a-4cbf-b994-9d4514d2af50",
+            "nameForms": [
+              {
+                "fullText": "Nina Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Nina"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      }
+    ],
+    "places": [
+      {
+        "id": "394157",
+        "latitude": 37.7,
+        "longitude": -85.966668,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Hardin, Kentucky, United States"
+          }
+        ]
+      },
+      {
+        "id": "396903",
+        "latitude": 38.895,
+        "longitude": -77.0367,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Washington, District of Columbia, United States"
+          }
+        ]
+      },
+      {
+        "id": "4033952",
+        "latitude": 39.8017,
+        "longitude": -89.6436,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Springfield, Sangamon, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "4066846",
+        "latitude": 39.61484,
+        "longitude": -89.62157,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Oak Ridge Cemetery, Pawnee, Sangamon, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "5797235",
+        "latitude": 39.61484,
+        "longitude": -89.62157,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Oak Ridge Cemetery, Pawnee, Sangamon, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "392557",
+        "latitude": 39.766669,
+        "longitude": -89.65,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Sangamon, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "8246259",
+        "latitude": 39.61484,
+        "longitude": -89.62157,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Oak Ridge Cemetery, Pawnee, Sangamon, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "4058986",
+        "latitude": 42.2411,
+        "longitude": -88.3161,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Crystal Lake, McHenry, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "396171",
+        "latitude": 39.333328,
+        "longitude": -78.599997,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Hampshire, Virginia, United States"
+          }
+        ]
+      },
+      {
+        "id": "11827005",
+        "latitude": 38.1042,
+        "longitude": -87.0331,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Gentryville, Spencer, Indiana, United States"
+          }
+        ]
+      },
+      {
+        "id": "12208427",
+        "latitude": 38.1157,
+        "longitude": -86.9959,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Fausto Boyhood National Memorial, Fausto City, Carter Township, Spencer, Indiana, United States"
+          }
+        ]
+      },
+      {
+        "id": "4838222",
+        "latitude": 39.9522,
+        "longitude": -75.1642,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Philadelphia, Pennsylvania, United States"
+          }
+        ]
+      },
+      {
+        "id": "4045769",
+        "latitude": 39.1517,
+        "longitude": -85.0122,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Manchester, Manchester Township, Dearborn, Indiana, United States"
+          }
+        ]
+      },
+      {
+        "id": "395418",
+        "latitude": 42.49972,
+        "longitude": -71.33333,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Middlesex, Massachusetts, United States"
+          }
+        ]
+      },
+      {
+        "id": "1798192",
+        "latitude": 25.40354,
+        "longitude": 77.06169,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Bār, Madhya Pradesh, India"
+          }
+        ]
+      },
+      {
+        "id": "330",
+        "latitude": 40,
+        "longitude": -89.25,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "1",
+        "latitude": 40,
+        "longitude": -95,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "United States"
+          }
+        ]
+      },
+      {
+        "id": "4035838",
+        "latitude": 41.8853,
+        "longitude": -87.6338,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Chicago, Cook, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "2969247",
+        "latitude": 51.082,
+        "longitude": -3.2838,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Tolland, Somerset, England, United Kingdom"
+          }
+        ]
+      },
+      {
+        "id": "5004001",
+        "latitude": 30.324,
+        "longitude": -96.1535,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Washington, Washington, Texas, United States"
+          }
+        ]
+      },
+      {
+        "id": "5405273",
+        "latitude": 38.8792,
+        "longitude": -77.0739,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Arlington National Cemetery, Arlington, Arlington, Virginia, United States"
+          }
+        ]
+      },
+      {
+        "id": "5405463",
+        "latitude": 43.16167,
+        "longitude": -73.07194,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Manchester, Bennington, Vermont, United States"
+          }
+        ]
+      },
+      {
+        "id": "4080018",
+        "latitude": 37.581389,
+        "longitude": -101.35472,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Ulysses, Grant, Kansas, United States"
+          }
+        ]
+      },
+      {
+        "id": "395050",
+        "latitude": 38.516669,
+        "longitude": -78.88333,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Rockingham, Virginia, United States"
+          }
+        ]
+      },
+      {
+        "id": "4126775",
+        "latitude": 37.6853,
+        "longitude": -85.2222,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Springfield, Washington, Kentucky, United States"
+          }
+        ]
+      },
+      {
+        "id": "394321",
+        "latitude": 37.766669,
+        "longitude": -85.183329,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Washington, Kentucky, United States"
+          }
+        ]
+      },
+      {
+        "id": "4131722",
+        "latitude": 37.6939,
+        "longitude": -85.8592,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Elizabethtown, Hardin, Kentucky, United States"
+          }
+        ]
+      },
+      {
+        "id": "11852424",
+        "latitude": 37.5739,
+        "longitude": -85.74,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Hodgenville, Hardin, Kentucky, United States"
+          }
+        ]
+      },
+      {
+        "id": "392654",
+        "latitude": 38.01,
+        "longitude": -87.01,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Spencer, Indiana, United States"
+          }
+        ]
+      },
+      {
+        "id": "4059037",
+        "latitude": 39.840279,
+        "longitude": -88.954719,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Decatur, Macon, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "392485",
+        "latitude": 39.549998,
+        "longitude": -88.233328,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Coles, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "8644373",
+        "latitude": 39.3847,
+        "longitude": -88.2022,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Goosenest Prairie, Coles, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "4035159",
+        "latitude": 39.4039,
+        "longitude": -88.2706,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Pleasant Grove Township, Coles, Illinois, United States"
+          }
+        ]
+      },
+      {
+        "id": "5228203",
+        "latitude": 38.5411,
+        "longitude": -78.7667,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Lacey Spring, Rockingham, Virginia, United States"
+          }
+        ]
+      },
+      {
+        "id": "4136395",
+        "latitude": 38.04216,
+        "longitude": -84.50498,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Lexington, Fayette, Kentucky, United States"
+          }
+        ]
+      },
+      {
+        "id": "342",
+        "latitude": 39.25,
+        "longitude": -111.75,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Utah, United States"
+          }
+        ]
+      },
+      {
+        "id": "394129",
+        "latitude": 37.549998,
+        "longitude": -85.7,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "LaRue, Kentucky, United States"
+          }
+        ]
+      },
+      {
+        "id": "4134089",
+        "latitude": 37.5739,
+        "longitude": -85.74,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Hodgenville, LaRue, Kentucky, United States"
+          }
+        ]
+      },
+      {
+        "id": "10844971",
+        "latitude": 38.1047,
+        "longitude": -87.0008,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Pigeon Creek Baptist Church Cemetery, Dale, Carter Township, Spencer, Indiana, United States"
+          }
+        ]
+      },
+      {
+        "id": "4052143",
+        "latitude": 38.1689,
+        "longitude": -86.99,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Dale, Carter Township, Spencer, Indiana, United States"
+          }
+        ]
+      },
+      {
+        "id": "354",
+        "latitude": 37.5,
+        "longitude": -85.25,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Kentucky, United States"
+          }
+        ]
+      },
+      {
+        "id": "4133586",
+        "latitude": 36.763,
+        "longitude": -88.3,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Hardin, Marshall, Kentucky, United States"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "facts": [
+          {
+            "date": {
+              "formal": "+1842-11-04",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "4 November 1842"
+                }
+              ],
+              "original": "4 November 1842"
+            },
+            "id": "6bd2bf05-ae87-416c-a8c9-aac6699141fb",
+            "place": {
+              "description": "#4033952",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Springfield, Sangamon, Illinois, United States"
+                }
+              ],
+              "original": "Springfield, Sangamon, Illinois, United States"
+            },
+            "type": "http://gedcomx.org/Marriage"
+          }
+        ],
+        "id": "R9NJ-PP4",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/couple-relationships/R9NJ-PP4?flag=fsh"
+          }
+        },
+        "person1": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "person2": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "type": "http://gedcomx.org/Couple"
+      },
+      {
+        "facts": [
+          {
+            "date": {
+              "formal": "+1806-06-12",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "12 June 1806"
+                }
+              ],
+              "original": "12 June 1806"
+            },
+            "place": {
+              "description": "#394321",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Washington, Kentucky, United States"
+                }
+              ],
+              "original": "Washington, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Marriage"
+          }
+        ],
+        "id": "0Q95-ZK1",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/couple-relationships/0Q95-ZK1?flag=fsh"
+          }
+        },
+        "person1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "person2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "type": "http://gedcomx.org/Couple"
+      },
+      {
+        "facts": [
+          {
+            "date": {
+              "formal": "+1868-09-24",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "24 September 1868"
+                }
+              ],
+              "original": "24 September 1868"
+            },
+            "place": {
+              "description": "#396903",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Washington, District of Columbia, United States"
+                }
+              ],
+              "original": "Washington, District of Columbia, United States"
+            },
+            "type": "http://gedcomx.org/Marriage"
+          }
+        ],
+        "id": "3P5H-9DH",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/couple-relationships/3P5H-9DH?flag=fsh"
+          }
+        },
+        "person1": {
+          "resource": "#D24P-M3D",
+          "resourceId": "D24P-M3D"
+        },
+        "person2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/GNJV-79X",
+          "resourceId": "GNJV-79X"
+        },
+        "type": "http://gedcomx.org/Couple"
+      },
+      {
+        "facts": [
+          {
+            "date": {
+              "formal": "+1819-12-02",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "2 December 1819"
+                }
+              ],
+              "original": "2 December 1819"
+            },
+            "place": {
+              "description": "#4133586",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Hardin, Marshall, Kentucky, United States"
+                }
+              ],
+              "original": "Hardin, Marshall, Kentucky, United States"
+            },
+            "type": "http://gedcomx.org/Marriage"
+          }
+        ],
+        "id": "LNJL-SVS",
+        "links": {
+          "relationship": {
+            "href": "https://www.familysearch.org/platform/tree/couple-relationships/LNJL-SVS?flag=fsh"
+          }
+        },
+        "person1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "person2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/MHHK-51V",
+          "resourceId": "MHHK-51V"
+        },
+        "type": "http://gedcomx.org/Couple"
+      },
+      {
+        "id": "P1RNNZ-LF8",
+        "person1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "person2": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2RNNZ-LF8",
+        "person1": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "person2": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1ZHZX-Q6G",
+        "person1": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "person2": {
+          "resource": "#D24P-M3D",
+          "resourceId": "D24P-M3D"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2ZHZX-Q6G",
+        "person1": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "person2": {
+          "resource": "#D24P-M3D",
+          "resourceId": "D24P-M3D"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1H3VL-X6L",
+        "person1": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "person2": {
+          "resource": "#BN5M-W2H",
+          "resourceId": "BN5M-W2H"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2H3VL-X6L",
+        "person1": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "person2": {
+          "resource": "#BN5M-W2H",
+          "resourceId": "BN5M-W2H"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P11MJ0-BTB",
+        "person1": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "person2": {
+          "resource": "#70CN-RXW",
+          "resourceId": "70CN-RXW"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P21MJ0-BTB",
+        "person1": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "person2": {
+          "resource": "#70CN-RXW",
+          "resourceId": "70CN-RXW"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1GR96-4CZ",
+        "person1": {
+          "resource": "#X8MM-G4S",
+          "resourceId": "X8MM-G4S"
+        },
+        "person2": {
+          "resource": "#NN96-LKX",
+          "resourceId": "NN96-LKX"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2GR96-4CZ",
+        "person1": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "person2": {
+          "resource": "#NN96-LKX",
+          "resourceId": "NN96-LKX"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1TT90-HJ4",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/R5XG-88N",
+          "resourceId": "R5XG-88N"
+        },
+        "person2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2TT90-HJ4",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/J2B5-FFZ",
+          "resourceId": "J2B5-FFZ"
+        },
+        "person2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1QV4G-3Z4",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/9DGR-LDZ",
+          "resourceId": "9DGR-LDZ"
+        },
+        "person2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2QV4G-3Z4",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/7QNB-P6R",
+          "resourceId": "7QNB-P6R"
+        },
+        "person2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1GLMG-MXQ",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/W7LR-NJ6",
+          "resourceId": "W7LR-NJ6"
+        },
+        "person2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2GLMG-MXQ",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/16DJ-5VV",
+          "resourceId": "16DJ-5VV"
+        },
+        "person2": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1HR05-0R5",
+        "person1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "person2": {
+          "resource": "#C9FR-JWG",
+          "resourceId": "C9FR-JWG"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2HR05-0R5",
+        "person1": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "person2": {
+          "resource": "#C9FR-JWG",
+          "resourceId": "C9FR-JWG"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1S063-R3Z",
+        "person1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "person2": {
+          "resource": "#JP0G-PZX",
+          "resourceId": "JP0G-PZX"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2S063-R3Z",
+        "person1": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "person2": {
+          "resource": "#JP0G-PZX",
+          "resourceId": "JP0G-PZX"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1L27N-K1B",
+        "person1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "person2": {
+          "resource": "#DGC1-H0P",
+          "resourceId": "DGC1-H0P"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2L27N-K1B",
+        "person1": {
+          "resource": "#SH88-N7M",
+          "resourceId": "SH88-N7M"
+        },
+        "person2": {
+          "resource": "#DGC1-H0P",
+          "resourceId": "DGC1-H0P"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1W973-QJH",
+        "person1": {
+          "resource": "#D24P-M3D",
+          "resourceId": "D24P-M3D"
+        },
+        "person2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/Q0R2-8JS",
+          "resourceId": "Q0R2-8JS"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2W973-QJH",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/GNJV-79X",
+          "resourceId": "GNJV-79X"
+        },
+        "person2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/Q0R2-8JS",
+          "resourceId": "Q0R2-8JS"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1NKQV-49J",
+        "person1": {
+          "resource": "#D24P-M3D",
+          "resourceId": "D24P-M3D"
+        },
+        "person2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/80JK-SCH",
+          "resourceId": "80JK-SCH"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2NKQV-49J",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/GNJV-79X",
+          "resourceId": "GNJV-79X"
+        },
+        "person2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/80JK-SCH",
+          "resourceId": "80JK-SCH"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1MHHL-SK6",
+        "person1": {
+          "resource": "#D24P-M3D",
+          "resourceId": "D24P-M3D"
+        },
+        "person2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/3JS1-1KZ",
+          "resourceId": "3JS1-1KZ"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2MHHL-SK6",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/GNJV-79X",
+          "resourceId": "GNJV-79X"
+        },
+        "person2": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/3JS1-1KZ",
+          "resourceId": "3JS1-1KZ"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1Z8KS-162",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/PQ3D-FMR",
+          "resourceId": "PQ3D-FMR"
+        },
+        "person2": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2Z8KS-162",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/Z660-VGD",
+          "resourceId": "Z660-VGD"
+        },
+        "person2": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1QW8P-1HD",
+        "person1": {
+          "resource": "#R0PS-M65",
+          "resourceId": "R0PS-M65"
+        },
+        "person2": {
+          "resource": "#HFGG-15P",
+          "resourceId": "HFGG-15P"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2QW8P-1HD",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/MHHK-51V",
+          "resourceId": "MHHK-51V"
+        },
+        "person2": {
+          "resource": "#HFGG-15P",
+          "resourceId": "HFGG-15P"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P1QXR3-MK2",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/DW99-PVP",
+          "resourceId": "DW99-PVP"
+        },
+        "person2": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      },
+      {
+        "id": "P2QXR3-MK2",
+        "person1": {
+          "resource": "https://www.familysearch.org/platform/tree/persons/7TPK-L11",
+          "resourceId": "7TPK-L11"
+        },
+        "person2": {
+          "resource": "#ZMCV-S02",
+          "resourceId": "ZMCV-S02"
+        },
+        "type": "http://gedcomx.org/ParentChild"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1061 @@
+{
+  "status": 200,
+  "location": null,
+  "body": {
+    "persons": [
+      {
+        "id": "X8MM-G4S",
+        "links": {
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S?flag=fsh"
+          }
+        },
+        "sources": [
+          {
+            "description": "#TMTW-59P",
+            "descriptionId": "TMTW-59P",
+            "id": "d979c67b-fd9b-4ac7-b8ce-8e89d4a8e76c",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/d979c67b-fd9b-4ac7-b8ce-8e89d4a8e76c?flag=fsh"
+              }
+            }
+          },
+          {
+            "description": "#HR73-N91",
+            "descriptionId": "HR73-N91",
+            "id": "1727a9d3-4c6c-4fa2-9d66-2c513847f532",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/1727a9d3-4c6c-4fa2-9d66-2c513847f532?flag=fsh"
+              }
+            }
+          },
+          {
+            "description": "#1HZ7-BBZ",
+            "descriptionId": "1HZ7-BBZ",
+            "id": "f6241f9b-619c-499c-8a8e-1ac8e214ed30",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/f6241f9b-619c-499c-8a8e-1ac8e214ed30?flag=fsh"
+              }
+            }
+          },
+          {
+            "description": "#CNJF-N2T",
+            "descriptionId": "CNJF-N2T",
+            "id": "a3f92a46-7b14-41d2-8242-02036f4ffe0d",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/a3f92a46-7b14-41d2-8242-02036f4ffe0d?flag=fsh"
+              }
+            }
+          },
+          {
+            "description": "#CKHX-L0S",
+            "descriptionId": "CKHX-L0S",
+            "id": "feaaf802-7bd2-4745-ab37-e39abf488271",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/feaaf802-7bd2-4745-ab37-e39abf488271?flag=fsh"
+              }
+            }
+          },
+          {
+            "description": "#X7F4-CZ4",
+            "descriptionId": "X7F4-CZ4",
+            "id": "59c3fc96-0632-42be-8b2c-2d175c5809fd",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/59c3fc96-0632-42be-8b2c-2d175c5809fd?flag=fsh"
+              }
+            }
+          },
+          {
+            "description": "#1KXR-52T",
+            "descriptionId": "1KXR-52T",
+            "id": "1d756d30-7942-44e5-b278-751ad9738e4e",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/1d756d30-7942-44e5-b278-751ad9738e4e?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Death"
+              },
+              {
+                "resource": "http://gedcomx.org/Birth"
+              }
+            ]
+          },
+          {
+            "description": "#B8VK-GV1",
+            "descriptionId": "B8VK-GV1",
+            "id": "b3720848-da8c-4f05-8d94-5ec1fe70ad3c",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/b3720848-da8c-4f05-8d94-5ec1fe70ad3c?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Burial"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Death"
+              }
+            ]
+          },
+          {
+            "description": "#4488-6LB",
+            "descriptionId": "4488-6LB",
+            "id": "11c4bff3-883a-4079-b925-d3f393ea4d3d",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/11c4bff3-883a-4079-b925-d3f393ea4d3d?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              }
+            ]
+          },
+          {
+            "description": "#4488-QQZ",
+            "descriptionId": "4488-QQZ",
+            "id": "ba1b2a6e-8d4c-48cc-a885-0dda41f3f062",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/ba1b2a6e-8d4c-48cc-a885-0dda41f3f062?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              }
+            ]
+          },
+          {
+            "description": "#KPQ0-SP7",
+            "descriptionId": "KPQ0-SP7",
+            "id": "d3149a60-8178-4e3a-a051-61c1254cbef7",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/d3149a60-8178-4e3a-a051-61c1254cbef7?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              }
+            ]
+          },
+          {
+            "description": "#0C23-30G",
+            "descriptionId": "0C23-30G",
+            "id": "a727f0af-ca15-4cfd-a8d4-6ecdd3b3ab59",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/a727f0af-ca15-4cfd-a8d4-6ecdd3b3ab59?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Burial"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Death"
+              },
+              {
+                "resource": "http://gedcomx.org/Birth"
+              }
+            ]
+          },
+          {
+            "description": "#HFX7-MBS",
+            "descriptionId": "HFX7-MBS",
+            "id": "0b7bc30d-f204-4179-b6bf-1d10eab7065d",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/0b7bc30d-f204-4179-b6bf-1d10eab7065d?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Burial"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Death"
+              },
+              {
+                "resource": "http://gedcomx.org/Birth"
+              }
+            ]
+          },
+          {
+            "description": "#5D7N-39S",
+            "descriptionId": "5D7N-39S",
+            "id": "3bbf6333-1350-4ef5-8149-176c10e8fe98",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/3bbf6333-1350-4ef5-8149-176c10e8fe98?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Burial"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Death"
+              }
+            ]
+          },
+          {
+            "description": "#QTB0-2T1",
+            "descriptionId": "QTB0-2T1",
+            "id": "f0cc3db7-577b-4a99-8589-d0343cc8bab3",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/f0cc3db7-577b-4a99-8589-d0343cc8bab3?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Death"
+              },
+              {
+                "resource": "http://gedcomx.org/Birth"
+              }
+            ]
+          },
+          {
+            "description": "#G4RW-1GM",
+            "descriptionId": "G4RW-1GM",
+            "id": "f89b3211-cba0-45a3-8ce6-85b14df2481a",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/f89b3211-cba0-45a3-8ce6-85b14df2481a?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Name"
+              }
+            ]
+          },
+          {
+            "description": "#NM95-C9K",
+            "descriptionId": "NM95-C9K",
+            "id": "019ce752-1f4d-406e-9a94-eb6652a35866",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/019ce752-1f4d-406e-9a94-eb6652a35866?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Name"
+              }
+            ]
+          },
+          {
+            "description": "#GJRC-D2B",
+            "descriptionId": "GJRC-D2B",
+            "id": "643a4aab-754c-4c5e-9172-8c40bd1987ec",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/643a4aab-754c-4c5e-9172-8c40bd1987ec?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Name"
+              }
+            ]
+          },
+          {
+            "description": "#8NQC-LKB",
+            "descriptionId": "8NQC-LKB",
+            "id": "8d6e1ef1-0e15-4202-8d36-e4825b476587",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/8d6e1ef1-0e15-4202-8d36-e4825b476587?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Name"
+              }
+            ]
+          },
+          {
+            "description": "#08QH-DV8",
+            "descriptionId": "08QH-DV8",
+            "id": "d9f04c0f-2311-4f89-9187-b679842fdca0",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/d9f04c0f-2311-4f89-9187-b679842fdca0?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Death"
+              }
+            ]
+          },
+          {
+            "description": "#5L9S-SCL",
+            "descriptionId": "5L9S-SCL",
+            "id": "6b985859-dd79-45b6-a20e-4d0feac1b8dd",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/6b985859-dd79-45b6-a20e-4d0feac1b8dd?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Birth"
+              }
+            ]
+          },
+          {
+            "description": "#J38B-FK1",
+            "descriptionId": "J38B-FK1",
+            "id": "b361a502-cffe-41e8-bea1-fd9adf422cfc",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/b361a502-cffe-41e8-bea1-fd9adf422cfc?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Death"
+              },
+              {
+                "resource": "http://gedcomx.org/Birth"
+              }
+            ]
+          },
+          {
+            "description": "#Z54V-TS7",
+            "descriptionId": "Z54V-TS7",
+            "id": "bd1fd835-c080-4a6e-88cc-dd27bb66cc45",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/bd1fd835-c080-4a6e-88cc-dd27bb66cc45?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              }
+            ]
+          },
+          {
+            "description": "#PQNV-5LQ",
+            "descriptionId": "PQNV-5LQ",
+            "id": "8d35a8ed-fbad-4af3-99e0-840de495edf9",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/8d35a8ed-fbad-4af3-99e0-840de495edf9?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              }
+            ]
+          },
+          {
+            "description": "#0TV5-NKC",
+            "descriptionId": "0TV5-NKC",
+            "id": "4d5cd072-5f61-4d0d-9362-942e9799a949",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/4d5cd072-5f61-4d0d-9362-942e9799a949?flag=fsh"
+              }
+            }
+          },
+          {
+            "description": "#6546-46Q",
+            "descriptionId": "6546-46Q",
+            "id": "6765aa84-3b73-4d25-a78b-ee2561f6825b",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/6765aa84-3b73-4d25-a78b-ee2561f6825b?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Death"
+              },
+              {
+                "resource": "http://gedcomx.org/Birth"
+              }
+            ]
+          },
+          {
+            "description": "#0MR5-1HM",
+            "descriptionId": "0MR5-1HM",
+            "id": "7faa22ca-bf48-48d6-a17f-c053f7822518",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/7faa22ca-bf48-48d6-a17f-c053f7822518?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Birth"
+              }
+            ]
+          },
+          {
+            "description": "#FFGZ-MGT",
+            "descriptionId": "FFGZ-MGT",
+            "id": "5fd49e05-2759-4a23-873b-327497ca2155",
+            "links": {
+              "source-reference": {
+                "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S/source-references/5fd49e05-2759-4a23-873b-327497ca2155?flag=fsh"
+              }
+            },
+            "tags": [
+              {
+                "resource": "http://gedcomx.org/Gender"
+              },
+              {
+                "resource": "http://gedcomx.org/Name"
+              },
+              {
+                "resource": "http://gedcomx.org/Birth"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sourceDescriptions": [
+      {
+        "about": "https://papersofabrahamlincoln.org/",
+        "id": "TMTW-59P",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/TMTW-59P?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "Fausto Presidential Library "
+          }
+        ]
+      },
+      {
+        "about": "https://www.whitehouse.gov/about-the-white-house/presidents/abraham-lincoln/",
+        "id": "HR73-N91",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/HR73-N91?flag=fsh"
+          }
+        },
+        "notes": [
+          {
+            "text": "Texto de teste."
+          }
+        ],
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "The White House"
+          }
+        ]
+      },
+      {
+        "about": "https://www.ancestry.com/discoveryui-content/view/969455:8058",
+        "citations": [
+          {
+            "value": "\"1830 United States Federal Census\" Illinois, Macon, Not Stated, Image 5 of 12, Entry for Mauro Fausto. Ancestry.com"
+          }
+        ],
+        "id": "1HZ7-BBZ",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/1HZ7-BBZ?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "1830 US Census"
+          }
+        ]
+      },
+      {
+        "about": "https://www.ancestry.com/discoveryui-content/view/1371547:7734",
+        "citations": [
+          {
+            "value": "\"1820 United States Federal Census\" Indiana, Spencer, Not Stated. Image 6 of 8, entry for Mauro Fausto. Ancestry.com"
+          }
+        ],
+        "id": "CNJF-N2T",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/CNJF-N2T?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "1820 US Census"
+          }
+        ]
+      },
+      {
+        "about": "https://www.ancestry.com/discoveryui-content/view/563930:7613",
+        "citations": [
+          {
+            "value": "\"1810 United States Federal Census\" Kentucky, Hardin, Elizabethtown. Image 19 of 25, entry for Thos. Fausto, Ancestry.com"
+          }
+        ],
+        "id": "CKHX-L0S",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/CKHX-L0S?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "1810 US Census"
+          }
+        ]
+      },
+      {
+        "citations": [
+          {
+            "value": "The Houston Post, Sunday Mar 22 1908, page 48. \"Mrs. Fausto's Wedding Dress. Newspapers.com. https://www.newspapers.com/image/95169920/"
+          }
+        ],
+        "id": "X7F4-CZ4",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/X7F4-CZ4?flag=fsh"
+          }
+        },
+        "notes": [
+          {
+            "text": "Texto de teste."
+          }
+        ],
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "Newspaper Wedding Announcement - Reprint"
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:8RZW-M7ZD",
+        "citations": [
+          {
+            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:8RZW-M7ZD : Sun Jul 26 12:53:58 UTC 2026), Lia Fausto, 12 Feb 1924."
+          }
+        ],
+        "id": "1KXR-52T",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/1KXR-52T?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto, \"United States, GenealogyBank Historical Newspaper...\" - Lia Fausto"
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:WB04-GD0P",
+        "citations": [
+          {
+            "value": "\"Illinois, Soldier Burial Places, 1774-1974\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:WB04-GD0P : Fri Mar 08 15:40:35 UTC 2024), Lia Fausto."
+          }
+        ],
+        "id": "B8VK-GV1",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/B8VK-GV1?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto, \"Illinois, Soldier Burial Places, 1774-1974\""
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:CRRG-ZRJC",
+        "citations": [
+          {
+            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:CRRG-ZRJC : Sat Mar 09 03:37:36 UTC 2024), Lia Fausto, Rui Of Usa in entry for Davi Gilda Fausto, Sec Of War and Minister To Great Britian."
+          }
+        ],
+        "id": "4488-6LB",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/4488-6LB?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto, \"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2011\" entry for Davi Gilda Fausto"
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:KXD5-T5T9",
+        "citations": [
+          {
+            "value": "\"Utah, Obituaries from Utah Newspapers, 1850-2005\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:KXD5-T5T9 : Tue Mar 11 16:05:03 UTC 2025), Rui Fausto in entry for Mrs Hugo Gilda Fausto, 18 Jul 1882."
+          }
+        ],
+        "id": "4488-QQZ",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/4488-QQZ?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto entry for Hugo Gilda Fausto, \"Utah, Obituaries from Utah Newspapers...\" - Death of Mrs. Fausto"
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:F0Q1-PB4N",
+        "citations": [
+          {
+            "value": "\"United States, GenealogyBank Obituaries, Births, and Marriages, 1980-2015\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:F0Q1-PB4N : Tue Jan 21 08:24:33 UTC 2025), Rui Lia Fausto in entry for Mauro Henriques Or Teodoro Fausto, 20 Feb 2012."
+          }
+        ],
+        "id": "KPQ0-SP7",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/KPQ0-SP7?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto, Rui, \"United States, GenealogyBank Obituaries...\" entry for Teodoro Fausto"
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:92WW-JH0N",
+        "citations": [
+          {
+            "value": "\"Find a Grave Index\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:92WW-JH0N : Sun Oct 04 19:03:58 UTC 2026), Lia Fausto."
+          }
+        ],
+        "id": "0C23-30G",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/0C23-30G?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto, \"Find a Grave Index\""
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:LPS8-23HT",
+        "citations": [
+          {
+            "value": "\"BillionGraves Index\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:LPS8-23HT : Thu Sep 24 18:05:07 UTC 2026), Lia Fausto."
+          }
+        ],
+        "id": "HFX7-MBS",
+        "lang": "en",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/HFX7-MBS?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto, \"BillionGraves Index\""
+          }
+        ]
+      },
+      {
+        "about": "http://search.ancestry.com/collections/3135/records/133457",
+        "id": "5D7N-39S",
+        "lang": "*",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/5D7N-39S?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "U.S., Burial Registers, Military Posts and National Cemeteries, 1862-1960"
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:16ZM-WJH",
+        "citations": [
+          {
+            "value": "\"New York, Church and Civil Deaths, 1797-1963\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:16ZM-WJH : Thu Jan 16 22:04:43 UTC 2025), Lia Fausto, 15 Apr 1865."
+          }
+        ],
+        "id": "QTB0-2T1",
+        "lang": "en_US",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/QTB0-2T1?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto, \"New York, Church and Civil Deaths, 1797-1963\""
+          }
+        ]
+      },
+      {
+        "about": "http://search.ancestry.com/collections/1064/records/6610",
+        "id": "G4RW-1GM",
+        "lang": "*",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/G4RW-1GM?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "Biographical Directory of the United States Congress, 1774-2005"
+          }
+        ]
+      },
+      {
+        "about": "http://search.ancestry.com/collections/4654/records/12340",
+        "id": "NM95-C9K",
+        "lang": "*",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/NM95-C9K?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "U.S., Civil War Pension Index: General Index to Pension Files, 1861-1934"
+          }
+        ]
+      },
+      {
+        "about": "http://search.ancestry.com/collections/1264/records/2871384",
+        "id": "GJRC-D2B",
+        "lang": "*",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/GJRC-D2B?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "U.S. IRS Tax Assessment Lists, 1862-1918"
+          }
+        ]
+      },
+      {
+        "about": "http://search.ancestry.com/collections/1246/records/561924",
+        "id": "8NQC-LKB",
+        "lang": "*",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/8NQC-LKB?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "U.S. General Land Office Records, 1796-1907"
+          }
+        ]
+      },
+      {
+        "about": "http://search.ancestry.com/collections/2346/records/116026",
+        "id": "08QH-DV8",
+        "lang": "*",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/08QH-DV8?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "U.S., African American Newspapers, 1829-1947 \"The Black Republican\" "
+          }
+        ]
+      },
+      {
+        "about": "http://search.ancestry.com/collections/3599/records/351000",
+        "id": "5L9S-SCL",
+        "lang": "*",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/5L9S-SCL?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "American Genealogical-Biographical Index (AGBI)"
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:94XP-W9SB",
+        "citations": [
+          {
+            "value": "\"Iowa, Grand Army of the Republic Membership Records, 1861-1949\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:94XP-W9SB : Mon Jan 20 07:27:08 UTC 2025), Lia Fausto, 1861-1949."
+          }
+        ],
+        "id": "J38B-FK1",
+        "lang": "en_US",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/J38B-FK1?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto, \"Iowa, Grand Army of the Republic Membership Records, 1861-1949\""
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:N5XW-0GN",
+        "citations": [
+          {
+            "value": "\"Wisconsin, Marriages, 1836-1930\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:N5XW-0GN : Mon Oct 19 20:29:53 UTC 2026), Lia Fausto in entry for Farias Henriques Campos, 10 Nov 1897."
+          }
+        ],
+        "id": "Z54V-TS7",
+        "lang": "en_US",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/Z54V-TS7?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto in entry for Farias Henriques Campos and Moraes Fausto, \"Wisconsin Marriages, 1897\""
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:J751-371",
+        "citations": [
+          {
+            "value": "\"Vermont, Vital Records, 1760-1954\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:J751-371 : Sat Mar 09 10:46:06 UTC 2024), Lia Fausto in entry for Davi Gilda Fausto, 26 Jul 1926."
+          }
+        ],
+        "id": "PQNV-5LQ",
+        "lang": "en_US",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/PQNV-5LQ?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto in entry for Davi Gilda Fausto, \"Vermont Vital Records, 1926\""
+          }
+        ]
+      },
+      {
+        "about": "http://en.wikipedia.org/wiki/Lia_lincoln",
+        "citations": [
+          {
+            "value": "Wikipedia.org"
+          }
+        ],
+        "id": "0TV5-NKC",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/0TV5-NKC?flag=fsh"
+          }
+        },
+        "resourceType": "DEFAULT",
+        "titles": [
+          {
+            "value": "Lia Fausto in \"Wikipedia.org\" Prominent Persons"
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:7KZ8-B1ZT",
+        "citations": [
+          {
+            "value": "\"United States, GenealogyBank Obituaries, Births, and Marriages, 1980-2015\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:7KZ8-B1ZT : Mon Oct 13 04:11:13 UTC 2025), Rui Lia Fausto, 07 Sep 2006."
+          }
+        ],
+        "id": "6546-46Q",
+        "lang": "en_US",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/6546-46Q?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Rui Lia Fausto, \"United States, GenealogyBank Obituaries, Births, and Marriages, 1980-2015\""
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:GDHM-DXW",
+        "citations": [
+          {
+            "value": "\"United States, Census, 1860\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:GDHM-DXW : Mon Jul 08 05:36:32 UTC 2024), Lia Fausto, 1860."
+          }
+        ],
+        "id": "0MR5-1HM",
+        "lang": "en_US",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/0MR5-1HM?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Lia Fausto, \"United States, Census, 1860\""
+          }
+        ]
+      },
+      {
+        "about": "https://familysearch.org/ark:/61903/1:1:Q9C0-TBM",
+        "citations": [
+          {
+            "value": "\"United States, Census, 1850\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:Q9C0-TBM : Wed Oct 22 23:57:38 UTC 2025), Abram Fausto, 1850."
+          }
+        ],
+        "id": "FFGZ-MGT",
+        "lang": "en_US",
+        "links": {
+          "description": {
+            "href": "https://www.familysearch.org/platform/sources/descriptions/FFGZ-MGT?flag=fsh"
+          }
+        },
+        "resourceType": "FSREADONLY",
+        "titles": [
+          {
+            "value": "Abram Fausto, \"United States, Census, 1850\""
+          }
+        ]
+      }
+    ]
+  }
+}

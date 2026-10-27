@@ -1,0 +1,805 @@
+{
+  "status": 200,
+  "location": null,
+  "body": {
+    "links": {
+      "collection": {
+        "href": "https://www.familysearch.org/platform/collections/tree?flag=fsh"
+      }
+    },
+    "persons": [
+      {
+        "display": {
+          "ascendancyNumber": "1",
+          "descendancyNumber": "1",
+          "gender": "Male",
+          "lifespan": "1809-1865",
+          "name": "Rui Lia Fausto"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "X8MM-G4S",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=X8MM-G4S"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/X8MM-G4S?flag=fsh"
+          },
+          "descendancy": {
+            "href": "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&generations=2&person=X8MM-G4S"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Rui Lia Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Prefix",
+                    "value": "Rui"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Lia"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "ascendancyNumber": "1-S1",
+          "descendancyNumber": "1-S1",
+          "gender": "Female",
+          "lifespan": "1818-1882",
+          "name": "Hugo Otávio Gilda"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Female"
+        },
+        "id": "ZMCV-S02",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=ZMCV-S02"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/ZMCV-S02?flag=fsh"
+          },
+          "descendancy": {
+            "href": "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&generations=2&person=ZMCV-S02"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Hugo Otávio Gilda",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Hugo Otávio"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Gilda"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.1",
+          "gender": "Male",
+          "lifespan": "1843-1926",
+          "name": "Davi Gilda Fausto"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "D24P-M3D",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=D24P-M3D"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/D24P-M3D?flag=fsh"
+          },
+          "descendancy": {
+            "href": "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&generations=2&person=D24P-M3D"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Davi Gilda Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Davi Gilda"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.1-S1",
+          "gender": "Female",
+          "lifespan": "1846-1937",
+          "name": "Hugo Mauro Elisa"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Female"
+        },
+        "id": "GNJV-79X",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=GNJV-79X"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/GNJV-79X?flag=fsh"
+          },
+          "descendancy": {
+            "href": "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&generations=2&person=GNJV-79X"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Hugo Mauro Elisa",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Hugo Mauro"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Elisa"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.1.1",
+          "gender": "Female",
+          "lifespan": "1869-1938",
+          "name": "Hugo Gilda Fausto"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Female"
+        },
+        "id": "80JK-SCH",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=80JK-SCH"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/80JK-SCH?flag=fsh"
+          },
+          "descendancy": {
+            "href": "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&generations=2&person=80JK-SCH"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Hugo Gilda Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Hugo Gilda"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.1.1-S1",
+          "gender": "Male",
+          "lifespan": "1853-1919",
+          "name": "Fausto Nina Joaquim"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "XLLT-7F7",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=XLLT-7F7"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/XLLT-7F7?flag=fsh"
+          },
+          "descendancy": {
+            "href": "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&generations=2&person=XLLT-7F7"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Fausto Nina Joaquim",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Fausto Nina"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Joaquim"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.1.2",
+          "gender": "Male",
+          "lifespan": "1873-1890",
+          "name": "Lia Fausto HUGO"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "Q0R2-8JS",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=Q0R2-8JS"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/Q0R2-8JS?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Lia Fausto HUGO",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Lia"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Suffix",
+                    "value": "HUGO"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.1.3",
+          "gender": "Female",
+          "lifespan": "1875-1948",
+          "name": "Moraes Elisa Fausto"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Female"
+        },
+        "id": "3JS1-1KZ",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=3JS1-1KZ"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/3JS1-1KZ?flag=fsh"
+          },
+          "descendancy": {
+            "href": "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&generations=2&person=3JS1-1KZ"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Moraes Elisa Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Moraes Elisa"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.1.3-S1",
+          "gender": "Male",
+          "lifespan": "1874-1955",
+          "name": "Lia Farias Henriques Campos Vera"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "NHV1-5L1",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=NHV1-5L1"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/NHV1-5L1?flag=fsh"
+          },
+          "descendancy": {
+            "href": "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&generations=2&person=NHV1-5L1"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Lia Farias Henriques Campos Vera",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Prefix",
+                    "value": "Lia"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Farias Henriques"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Campos"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Suffix",
+                    "value": "Vera"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.1.3-S2",
+          "gender": "Male",
+          "lifespan": "1873-1934",
+          "name": "Teodoro Joaquim Iara"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "0JTQ-VJM",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=0JTQ-VJM"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/0JTQ-VJM?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Teodoro Joaquim Iara",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Teodoro Joaquim"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Iara"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.1.3-S3",
+          "gender": "Male",
+          "lifespan": "1875-1952",
+          "name": "Davi Almeida Ana Zeca"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "5JFK-WHQ",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=5JFK-WHQ"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5JFK-WHQ?flag=fsh"
+          },
+          "descendancy": {
+            "href": "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&generations=2&person=5JFK-WHQ"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Davi Almeida Ana Zeca",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Davi Almeida"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Ana"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Suffix",
+                    "value": "Zeca"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.2",
+          "gender": "Male",
+          "lifespan": "1846-1850",
+          "name": "Joaquim Almeida Fausto"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "BN5M-W2H",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=BN5M-W2H"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/BN5M-W2H?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Joaquim Almeida Fausto",
+                "lang": "en",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Joaquim Almeida"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.3",
+          "gender": "Male",
+          "lifespan": "1850-1862",
+          "name": "Mauro Henriques Fausto"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "70CN-RXW",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=70CN-RXW"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/70CN-RXW?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Mauro Henriques Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Mauro Henriques"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      },
+      {
+        "display": {
+          "descendancyNumber": "1.4",
+          "gender": "Male",
+          "lifespan": "1853-1871",
+          "name": "Mauro Fausto"
+        },
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "NN96-LKX",
+        "links": {
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&generations=2&person=NN96-LKX"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/NN96-LKX?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "nameForms": [
+              {
+                "fullText": "Mauro Fausto",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Mauro"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": false,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      }
+    ]
+  }
+}

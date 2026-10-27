@@ -1,0 +1,251 @@
+{
+  "status": 301,
+  "location": "https://www.familysearch.org/platform/tree/persons/T2SD-CF4",
+  "body": {
+    "description": "#sd_person_5TKK-FR3",
+    "persons": [
+      {
+        "display": {
+          "ascendancyNumber": "1",
+          "birthDate": "1877",
+          "birthPlace": "Stour Provost, Dorset, England, United Kingdom",
+          "descendancyNumber": "1",
+          "gender": "Female",
+          "lifespan": "1877-Deceased",
+          "name": "Fausto Almeida"
+        },
+        "facts": [
+          {
+            "date": {
+              "formal": "+1877",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "1877"
+                }
+              ],
+              "original": "1877"
+            },
+            "id": "ebe0d4fe-20f8-4dad-b4b8-c69c03d0f100",
+            "links": {
+              "conclusion": {
+                "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/conclusions/ebe0d4fe-20f8-4dad-b4b8-c69c03d0f100?flag=fsh"
+              }
+            },
+            "place": {
+              "description": "#2968292",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Stour Provost, Dorset, England, United Kingdom"
+                }
+              ],
+              "original": "Stour Provost, Dorset, England"
+            },
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "id": "689dd5f0-4e0e-47e7-9415-6db71c0d6dba",
+            "links": {
+              "conclusion": {
+                "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/conclusions/689dd5f0-4e0e-47e7-9415-6db71c0d6dba?flag=fsh"
+              }
+            },
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "date": {
+              "formal": "+1901-03-31",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "31 March 1901"
+                }
+              ],
+              "original": "31 Mar 1901"
+            },
+            "id": "751d6e78-9341-418e-b3fc-09ac98b14bd5",
+            "links": {
+              "conclusion": {
+                "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/conclusions/751d6e78-9341-418e-b3fc-09ac98b14bd5?flag=fsh"
+              }
+            },
+            "place": {
+              "description": "#2978737",
+              "normalized": [
+                {
+                  "lang": "en-US",
+                  "value": "Charlton Musgrove, Somerset, England, United Kingdom"
+                }
+              ],
+              "original": "Charlton Musgrove, Somerset, England, United Kingdom"
+            },
+            "type": "http://gedcomx.org/Residence"
+          }
+        ],
+        "gender": {
+          "id": "a29ee816-0494-4634-abd6-52092bb6a350",
+          "links": {
+            "conclusion": {
+              "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/conclusions/a29ee816-0494-4634-abd6-52092bb6a350?flag=fsh"
+            }
+          },
+          "type": "http://gedcomx.org/Female"
+        },
+        "id": "5TKK-FR3",
+        "links": {
+          "spouses": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/spouses?flag=fsh"
+          },
+          "change-history": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/changes?flag=fsh"
+          },
+          "notes": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/notes?flag=fsh"
+          },
+          "ancestry": {
+            "href": "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&person=5TKK-FR3"
+          },
+          "non-matches": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/not-a-match?flag=fsh"
+          },
+          "portraits": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/portraits?flag=fsh"
+          },
+          "collection": {
+            "href": "https://www.familysearch.org/platform/collections/tree?flag=fsh"
+          },
+          "portrait": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/portrait?flag=fsh"
+          },
+          "families": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/families?flag=fsh"
+          },
+          "matches": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/matches?flag=fsh"
+          },
+          "children": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/children?flag=fsh"
+          },
+          "source-descriptions": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/sources?flag=fsh"
+          },
+          "person": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3?flag=fsh"
+          },
+          "descendancy": {
+            "href": "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&person=5TKK-FR3"
+          },
+          "merge": {
+            "accept": "*/*",
+            "allow": "GET,OPTIONS,POST",
+            "template": "https://www.familysearch.org/platform/tree/persons/{pid}/merges/{dpid}?flag=fst{&filter,access_token}",
+            "title": "Person Merge",
+            "type": "application/json,application/x-fs-v1+json,application/x-fs-v1+xml,application/xml,text/html"
+          },
+          "parents": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/parents?flag=fsh"
+          },
+          "artifacts": {
+            "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/memories?flag=fsh"
+          }
+        },
+        "living": false,
+        "names": [
+          {
+            "id": "991a0a6e-291e-4f21-a0db-159dd32b100f",
+            "links": {
+              "conclusion": {
+                "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/conclusions/991a0a6e-291e-4f21-a0db-159dd32b100f?flag=fsh"
+              }
+            },
+            "nameForms": [
+              {
+                "fullText": "Fausto Almeida",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Fausto"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Almeida"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": true,
+            "type": "http://gedcomx.org/BirthName"
+          },
+          {
+            "id": "0ca3ae4f-95c7-4dfa-bd6c-7be6d049400e",
+            "links": {
+              "conclusion": {
+                "href": "https://www.familysearch.org/platform/tree/persons/5TKK-FR3/conclusions/0ca3ae4f-95c7-4dfa-bd6c-7be6d049400e?flag=fsh"
+              }
+            },
+            "nameForms": [
+              {
+                "fullText": "Fausto Almeida",
+                "parts": [
+                  {
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Fausto"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Almeida"
+                  }
+                ],
+                "nameFormInfo": [
+                  {
+                    "order": "http://familysearch.org/v1/Eurotypic"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "personInfo": [
+          {
+            "canUserEdit": true,
+            "published": true,
+            "visibleToAll": true,
+            "visibleToAllWhenUsingFamilySearchApps": true
+          }
+        ]
+      }
+    ],
+    "places": [
+      {
+        "id": "2968292",
+        "latitude": 50.9923,
+        "longitude": -2.2931,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Stour Provost, Dorset, England, United Kingdom"
+          }
+        ]
+      },
+      {
+        "id": "2978737",
+        "latitude": 51.0697,
+        "longitude": -2.4019,
+        "names": [
+          {
+            "lang": "en-US",
+            "value": "Charlton Musgrove, Somerset, England, United Kingdom"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -2,6 +2,14 @@ import type { Config } from "../config.js";
 import { authStatus } from "./auth.js";
 import type { ToolDef } from "./define.js";
 import { login } from "./login.js";
+import {
+  getAncestors,
+  getChangeHistory,
+  getDescendants,
+  getFamily,
+  getPerson,
+  searchPersons,
+} from "./tree.js";
 
 // Flat registry shared by the MCP server and the CLI: the two surfaces cannot
 // drift, because they resolve tools from this same array. The order here is the
@@ -10,6 +18,13 @@ export const allTools: ToolDef[] = [
   // Session and diagnosis
   authStatus,
   login,
+  // Family Tree
+  searchPersons,
+  getPerson,
+  getFamily,
+  getAncestors,
+  getDescendants,
+  getChangeHistory,
 ];
 
 /**
