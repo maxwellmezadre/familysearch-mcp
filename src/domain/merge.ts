@@ -19,16 +19,24 @@ export const resourceId = (uri: string): string => uri.split(/[?#]/)[0]!.split("
 
 const matches = (choice: string, uri: string): boolean => uri !== "" && (choice === uri || choice === resourceId(uri));
 
-export function buildMergeRequest(
-  analysis: MergeAnalysis,
-  choices: MergeChoices,
-): { resourcesToCopy: string[]; resourcesToDelete: string[] } {
+export type MergeRequest = {
+  resourcesToCopy: string[];
+  resourcesToDelete: string[];
+  /** The conflicts taken from the duplicate: the question lists exactly these as swaps. */
+  chosen: MergeAnalysis["conflicts"];
+};
+
+export function buildMergeRequest(analysis: MergeAnalysis, choices: MergeChoices): MergeRequest {
   const taken = choices.takeFromDuplicate.map((choice) => {
     const conflict = analysis.conflicts.find((pair) => matches(choice, pair.duplicate) || matches(choice, pair.survivor));
     if (!conflict) throw new Error(`"${choice}" não é um conflito desta mesclagem: confira os ids em take_from_duplicate.`);
+    // FamilySearch left one side out: there is nothing to swap, and "" must never be sent.
+    if (!conflict.survivor || !conflict.duplicate) {
+      throw new Error(`"${choice}": a análise do FamilySearch traz esse conflito com um lado vazio; não dá para trocar.`);
+    }
     return conflict;
   });
-  const swaps = [...new Set(taken)]; // either side's id names the same conflict
+  const chosen = [...new Set(taken)]; // either side's id names the same conflict
   const skipped = choices.skipCopy.map((choice) => {
     const resource = analysis.duplicateResources.find((uri) => matches(choice, uri));
     if (!resource) throw new Error(`"${choice}" não é um item só da duplicata nesta mesclagem: confira os ids em skip_copy.`);
@@ -36,10 +44,11 @@ export function buildMergeRequest(
   });
   return {
     resourcesToCopy: [
-      ...analysis.duplicateResources.filter((uri) => !skipped.includes(uri)),
-      ...swaps.map((pair) => pair.duplicate),
+      ...analysis.duplicateResources.filter((uri) => uri !== "" && !skipped.includes(uri)),
+      ...new Set(chosen.map((pair) => pair.duplicate)),
     ],
-    resourcesToDelete: swaps.map((pair) => pair.survivor),
+    resourcesToDelete: [...new Set(chosen.map((pair) => pair.survivor))],
+    chosen,
   };
 }
 

@@ -27,13 +27,13 @@ afterAll(() => {
   for (const dir of dirs) rmSync(dir, { recursive: true, force: true });
 });
 
-type Who = { gender?: "Male" | "Female"; living?: boolean; birth?: string };
+type Who = { name?: string; gender?: "Male" | "Female"; living?: boolean; birth?: string };
 const personDoc = (id: string, name: string, who: Who = {}) => ({
   persons: [
     {
       id,
       living: who.living ?? false,
-      display: { name, gender: who.gender ?? "Female", lifespan: "1890-1950" },
+      display: { name: who.name ?? name, gender: who.gender ?? "Female", lifespan: "1890-1950" },
       gender: { id: `gender-${id}`, type: `http://gedcomx.org/${who.gender ?? "Female"}` },
       names: [{ id: `name-${id}`, nameForms: [{ fullText: name }] }],
       facts: [{ id: `birth-${id}`, type: "http://gedcomx.org/Birth", date: { original: who.birth ?? "1890", formal: `+${who.birth ?? "1890"}` } }],
@@ -61,7 +61,11 @@ const analysis = {
 };
 
 type World = {
+  survivor?: Who;
   duplicate?: Who;
+  analysis?: typeof analysis;
+  /** A person whose change history comes back empty. */
+  emptyHistory?: string;
   options?: FetchResponse;
   /** Answers the POST; the duplicate turns into a 301 only when it is 2xx. */
   merge?: () => FetchResponse;
@@ -82,17 +86,20 @@ function world(w: World = {}) {
       merged = answer.status < 300;
       return answer;
     }
-    if (sub === `merges/${DUPLICATE}`) return jsonResponse(analysis);
+    if (sub === `merges/${DUPLICATE}`) return jsonResponse(w.analysis ?? analysis);
     if (merged && id === DUPLICATE) {
       return response({ status: 301, headers: { location: `https://www.familysearch.org/platform/tree/persons/${SURVIVOR}` } });
     }
-    if (sub === "") return jsonResponse(id === DUPLICATE ? personDoc(id, "Giulia Rossi", w.duplicate) : personDoc(id!, "Giulia Rossi"));
+    if (sub === "") return jsonResponse(personDoc(id!, "Giulia Rossi", id === DUPLICATE ? w.duplicate : w.survivor));
     if (sub === "families") {
       if (id === DUPLICATE) return jsonResponse(mother(DUPLICATE));
       return jsonResponse(merged && (w.childMoves ?? true) ? mother(SURVIVOR) : personDoc(id!, "Giulia Rossi"));
     }
     if (sub === "sources") return response({ status: 204 });
-    if (sub === "changes") return jsonResponse({ entries: [{ id: id === SURVIVOR ? "chg-a" : "chg-b", title: "Birth Added" }] });
+    if (sub === "changes") {
+      if (id === w.emptyHistory) return jsonResponse({ entries: [] });
+      return jsonResponse({ entries: [{ id: id === SURVIVOR ? "chg-a" : "chg-b", title: "Birth Added" }] });
+    }
     throw new Error(`rota não prevista: ${init.method} ${url}`);
   };
 }
@@ -205,6 +212,48 @@ describe("merge_persons", () => {
     expect(prompt.headline.split("\n")[1]).toBe("ATENÇÃO: 2 sinais de que não são a mesma pessoa.");
     expect(prompt.details).toContain("Sexo diferente");
     expect(prompt.details).toContain("Copia 1, troca 0.");
+  });
+
+  test("long names never push the warning out of the headline", async () => {
+    const approver = fakeApprover([{ approved: false, reason: "não" }]);
+    const long = (first: string) => `${first} ${"Maria ".repeat(20)}`.trim().slice(0, 120);
+    const { run } = setup(
+      world({ survivor: { name: long("Giulia") }, duplicate: { name: `Giulia\n${long("Rossi")}`, gender: "Male", birth: "1850" } }),
+      approver,
+    );
+    await run("merge_persons", merge());
+    const [first, second] = approver.prompts[0]!.headline.split("\n");
+    expect(second).toStartWith("ATENÇÃO:");
+    expect(first).toContain(`… [${DUPLICATE}] em Giulia`);
+    expect(first).toEndWith(`… [${SURVIVOR}]`);
+  });
+
+  test("an empty change history is refused before any question", async () => {
+    const { run, approver, writes } = setup(world({ emptyHistory: DUPLICATE }));
+    // "null" is what compare_persons puts in the fingerprint for an empty history: it must not pass.
+    await expect(run("merge_persons", merge({ fingerprint: "chg-a|null" }))).rejects.toThrow(
+      `não consegui ler o histórico de alterações de ${DUPLICATE}; não dá para garantir que nada mudou desde a comparação`,
+    );
+    expect(approver.prompts).toHaveLength(0);
+    expect(writes()).toHaveLength(0);
+  });
+
+  test("two conflicts sharing the survivor's side: the question counts what is sent", async () => {
+    const shared = structuredClone(analysis);
+    const birthA = { resource: `${API}/persons/${SURVIVOR}/conclusions/birth-${SURVIVOR}` };
+    shared.mergeAnalyses[0]!.conflictingResources.push({
+      survivorResource: birthA,
+      duplicateResource: { resource: `${API}/persons/${DUPLICATE}/conclusions/name-${DUPLICATE}` },
+    });
+    const approver = autoApprove();
+    const { run, writes } = setup(world({ analysis: shared }), approver);
+    await run("merge_persons", merge({ take_from_duplicate: [`birth-${DUPLICATE}`] }));
+    const body = JSON.parse(String(writes()[0]!.init.body)).merges[0];
+    expect(body.resourcesToCopy).toHaveLength(2); // the child link and the chosen birth
+    expect(body.resourcesToDelete).toEqual([birthA]);
+    const prompt = approver.prompts[0]!;
+    expect(prompt.headline.split("\n")[1]).toEndWith("Copia 1, troca 1.");
+    expect(prompt.details.match(/no lugar de/g)).toHaveLength(1);
   });
 
   test("the snapshot is saved only after approval, before the POST", async () => {

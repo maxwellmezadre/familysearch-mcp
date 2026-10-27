@@ -26,6 +26,11 @@ const idList = (description: string) => Type.Optional(Type.Array(Type.String({ m
 
 const errorText = (error: unknown) => (error instanceof Error ? error.message : String(error));
 const nameOf = (bundle: PersonBundle) => `${bundle.person.name ?? "(sem nome)"} [${bundle.person.id}]`;
+/** One line, at most 50 characters: the headline's second line (the warning) must survive any name. */
+const shortName = (bundle: PersonBundle) => {
+  const name = (bundle.person.name ?? "(sem nome)").replace(/\s+/g, " ").trim();
+  return `${name.length > 50 ? `${name.slice(0, 49)}…` : name} [${bundle.person.id}]`;
+};
 const signs = (count: number) => `${count} ${count === 1 ? "sinal" : "sinais"} de que não são a mesma pessoa`;
 const bullets = (title: string, items: string[]) => (items.length > 0 ? ["", title, ...items.map((item) => `- ${item}`)] : []);
 
@@ -116,6 +121,13 @@ export const mergePersons = defineTool({
       throw new Error(`${nameOf(living)} está marcada como viva: pessoa viva não é mesclada; use link_parents e remove_relationship.`);
     }
     const [a, b] = [s.lastChangeId, d.lastChangeId];
+    // compare_persons writes "null" for an empty history, which would always match: refuse instead.
+    const unread = a === null ? survivor : b === null ? duplicate : null;
+    if (unread) {
+      throw new Error(
+        `Mesclagem recusada: não consegui ler o histórico de alterações de ${unread}; não dá para garantir que nada mudou desde a comparação.`,
+      );
+    }
     if (args.fingerprint !== `${a}|${b}` && args.fingerprint !== `${b}|${a}`) {
       throw new Error("Mesclagem recusada: alguém alterou uma das duas desde a comparação: rode compare_persons de novo.");
     }
@@ -147,14 +159,14 @@ export const mergePersons = defineTool({
     const label = (uri: string) => labelResource(uri, people, families);
     const flags = buildComparison(s, d, { aSurvives: check, bSurvives: check }, analysis).redFlags;
 
-    const swapped = analysis.conflicts.filter((pair) => request.resourcesToDelete.includes(pair.survivor));
+    const swapped = request.chosen;
     const kept = analysis.conflicts.filter((pair) => !swapped.includes(pair));
     const copied = analysis.duplicateResources.filter((uri) => request.resourcesToCopy.includes(uri));
     const skipped = analysis.duplicateResources.filter((uri) => !copied.includes(uri));
     const counts = `Copia ${copied.length}, troca ${swapped.length}.`;
     const undo = `Para desfazer: restore_person(${duplicate}). O que foi copiado continua em ${survivor}.`;
     const headline = [
-      `Mesclar ${nameOf(d)} em ${nameOf(s)}`,
+      `Mesclar ${shortName(d)} em ${shortName(s)}`,
       flags.length > 0 ? `ATENÇÃO: ${signs(flags.length)}.` : `Fica ${survivor}; ${duplicate} deixa de existir. ${counts}`,
     ].join("\n");
     const details = [
@@ -171,7 +183,12 @@ export const mergePersons = defineTool({
       ),
       ...bullets(
         "Conflitos em que fica a versão da sobrevivente (a da duplicata não é copiada):",
-        kept.map((pair) => `${label(pair.survivor)}; não copia ${label(pair.duplicate)}`),
+        kept.map((pair) =>
+          // A survivor side shared with a chosen swap leaves anyway: say so instead of "fica".
+          request.resourcesToDelete.includes(pair.survivor)
+            ? `não copia ${label(pair.duplicate)} (${resourceId(pair.survivor)} sai pela troca acima)`
+            : `${label(pair.survivor)}; não copia ${label(pair.duplicate)}`,
+        ),
       ),
       ...bullets("Já está na sobrevivente:", analysis.survivorResources.map(label)),
       "",

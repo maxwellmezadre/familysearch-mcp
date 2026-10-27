@@ -21,6 +21,7 @@ describe("buildMergeRequest", () => {
     expect(buildMergeRequest(analysis, { takeFromDuplicate: [], skipCopy: [] })).toEqual({
       resourcesToCopy: [CHILD_LINK, SOURCE],
       resourcesToDelete: [],
+      chosen: [],
     });
   });
 
@@ -32,9 +33,28 @@ describe("buildMergeRequest", () => {
 
   test("a conflict taken from the duplicate copies its side and deletes the survivor's", () => {
     const request = buildMergeRequest(analysis, { takeFromDuplicate: ["birth-b"], skipCopy: [] });
-    expect(request).toEqual({ resourcesToCopy: [CHILD_LINK, SOURCE, BIRTH.duplicate], resourcesToDelete: [BIRTH.survivor] });
+    expect(request).toEqual({
+      resourcesToCopy: [CHILD_LINK, SOURCE, BIRTH.duplicate],
+      resourcesToDelete: [BIRTH.survivor],
+      chosen: [BIRTH],
+    });
     // The conflict not chosen (death) keeps the survivor's: nothing is sent for it.
     expect(JSON.stringify(request)).not.toContain("death");
+  });
+
+  test("two conflicts sharing the survivor's side: only the chosen one is swapped", () => {
+    const shared = { ...analysis, conflicts: [BIRTH, { survivor: BIRTH.survivor, duplicate: DEATH.duplicate }] };
+    const request = buildMergeRequest(shared, { takeFromDuplicate: ["birth-b"], skipCopy: [] });
+    expect(request.chosen).toEqual([BIRTH]);
+    expect(request.resourcesToCopy).toEqual([CHILD_LINK, SOURCE, BIRTH.duplicate]);
+    expect(request.resourcesToDelete).toEqual([BIRTH.survivor]);
+  });
+
+  test("a one-sided conflict cannot be taken, and nothing empty is ever sent", () => {
+    const oneSided = { ...analysis, duplicateResources: [CHILD_LINK, ""], conflicts: [{ survivor: "", duplicate: DEATH.duplicate }] };
+    expect(() => buildMergeRequest(oneSided, { takeFromDuplicate: ["death-b"], skipCopy: [] })).toThrow(/death-b/);
+    const request = buildMergeRequest(oneSided, { takeFromDuplicate: [], skipCopy: [] });
+    expect([...request.resourcesToCopy, ...request.resourcesToDelete]).not.toContain("");
   });
 
   test("an unknown choice is an error naming it", () => {
