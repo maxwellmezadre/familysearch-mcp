@@ -68,6 +68,16 @@ describe("toGedcom", () => {
     expect(out).toContain("1 _FSFTID AAAA-AA1");
   });
 
+  test("a newline in a date phrase cannot inject a record", () => {
+    const out = toGedcom(
+      { rootId: "A", persons: [person("A", { birthDate: "1937\n0 @I9@ INDI (x)", birthFormal: null })], relationships: [] },
+      AT,
+    );
+    expect(out.split("\n").filter((l) => l.startsWith("2 DATE"))).toEqual(["2 DATE (1937 0 @I9@ INDI [x])"]);
+    expect(out).not.toContain("@I9@ INDI\n");
+    expect(out.match(/INDI/g)?.length).toBe(2);
+  });
+
   test("without name parts the last word is the surname", () => {
     const out = toGedcom({ rootId: "A", persons: [person("A", { given: null, surname: null, name: "Maria da Silva" })], relationships: [] }, AT);
     expect(out).toContain("1 NAME Maria da /Silva/");

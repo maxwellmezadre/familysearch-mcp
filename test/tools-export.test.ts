@@ -34,7 +34,7 @@ function setup(seed = true) {
     repo.setMeta("root_id", "AAAA-AA1");
     repo.upsertPerson(input("AAAA-AA1", { ascendancy: "1", generation: 0 }));
     repo.upsertPerson(input("AAAA-AA2", { name: "ジュゼッペ Rossi", given: "ジュゼッペ", gender: "male", ascendancy: "2", generation: 1 }));
-    repo.upsertPerson(input("AAAA-AA3", { name: "Anna Bianchi", living: true, ascendancy: "3", generation: 1 }));
+    repo.upsertPerson(input("AAAA-AA3", { name: "Anna Bianchi", living: true, birthPlace: "Cuneo", birthDate: "1990", birthFormal: "+1990", ascendancy: "3", generation: 1 }));
     repo.upsertPerson(input("AAAA-AA9", { name: "Fora Daqui" }));
     repo.upsertRelationship({ id: "r1", kind: "parents", person1: "AAAA-AA2", person2: "AAAA-AA3", child: "AAAA-AA1" });
     repo.upsertRelationship({ id: "r2", kind: "couple", person1: "AAAA-AA9", person2: "AAAA-AA2", child: null });
@@ -55,6 +55,9 @@ describe("export tool", () => {
     expect(text).toContain("1 NAME ジュゼッペ /Rossi/");
     expect(text).toContain("1 NAME Pessoa /viva/");
     expect(text).not.toContain("Bianchi");
+    expect(text).not.toContain("Cuneo");
+    const living = text.split("0 @I").find((b) => b.startsWith("3@"))!;
+    expect(living).not.toMatch(/BIRT|DEAT|PLAC|DATE/);
     expect(text).toContain("1 _FSFTID AAAA-AA3");
     expect(text).toContain("1 HUSB @I2@\n1 WIFE @I3@\n1 CHIL @I1@");
     expect(fetch.calls.length).toBe(0);
@@ -68,6 +71,17 @@ describe("export tool", () => {
     expect(data.rootId).toBe("AAAA-AA1");
     expect(data.persons.find((p: any) => p.id === "AAAA-AA3").name).toBe("Anna Bianchi");
     expect(data.persons[0].raw).toBeUndefined();
+  });
+
+  test("json masks the living person by default", async () => {
+    const { ctx } = setup();
+    const r = await run(ctx, { format: "json" });
+    const text = readFileSync(r.path, "utf8");
+    expect(text).not.toContain("Bianchi");
+    expect(text).not.toContain("Cuneo");
+    expect(text).not.toContain("1990");
+    const p = JSON.parse(text).persons.find((x: any) => x.id === "AAAA-AA3");
+    expect(p).toMatchObject({ name: "Pessoa viva", birthDate: null, birthPlace: null, deathDate: null, deathPlace: null });
   });
 
   test("csv masks living fields", async () => {

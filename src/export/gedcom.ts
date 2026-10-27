@@ -20,7 +20,7 @@ export function gedcomDate(date: { original: string; formal: string | null } | n
   if (!date) return null;
   const match = date.formal?.match(/^(A)?\+(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/);
   const month = match?.[3] ? MONTHS[Number(match[3]) - 1] : undefined;
-  if (!match || (match[3] && !month)) return `(${date.original})`;
+  if (!match || (match[3] && !month)) return `(${clean(date.original).replace(/\(/g, "[").replace(/\)/g, "]")})`;
   const text = [match[4] ? String(Number(match[4])) : null, month, String(Number(match[2]))].filter(Boolean).join(" ");
   return match[1] ? `ABT ${text}` : text;
 }
