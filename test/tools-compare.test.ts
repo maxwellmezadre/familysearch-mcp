@@ -1,5 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { loadConfig } from "../src/config.js";
+import { formatComparison } from "../src/cli/format.js";
 import { createContext } from "../src/context.js";
 import { runTool } from "../src/tools/define.js";
 import { toolByName } from "../src/tools/registry.js";
@@ -40,6 +41,7 @@ function setup(script: Parameters<typeof scriptedFetch>[0]) {
 }
 
 const A = "X8MM-G4S";
+const BIRTH = "a61d2b1e-1814-4ba3-a036-d42350080eb4"; // the birth fact in the person fixture
 const B = "1HH8-PZG";
 const bundles = () => [
   replay("person"),
@@ -76,7 +78,7 @@ describe("compare_persons", () => {
           duplicateResources: [{ resource: "https://api.familysearch.org/platform/tree/child-and-parents-relationships/CPR1" }],
           conflictingResources: [
             {
-              survivorResource: { resource: `https://api.familysearch.org/platform/tree/persons/${A}/conclusions/C1` },
+              survivorResource: { resource: `https://api.familysearch.org/platform/tree/persons/${A}/conclusions/${BIRTH}` },
               duplicateResource: { resource: `https://api.familysearch.org/platform/tree/persons/${B}/conclusions/C2` },
             },
           ],
@@ -98,6 +100,13 @@ describe("compare_persons", () => {
       "https://api.familysearch.org/platform/tree/child-and-parents-relationships/CPR1",
     ]);
     expect(comparison.analysis.conflicts).toHaveLength(1);
+
+    // The human output carries what `merge` needs: the fingerprint and every id --take/--skip accept.
+    const text = formatComparison(comparison);
+    expect(text).toContain(`fingerprint: ${(comparison as unknown as { fingerprint: string }).fingerprint}`);
+    expect(text).toContain("(CPR1)");
+    expect(text).toContain(`Birth: 12 February 1809, Hardin, Kentucky, United States, de ${A} (${BIRTH})`);
+    expect(text).toContain(`de ${B} (C2)`);
   });
 
   test("a living person: 8 requests, no merge questions, path relink", async () => {

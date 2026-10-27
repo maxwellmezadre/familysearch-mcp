@@ -52,7 +52,7 @@ dizendo em quem parou.
 
 | Comando | O que faz |
 | --- | --- |
-| `familysearch compare <a> <b>` | Lado a lado de duas pessoas, só lê. O `fingerprint` que `merge` exige sai no `--json` |
+| `familysearch compare <a> <b>` | Lado a lado de duas pessoas, só lê. Termina com o `fingerprint` que `merge` exige e, quando a mesclagem é permitida, com os ids que `--take` e `--skip` aceitam |
 | `familysearch gaps [--limit <n>] [--kind <tipos...>]` | O que falta na linhagem, do cache. Tipos: `missing_father`, `missing_mother`, `missing_birth`, `missing_birth_date`, `missing_birth_place`, `missing_death`, `no_sources`, `pending_hints`, `possible_duplicates` |
 | `familysearch export --format gedcom\|json\|csv [--scope lineage\|all] [--include-living]` | Arquivo dentro de `FAMILYSEARCH_EXPORT_DIR`, a partir do cache |
 

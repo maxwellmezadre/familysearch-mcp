@@ -12,6 +12,7 @@ import type {
   RecordHit,
   SearchHit,
 } from "../domain/types.js";
+import { labelResource, resourceId } from "../domain/merge.js";
 import { printTable } from "./output.js";
 
 // Human renderings for the CLI. `--json` bypasses all of this.
@@ -131,6 +132,17 @@ export const formatPlaces = (result: unknown): string =>
 const factText = (fact: Fact): string =>
   `${fact.type}: ${[fact.date?.original, fact.place, fact.value].filter(Boolean).join(", ") || "-"}`;
 
+/** A merge-analysis resource in words, ending with the id `merge --take/--skip` accepts. */
+function analysisLabel(c: Comparison, uri: string): string {
+  const [, personId = "", factId = ""] = /\/persons\/([^/]+)\/conclusions\/([^/?#]+)/.exec(uri) ?? [];
+  const fact = [c.a, c.b].find((side) => side.person.id === personId)?.person.facts.find((f) => f.id === factId);
+  if (fact) return `${factText(fact)}, de ${personId} (${resourceId(uri)})`;
+  // The bundles carry no raw persons: names, sex and sources read as "dado"/"fonte" with their id.
+  const label = labelResource(uri, [], { [c.a.person.id]: c.a.family, [c.b.person.id]: c.b.family });
+  // A relationship outside the two families comes back as the bare URI: still give the id.
+  return label === uri ? `${/relationships\//.test(uri) ? "relacionamento" : "item"} (${resourceId(uri)})` : label;
+}
+
 export const formatComparison = (result: unknown): string => {
   const c = result as Comparison;
   const column = (bundle: Comparison["a"]) => [
@@ -157,10 +169,20 @@ export const formatComparison = (result: unknown): string => {
   lines.push("", `caminho: ${c.path}. ${c.pathReason}`);
   if (c.suggestion) lines.push(`sugestão: fica ${c.suggestion.survivorId}, sai ${c.suggestion.duplicateId}. ${c.suggestion.why}`);
   if (c.analysis) {
+    const { duplicateResources, conflicts } = c.analysis;
     lines.push(
-      `a mesclagem levaria ${c.analysis.duplicateResources.length} item(ns) só da duplicata e tem ${c.analysis.conflicts.length} conflito(s) a decidir.`,
+      `a mesclagem levaria ${duplicateResources.length} item(ns) só da duplicata e tem ${conflicts.length} conflito(s) a decidir.`,
     );
+    if (duplicateResources.length > 0) {
+      lines.push("só na duplicata (copiados por padrão; --skip <id> deixa de fora):");
+      for (const uri of duplicateResources) lines.push(`  ${analysisLabel(c, uri)}`);
+    }
+    if (conflicts.length > 0) {
+      lines.push("conflitos da mesclagem (fica a sobrevivente; --take <id> fica com a duplicata):");
+      for (const pair of conflicts) lines.push(`  ${analysisLabel(c, pair.survivor)}   x   ${analysisLabel(c, pair.duplicate)}`);
+    }
   }
+  lines.push("", `fingerprint: ${c.fingerprint}`);
   return lines.join("\n");
 };
 
