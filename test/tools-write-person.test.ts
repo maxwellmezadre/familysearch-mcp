@@ -98,6 +98,8 @@ describe("update_person", () => {
     expect(out.status).toBe("applied");
     expect(out.readBack.ok).toBe(true);
     expect(out.headline.split("\n")[0]).toBe("Alterar 4 fatos de Giulia Rossi [KWCB-XXX] 1921-1990");
+    // The removal warning leads, and the other changes are still named.
+    expect(out.headline.split("\n")[1]).toBe("ATENÇÃO: remove 2 fato(s); também 1 novo(s), 1 alterado(s). Removidos: Occupation (f2), Baptism (f3)");
     const writes = fetch.calls.slice(1, 4);
     expect(writes.map((c) => c.init.method)).toEqual(["POST", "DELETE", "DELETE"]);
     expect(writes[1]!.url).toContain("/persons/KWCB-XXX/conclusions/f2");
@@ -125,7 +127,8 @@ describe("update_person", () => {
 
   test("read-back reports a fact that was not removed", async () => {
     const { ctx } = setup([person([fact("f2", "Occupation")]), response({ status: 204 }), person([fact("f2", "Occupation")])]);
-    const out = (await runTool(updatePerson, { ...base, remove_fact_ids: ["f2"] }, ctx)) as { readBack: { ok: boolean } };
+    const out = (await runTool(updatePerson, { ...base, remove_fact_ids: ["f2"] }, ctx)) as { headline: string; readBack: { ok: boolean } };
+    expect(out.headline.split("\n")[1]).toBe("ATENÇÃO: remove 1 fato(s): Occupation (f2)");
     expect(out.readBack.ok).toBe(false);
   });
 

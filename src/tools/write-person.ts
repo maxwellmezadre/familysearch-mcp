@@ -227,10 +227,15 @@ export const updatePerson = defineTool({
     const count = adds.length + changes.length + removes.length;
     const who = `${nameOf(person)} [${person.id}]${person.lifespan ? ` ${person.lifespan}` : ""}`;
     const extra = [args.gender ? "muda o sexo" : "", args.add_name ? "acrescenta um nome" : ""].filter(Boolean);
+    const removed = removes.map((id) => `${byId.get(id)?.type} (${id})`).join(", ");
+    // The removal warning leads; whatever else the call changes is named before the (long) list.
+    const others = [adds.length > 0 ? `${adds.length} novo(s)` : "", changes.length > 0 ? `${changes.length} alterado(s)` : "", ...extra].filter(Boolean);
     const line2 =
-      removes.length > 0
-        ? `ATENÇÃO: remove ${removes.length} fato(s): ${removes.map((id) => `${byId.get(id)?.type} (${id})`).join(", ")}`
-        : [`${adds.length} novo(s), ${changes.length} alterado(s)`, ...extra].join("; ");
+      removes.length === 0
+        ? [`${adds.length} novo(s), ${changes.length} alterado(s)`, ...extra].join("; ")
+        : others.length > 0
+          ? `ATENÇÃO: remove ${removes.length} fato(s); também ${others.join(", ")}. Removidos: ${removed}`
+          : `ATENÇÃO: remove ${removes.length} fato(s): ${removed}`;
     const plan: WritePlan = {
       tool: "update_person",
       reason: args.reason,
