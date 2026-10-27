@@ -50,6 +50,35 @@ describe("buildMergeRequest", () => {
     expect(request.resourcesToDelete).toEqual([BIRTH.survivor]);
   });
 
+  test("a choice that names more than one conflict is refused, asking for the other side's id", () => {
+    // Two conflicts share the duplicate's birth: "birth-b" alone does not say which survivor fact leaves.
+    const sharedDuplicate = { ...analysis, conflicts: [BIRTH, { survivor: DEATH.survivor, duplicate: BIRTH.duplicate }] };
+    const error = (() => {
+      try {
+        buildMergeRequest(sharedDuplicate, { takeFromDuplicate: ["birth-b"], skipCopy: [] });
+      } catch (caught) {
+        return String(caught);
+      }
+    })();
+    expect(error).toContain("birth-b");
+    expect(error).toContain("birth-a, death-a");
+    expect(() => buildMergeRequest(sharedDuplicate, { takeFromDuplicate: [BIRTH.duplicate], skipCopy: [] })).toThrow(/birth-a, death-a/);
+    const byOtherSide = buildMergeRequest(sharedDuplicate, { takeFromDuplicate: ["death-a"], skipCopy: [] });
+    expect(byOtherSide.resourcesToDelete).toEqual([DEATH.survivor]);
+    expect(byOtherSide.resourcesToCopy).toEqual([CHILD_LINK, SOURCE, BIRTH.duplicate]);
+
+    // The same for a shared survivor side: the duplicate-side ids tell them apart.
+    const sharedSurvivor = { ...analysis, conflicts: [BIRTH, { survivor: BIRTH.survivor, duplicate: DEATH.duplicate }] };
+    expect(() => buildMergeRequest(sharedSurvivor, { takeFromDuplicate: ["birth-a"], skipCopy: [] })).toThrow(/birth-b, death-b/);
+  });
+
+  test("a skip_copy id that names more than one resource asks for the full URI", () => {
+    const twin = `${API}/persons/BBBB-BBB/conclusions/RRRR-111`;
+    const twins = { ...analysis, duplicateResources: [CHILD_LINK, twin] };
+    expect(() => buildMergeRequest(twins, { takeFromDuplicate: [], skipCopy: ["RRRR-111"] })).toThrow(/URI/);
+    expect(buildMergeRequest(twins, { takeFromDuplicate: [], skipCopy: [twin] }).resourcesToCopy).toEqual([CHILD_LINK]);
+  });
+
   test("a one-sided conflict cannot be taken, and nothing empty is ever sent", () => {
     const oneSided = { ...analysis, duplicateResources: [CHILD_LINK, ""], conflicts: [{ survivor: "", duplicate: DEATH.duplicate }] };
     expect(() => buildMergeRequest(oneSided, { takeFromDuplicate: ["death-b"], skipCopy: [] })).toThrow(/death-b/);

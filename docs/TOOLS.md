@@ -392,7 +392,7 @@ Mescla duas pessoas da árvore: a duplicata deixa de existir e o id dela passa a
 | `duplicate_id` | string (`^[A-Z0-9]{4}-[A-Z0-9]{3,4}$`) | sim | Id da pessoa no FamilySearch, como aparece no link da página (ex.: KWCB-XXX) |
 | `fingerprint` | string (min 1 chars) | sim | O fingerprint devolvido por compare_persons para este par |
 | `reason` | string (min 10 chars) | sim | Motivo da alteração, fica no histórico do FamilySearch |
-| `take_from_duplicate` | array | — | Conflitos em que fica a versão da duplicata: id do recurso (ou a URI) de qualquer um dos lados |
+| `take_from_duplicate` | array | — | Conflitos em que fica a versão da duplicata: id do recurso (ou a URI) de qualquer um dos lados; se o id aparece em mais de um conflito, use o do outro lado |
 | `skip_copy` | array | — | Itens só da duplicata que NÃO devem ser copiados: id do recurso ou a URI |
 | `preview` | boolean | — | Mostra o que mudaria sem perguntar nem escrever |
 

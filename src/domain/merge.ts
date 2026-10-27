@@ -28,8 +28,16 @@ export type MergeRequest = {
 
 export function buildMergeRequest(analysis: MergeAnalysis, choices: MergeChoices): MergeRequest {
   const taken = choices.takeFromDuplicate.map((choice) => {
-    const conflict = analysis.conflicts.find((pair) => matches(choice, pair.duplicate) || matches(choice, pair.survivor));
+    const found = analysis.conflicts.filter((pair) => matches(choice, pair.duplicate) || matches(choice, pair.survivor));
+    const conflict = found[0];
     if (!conflict) throw new Error(`"${choice}" não é um conflito desta mesclagem: confira os ids em take_from_duplicate.`);
+    if (found.length > 1) {
+      // A side shared by several conflicts: only the other side's id says which one.
+      const others = found.map((pair) => resourceId(matches(choice, pair.duplicate) ? pair.survivor : pair.duplicate));
+      throw new Error(
+        `"${choice}" aparece em ${found.length} conflitos desta mesclagem; em take_from_duplicate, use o id do outro lado do conflito que você quer: ${others.join(", ")}.`,
+      );
+    }
     // FamilySearch left one side out: there is nothing to swap, and "" must never be sent.
     if (!conflict.survivor || !conflict.duplicate) {
       throw new Error(`"${choice}": a análise do FamilySearch traz esse conflito com um lado vazio; não dá para trocar.`);
@@ -38,8 +46,10 @@ export function buildMergeRequest(analysis: MergeAnalysis, choices: MergeChoices
   });
   const chosen = [...new Set(taken)]; // either side's id names the same conflict
   const skipped = choices.skipCopy.map((choice) => {
-    const resource = analysis.duplicateResources.find((uri) => matches(choice, uri));
+    const found = analysis.duplicateResources.filter((uri) => matches(choice, uri));
+    const resource = found[0];
     if (!resource) throw new Error(`"${choice}" não é um item só da duplicata nesta mesclagem: confira os ids em skip_copy.`);
+    if (found.length > 1) throw new Error(`"${choice}" é o id de ${found.length} itens desta mesclagem; em skip_copy, use a URI completa.`);
     return resource;
   });
   return {

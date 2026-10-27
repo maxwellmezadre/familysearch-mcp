@@ -132,7 +132,9 @@ export const mergePersons = defineTool({
     duplicate_id: personIdField,
     fingerprint: Type.String({ minLength: 1, description: "O fingerprint devolvido por compare_persons para este par" }),
     reason: reasonField,
-    take_from_duplicate: idList("Conflitos em que fica a versão da duplicata: id do recurso (ou a URI) de qualquer um dos lados"),
+    take_from_duplicate: idList(
+      "Conflitos em que fica a versão da duplicata: id do recurso (ou a URI) de qualquer um dos lados; se o id aparece em mais de um conflito, use o do outro lado",
+    ),
     skip_copy: idList("Itens só da duplicata que NÃO devem ser copiados: id do recurso ou a URI"),
     preview: previewField,
   }),
@@ -209,13 +211,17 @@ export const mergePersons = defineTool({
         swapped.map((pair) => `${label(pair.duplicate)}, no lugar de ${label(pair.survivor)}`),
       ),
       ...bullets(
-        "Conflitos em que fica a versão da sobrevivente (a da duplicata não é copiada):",
-        kept.map((pair) =>
-          // A survivor side shared with a chosen swap leaves anyway: say so instead of "fica".
-          request.resourcesToDelete.includes(pair.survivor)
-            ? `não copia ${label(pair.duplicate)} (${resourceId(pair.survivor)} sai pela troca acima)`
-            : `${label(pair.survivor)}; não copia ${label(pair.duplicate)}`,
-        ),
+        "Conflitos em que fica a versão da sobrevivente:",
+        kept.map((pair) => {
+          // A side shared with a chosen swap moves anyway: say so instead of "fica" or "não copia".
+          const survivorSide = request.resourcesToDelete.includes(pair.survivor)
+            ? `${resourceId(pair.survivor)} sai pela troca acima`
+            : `fica ${label(pair.survivor)}`;
+          const duplicateSide = request.resourcesToCopy.includes(pair.duplicate)
+            ? `${resourceId(pair.duplicate)} entra pela troca acima`
+            : `não copia ${label(pair.duplicate)}`;
+          return `${survivorSide}; ${duplicateSide}`;
+        }),
       ),
       ...bullets("Já está na sobrevivente:", analysis.survivorResources.map(label)),
       "",

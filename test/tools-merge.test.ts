@@ -259,6 +259,28 @@ describe("merge_persons", () => {
     expect(prompt.details.match(/no lugar de/g)).toHaveLength(1);
   });
 
+  test("two conflicts sharing the duplicate's side: an ambiguous choice is refused, the unchosen one says it comes in", async () => {
+    const shared = structuredClone(analysis);
+    const birthB = `${API}/persons/${DUPLICATE}/conclusions/birth-${DUPLICATE}`;
+    shared.mergeAnalyses[0]!.conflictingResources.push({
+      survivorResource: { resource: `${API}/persons/${SURVIVOR}/conclusions/name-${SURVIVOR}` },
+      duplicateResource: { resource: birthB },
+    });
+    const refused = setup(world({ analysis: shared }), fakeApprover([]));
+    await expect(refused.run("merge_persons", merge({ take_from_duplicate: [`birth-${DUPLICATE}`] }))).rejects.toThrow(
+      `birth-${SURVIVOR}, name-${SURVIVOR}`,
+    );
+    expect(refused.writes()).toHaveLength(0);
+
+    const approver = fakeApprover([{ approved: false, reason: "não" }]);
+    const { run } = setup(world({ analysis: shared }), approver);
+    await run("merge_persons", merge({ take_from_duplicate: [`birth-${SURVIVOR}`] }));
+    const details = approver.prompts[0]!.details;
+    // The duplicate's birth is sent by the swap: the conflict left as is must not say it is not copied.
+    expect(details).not.toContain(`não copia Birth: 1890, de Giulia Rossi [${DUPLICATE}]`);
+    expect(details).toContain(`fica nome "Giulia Rossi", de Giulia Rossi [${SURVIVOR}] (name-${SURVIVOR}); birth-${DUPLICATE} entra pela troca acima`);
+  });
+
   test("the snapshot is saved only after approval, before the POST", async () => {
     let atQuestion = null as string[] | null;
     let atPost = null as string[] | null;

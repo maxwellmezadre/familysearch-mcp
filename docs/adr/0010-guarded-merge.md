@@ -30,7 +30,8 @@ nem por regra.
    análise e monta o pedido: copia por padrão tudo o que só existe na
    duplicata, relacionamentos inclusive; `take_from_duplicate` escolhe, conflito
    a conflito, a versão da duplicata; `skip_copy` deixa itens de fora. Escolhas
-   que não batem com a análise são recusadas.
+   que não batem com a análise são recusadas, e também as ambíguas: um id que
+   aparece em mais de um conflito pede o id do outro lado.
 
 A pergunta mostra no título quantos sinais de alerta há, lista nos detalhes o
 que é copiado, o que fica de fora, o que é trocado e o que já está na
