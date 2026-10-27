@@ -63,10 +63,13 @@ export class NotFoundError extends Error {
 export class MergedError extends Error {
   constructor(
     public readonly id: string,
-    public readonly survivorId: string,
+    /** Null when FamilySearch did not say which person survived. */
+    public readonly survivorId: string | null,
   ) {
     super(
-      `A pessoa ${id} foi mesclada em ${survivorId}. Use ${survivorId}: é ela que continua na árvore.`,
+      survivorId
+        ? `A pessoa ${id} foi mesclada em ${survivorId}. Use ${survivorId}: é ela que continua na árvore.`
+        : `A pessoa ${id} foi mesclada em outra pessoa. Abra a página dela no FamilySearch para ver qual continua na árvore.`,
     );
     this.name = "MergedError";
   }

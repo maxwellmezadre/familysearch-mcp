@@ -19,13 +19,31 @@ export const ATOM = "application/x-gedcomx-atom+json";
  *   400 / 404 → NotFoundError (FamilySearch answers 400 to a malformed id);
  *   410 → DeletedError; anything else ≥ 400 → HttpError with FamilySearch's warning.
  */
-/** Maps FamilySearch's "this id is not a usable person" answers to the project's errors. */
+const PERSON_ID = /^[A-Z0-9]{4}-[A-Z0-9]{3,4}$/;
+
+/**
+ * The surviving person in a 301 `Location`, whatever the sub-resource:
+ * `/persons/{id}`, `/persons/{id}/families`, `ancestry?person={id}`...
+ */
+export function survivorFrom(location: string | null): string | null {
+  if (!location) return null;
+  const match =
+    /\/persons\/([A-Z0-9]{4}-[A-Z0-9]{3,4})(?![A-Z0-9])/.exec(location) ??
+    /[?&]person=([A-Z0-9]{4}-[A-Z0-9]{3,4})(?![A-Z0-9])/.exec(location);
+  return match?.[1] ?? null;
+}
+
+/**
+ * Maps FamilySearch's "this id is not a usable person" answers to the
+ * project's errors. A 400/404 means "not found" only for a request about an
+ * id (FamilySearch answers 400 to a malformed one); on a search it is the
+ * API's own complaint and keeps its Warning text.
+ */
 function checkStatus(response: HttpResponse, about: string, label: string): void {
-  if (response.status === 301) {
-    const survivor = response.headers.get("location")?.split("?")[0]?.split("/").pop() ?? "?";
-    throw new MergedError(about, survivor);
+  if (response.status === 301) throw new MergedError(about, survivorFrom(response.headers.get("location")));
+  if ((response.status === 400 || response.status === 404) && PERSON_ID.test(about)) {
+    throw new NotFoundError(about);
   }
-  if (response.status === 400 || response.status === 404) throw new NotFoundError(about);
   if (response.status === 410) throw new DeletedError(about);
   if (response.status >= 400) {
     const warning = response.headers.get("warning");

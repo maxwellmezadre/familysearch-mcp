@@ -15,8 +15,8 @@ export type ContextDeps = {
   random?: () => number;
   session?: SessionStore;
   log?: Logger;
-  /** Overrides the browser re-import used on a 401. */
-  reauth?: () => Promise<boolean>;
+  /** Overrides the browser re-import used on a 401 (null = re-imported, string = why not). */
+  reauth?: () => Promise<string | null>;
 };
 
 export type Ctx = {
@@ -50,12 +50,9 @@ export function createContext(config: Config, deps: ContextDeps = {}): Ctx {
       ? async () => {
           try {
             await importFromBrowser(ctx, { browser, report: (message) => log.debug(message) });
-            return true;
+            return null;
           } catch (error) {
-            log.warn(
-              `re-import from ${browser} failed: ${error instanceof Error ? error.message : String(error)}`,
-            );
-            return false;
+            return error instanceof Error ? error.message : String(error);
           }
         }
       : undefined);

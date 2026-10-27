@@ -26,7 +26,7 @@ function setup(opts: { session?: ReturnType<typeof memorySession>; env?: Record<
     log: silentLogger(),
     now: clock.now,
     sleep: clock.sleep,
-    reauth: async () => false,
+    reauth: async () => "nenhum navegador configurado",
   });
   const run = (name: string, args: Record<string, unknown> = {}) =>
     runTool(toolByName(name) as never, args, ctx) as Promise<Record<string, unknown>>;
@@ -57,6 +57,13 @@ describe("doctor", () => {
     const report = (await run("doctor")) as Report;
     expect(report.layers.at(-1)).toMatchObject({ layer: "api", ok: false });
     expect(report.layers.at(-1)!.detail).toContain("familysearch login");
+  });
+
+  test("a 403 from the edge stops at api, never 'accepted'", async () => {
+    const { run } = setup({ script: [response({ status: 403 })] });
+    const report = (await run("doctor")) as Report;
+    expect(report.layers.at(-1)).toMatchObject({ layer: "api", ok: false });
+    expect(report.layers.at(-1)!.detail).toContain("403");
   });
 
   test("healthy: every layer ok in at most 3 requests", async () => {

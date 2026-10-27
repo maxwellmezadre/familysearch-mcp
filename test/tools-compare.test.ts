@@ -32,7 +32,7 @@ function setup(script: Parameters<typeof scriptedFetch>[0]) {
     log: silentLogger(),
     now: clock.now,
     sleep: clock.sleep,
-    reauth: async () => false,
+    reauth: async () => "nenhum navegador configurado",
   });
   const run = (args: Record<string, unknown>) =>
     runTool(toolByName("compare_persons") as never, args, ctx) as Promise<Record<string, unknown>>;
@@ -98,6 +98,19 @@ describe("compare_persons", () => {
       "https://api.familysearch.org/platform/tree/child-and-parents-relationships/CPR1",
     ]);
     expect(comparison.analysis.conflicts).toHaveLength(1);
+  });
+
+  test("a living person: 8 requests, no merge questions, path relink", async () => {
+    const living = structuredClone((fixture("person") as { body: { persons: Array<{ living: boolean }> } }).body);
+    living.persons[0]!.living = true;
+    const script = bundles();
+    script[0] = jsonResponse(living);
+    const { run, fetch } = setup(script);
+    const comparison = await run({ person_a: A, person_b: B });
+    expect(fetch.calls).toHaveLength(8);
+    expect(fetch.calls.some((call) => call.init.method === "OPTIONS")).toBe(false);
+    expect(comparison.path).toBe("relink");
+    expect(comparison.analysis).toBeNull();
   });
 
   test("a merged id says who it was merged into", async () => {

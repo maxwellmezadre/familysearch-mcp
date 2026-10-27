@@ -23,7 +23,7 @@ function ctxWith(opts: { env?: Record<string, string>; session?: ReturnType<type
     log: silentLogger(),
     now: clock.now,
     sleep: clock.sleep,
-    reauth: async () => false,
+    reauth: async () => "nenhum navegador configurado",
   });
   return { ctx, fetch };
 }
@@ -62,6 +62,12 @@ describe("auth_status", () => {
     const status = await run(ctx, "auth_status", { verify: true });
     expect(status).toMatchObject({ loggedIn: false, verified: false });
     expect(String(status.error)).toContain("familysearch login");
+  });
+  test("verify with a 403 (edge block) is not verified", async () => {
+    const { ctx } = ctxWith({ script: [response({ status: 403, headers: { warning: '403 FamilySearch "Blocked"' } })] });
+    const status = await run(ctx, "auth_status", { verify: true });
+    expect(status.verified).toBe(false);
+    expect(String(status.error)).toContain("403");
   });
 });
 

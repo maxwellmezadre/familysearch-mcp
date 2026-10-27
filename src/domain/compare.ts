@@ -50,6 +50,38 @@ const sameFact = (a: Fact, b: Fact): boolean =>
   (a.place ? fold(a.place) : null) === (b.place ? fold(b.place) : null) &&
   (a.value ? fold(a.value) : null) === (b.value ? fold(b.value) : null);
 
+/** Portuguese and English spellings of the countries a Brazilian tree meets most. */
+const COUNTRY_ALIASES: Record<string, string> = {
+  brasil: "brazil",
+  italia: "italy",
+  alemanha: "germany",
+  espanha: "spain",
+  "estados unidos": "united states",
+  eua: "united states",
+  usa: "united states",
+  uruguai: "uruguay",
+  paraguai: "paraguay",
+  polonia: "poland",
+  "austria-hungria": "austria",
+  libano: "lebanon",
+  japao: "japan",
+};
+
+/**
+ * The country of a standardized place ("Town, State, Country"). Only places
+ * with at least three parts count: a bare town name says nothing about the country.
+ */
+function countryOf(place: string | null | undefined): string | null {
+  const parts = place?.split(",").map((part) => part.trim()).filter(Boolean) ?? [];
+  if (parts.length < 3) return null;
+  const country = fold(parts.at(-1)!);
+  return COUNTRY_ALIASES[country] ?? country;
+}
+
+function birthPlace(bundle: PersonBundle): string | null {
+  return bundle.person.facts.find((fact) => fact.type === "Birth")?.place ?? bundle.person.birth?.place ?? null;
+}
+
 export function relationshipCount(family: Family): number {
   const parents = family.parents.flatMap((entry) => [entry.parent1, entry.parent2]).filter(Boolean).length;
   const spouses = family.spouses.filter((entry) => entry.spouse !== null).length;
@@ -123,6 +155,11 @@ function redFlags(a: PersonBundle, b: PersonBundle): string[] {
     if (left !== null && right !== null && Math.abs(left - right) > MAX_YEAR_GAP) {
       flags.push(`Anos de ${word} diferem em ${Math.abs(left - right)} anos (${left} e ${right}).`);
     }
+  }
+  const [countryA, countryB] = [countryOf(birthPlace(a)), countryOf(birthPlace(b))];
+  if (countryA && countryB && countryA !== countryB) {
+    const label = (place: string | null) => place?.split(",").at(-1)?.trim() ?? "";
+    flags.push(`Nasceram em países diferentes (${label(birthPlace(a))} e ${label(birthPlace(b))}).`);
   }
   const names = (people: Array<{ name: string | null } | null>) =>
     new Set(people.map((person) => nameKey(person?.name ?? null)).filter((key): key is string => key !== null));

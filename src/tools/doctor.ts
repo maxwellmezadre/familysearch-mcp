@@ -62,7 +62,14 @@ export const doctor = defineTool({
     }
     if (
       !(await step("api", async () => {
-        await ctx.http.send({ method: "GET", path: "/platform/users/current", label: "users/current" });
+        const response = await ctx.http.send({ method: "GET", path: "/platform/users/current", label: "users/current" });
+        if (response.status !== 200) {
+          const warning = response.headers.get("warning");
+          throw new Error(
+            `O FamilySearch respondeu HTTP ${response.status} em users/current${warning ? `: ${warning}` : ""}. ` +
+              "Um 403 costuma ser bloqueio anti-bot: abra o FamilySearch no navegador, espere alguns minutos e tente de novo.",
+          );
+        }
         return "o FamilySearch aceitou a sessão";
       }))
     ) {

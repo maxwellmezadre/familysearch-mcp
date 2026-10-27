@@ -18,7 +18,7 @@ const get = (path = "/platform/users/current"): HttpRequest => ({ method: "GET",
 
 function setup(
   script: Parameters<typeof scriptedFetch>[0],
-  opts: { session?: SessionStore; reauth?: () => Promise<boolean>; fallback?: Parameters<typeof scriptedFetch>[1] } = {},
+  opts: { session?: SessionStore; reauth?: () => Promise<string | null>; fallback?: Parameters<typeof scriptedFetch>[1] } = {},
 ) {
   const clock = fakeClock();
   const fetch = scriptedFetch(script, opts.fallback);
@@ -111,7 +111,7 @@ describe("authentication", () => {
     const reauth = async () => {
       reauths += 1;
       session.save(sessionFixture({ token: "p0-fresh-token-after-reimport" }));
-      return true;
+      return null;
     };
     const { http, fetch } = setup([response({ status: 401 }), jsonResponse({})], { session, reauth });
     expect((await http.send(get())).status).toBe(200);
@@ -121,10 +121,33 @@ describe("authentication", () => {
     expect(http.state().reauths).toBe(1);
   });
 
-  test("401 with a failed reauth is an AuthError with the login hint", async () => {
-    const { http, fetch } = setup([response({ status: 401 })], { reauth: async () => false });
-    await expect(http.send(get())).rejects.toThrow(/familysearch login/);
+  test("401 with a failed reauth is an AuthError with the login hint and the reason", async () => {
+    const { http, fetch } = setup([response({ status: 401 })], {
+      reauth: async () => "O Dia está logado no beta, não no production.",
+    });
+    const error = await http.send(get()).catch((caught: Error) => caught);
+    expect(error).toBeInstanceOf(AuthError);
+    expect((error as Error).message).toContain("familysearch login");
+    expect((error as Error).message).toContain("logado no beta");
     expect(fetch.calls).toHaveLength(1);
+  });
+
+  test("after a failed reauth, the next call tries to re-import again", async () => {
+    const session = memorySession(sessionFixture());
+    let attempts = 0;
+    const reauth = async () => {
+      attempts += 1;
+      if (attempts === 1) return "O Dia não está logado no FamilySearch.";
+      session.save(sessionFixture({ token: "p0-token-after-user-fixed-dia" }));
+      return null;
+    };
+    const { http, fetch } = setup([response({ status: 401 }), jsonResponse({})], { session, reauth });
+    await expect(http.send(get())).rejects.toThrow(AuthError);
+    // The user logs in on Dia and asks again: no 401 needed to trigger the re-import.
+    expect((await http.send(get())).status).toBe(200);
+    expect(attempts).toBe(2);
+    expect(fetch.calls).toHaveLength(2);
+    expect(fetch.calls[1]!.init.headers.authorization).toBe("Bearer p0-token-after-user-fixed-dia");
   });
 
   test("a dead token is not retried by later calls until the session changes", async () => {
@@ -172,6 +195,14 @@ describe("toPath", () => {
       "/platform/tree/persons/X?flag=fsh",
     );
     expect(toPath("https://familysearch.org/ark:/61903/4:1:AAAA-AAA")).toBe("/ark:/61903/4:1:AAAA-AAA");
+  });
+
+  test("send never leaves the configured origin, even through a backslash path", async () => {
+    const { http, fetch } = setup([]);
+    for (const path of ["/\\evil.example/platform", "/\t/evil.example/platform", "/\\/evil.example/x"]) {
+      await expect(http.send({ method: "GET", path, label: "x" })).rejects.toThrow(/Recusando/);
+    }
+    expect(fetch.calls).toHaveLength(0);
   });
 
   test("refuses to send the session anywhere else", () => {

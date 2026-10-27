@@ -61,8 +61,14 @@ export const authStatus = defineTool({
     if (!args.verify) return status;
 
     try {
-      await ctx.http.send({ method: "GET", path: "/platform/users/current", label: "users/current" });
-      return { ...status, verified: true };
+      const response = await ctx.http.send({ method: "GET", path: "/platform/users/current", label: "users/current" });
+      if (response.status === 200) return { ...status, verified: true };
+      const warning = response.headers.get("warning");
+      return compactObject({
+        ...status,
+        verified: false,
+        error: `O FamilySearch respondeu HTTP ${response.status} ao conferir a sessão${warning ? `: ${warning}` : "."}`,
+      });
     } catch (error) {
       // An expired session is a *status*, not a crash: this tool exists to report it.
       if (error instanceof AuthError) {

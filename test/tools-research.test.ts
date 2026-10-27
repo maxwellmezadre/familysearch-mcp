@@ -29,7 +29,7 @@ function setup(script: Parameters<typeof scriptedFetch>[0]) {
     log: silentLogger(),
     now: clock.now,
     sleep: clock.sleep,
-    reauth: async () => false,
+    reauth: async () => "nenhum navegador configurado",
   });
   const run = (name: string, args: Record<string, unknown>) =>
     runTool(toolByName(name) as never, args, ctx) as Promise<Record<string, unknown>>;

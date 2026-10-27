@@ -112,6 +112,18 @@ describe("red flags", () => {
     expect(buildComparison(a, b, BOTH, null).redFlags[0]).toMatch(/morte|falecimento/i);
   });
 
+  test("births in different countries", () => {
+    const a = bundle({ facts: [fact("Birth", "1921", "Garibaldi, Rio Grande do Sul, Brazil")] });
+    const b = bundle({ id: "BBBB-BBB", facts: [fact("Birth", "1921", "Treviso, Veneto, Italy")] });
+    expect(buildComparison(a, b, BOTH, null).redFlags[0]).toMatch(/países diferentes.*Brazil.*Italy/);
+  });
+
+  test("births in the same country, different towns, are not a red flag", () => {
+    const a = bundle({ facts: [fact("Birth", "1921", "Garibaldi, Rio Grande do Sul, Brazil")] });
+    const b = bundle({ id: "BBBB-BBB", facts: [fact("Birth", "1921", "Bento Gonçalves, Rio Grande do Sul, Brasil")] });
+    expect(buildComparison(a, b, BOTH, null).redFlags).toEqual([]);
+  });
+
   test("both have parents and none in common", () => {
     const a = bundle({ parents: [["João Rossi", "Ana Bertolini"]] });
     const b = bundle({ id: "BBBB-BBB", parents: [["Pedro Silva", "Rosa Lima"]] });

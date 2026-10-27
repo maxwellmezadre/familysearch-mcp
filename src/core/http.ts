@@ -8,7 +8,9 @@ import type { Logger } from "./logger.js";
 //     tree is shared, and volume is what gets an account noticed);
 //   - backoff on 429 (honouring Retry-After), 5xx and network failures;
 //   - one silent re-import of the browser session on a 401, then a clear
-//     AuthError — and no further requests with a token already rejected;
+//     AuthError carrying the reason; a token already rejected is never sent
+//     again, but every later call tries the re-import first (the user may
+//     have logged in on the browser in the meantime);
 //   - the token goes to FamilySearch hosts only;
 //   - read-only: any method other than GET/HEAD/OPTIONS is refused here, so
 //     no tool can write by accident. Writes arrive with the approval gate.
@@ -70,8 +72,8 @@ export type HttpOptions = {
   jitterMs: number;
   timeoutMs: number;
   log: Logger;
-  /** Re-imports the session from the browser; true when a new token was saved. */
-  reauth?: () => Promise<boolean>;
+  /** Re-imports the session from the browser: null when a new session was saved, else why it failed. */
+  reauth?: () => Promise<string | null>;
 };
 
 export const DEFAULT_ACCEPT = "application/x-fs-v1+json";
@@ -137,14 +139,32 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
     return run;
   };
 
+  /** Why the last re-import failed; goes into the AuthError so the model sees it, not just stderr. */
+  let reauthFailure: string | null = null;
+
+  const authError = (): AuthError =>
+    new AuthError(
+      `A sessão do FamilySearch expirou ou foi rejeitada.${
+        reauthFailure ? ` A reimportação do navegador falhou: ${reauthFailure}` : ""
+      }`,
+    );
+
   /** Re-read on every request: a `familysearch login` in another process is picked up at once. */
-  function currentSession(): SessionData {
+  function loadSession(): SessionData {
     const data = session.load();
     if (data === null) throw new AuthError("Nenhuma sessão do FamilySearch salva.");
-    if (data.token === deadToken) {
-      throw new AuthError("A sessão do FamilySearch expirou ou foi rejeitada.");
-    }
     return data;
+  }
+
+  /** One re-import attempt; true when it produced a token that was not already rejected. */
+  async function reimport(label: string): Promise<boolean> {
+    if (!opts.reauth) return false;
+    reauths += 1;
+    log.info(`${label}: sessão rejeitada, reimportando do navegador`);
+    reauthFailure = await opts.reauth().catch((error: unknown) =>
+      error instanceof Error ? error.message : String(error),
+    );
+    return reauthFailure === null && loadSession().token !== deadToken;
   }
 
   async function gap(): Promise<void> {
@@ -153,8 +173,15 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
     lastRequestAt = now();
   }
 
+  const origin = new URL(opts.baseUrl).origin;
+
   function buildUrl(request: HttpRequest): string {
     const url = new URL(toPath(request.path), opts.baseUrl);
+    // The last word on where the token goes: URL parsing turns paths like
+    // "/\\host" into another host, so the resolved origin is checked, not the string.
+    if (url.origin !== origin) {
+      throw new Error(`Recusando enviar a sessão para ${url.origin}: só ${origin}.`);
+    }
     for (const [key, value] of Object.entries(request.query ?? {})) {
       if (value !== undefined) url.searchParams.append(key, String(value));
     }
@@ -167,10 +194,15 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
         `Método ${request.method} recusado: neste ponto o familysearch-mcp só lê a árvore. Escritas passam pela trava de aprovação.`,
       );
     }
-    let current = currentSession();
+    let current = loadSession();
+    let reauthed = false;
+    if (current.token === deadToken) {
+      reauthed = true;
+      if (!(await reimport(request.label))) throw authError();
+      current = loadSession();
+    }
     const url = buildUrl(request);
     const started = now();
-    let reauthed = false;
 
     for (let attempt = 1; ; attempt += 1) {
       await gap();
@@ -200,18 +232,16 @@ export function createHttp(opts: HttpOptions, deps: HttpDeps = {}): Http {
       const { status } = response;
 
       if (status === 401) {
-        if (opts.reauth && !reauthed) {
+        deadToken = current.token;
+        if (!reauthed) {
           reauthed = true;
-          reauths += 1;
-          log.info(`${request.label}: sessão rejeitada, reimportando do navegador`);
-          if (await opts.reauth().catch(() => false)) {
-            current = currentSession();
+          if (await reimport(request.label)) {
+            current = loadSession();
             attempt -= 1; // the retry with the new token is not a backoff attempt
             continue;
           }
         }
-        deadToken = current.token;
-        throw new AuthError("A sessão do FamilySearch expirou ou foi rejeitada.");
+        throw authError();
       }
 
       if (status === 429 || status >= 500) {

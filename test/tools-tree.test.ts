@@ -32,7 +32,7 @@ function setup(script: Parameters<typeof scriptedFetch>[0]) {
     log: silentLogger(),
     now: clock.now,
     sleep: clock.sleep,
-    reauth: async () => false,
+    reauth: async () => "nenhum navegador configurado",
   });
   const run = (name: string, args: Record<string, unknown>) =>
     runTool(toolByName(name) as never, args, ctx) as Promise<Record<string, unknown>>;
@@ -64,6 +64,25 @@ describe("get_person", () => {
     await expect(run("get_person", { person_id: "AAAA-AAA" })).rejects.toThrow(
       /AAAA-AAA foi mesclada em T2SD-CF4/,
     );
+  });
+
+  test("a 301 on a sub-resource still names the surviving person", async () => {
+    const cases: Array<[string, Record<string, unknown>, string]> = [
+      ["get_family", { person_id: "AAAA-AAA" }, "https://www.familysearch.org/platform/tree/persons/BBBB-BBB/families?flag=fsh"],
+      ["get_ancestors", { person_id: "AAAA-AAA" }, "https://www.familysearch.org/platform/tree/ancestry?person=BBBB-BBB&generations=4"],
+      ["get_change_history", { person_id: "AAAA-AAA" }, "https://api.familysearch.org/platform/tree/persons/BBBB-BBB/changes"],
+    ];
+    for (const [tool, args, location] of cases) {
+      const { run } = setup([response({ status: 301, headers: { location } })]);
+      await expect(run(tool, args)).rejects.toThrow(/AAAA-AAA foi mesclada em BBBB-BBB/);
+    }
+  });
+
+  test("a 301 without a usable Location says merged, without inventing an id", async () => {
+    const { run } = setup([response({ status: 301 })]);
+    const error = await run("get_person", { person_id: "AAAA-AAA" }).catch((caught: Error) => caught);
+    expect((error as Error).message).toMatch(/AAAA-AAA foi mesclada em outra pessoa/);
+    expect((error as Error).message).not.toContain("?");
   });
 
   test("404, 400 and 204 are all 'not found', never an empty person", async () => {
@@ -154,6 +173,15 @@ describe("search_persons", () => {
     const { run, fetch } = setup([]);
     await expect(run("search_persons", {})).rejects.toThrow(/pelo menos/);
     expect(fetch.calls).toHaveLength(0);
+  });
+
+  test("a 400 on a search is FamilySearch's complaint, not 'not found'", async () => {
+    const { run } = setup([
+      response({ status: 400, headers: { warning: '400 FamilySearch "Failure in upstream call: Search for tree persons"' } }),
+    ]);
+    const error = await run("search_persons", { surname: "Rossi" }).catch((caught: Error) => caught);
+    expect((error as Error).message).toContain("Failure in upstream call");
+    expect((error as Error).message).not.toMatch(/não encontrad/);
   });
 
   test("204 means no results", async () => {
