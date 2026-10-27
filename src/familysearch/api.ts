@@ -1,7 +1,7 @@
 import { DeletedError, HttpError, MergedError, NotFoundError, ParseError } from "../core/errors.js";
 import type { Http, HttpRequest } from "../core/http.js";
 import { normalizeSearchDate } from "../domain/dates.js";
-import type { TreeQuery } from "../domain/types.js";
+import type { RecordQuery, TreeQuery } from "../domain/types.js";
 import type { GxDocument, GxFeed } from "./gedcomx.js";
 
 // Every FamilySearch read, one small function each. Paths are the documented
@@ -122,4 +122,61 @@ export const searchTree = (http: Http, query: TreeQuery) =>
     query: treeSearchParams(query),
     accept: ATOM,
     label: "tree search",
+  });
+
+// ---- research ---------------------------------------------------------------
+
+export const RECORDS_COLLECTION = "https://familysearch.org/platform/collections/records";
+
+/** Possible duplicates of a person in the tree, as FamilySearch scores them. */
+export const readTreeMatches = (http: Http, id: string) =>
+  getJson<GxFeed>(http, { method: "GET", path: `${person(id)}/matches`, accept: ATOM, label: "matches" }, id);
+
+/** Record hints: historical records FamilySearch thinks are about this person. */
+export const readRecordHints = (http: Http, id: string) =>
+  getJson<GxFeed>(
+    http,
+    {
+      method: "GET",
+      path: `${person(id)}/matches`,
+      query: { collection: RECORDS_COLLECTION },
+      accept: ATOM,
+      label: "record hints",
+    },
+    id,
+  );
+
+/** Historical record search lives on the website's search service, not on /platform. */
+export const searchRecords = (http: Http, query: RecordQuery) =>
+  getJson<GxFeed>(http, {
+    method: "GET",
+    path: "/service/search/hr/v2/personas",
+    query: {
+      "q.givenName": query.givenName,
+      "q.surname": query.surname,
+      "q.birthLikeDate.from": query.birthDate ? normalizeSearchDate(query.birthDate) : undefined,
+      "q.birthLikePlace": query.birthPlace,
+      "q.deathLikeDate.from": query.deathDate ? normalizeSearchDate(query.deathDate) : undefined,
+      "q.deathLikePlace": query.deathPlace,
+      "f.collectionId": query.collectionId,
+      count: query.limit ?? 10,
+    },
+    accept: "application/json",
+    label: "record search",
+  });
+
+export const readRecordPersona = (http: Http, id: string) =>
+  getRequired<GxDocument>(
+    http,
+    { method: "GET", path: `/platform/records/personas/${encodeURIComponent(id)}`, label: "record" },
+    id,
+  );
+
+export const searchPlaces = (http: Http, name: string, limit: number) =>
+  getJson<GxFeed>(http, {
+    method: "GET",
+    path: "/platform/places/search",
+    query: { q: `name:"${name.replace(/"/g, "")}"`, count: limit },
+    accept: ATOM,
+    label: "place search",
   });

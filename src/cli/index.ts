@@ -1,7 +1,17 @@
 import { Command } from "commander";
 import { loadConfig } from "../config.js";
 import { createContext } from "../context.js";
-import { formatChanges, formatFamily, formatPedigree, formatPerson, formatSearch } from "./format.js";
+import {
+  formatCandidates,
+  formatChanges,
+  formatFamily,
+  formatPedigree,
+  formatPerson,
+  formatPlaces,
+  formatRecord,
+  formatRecords,
+  formatSearch,
+} from "./format.js";
 import { invoke } from "./output.js";
 
 // The CLI is a thin argv → tool-args mapper: one command per tool, every
@@ -129,6 +139,68 @@ export async function runCli(argv: string[], version: string): Promise<void> {
         "get_change_history",
         { person_id: id, limit: options.limit ? Number(options.limit) : undefined },
         { json: options.json ?? false, format: formatChanges },
+      ),
+    );
+
+  // ---- research -------------------------------------------------------------
+
+  command("records")
+    .description("Busca registros históricos indexados")
+    .option("--given <name>", "prenome(s)")
+    .option("--surname <name>", "sobrenome")
+    .option("--birth <date>", "data ou ano de nascimento")
+    .option("--birth-place <place>", "lugar de nascimento")
+    .option("--death <date>", "data ou ano de falecimento")
+    .option("--death-place <place>", "lugar de falecimento")
+    .option("--collection <id>", "id de uma coleção")
+    .option("--limit <n>", "máximo de resultados (default 10)")
+    .action((options) =>
+      invoke(
+        "search_records",
+        {
+          given_name: options.given,
+          surname: options.surname,
+          birth_date: options.birth,
+          birth_place: options.birthPlace,
+          death_date: options.death,
+          death_place: options.deathPlace,
+          collection_id: options.collection,
+          limit: options.limit ? Number(options.limit) : undefined,
+        },
+        { json: options.json ?? false, format: formatRecords },
+      ),
+    );
+
+  command("record <id>")
+    .description("Mostra um registro histórico e as pessoas citadas nele")
+    .action((id: string, options) =>
+      invoke("get_record", { record_id: id }, { json: options.json ?? false, format: formatRecord }),
+    );
+
+  command("hints <id>")
+    .description("Sugestões de registros do FamilySearch para uma pessoa")
+    .action((id: string, options) =>
+      invoke("get_hints", { person_id: id }, { json: options.json ?? false, format: formatCandidates("hints") }),
+    );
+
+  command("duplicates <id>")
+    .description("Possíveis duplicatas de uma pessoa, segundo o FamilySearch")
+    .action((id: string, options) =>
+      invoke(
+        "get_possible_duplicates",
+        { person_id: id },
+        { json: options.json ?? false, format: formatCandidates("candidates") },
+      ),
+    );
+
+  command("places <name>")
+    .description("Busca lugares padronizados")
+    .option("--limit <n>", "máximo de resultados (default 10)")
+    .action((name: string, options) =>
+      invoke(
+        "search_places",
+        { name, limit: options.limit ? Number(options.limit) : undefined },
+        { json: options.json ?? false, format: formatPlaces },
       ),
     );
 

@@ -20,6 +20,9 @@ import type {
   NumberedPerson,
   PersonDetail,
   PersonSummary,
+  Place,
+  RecordDetail,
+  RecordHit,
   SearchHit,
   SourceRef,
 } from "./types.js";
@@ -225,4 +228,73 @@ export function toMemories(document: GxDocument | null): Memory[] {
     title: memory.titles?.[0]?.value ?? null,
     url: memory.about ?? null,
   }));
+}
+
+// ---- records and places -----------------------------------------------------
+
+export const recordUrl = (baseUrl: string, id: string): string => `${baseUrl}/ark:/61903/1:1:${id}`;
+
+/** The collection a record belongs to: the `sd_c_*` description, FamilySearch's convention. */
+function collectionOf(document: GxDocument): string | null {
+  const collection = (document.sourceDescriptions ?? []).find((source) => source.id?.startsWith("sd_c_"));
+  return collection?.titles?.[0]?.value ?? null;
+}
+
+/** The record image (a `3:1` digital artifact), when the record has one. */
+function imageOf(document: GxDocument): string | null {
+  return (document.sourceDescriptions ?? []).find((source) => source.about?.includes("/ark:/61903/3:1:"))?.about ?? null;
+}
+
+function principalPerson(document: GxDocument): GxPerson | undefined {
+  const persons = document.persons ?? [];
+  return persons.find((person) => person.principal) ?? persons[0];
+}
+
+export function toRecordHits(feed: GxFeed, baseUrl: string): RecordHit[] {
+  return (feed.entries ?? []).flatMap((entry) => {
+    const document = entry.content?.gedcomx;
+    if (!entry.id || !document) return [];
+    const person = principalPerson(document);
+    const fact = (person?.facts ?? []).find((candidate) => candidate.date || candidate.place);
+    return [
+      {
+        id: entry.id,
+        name: person ? (allNames(person)[0] ?? null) : null,
+        collection: collectionOf(document),
+        eventType: fact ? shortType(fact.type) : null,
+        event: fact ? { date: toDate(fact.date), place: placeOf(fact) } : null,
+        confidence: entry.confidence ?? null,
+        url: recordUrl(baseUrl, entry.id),
+      },
+    ];
+  });
+}
+
+export function toRecordDetail(document: GxDocument, id: string, baseUrl: string): RecordDetail {
+  const persons = [...(document.persons ?? [])]
+    .sort((a, b) => Number(b.principal === true) - Number(a.principal === true))
+    .map((person) => ({ ...toPersonDetail(person), principal: person.principal === true }));
+  return {
+    id,
+    collection: collectionOf(document),
+    persons,
+    imageUrl: imageOf(document),
+    url: recordUrl(baseUrl, id),
+  };
+}
+
+export function toPlaces(feed: GxFeed): Place[] {
+  return (feed.entries ?? []).flatMap((entry) => {
+    const place = entry.content?.gedcomx?.places?.[0];
+    const id = place?.id ?? entry.id;
+    if (!place || !id) return [];
+    return [
+      {
+        id,
+        name: place.display?.name ?? "",
+        fullName: place.display?.fullName ?? place.display?.name ?? "",
+        type: place.display?.type ?? null,
+      },
+    ];
+  });
 }

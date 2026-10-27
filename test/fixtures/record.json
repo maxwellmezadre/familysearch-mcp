@@ -1,0 +1,413 @@
+{
+  "status": 200,
+  "location": null,
+  "body": {
+    "description": "#sd_p_105038009996",
+    "id": "r_106515605212",
+    "lang": "en",
+    "links": {
+      "next": {
+        "href": "https://www.familysearch.org/ark:/61903/1:2:SJ1H-GLTL?seek=next"
+      },
+      "prev": {
+        "href": "https://www.familysearch.org/ark:/61903/1:2:SJ1H-GLTL?seek=prev"
+      },
+      "self": {
+        "href": "https://www.familysearch.org/ark:/61903/1:2:SJ1H-GLTL"
+      }
+    },
+    "persons": [
+      {
+        "display": {
+          "birthDate": "12 Feb 1809",
+          "deathDate": "14 Apr 1865",
+          "gender": "Male",
+          "name": "Lia Fausto"
+        },
+        "extracted": true,
+        "facts": [
+          {
+            "date": {
+              "id": "cbd9b4b1-19df-4578-b37b-78d77f689977",
+              "original": "14 Apr 1865"
+            },
+            "id": "d65793be-c02e-4b7e-9942-e7200cbee633",
+            "type": "http://gedcomx.org/Death"
+          },
+          {
+            "date": {
+              "id": "2e78709a-d566-49cb-8d2d-b39de0c7530d",
+              "original": "12 Feb 1809"
+            },
+            "id": "71dea8ba-16c1-4b86-89a6-87f1ff928485",
+            "type": "http://gedcomx.org/Birth"
+          },
+          {
+            "date": {
+              "id": "cf57ab8f-42d4-468d-b21a-f2e1e9a6f07b",
+              "original": "14 Apr 1887"
+            },
+            "id": "bed05428-556a-4288-a121-c6aa47172c04",
+            "place": {
+              "description": "#place_4813889",
+              "id": "676c1f8b-95ba-4dfe-a2b9-5439a15717a4",
+              "original": "Canton, Ohio"
+            },
+            "primary": true,
+            "type": "http://gedcomx.org/Obituary"
+          },
+          {
+            "date": {
+              "id": "5c923560-bbb0-454d-8b86-9152e14081e7",
+              "original": "14 Apr 1887"
+            },
+            "id": "d0bc78a3-f219-4d0e-baaf-15839a3a7a53",
+            "type": "http://gedcomx.org/Residence"
+          }
+        ],
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "p_105038009996",
+        "links": {
+          "persona": {
+            "href": "https://www.familysearch.org/platform/records/personas/LHQL-RJL2?flag=fsh"
+          },
+          "record": {
+            "href": "https://www.familysearch.org/platform/records/records/SJ1H-GLTL?flag=fsh"
+          }
+        },
+        "names": [
+          {
+            "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "id": "6cda7145-ab5a-4bce-bef1-588adbffb478",
+            "nameForms": [
+              {
+                "fullText": "Lia Fausto",
+                "parts": [
+                  {
+                    "id": "0603ef26-29b4-4664-b5cc-eee6b1f09f2b",
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  },
+                  {
+                    "id": "3ea67f3c-b134-459c-9fde-f9f47ea29e91",
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Lia"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "principal": true,
+        "sources": [
+          {
+            "description": "#sd_da1",
+            "descriptionId": "sd_da1"
+          }
+        ]
+      },
+      {
+        "display": {
+          "gender": "Male",
+          "name": "Lia Fausto"
+        },
+        "extracted": true,
+        "gender": {
+          "type": "http://gedcomx.org/Male"
+        },
+        "id": "p_105038009997",
+        "links": {
+          "persona": {
+            "href": "https://www.familysearch.org/platform/records/personas/D33R-JNMG?flag=fsh"
+          },
+          "record": {
+            "href": "https://www.familysearch.org/platform/records/records/SJ1H-GLTL?flag=fsh"
+          }
+        },
+        "names": [
+          {
+            "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "id": "e50aca6b-70c6-4dc5-8f7b-6f06b3f84e3e",
+            "nameForms": [
+              {
+                "fullText": "Lia Fausto",
+                "parts": [
+                  {
+                    "id": "1031885d-ee30-4657-bed1-978876b89573",
+                    "type": "http://gedcomx.org/Surname",
+                    "value": "Fausto"
+                  },
+                  {
+                    "id": "bf9c27f6-d7c0-40af-ad70-0991acff4166",
+                    "type": "http://gedcomx.org/Given",
+                    "value": "Lia"
+                  }
+                ]
+              }
+            ],
+            "preferred": false,
+            "type": "http://gedcomx.org/BirthName"
+          }
+        ],
+        "principal": false,
+        "sources": [
+          {
+            "description": "#sd_da1",
+            "descriptionId": "sd_da1"
+          }
+        ]
+      }
+    ],
+    "places": [
+      {
+        "id": "place_4813889"
+      }
+    ],
+    "sourceDescriptions": [
+      {
+        "about": "https://www.familysearch.org/ark:/61903/1:2:SJ1H-GLTL",
+        "citations": [
+          {
+            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2 : Sun Jul 26 11:23:16 UTC 2026), Entry for Lia Fausto and Lia Fausto, 14 Apr 1887."
+          }
+        ],
+        "componentOf": {
+          "description": "#sd_c_2860782",
+          "descriptionId": "sd_c_2860782"
+        },
+        "coverage": [
+          {
+            "recordType": "http://gedcomx.org/Obituary",
+            "spatial": {
+              "description": "https://www.familysearch.org/platform/places/description/4813889",
+              "original": "Canton, Stark, Ohio, United States"
+            },
+            "temporal": {
+              "formal": "+1887-04-14",
+              "original": "14 Apr 1887"
+            }
+          }
+        ],
+        "created": 1596050525195,
+        "descriptor": {
+          "resource": "https://www.familysearch.org/platform/records/collections/2860782?arkName=1:2:SJ1H-GLTL"
+        },
+        "id": "src_r_106515605212",
+        "mediaType": "image/jpeg",
+        "modified": 1785064996970,
+        "resourceType": "http://gedcomx.org/Record",
+        "rights": [
+          "http://familysearch.org/records/recordPermissions/CdsPrmAnyone"
+        ],
+        "sources": [
+          {
+            "description": "#sd_da1",
+            "descriptionId": "sd_da1",
+            "qualifiers": [
+              {
+                "name": "http://gedcomx.org/RectangleRegion",
+                "value": "0.059140,0.036160,0.213360,0.382310"
+              }
+            ]
+          }
+        ],
+        "statuses": [
+          "http://gedcomx.org/Published"
+        ],
+        "titles": [
+          {
+            "lang": "en",
+            "value": "Entry for Lia Fausto, \"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\""
+          }
+        ]
+      },
+      {
+        "about": "https://www.familysearch.org/platform/records/collections/2860782",
+        "coverage": [
+          {
+            "recordType": "http://gedcomx.org/Obituary",
+            "spatial": {
+              "description": "https://www.familysearch.org/platform/places/description/1",
+              "original": "United States"
+            },
+            "temporal": {
+              "formal": "+1815/+2013",
+              "original": "1815/2013"
+            }
+          }
+        ],
+        "created": 1526441279250,
+        "id": "sd_c_2860782",
+        "modified": 1791875319875,
+        "resourceType": "http://gedcomx.org/Collection",
+        "titles": [
+          {
+            "lang": "en",
+            "value": "United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013"
+          },
+          {
+            "lang": "fr",
+            "value": "États-Unis, Banque Généalogique historique des journaux nécrologiques, 1815-2013"
+          },
+          {
+            "lang": "id",
+            "value": "Amerika Serikat, Wartamerta Surat Kabar Bersejarah GenealogyBank, 1815-2013"
+          },
+          {
+            "lang": "th",
+            "value": "สหรัฐ, ข่าวมรณกรรมจากหนังสือพิมพ์ประวัติศาสตร์ GenealogyBank, ปี 1815-2013"
+          },
+          {
+            "lang": "to",
+            "value": "ʻIunaiteti Siteití, Fakamatala 'o e  Pekia 'i he Nusipepa Fakahisitōlia ʻa e GenealogyBank  , 1815-2013"
+          },
+          {
+            "lang": "ro",
+            "value": "Statele Unite, Necrologuri din ziarul istoric GenealogyBank, 1815-2013"
+          },
+          {
+            "lang": "sm",
+            "value": "Hoa Kỳ, Cáo Phó trên Báo Lịch Sử GenealogyBank, 1815-2013"
+          },
+          {
+            "lang": "vi",
+            "value": "Hoa Kỳ, Cáo Phó trên Báo Lịch Sử GenealogyBank, 1815-2013"
+          },
+          {
+            "lang": "sq",
+            "value": "Shtetet e Bashkuara, GenealogyBank Gazeta Historike Nekrologji, 1815-2013"
+          },
+          {
+            "lang": "pt",
+            "value": "Estados Unidos, obituários no jornal histórico GenealogyBank, 1815-2013"
+          },
+          {
+            "lang": "de",
+            "value": "Vereinigte Staaten, GenealogyBank Historische Zeitungsnachrufe, 1815-2013"
+          },
+          {
+            "lang": "uk",
+            "value": "США, некрологи з газет, зібрані GenealogyBank, 1815–2013 рр."
+          },
+          {
+            "lang": "hr",
+            "value": "Sjedinjene Države, Osmrtnice u novinama GenealogyBank Historical Newspaper, 1815.-2013."
+          },
+          {
+            "lang": "cs",
+            "value": "Publikace United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013"
+          },
+          {
+            "lang": "tl",
+            "value": "United States, Mga Dating Obitwaryo sa Pahayagan ng GenealogyBank, 1815-2013"
+          },
+          {
+            "lang": "mg",
+            "value": "Etazonia, Gazety milaza Fahafatesana Ara-tantara avy amin'ny GenealogyBank, 1815-2013"
+          }
+        ]
+      },
+      {
+        "about": "https://www.familysearch.org/ark:/61903/3:1:GTZ4-RH5H-J93C-H",
+        "componentOf": {
+          "description": "#sd_c_2860782",
+          "descriptionId": "sd_c_2860782"
+        },
+        "coverage": [
+          {
+            "recordType": "http://gedcomx.org/Newspaper",
+            "spatial": {
+              "description": "https://www.familysearch.org/platform/places/description/4813889",
+              "original": "title:United States, Ohio, Stark, Canton"
+            },
+            "temporal": {
+              "formal": "+1884-01-01T00:00:00Z/+1890-12-31T23:59:59Z",
+              "original": "1884–1890"
+            }
+          }
+        ],
+        "descriptor": {
+          "resource": "https://www.familysearch.org/platform/records/collections/2860782?arkName=3:1:GTZ4-RH5H-J93C-H"
+        },
+        "id": "sd_da1",
+        "mediaType": "image/jpeg",
+        "resourceType": "http://gedcomx.org/DigitalArtifact"
+      },
+      {
+        "about": "https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2",
+        "citations": [
+          {
+            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:LHQL-RJL2 : Sun Jul 26 11:23:16 UTC 2026), Lia Fausto, 14 Apr 1887."
+          }
+        ],
+        "componentOf": {
+          "description": "#src_r_106515605212",
+          "descriptionId": "src_r_106515605212"
+        },
+        "descriptions": [
+          {
+            "lang": "en",
+            "value": "Lia Fausto, \"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\""
+          }
+        ],
+        "id": "sd_p_105038009996",
+        "resourceType": "http://gedcomx.org/Person",
+        "titles": [
+          {
+            "lang": "en",
+            "value": "Lia Fausto, \"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\""
+          }
+        ]
+      },
+      {
+        "about": "https://www.familysearch.org/ark:/61903/1:1:D33R-JNMG",
+        "citations": [
+          {
+            "value": "\"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\", <i>Teodoro</i> (https://www.familysearch.org/ark:/61903/1:1:D33R-JNMG : Sun Jul 26 11:23:16 UTC 2026), Lia Fausto in entry for Lia Fausto, 14 Apr 1887."
+          }
+        ],
+        "componentOf": {
+          "description": "#src_r_106515605212",
+          "descriptionId": "src_r_106515605212"
+        },
+        "descriptions": [
+          {
+            "lang": "en",
+            "value": "Lia Fausto, \"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\""
+          }
+        ],
+        "id": "sd_p_105038009997",
+        "resourceType": "http://gedcomx.org/Person",
+        "titles": [
+          {
+            "lang": "en",
+            "value": "Lia Fausto, \"United States, GenealogyBank Historical Newspaper Obituaries, 1815-2013\""
+          }
+        ]
+      },
+      {
+        "coverage": [
+          {
+            "spatial": {
+              "description": "https://www.familysearch.org/platform/places/description/357"
+            },
+            "temporal": {
+              "formal": "+1066-01-07T00:00:00Z/+2012-12-31T23:59:59Z"
+            }
+          }
+        ],
+        "id": "sd_auto_M7LT-PW8",
+        "resourceType": "http://familysearch.org/types/collection/auto",
+        "titles": [
+          {
+            "value": "United States, Ohio, Biographies, from 7 January 1066 to 2012"
+          }
+        ]
+      }
+    ]
+  }
+}

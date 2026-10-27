@@ -9,8 +9,8 @@
             "places": [
               {
                 "display": {
-                  "fullName": "Zeca, Kingston, Jamaica",
-                  "name": "Zeca",
+                  "fullName": "Springfield, Kingston, Jamaica",
+                  "name": "Springfield",
                   "type": "Neighborhood or suburb"
                 },
                 "id": "12243341",
@@ -29,7 +29,7 @@
                 "names": [
                   {
                     "lang": "en",
-                    "value": "Zeca, Kingston, Jamaica"
+                    "value": "Springfield, Kingston, Jamaica"
                   }
                 ],
                 "type": "https://www.familysearch.org/platform/places/types/308",
@@ -106,8 +106,8 @@
             "places": [
               {
                 "display": {
-                  "fullName": "Zeca, Saint Elizabeth, Jamaica",
-                  "name": "Zeca",
+                  "fullName": "Springfield, Saint Elizabeth, Jamaica",
+                  "name": "Springfield",
                   "type": "Village"
                 },
                 "id": "12216949",
@@ -126,7 +126,7 @@
                 "names": [
                   {
                     "lang": "en",
-                    "value": "Zeca, Saint Elizabeth, Jamaica"
+                    "value": "Springfield, Saint Elizabeth, Jamaica"
                   }
                 ],
                 "type": "https://www.familysearch.org/platform/places/types/391",
@@ -203,8 +203,8 @@
             "places": [
               {
                 "display": {
-                  "fullName": "Zeca, Saint James, Jamaica",
-                  "name": "Zeca",
+                  "fullName": "Springfield, Saint James, Jamaica",
+                  "name": "Springfield",
                   "type": "Village"
                 },
                 "id": "12174926",
@@ -223,7 +223,7 @@
                 "names": [
                   {
                     "lang": "en",
-                    "value": "Zeca, Saint James, Jamaica"
+                    "value": "Springfield, Saint James, Jamaica"
                   }
                 ],
                 "type": "https://www.familysearch.org/platform/places/types/391",

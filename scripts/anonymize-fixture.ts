@@ -47,8 +47,11 @@ const FREE_TEXT: Record<string, string> = {
 /** Keys dropped: bulky, irrelevant to the parsers, and (attribution) about contributors. */
 const DROPPED = new Set(["evidence", "sortKey", "identifiers", "attribution", "fields"]);
 /** Only these captures keep their sources and source descriptions (the parsers read them there). */
-const KEEPS_SOURCES = new Set(["sources.json", "record-search.json"]);
+const KEEPS_SOURCES = new Set(["sources.json", "record-search.json", "record.json"]);
 let dropSources = false;
+/** Captures with no people in them: their `name` fields are place names, left alone. */
+const NO_PEOPLE = new Set(["places.json"]);
+let keepNames = false;
 /** Feeds cut to this many entries. */
 const MAX_ENTRIES = 12;
 
@@ -117,7 +120,9 @@ function walk(node: Json, key = "", parent: { [key: string]: Json } | null = nul
     if (key in FREE_TEXT) return FREE_TEXT[key]!;
     const isPart = key === "value" && parent !== null && typeof parent.type === "string" && /Given|Surname|Prefix|Suffix/.test(parent.type);
     // `name` also labels URIs (qualifiers, field types): those are not people.
-    if ((key === "fullText" || key === "name" || isPart) && !node.includes("://")) return fakeName(node);
+    if (!keepNames && (key === "fullText" || key === "name" || isPart) && !node.includes("://")) {
+      return fakeName(node);
+    }
     return node;
   }
   return node;
@@ -145,6 +150,7 @@ let failed = false;
 for (const file of readdirSync(CAPTURES).filter((name) => name.endsWith(".json")).sort()) {
   const raw = readFileSync(join(CAPTURES, file), "utf8");
   dropSources = !KEEPS_SOURCES.has(file);
+  keepNames = NO_PEOPLE.has(file);
   const output = anonymize(raw);
   const leaked = [...new Set(raw.match(ID) ?? [])].filter((id) => output.includes(id));
   const secret = secrets.filter((value) => output.includes(value));

@@ -66,12 +66,21 @@ export type GxSourceDescription = {
   about?: string;
   titles?: Array<{ value?: string }>;
   citations?: Array<{ value?: string }>;
+  componentOf?: { description?: string };
+};
+
+export type GxPlaceDescription = {
+  id?: string;
+  display?: { name?: string; fullName?: string; type?: string };
 };
 
 export type GxNote = { id?: string; subject?: string; text?: string };
 
 export type GxDocument = {
+  id?: string;
+  description?: string;
   persons?: Array<GxPerson & { notes?: GxNote[] }>;
+  places?: GxPlaceDescription[];
   relationships?: GxRelationship[];
   childAndParentsRelationships?: GxChildAndParents[];
   sourceDescriptions?: GxSourceDescription[];

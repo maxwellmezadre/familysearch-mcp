@@ -21,6 +21,8 @@ const ATOM = "application/x-gedcomx-atom+json";
 const PERSON = "LZJW-C31";
 /** An old id FamilySearch merged into another person: answers 301. */
 const MERGED = "LZJW-C61";
+/** A newspaper obituary of the same person, from the record search. */
+const RECORD = "Q5SN-NK1T";
 
 type Capture = { name: string; request: Omit<HttpRequest, "label"> };
 
@@ -57,15 +59,18 @@ const CAPTURES: Capture[] = [
       accept: "application/json",
     },
   },
+  { name: "record", request: { method: "GET", path: `/platform/records/personas/${RECORD}` } },
   {
     name: "places",
     request: { method: "GET", path: "/platform/places/search", query: { q: 'name:"Springfield"', count: 3 }, accept: ATOM },
   },
 ];
 
+// `bun run scripts/capture-fixtures.ts record places` recaptures only those.
+const only = new Set(process.argv.slice(2));
 const ctx = createContext(loadConfig());
 mkdirSync(OUT, { recursive: true });
-for (const capture of CAPTURES) {
+for (const capture of CAPTURES.filter((item) => only.size === 0 || only.has(item.name))) {
   const response = await ctx.http.send({ ...capture.request, label: capture.name });
   const file = join(OUT, `${capture.name}.json`);
   writeFileSync(

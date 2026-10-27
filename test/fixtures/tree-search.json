@@ -87,10 +87,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Zeca, Sangamon, Illinois, United States"
+                          "value": "Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Zeca, Sangamon, Illinois, United States"
+                      "original": "Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Residence",
                     "value": ""
@@ -112,10 +112,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Zeca, Sangamon, Illinois, United States"
+                          "value": "Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Zeca, Sangamon, Illinois, United States"
+                      "original": "Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Residence",
                     "value": ""
@@ -137,10 +137,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Zeca, Sangamon, Illinois, United States"
+                          "value": "Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Zeca, Sangamon, Illinois, United States"
+                      "original": "Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Residence",
                     "value": ""
@@ -162,10 +162,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                          "value": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                      "original": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Burial"
                   },
@@ -223,9 +223,9 @@
               {
                 "display": {
                   "birthDate": "10 March 1846",
-                  "birthPlace": "Zeca, Sangamon, Illinois, United States",
+                  "birthPlace": "Springfield, Sangamon, Illinois, United States",
                   "deathDate": "1 February 1850",
-                  "deathPlace": "Zeca, Sangamon, Illinois, United States",
+                  "deathPlace": "Springfield, Sangamon, Illinois, United States",
                   "gender": "Male",
                   "name": "Joaquim Almeida Fausto",
                   "role": "Other"
@@ -248,10 +248,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Zeca, Sangamon, Illinois, United States"
+                          "value": "Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Zeca, Sangamon, Illinois, United States"
+                      "original": "Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Birth"
                   },
@@ -272,10 +272,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Zeca, Sangamon, Illinois, United States"
+                          "value": "Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Zeca, Sangamon, Illinois, United States"
+                      "original": "Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Death"
                   },
@@ -286,10 +286,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                          "value": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                      "original": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Burial"
                   }
@@ -379,7 +379,7 @@
               {
                 "display": {
                   "birthDate": "21 December 1850",
-                  "birthPlace": "Zeca, Sangamon, Illinois, United States",
+                  "birthPlace": "Springfield, Sangamon, Illinois, United States",
                   "deathDate": "20 February 1862",
                   "deathPlace": "Washington, District of Columbia, United States",
                   "gender": "Male",
@@ -404,10 +404,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Zeca, Sangamon, Illinois, United States"
+                          "value": "Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Zeca, Sangamon, Illinois, United States"
+                      "original": "Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Birth"
                   },
@@ -442,10 +442,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                          "value": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                      "original": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Burial"
                   }
@@ -720,7 +720,7 @@
               {
                 "display": {
                   "birthDate": "1 August 1843",
-                  "birthPlace": "Zeca, Sangamon, Illinois, United States",
+                  "birthPlace": "Springfield, Sangamon, Illinois, United States",
                   "deathDate": "26 July 1926",
                   "deathPlace": "Manchester, Bennington, Vermont, United States",
                   "gender": "Male",
@@ -745,10 +745,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Zeca, Sangamon, Illinois, United States"
+                          "value": "Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Zeca, Sangamon, Illinois, United States"
+                      "original": "Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Birth"
                   },
@@ -1035,7 +1035,7 @@
               {
                 "display": {
                   "birthDate": "4 April 1853",
-                  "birthPlace": "Zeca, Sangamon, Illinois, United States",
+                  "birthPlace": "Springfield, Sangamon, Illinois, United States",
                   "deathDate": "15 July 1871",
                   "deathPlace": "Chicago, Cook, Illinois, United States",
                   "gender": "Male",
@@ -1060,10 +1060,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Zeca, Sangamon, Illinois, United States"
+                          "value": "Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Zeca, Sangamon, Illinois, United States"
+                      "original": "Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Birth"
                   },
@@ -1084,10 +1084,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                          "value": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                      "original": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Burial"
                   },
@@ -1218,7 +1218,7 @@
                   "birthDate": "13 December 1818",
                   "birthPlace": "Lexington, Fayette, Kentucky, United States",
                   "deathDate": "16 July 1882",
-                  "deathPlace": "Zeca, Sangamon, Illinois, United States",
+                  "deathPlace": "Springfield, Sangamon, Illinois, United States",
                   "gender": "Female",
                   "name": "Hugo Otávio Gilda",
                   "role": "Other"
@@ -1265,10 +1265,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                          "value": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                      "original": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Burial"
                   },
@@ -1289,10 +1289,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Zeca, Sangamon, Illinois, United States"
+                          "value": "Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Zeca, Sangamon, Illinois, United States"
+                      "original": "Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Death"
                   }
@@ -1452,7 +1452,7 @@
                 "names": [
                   {
                     "lang": "en-US",
-                    "value": "Zeca, Sangamon, Illinois, United States"
+                    "value": "Springfield, Sangamon, Illinois, United States"
                   }
                 ]
               },
@@ -1516,7 +1516,7 @@
                 "names": [
                   {
                     "lang": "en-US",
-                    "value": "Oak Ridge Cemetery, Zeca, Sangamon, Illinois, United States"
+                    "value": "Oak Ridge Cemetery, Springfield, Sangamon, Illinois, United States"
                   }
                 ]
               },
@@ -1563,10 +1563,10 @@
                       "normalized": [
                         {
                           "lang": "en-US",
-                          "value": "Zeca, Sangamon, Illinois, United States"
+                          "value": "Springfield, Sangamon, Illinois, United States"
                         }
                       ],
-                      "original": "Zeca, Sangamon, Illinois, United States"
+                      "original": "Springfield, Sangamon, Illinois, United States"
                     },
                     "type": "http://gedcomx.org/Marriage"
                   }

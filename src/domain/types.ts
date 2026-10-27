@@ -66,3 +66,36 @@ export type TreeQuery = {
   spouseName?: string;
   limit?: number;
 };
+
+/** A historical record (an indexed persona) from the record search. */
+export type RecordHit = {
+  id: string;
+  name: string | null;
+  collection: string | null;
+  eventType: string | null;
+  event: GenEvent | null;
+  confidence: number | null;
+  url: string;
+};
+
+export type RecordDetail = {
+  id: string;
+  collection: string | null;
+  /** The person the record is about comes first (`principal`), then the others named in it. */
+  persons: Array<PersonDetail & { principal: boolean }>;
+  imageUrl: string | null;
+  url: string;
+};
+
+export type Place = { id: string; name: string; fullName: string; type: string | null };
+
+export type RecordQuery = {
+  givenName?: string;
+  surname?: string;
+  birthDate?: string;
+  birthPlace?: string;
+  deathDate?: string;
+  deathPlace?: string;
+  collectionId?: string;
+  limit?: number;
+};

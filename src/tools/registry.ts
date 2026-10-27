@@ -2,6 +2,7 @@ import type { Config } from "../config.js";
 import { authStatus } from "./auth.js";
 import type { ToolDef } from "./define.js";
 import { login } from "./login.js";
+import { getHints, getPossibleDuplicates, getRecord, searchPlaces, searchRecords } from "./research.js";
 import {
   getAncestors,
   getChangeHistory,
@@ -25,6 +26,12 @@ export const allTools: ToolDef[] = [
   getAncestors,
   getDescendants,
   getChangeHistory,
+  // Research
+  searchRecords,
+  getRecord,
+  getHints,
+  getPossibleDuplicates,
+  searchPlaces,
 ];
 
 /**

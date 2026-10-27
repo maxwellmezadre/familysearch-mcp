@@ -22,6 +22,7 @@ describe("committed fixtures", () => {
       "person.json",
       "places.json",
       "record-search.json",
+      "record.json",
       "sources.json",
       "tree-search.json",
     ]);

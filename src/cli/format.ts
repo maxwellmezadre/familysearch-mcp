@@ -6,6 +6,9 @@ import type {
   NumberedPerson,
   PersonDetail,
   PersonSummary,
+  Place,
+  RecordDetail,
+  RecordHit,
   SearchHit,
 } from "../domain/types.js";
 import { printTable } from "./output.js";
@@ -81,3 +84,45 @@ export const formatChanges = (result: unknown): string => {
     ["O QUÊ", (row) => row.what],
   ]);
 };
+
+export const formatRecords = (result: unknown): string => {
+  const data = result as { total: number; records: RecordHit[] };
+  const table = printTable(data.records, [
+    ["ID", (row) => row.id],
+    ["CONF", (row) => String(row.confidence ?? "-")],
+    ["NOME", (row) => (row.name ?? "-").slice(0, 30)],
+    ["EVENTO", (row) => `${row.eventType ?? "-"}: ${eventText(row.event)}`.slice(0, 50)],
+    ["COLEÇÃO", (row) => (row.collection ?? "-").slice(0, 50)],
+  ]);
+  return `${table}\n\n${data.records.length} de ${data.total}`;
+};
+
+export const formatRecord = (result: unknown): string => {
+  const record = result as RecordDetail;
+  const lines = [record.collection ?? "(coleção desconhecida)", record.url];
+  if (record.imageUrl) lines.push(`imagem: ${record.imageUrl}`);
+  for (const person of record.persons) {
+    lines.push(`${person.principal ? "* " : "  "}${person.name ?? "(sem nome)"}`);
+    for (const fact of person.facts) lines.push(`    ${fact.type}: ${eventText(fact)}`);
+  }
+  return lines.join("\n");
+};
+
+export const formatCandidates = (key: "candidates" | "hints") => (result: unknown): string => {
+  const data = result as Record<string, Array<SearchHit | RecordHit>> & { note?: string };
+  const rows = data[key] ?? [];
+  if (rows.length === 0) return data.note ?? "(nenhuma)";
+  return printTable(rows, [
+    ["ID", (row) => row.id],
+    ["CONF", (row) => String(row.confidence ?? "-")],
+    ["NOME", (row) => row.name ?? "-"],
+    ["LINK", (row) => ("url" in row ? String(row.url) : "-")],
+  ]);
+};
+
+export const formatPlaces = (result: unknown): string =>
+  printTable((result as { places: Place[] }).places, [
+    ["ID", (row) => row.id],
+    ["TIPO", (row) => row.type ?? "-"],
+    ["NOME COMPLETO", (row) => row.fullName],
+  ]);
