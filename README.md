@@ -242,7 +242,8 @@ em produção, e a descrição de cada uma avisa isso.
 
 ### A trava de aprovação
 
-Toda escrita monta um plano, pergunta e só então envia. No servidor MCP a
+Toda escrita monta um plano, pergunta e só então envia. A pergunta começa pelo
+motivo, que vai para o histórico público da pessoa. No servidor MCP a
 pergunta é uma elicitation: o cliente mostra um formulário a você e a resposta
 volta para o servidor, sem passar pelo modelo. No CLI é um diálogo nativo do
 macOS, com "Cancelar" como botão padrão, que não aceita resposta pela entrada

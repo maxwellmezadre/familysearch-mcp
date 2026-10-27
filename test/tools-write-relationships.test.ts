@@ -172,6 +172,8 @@ describe("remove_relationship", () => {
     const prompt = (approver as any).prompts[0];
     expect(prompt.headline).toContain("Rui Lia");
     expect(prompt.headline).toContain("Ana Lia");
+    // The gate puts the reason on top; the tool does not repeat it.
+    expect(prompt.details.match(/Motivo/g)).toHaveLength(1);
     expect(out.status).toBe("applied");
     expect(out.readBack.ok).toBe(true);
     const [w] = writes(fetch);

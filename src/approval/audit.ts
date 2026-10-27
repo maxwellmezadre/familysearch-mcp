@@ -31,6 +31,9 @@ function privateFile(path: string, content: string, append = false): void {
   chmodSync(path, 0o600);
 }
 
+/** The reason goes into FamilySearch's public change history: every question shows it first. */
+export const reasonLine = (reason: string) => `Motivo (vai para o histórico público): ${reason}`;
+
 /** Filesystem-safe timestamp that still sorts chronologically. */
 const stamp = (at: number) => new Date(at).toISOString().replace(/[:.]/g, "-");
 const slug = (text: string) => text.replace(/[^A-Za-z0-9_-]+/g, "-");
@@ -50,7 +53,7 @@ export function writeDetails(config: Config, plan: WritePlan, at: number): strin
     `# ${plan.headline}`,
     "",
     `Ferramenta: ${plan.tool}`,
-    `Motivo: ${plan.reason}`,
+    reasonLine(plan.reason),
     "",
     "## Escritas",
     ...plan.writes.map((w) => `- ${w.summary} (${w.method} ${w.path})`),

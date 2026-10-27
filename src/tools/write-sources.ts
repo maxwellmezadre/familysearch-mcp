@@ -155,7 +155,7 @@ export const resolveSuggestion = defineTool({
         args.kind === "record"
           ? `${accept ? "Aceitar" : "Rejeitar"} o registro ${args.target_id} para ${args.person_id}\nResolve a sugestão de registro.`
           : `Marcar ${args.person_id} e ${args.target_id} como pessoas diferentes\nA sugestão de duplicata deixa de aparecer.`,
-      details: `${write.summary}\nMotivo: ${args.reason}`,
+      details: write.summary,
       writes: [write],
     };
     return runWritePlan(ctx, plan, {

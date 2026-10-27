@@ -74,7 +74,7 @@ export const linkParents = defineTool({
       tool: "link_parents",
       reason: args.reason,
       headline: `Ligar ${childLabel} como filho(a) de ${names.join(" e ")}\nO FamilySearch passa a mostrar essa família na árvore de todos os usuários.`,
-      details: `Criar um relacionamento pais-filho.\nFilho(a): ${childLabel}\nPais: ${names.join(" e ")}\nMotivo: ${args.reason}`,
+      details: `Criar um relacionamento pais-filho.\nFilho(a): ${childLabel}\nPais: ${names.join(" e ")}`,
       writes: [linkParentsWrite(ctx.config.baseUrl, child, p1, p2)],
     };
     return runWritePlan(ctx, plan, {
@@ -129,7 +129,7 @@ export const linkSpouses = defineTool({
       tool: "link_spouses",
       reason: args.reason,
       headline: `Ligar ${first} e ${second} como casal${when}\nO FamilySearch passa a mostrar esse casal na árvore de todos os usuários.`,
-      details: `Criar um relacionamento de casal.\nPessoa 1: ${first}\nPessoa 2: ${second}${when ? `\nCasamento:${when}` : ""}\nMotivo: ${args.reason}`,
+      details: `Criar um relacionamento de casal.\nPessoa 1: ${first}\nPessoa 2: ${second}${when ? `\nCasamento:${when}` : ""}`,
       writes: [linkSpousesWrite(ctx.config.baseUrl, a, b, marriage)],
     };
     return runWritePlan(ctx, plan, {
@@ -190,7 +190,7 @@ export const removeRelationship = defineTool({
       tool: "remove_relationship",
       reason: args.reason,
       headline: `Remover a ligação de ${text}\nATENÇÃO: as pessoas continuam na árvore, mas deixam de estar ligadas.`,
-      details: `Apagar o relacionamento ${id} (${kind === "couple" ? "casal" : "pais e filho"}).\nPessoas: ${labels.join("; ")}\nMotivo: ${args.reason}`,
+      details: `Apagar o relacionamento ${id} (${kind === "couple" ? "casal" : "pais e filho"}).\nPessoas: ${labels.join("; ")}`,
       writes: [deleteRelationshipWrite(kind, id)],
     };
     return runWritePlan(ctx, plan, {

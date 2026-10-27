@@ -1,7 +1,7 @@
 import type { Ctx } from "../context.js";
 import { ApprovalRefusedError } from "../core/errors.js";
 import { type PlannedWrite, type WriteTicket, issueTicket } from "../core/ticket.js";
-import { appendAudit, writeDetails } from "./audit.js";
+import { appendAudit, reasonLine, writeDetails } from "./audit.js";
 
 // Every write asks the user first, one question per tool call. The answer
 // becomes a single-use ticket; without an Approver nothing is written.
@@ -61,7 +61,7 @@ export async function requestApproval(ctx: Ctx, plan: WritePlan): Promise<WriteT
   try {
     answer = await approver.ask({
       headline,
-      details: plan.details,
+      details: `${reasonLine(plan.reason)}\n\n${plan.details}`,
       detailsPath,
       confirm: plan.confirm ?? null,
     });

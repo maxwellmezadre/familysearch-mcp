@@ -62,6 +62,16 @@ describe("requestApproval", () => {
     expect(md).toContain("Detalhe completo da mudança");
   });
 
+  test("every question leads its details with the reason that goes public", async () => {
+    const { ctx, approver } = setup();
+    await requestApproval(ctx, plan([note]));
+    const prompt = approver.prompts[0]!;
+    const line = "Motivo (vai para o histórico público): corrigir a data de batismo";
+    expect(prompt.details.split("\n")[0]).toBe(line);
+    expect(prompt.details).toContain("Detalhe completo da mudança");
+    expect(readFileSync(prompt.detailsPath as string, "utf8")).toContain(line);
+  });
+
   test("cuts the headline to 2 lines and 200 characters", async () => {
     const { ctx, approver } = setup();
     await requestApproval(ctx, { ...plan([note]), headline: `a\nb\nc\n${"x".repeat(300)}` });
