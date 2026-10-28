@@ -7,3 +7,7 @@ test("describeWrite flags tools not yet proven in production", () => {
   expect(describeWrite("proven_tool", "Faz algo.")).toBe("Faz algo.");
   (PRODUCTION_PROVEN as Set<string>).delete("proven_tool");
 });
+
+test("merge_persons is proven in production (grandmother pilot)", () => {
+  expect(PRODUCTION_PROVEN.has("merge_persons")).toBe(true);
+});

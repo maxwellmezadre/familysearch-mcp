@@ -98,7 +98,9 @@ describe("doctor", () => {
     const { run } = setup({ script: [response({ status: 401 })] });
     const detail = ((await run("doctor")) as Report).layers.find((layer) => layer.layer === "writes")!.detail;
     expect(detail).toContain("create_person");
-    expect(detail).toContain("merge_persons");
+    expect(detail).toContain("restore_person");
+    // Proven in production (PRODUCTION_PROVEN) drops out of the list.
+    expect(detail.split(/[:,]\s*/)).not.toContain("merge_persons");
     // These persist local files (session, cache, export), not the shared tree.
     for (const local of ["login", "sync", "export"]) expect(detail.split(/[:,]\s*/)).not.toContain(local);
   });

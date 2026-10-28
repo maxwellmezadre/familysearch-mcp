@@ -42,8 +42,11 @@ versionamento [SemVer](https://semver.org/lang/pt-BR/).
   aprovadas, motivo obrigatório (mínimo de 10 caracteres, enviado em
   `X-Reason`), `preview: true` em todas as escritas e registro local em
   `CONFIG_DIR/audit/` (tentativas, texto de cada pergunta e snapshots).
-  Nenhuma variável desliga a trava.
-- Escritas: `create_person` (busca parecidas antes e exige digitar "criar" se
+  Nenhuma variável desliga a trava. Onde a pergunta exige um texto (o id da
+  duplicata, "criar"), a elicitation pede para digitar e o diálogo do macOS
+  pede para escolher numa lista: o macOS não entrega o teclado a um diálogo
+  aberto por um processo em segundo plano.
+- Escritas: `create_person` (busca parecidas antes e exige confirmar "criar" se
   achar candidatas fortes), `update_person`, `add_note`, `link_parents`,
   `link_spouses`, `remove_relationship`, `add_source`, `attach_record` e
   `resolve_suggestion`. Cada uma relê o resultado depois de aplicar, e nenhuma é
@@ -84,9 +87,10 @@ versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
 ### Notas
 
-- Nenhuma escrita foi provada ainda num uso real em produção. A descrição de
-  cada tool de escrita avisa isso, e o `doctor` lista quais são.
-- As escritas não atualizam o cache: depois delas, `sync --full` traz a
-  linhagem de volta ao estado da árvore.
+- Provada em produção: `merge_persons` (piloto real, com troca de conflito e
+  releitura conferida). As outras escritas foram provadas só no beta; a
+  descrição delas avisa isso, e o `doctor` lista quais são.
+- Uma escrita marca as pessoas que tocou como desatualizadas no cache local;
+  o próximo `sync` relê essas pessoas.
 
 [Unreleased]: https://github.com/maxwellmezadre/familysearch-mcp/commits/HEAD
