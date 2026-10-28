@@ -68,6 +68,7 @@ describe("elicitation approver", () => {
     const wrong = await ask("CCCC-CCC");
     expect(wrong.approved).toBe(false);
     expect(wrong.reason).toContain("confirmação");
+    expect(wrong.reason).toContain('digitado "CCCC-CCC"');
     const { server, calls } = fakeServer({ action: "accept", content: { approve: true, confirm: "BBBB-BBB" } });
     await createElicitationApprover(server).ask(prompt(confirm));
     expect(calls[0]!.params.requestedSchema.required).toEqual(["approve", "confirm"]);

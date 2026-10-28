@@ -1,4 +1,4 @@
-import { type ApprovalAnswer, type ApprovalPrompt, type Approver, confirmMatches } from "../approval/gate.js";
+import { type ApprovalAnswer, type ApprovalPrompt, type Approver, confirmMismatch } from "../approval/gate.js";
 
 // Approval for the CLI: a native macOS dialog. Cancel is the default button, so
 // a stray Enter refuses.
@@ -41,7 +41,8 @@ export function createDialogApprover(deps: DialogDeps = {}): Approver {
         if (!stdout.includes("button returned:Aprovar")) return no("recusado pelo usuário");
         if (prompt.confirm) {
           const typed = /text returned:(.*)$/m.exec(stdout)?.[1]?.trim();
-          if (!confirmMatches(typed, prompt.confirm.expected)) return no("texto de confirmação não confere");
+          const mismatch = confirmMismatch(typed, prompt.confirm.expected);
+          if (mismatch) return no(mismatch);
         }
         return { approved: true, reason: "aprovado pelo usuário" };
       } catch {

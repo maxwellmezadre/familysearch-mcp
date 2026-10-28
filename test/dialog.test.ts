@@ -48,7 +48,10 @@ describe("dialog approver", () => {
       return createDialogApprover({ platform: "darwin", run: r.run }).ask(prompt({ confirm }));
     };
     expect((await ask("button returned:Aprovar, text returned:BBBB-BBB")).approved).toBe(true);
-    expect((await ask("button returned:Aprovar, text returned:outro")).approved).toBe(false);
+    const wrong = await ask("button returned:Aprovar, text returned:outro");
+    expect(wrong.approved).toBe(false);
+    expect(wrong.reason).toContain('digitado "outro"');
+    expect(wrong.reason).toContain("BBBB-BBB");
   });
 
   test("confirm ignores letter case", async () => {

@@ -17,9 +17,15 @@ export type ApprovalPrompt = {
 
 export type ApprovalAnswer = { approved: boolean; reason: string };
 
-/** The typed confirmation proves intent, not a secret: spaces and letter case do not matter. */
-export const confirmMatches = (typed: unknown, expected: string): boolean =>
-  String(typed ?? "").trim().toUpperCase() === expected.toUpperCase();
+/**
+ * Why the typed confirmation does not match, or null when it does. It proves
+ * intent, not a secret: spaces and letter case do not matter.
+ */
+export function confirmMismatch(typed: unknown, expected: string): string | null {
+  const text = String(typed ?? "").trim();
+  if (text.toUpperCase() === expected.toUpperCase()) return null;
+  return `texto de confirmação não confere: digitado ${JSON.stringify(text.slice(0, 40))}, esperado ${expected}`;
+}
 
 export type Approver = {
   kind: "elicitation" | "dialog" | "test";
