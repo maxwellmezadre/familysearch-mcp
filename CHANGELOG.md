@@ -33,7 +33,7 @@ versionamento [SemVer](https://semver.org/lang/pt-BR/).
   nas buscas; intervalos e décadas são ignorados em vez de estreitar a busca.
 - `compare_persons`: lado a lado de duas pessoas com fatos de um lado só,
   conflitos, sinais de que não são a mesma pessoa (sexo, anos de nascimento ou
-  falecimento, país de nascimento, pais ou cônjuges sem nome em comum), a ordem
+  falecimento, país de nascimento, pais ou cônjuges sem nome parecido), a ordem
   de mesclagem que o FamilySearch aceita, a sugestão de qual fica, a análise da
   mesclagem e um fingerprint das últimas alterações. Detecta pessoa viva e
   indica o caminho de religar em vez de mesclar.

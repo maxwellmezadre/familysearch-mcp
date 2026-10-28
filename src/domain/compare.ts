@@ -24,11 +24,30 @@ type Order = { aSurvives: MergeCheck; bSurvives: MergeCheck };
 const fold = (text: string): string =>
   text.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/\s+/g, " ").trim();
 
-/** "Giulia Maria Rossi" and "giulia rossi" share the key "giulia rossi". */
-function nameKey(name: string | null): string | null {
-  const words = name ? fold(name).split(" ").filter(Boolean) : [];
-  if (words.length === 0) return null;
-  return words.length === 1 ? words[0]! : `${words[0]} ${words.at(-1)}`;
+const PARTICLES = new Set(["de", "da", "do", "das", "dos", "e", "di", "del"]);
+
+/** True when one more, one fewer or one different letter turns `a` into `b`. */
+function oneEditApart(a: string, b: string): boolean {
+  if (Math.abs(a.length - b.length) > 1) return false;
+  let i = 0;
+  while (i < a.length && a[i] === b[i]) i++;
+  const tail = (x: string, skip: number) => x.slice(i + skip);
+  return tail(a, 1) === tail(b, 1) || tail(a, 1) === tail(b, 0) || tail(a, 0) === tail(b, 1);
+}
+
+/**
+ * Could two names be the same person, as far as a red flag cares: first names at most one
+ * letter apart and, when both have more, a later word in common. A married surname or a typo
+ * still matches ("Élida de Moura Prado", "Elda de Moura"); a shared surname alone does
+ * not ("João da Silva", "Pedro da Silva").
+ */
+function sameName(left: string, right: string): boolean {
+  const [first = "", ...restA] = fold(left).split(" ");
+  const [firstB = "", ...restB] = fold(right).split(" ");
+  if (!oneEditApart(first, firstB)) return false;
+  const later = new Set(restA.filter((word) => !PARTICLES.has(word)));
+  const laterB = restB.filter((word) => !PARTICLES.has(word));
+  return later.size === 0 || laterB.length === 0 || laterB.some((word) => later.has(word));
 }
 
 function yearOf(date: GenDate | null | undefined): number | null {
@@ -162,17 +181,17 @@ function redFlags(a: PersonBundle, b: PersonBundle): string[] {
     flags.push(`Nasceram em países diferentes (${label(birthPlace(a))} e ${label(birthPlace(b))}).`);
   }
   const names = (people: Array<{ name: string | null } | null>) =>
-    new Set(people.map((person) => nameKey(person?.name ?? null)).filter((key): key is string => key !== null));
-  const disjoint = (left: Set<string>, right: Set<string>) =>
-    left.size > 0 && right.size > 0 && ![...left].some((key) => right.has(key));
+    people.map((person) => person?.name?.trim() ?? "").filter(Boolean);
+  const disjoint = (left: string[], right: string[]) =>
+    left.length > 0 && right.length > 0 && !left.some((name) => right.some((other) => sameName(name, other)));
   const parents = (bundle: PersonBundle) =>
     names(bundle.family.parents.flatMap((entry) => [entry.parent1, entry.parent2]));
   const spouses = (bundle: PersonBundle) => names(bundle.family.spouses.map((entry) => entry.spouse));
   if (disjoint(parents(a), parents(b))) {
-    flags.push(`Os pais não batem: nenhum nome de pai ou mãe em comum (${[...parents(a)].join(", ")} contra ${[...parents(b)].join(", ")}).`);
+    flags.push(`Os pais não batem: nenhum nome de pai ou mãe em comum (${parents(a).join(", ")} contra ${parents(b).join(", ")}).`);
   }
   if (disjoint(spouses(a), spouses(b))) {
-    flags.push(`Os cônjuges não batem: nenhum nome em comum (${[...spouses(a)].join(", ")} contra ${[...spouses(b)].join(", ")}).`);
+    flags.push(`Os cônjuges não batem: nenhum nome em comum (${spouses(a).join(", ")} contra ${spouses(b).join(", ")}).`);
   }
   return flags;
 }

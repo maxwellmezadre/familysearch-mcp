@@ -140,6 +140,24 @@ describe("red flags", () => {
     const b = bundle({ id: "BBBB-BBB", spouses: ["Carlos Souza"] });
     expect(buildComparison(a, b, BOTH, null).redFlags[0]).toMatch(/cônjuge/i);
   });
+
+  test("a married surname and a one-letter typo still match the spouse", () => {
+    const a = bundle({ spouses: ["Élida de Moura Prado"] });
+    const b = bundle({ id: "BBBB-BBB", spouses: ["Elda de Moura"] });
+    expect(buildComparison(a, b, BOTH, null).redFlags).toEqual([]);
+  });
+
+  test("a shared surname alone does not match", () => {
+    const a = bundle({ parents: [["João da Silva", "Ana Lima"]] });
+    const b = bundle({ id: "BBBB-BBB", parents: [["Pedro da Silva", "Rosa Lima"]] });
+    expect(buildComparison(a, b, BOTH, null).redFlags[0]).toMatch(/pais/i);
+  });
+
+  test("the flag names the people as written", () => {
+    const a = bundle({ spouses: ["Pietro Conti"] });
+    const b = bundle({ id: "BBBB-BBB", spouses: ["Carlos Souza"] });
+    expect(buildComparison(a, b, BOTH, null).redFlags[0]).toContain("Pietro Conti contra Carlos Souza");
+  });
 });
 
 describe("facts", () => {
