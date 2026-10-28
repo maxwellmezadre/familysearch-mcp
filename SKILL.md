@@ -27,9 +27,12 @@ parâmetros em `TOOLS.md`, ao lado deste arquivo.
    salva. O `user.personId` dele é a pessoa do usuário na árvore, o ponto de
    partida de "meus avós", "meus bisavós". Com `verify: true` gasta 1
    requisição e confirma que o FamilySearch ainda aceita a sessão.
-2. Para juntar duplicatas, sempre `compare_persons` antes. Mostre ao usuário os
-   sinais de alerta (`redFlags`) e os conflitos (`conflicts`), explique o que
-   cada lado tem e pergunte o que ele escolhe. `merge_persons` só recebe o
+2. Para juntar duplicatas, sempre `compare_persons` antes. Rode
+   `get_possible_duplicates` em cada candidata, porque às vezes há três ou mais
+   versões da mesma pessoa. Mostre todas numa tabela só, uma coluna por pessoa
+   e uma linha por dado (id, nascimento, falecimento, pais, cônjuges, filhos,
+   fontes). Depois mostre os sinais de alerta (`redFlags`) e os conflitos
+   (`conflicts`) e pergunte o que ele escolhe. `merge_persons` só recebe o
    `fingerprint` que essa comparação devolveu.
 3. Toda escrita vai primeiro com `preview: true`. Mostre o plano ao usuário no
    chat e só depois faça a chamada real. A pergunta de aprovação na tela (no
