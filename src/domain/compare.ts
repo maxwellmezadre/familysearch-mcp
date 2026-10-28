@@ -37,17 +37,17 @@ function oneEditApart(a: string, b: string): boolean {
 
 /**
  * Could two names be the same person, as far as a red flag cares: first names at most one
- * letter apart and, when both have more, a later word in common. A married surname or a typo
- * still matches ("Élida de Moura Prado", "Elda de Moura"); a shared surname alone does
- * not ("João da Silva", "Pedro da Silva").
+ * letter apart and, when both have more, a later word in common, also up to one letter apart.
+ * A married surname or a typo still matches ("Élida de Moura Prado", "Elda de Moura";
+ * "Zanettin", "Zanetin"); a shared surname alone does not ("João da Silva", "Pedro da Silva").
  */
 function sameName(left: string, right: string): boolean {
   const [first = "", ...restA] = fold(left).split(" ");
   const [firstB = "", ...restB] = fold(right).split(" ");
   if (!oneEditApart(first, firstB)) return false;
-  const later = new Set(restA.filter((word) => !PARTICLES.has(word)));
+  const later = restA.filter((word) => !PARTICLES.has(word));
   const laterB = restB.filter((word) => !PARTICLES.has(word));
-  return later.size === 0 || laterB.length === 0 || laterB.some((word) => later.has(word));
+  return later.length === 0 || laterB.length === 0 || laterB.some((word) => later.some((other) => oneEditApart(word, other)));
 }
 
 function yearOf(date: GenDate | null | undefined): number | null {

@@ -147,6 +147,12 @@ describe("red flags", () => {
     expect(buildComparison(a, b, BOTH, null).redFlags).toEqual([]);
   });
 
+  test("a one-letter surname variant still matches", () => {
+    const a = bundle({ spouses: ["Bortolo Zanettin"] });
+    const b = bundle({ id: "BBBB-BBB", spouses: ["Bortolo Zanetin"] });
+    expect(buildComparison(a, b, BOTH, null).redFlags).toEqual([]);
+  });
+
   test("a shared surname alone does not match", () => {
     const a = bundle({ parents: [["João da Silva", "Ana Lima"]] });
     const b = bundle({ id: "BBBB-BBB", parents: [["Pedro da Silva", "Rosa Lima"]] });
