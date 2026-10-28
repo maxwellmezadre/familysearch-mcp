@@ -11,9 +11,14 @@ export type ApprovalPrompt = {
   details: string;
   /** Markdown file with the full plan, for when the headline is not enough. */
   detailsPath: string | null;
-  /** When set, the user must type `expected` (e.g. the duplicate's id) to approve. */
-  confirm: { title: string; expected: string } | null;
+  /**
+   * When set, the user must give `expected` (e.g. the duplicate's id) to approve:
+   * typed, or picked among `choices` where typing is not possible.
+   */
+  confirm: Confirm | null;
 };
+
+export type Confirm = { title: string; expected: string; choices?: string[] };
 
 export type ApprovalAnswer = { approved: boolean; reason: string };
 
@@ -38,7 +43,7 @@ export type WritePlan = {
   headline: string;
   details: string;
   writes: PlannedWrite[];
-  confirm?: { title: string; expected: string };
+  confirm?: Confirm;
   /** People whose cached copy the writes make stale (DESIGN §11). */
   touches?: string[];
   /** A merge: once applied, the cache marks the duplicate as merged into the survivor. */

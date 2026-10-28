@@ -202,7 +202,11 @@ describe("merge_persons", () => {
     // 8 for the two bundles, OPTIONS, the analysis, and the 4 raw documents.
     expect(fetch.calls).toHaveLength(14);
     const prompt = approver.prompts[0]!;
-    expect(prompt.confirm).toEqual({ title: `Digite o id da duplicata (${DUPLICATE}) para confirmar`, expected: DUPLICATE });
+    expect(prompt.confirm).toEqual({
+      title: `Confirme o id da duplicata (${DUPLICATE}), a pessoa que deixa de existir`,
+      expected: DUPLICATE,
+      choices: [SURVIVOR, DUPLICATE],
+    });
     expect(prompt.headline.split("\n")).toEqual([
       `Mesclar Giulia Rossi [${DUPLICATE}] em Giulia Rossi [${SURVIVOR}]`,
       `Fica ${SURVIVOR}; ${DUPLICATE} deixa de existir. Copia 1, troca 0.`,

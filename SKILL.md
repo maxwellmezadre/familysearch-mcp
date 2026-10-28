@@ -116,7 +116,7 @@ Todo comando do CLI aceita `--json`. Os que escrevem aceitam `--preview`.
   `search_persons` para achar a outra → `compare_persons` → converse sobre cada
   conflito → `merge_persons {survivor_id, duplicate_id, fingerprint, reason,
   preview: true}` → mostre `details` → `merge_persons` igual, sem `preview` (o
-  usuário digita o id da duplicata na pergunta) → mostre `readBack.checks`, o
+  usuário confirma o id da duplicata na pergunta) → mostre `readBack.checks`, o
   `snapshot` e o `undo`.
 - "Desfaz essa mesclagem" → `restore_person {preview: true}` → mostre →
   chamada real. Avise que o que foi copiado para a sobrevivente continua lá.

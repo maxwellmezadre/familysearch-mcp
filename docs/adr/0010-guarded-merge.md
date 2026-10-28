@@ -35,7 +35,9 @@ nem por regra.
 
 A pergunta mostra no título quantos sinais de alerta há, lista nos detalhes o
 que é copiado, o que fica de fora, o que é trocado e o que já está na
-sobrevivente, e exige digitar o id da duplicata. Depois do "sim" e logo antes do
+sobrevivente, e exige confirmar o id da duplicata: digitado na elicitation, escolhido
+numa lista no diálogo do macOS, que não recebe o teclado quando aberto por um
+processo em segundo plano. Depois do "sim" e logo antes do
 `POST`, a pessoa e a família das duas são salvas em `audit/snapshots/`. Depois
 do envio, a releitura confere que a duplicata responde 301 para a sobrevivente e
 que cada relacionamento copiado aparece nela. `restore_person` é o desfazer

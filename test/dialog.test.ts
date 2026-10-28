@@ -60,6 +60,23 @@ describe("dialog approver", () => {
     expect((await createDialogApprover({ platform: "darwin", run: r.run }).ask(prompt({ confirm }))).approved).toBe(true);
   });
 
+  test("with choices the id is picked from a list (macOS keeps the keyboard away from the dialog)", async () => {
+    const confirm = { title: "Digite o id da duplicata (BBBB-BBB) para confirmar", expected: "BBBB-BBB", choices: ["AAAA-AAA", "BBBB-BBB"] };
+    const ask = async (stdout: string) => {
+      const r = runner(0, stdout);
+      const answer = await createDialogApprover({ platform: "darwin", run: r.run }).ask(prompt({ confirm }));
+      return { answer, script: r.calls[0]!.join(" ") };
+    };
+    const ok = await ask("BBBB-BBB\n");
+    expect(ok.answer.approved).toBe(true);
+    expect(ok.script).toContain('choose from list {"AAAA-AAA", "BBBB-BBB"}');
+    expect(ok.script).not.toContain("default answer");
+    const wrong = await ask("AAAA-AAA\n");
+    expect(wrong.answer.approved).toBe(false);
+    expect(wrong.answer.reason).toContain('digitado "AAAA-AAA"');
+    expect((await ask("false\n")).answer.approved).toBe(false);
+  });
+
   test("the dialog says what to type when a confirm is asked", async () => {
     const r = runner(1, "");
     const confirm = { title: "Digite o id da duplicata (BBBB-BBB) para confirmar", expected: "BBBB-BBB" };

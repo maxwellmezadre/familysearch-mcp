@@ -77,7 +77,7 @@ sem sessão gráfica, a escrita é recusada.
 
 | Comando | O que faz |
 | --- | --- |
-| `familysearch merge <sobrevivente> <duplicata> --fingerprint <f> --reason <texto>` | Mescla a duplicata na sobrevivente. `--take <id>` (conflito em que fica a versão da duplicata) e `--skip <id>` (item da duplicata que não deve ser copiado), ambos repetíveis. O diálogo exige digitar o id da duplicata |
+| `familysearch merge <sobrevivente> <duplicata> --fingerprint <f> --reason <texto>` | Mescla a duplicata na sobrevivente. `--take <id>` (conflito em que fica a versão da duplicata) e `--skip <id>` (item da duplicata que não deve ser copiado), ambos repetíveis. Depois de Aprovar, o diálogo pede para escolher o id da duplicata numa lista (o macOS não deixa digitar num diálogo aberto por um processo em segundo plano) |
 | `familysearch restore <id> --reason <texto>` | Restaura uma pessoa mesclada ou apagada |
 
 ## Redescoberta

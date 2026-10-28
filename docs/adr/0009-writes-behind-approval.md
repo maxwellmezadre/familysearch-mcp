@@ -57,7 +57,7 @@ inclusive por excesso de iniciativa do modelo. Sessões sem interface
 
 O que ela não protege: a resposta sai do caminho do modelo, mas não da
 máquina. Com Bash livre e um terminal com permissão de Acessibilidade no macOS,
-um `osascript` com System Events clica em "Aprovar" no diálogo e digita o id
+um `osascript` com System Events clica em "Aprovar" no diálogo e escolhe o id
 pedido, e teclas enviadas ao terminal preenchem o formulário de elicitation do
 Claude Code. A trava segura erro e excesso de iniciativa, não um modelo decidido
 a contorná-la. Quem tem acesso livre à máquina também pode ler a sessão e

@@ -16,7 +16,7 @@ resposta sua na tela.
 | Destino do token | Só o host do ambiente configurado, por https. Links de outras origens são recusados e redirecionamentos não são seguidos |
 | Escrita na conta | Só depois da sua aprovação: elicitation no MCP, diálogo nativo do macOS no CLI. A aprovação vira um ticket de uso único que cobre exatamente as escritas aprovadas; a camada HTTP recusa qualquer outra |
 | Repetição de escrita | Nunca automática. Timeout, erro de rede e 5xx voltam como "pode ter sido aplicada"; só um 401 (prova de que nada foi aplicado) é repetido, depois de reimportar a sessão |
-| Mesclagem | Comparação antes, fingerprint contra alterações no meio do caminho, o id da duplicata digitado na pergunta, snapshot das duas pessoas antes do envio, releitura depois. Pessoa viva nunca é mesclada |
+| Mesclagem | Comparação antes, fingerprint contra alterações no meio do caminho, o id da duplicata confirmado na pergunta (digitado na elicitation, escolhido numa lista no diálogo do macOS), snapshot das duas pessoas antes do envio, releitura depois. Pessoa viva nunca é mesclada |
 | Registro local | `audit/` (`0700`) guarda cada tentativa de escrita, o texto de cada pergunta e os snapshots, em arquivos `0600` que nunca saem da máquina |
 | Cache | `cache.<env>.db` `0600`, com o `umask` forçado na criação. Contém a sua linhagem, inclusive parentes vivos |
 | Escrita em disco | `export` só escreve dentro de `FAMILYSEARCH_EXPORT_DIR`, e pessoas vivas saem mascaradas a menos que você peça o contrário |
@@ -39,7 +39,7 @@ de ambiente e nenhuma opção desligam a trava.
 A trava tira a resposta do caminho do modelo, mas não da máquina. Se o modelo
 tem Bash livre e o aplicativo de terminal tem permissão de Acessibilidade
 (Ajustes do Sistema, Privacidade e Segurança, Acessibilidade), um `osascript`
-com System Events consegue clicar em "Aprovar" no diálogo do macOS e digitar o
+com System Events consegue clicar em "Aprovar" no diálogo do macOS e escolher o
 id da duplicata. Teclas enviadas do mesmo jeito à janela do terminal podem
 preencher o formulário de elicitation do Claude Code. A trava não segura um
 modelo decidido a contorná-la. Se isso importa para você, tire a permissão de

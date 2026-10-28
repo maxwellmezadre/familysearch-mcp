@@ -237,7 +237,7 @@ em produção, e a descrição de cada uma avisa isso.
 4. Antes de qualquer mesclagem vem `compare_persons`: fatos de cada lado,
    conflitos, sinais de que não são a mesma pessoa, a ordem que o FamilySearch
    aceita e o que a mesclagem levaria. A mesclagem confere que nada mudou desde
-   a comparação, exige digitar o id da duplicata, salva as duas pessoas num
+   a comparação, exige confirmar o id da duplicata, salva as duas pessoas num
    snapshot local logo antes de enviar e relê o resultado.
 
 ### A trava de aprovação
@@ -258,7 +258,7 @@ variável nem opção que desligue a trava.
 
 O que ela não protege: um modelo decidido a contorná-la. Com Bash livre e um
 terminal com permissão de Acessibilidade no macOS, um `osascript` com System
-Events consegue clicar em "Aprovar" no diálogo e digitar o id pedido, e teclas
+Events consegue clicar em "Aprovar" no diálogo e escolher o id pedido, e teclas
 enviadas ao terminal preenchem o formulário de elicitation. Quem tem acesso
 livre à sua máquina também pode ler a sessão e chamar a API direto, sem passar
 por este projeto. Hooks de `Elicitation` no Claude Code (nas configurações ou

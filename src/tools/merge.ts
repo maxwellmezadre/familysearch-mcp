@@ -232,7 +232,7 @@ export const mergePersons = defineTool({
       reason: args.reason,
       headline,
       details,
-      confirm: { title: `Digite o id da duplicata (${duplicate}) para confirmar`, expected: duplicate },
+      confirm: { title: `Confirme o id da duplicata (${duplicate}), a pessoa que deixa de existir`, expected: duplicate, choices: [survivor, duplicate] },
       touches: [survivor, duplicate],
       merged: { duplicate, survivor },
       writes: [mergeWrite(survivor, duplicate, request)],
