@@ -96,6 +96,9 @@ export type RecordQuery = {
   birthPlace?: string;
   deathDate?: string;
   deathPlace?: string;
+  fatherName?: string;
+  motherName?: string;
+  spouseName?: string;
   collectionId?: string;
   limit?: number;
 };

@@ -42,7 +42,7 @@ dizendo em quem parou.
 
 | Comando | O que faz |
 | --- | --- |
-| `familysearch records` | Registros históricos. `--given --surname --birth --birth-place --death --death-place --collection --limit` |
+| `familysearch records` | Registros históricos. `--given --surname --birth --birth-place --death --death-place --father --mother --spouse --collection --limit` |
 | `familysearch record <id>` | Um registro e todas as pessoas citadas nele |
 | `familysearch hints <id>` | Registros que o FamilySearch sugere para a pessoa |
 | `familysearch duplicates <id>` | Possíveis duplicatas segundo o FamilySearch |

@@ -21,7 +21,7 @@ export const searchRecords = defineTool({
   description:
     "Busca registros históricos indexados no FamilySearch (nascimentos, casamentos, óbitos, censos, jornais...). " +
     "Devolve, para cada registro, o nome principal, a coleção, o evento com data e lugar, a confiança e o link. " +
-    "Datas aproximadas viram o ano. Use get_record para ver todas as pessoas de um registro. 1 requisição.",
+    "Pai, mãe e cônjuge estreitam a busca. Datas aproximadas viram o ano. Use get_record para ver todas as pessoas de um registro. 1 requisição.",
   readOnly: true,
   input: Type.Object({
     given_name: textField("Prenome(s)"),
@@ -30,6 +30,9 @@ export const searchRecords = defineTool({
     birth_place: textField("Lugar de nascimento"),
     death_date: textField("Data ou ano de falecimento"),
     death_place: textField("Lugar de falecimento"),
+    father_name: textField("Nome completo do pai"),
+    mother_name: textField("Nome completo da mãe"),
+    spouse_name: textField("Nome completo do cônjuge"),
     collection_id: textField("Id de uma coleção específica (o número no link da coleção)"),
     limit: limitField(50, 10),
   }),
@@ -41,11 +44,14 @@ export const searchRecords = defineTool({
       birthPlace: args.birth_place,
       deathDate: args.death_date,
       deathPlace: args.death_place,
+      fatherName: args.father_name,
+      motherName: args.mother_name,
+      spouseName: args.spouse_name,
       collectionId: args.collection_id,
       limit: args.limit,
     });
     if (Object.keys(query).every((key) => key === "limit" || key === "collectionId")) {
-      throw new Error("Informe pelo menos um campo de busca (nome, sobrenome, datas ou lugares).");
+      throw new Error("Informe pelo menos um campo de busca (nome, sobrenome, datas, lugares ou parentes).");
     }
     const feed = await searchRecordsApi(ctx.http, query);
     const records = feed ? toRecordHits(feed, ctx.config.baseUrl) : [];

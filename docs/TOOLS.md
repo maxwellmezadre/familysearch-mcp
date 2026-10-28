@@ -155,7 +155,7 @@ Histórico de alterações de uma pessoa na árvore, do mais recente ao mais ant
 
 ## `search_records`
 
-Busca registros históricos indexados no FamilySearch (nascimentos, casamentos, óbitos, censos, jornais...). Devolve, para cada registro, o nome principal, a coleção, o evento com data e lugar, a confiança e o link. Datas aproximadas viram o ano. Use get_record para ver todas as pessoas de um registro. 1 requisição.
+Busca registros históricos indexados no FamilySearch (nascimentos, casamentos, óbitos, censos, jornais...). Devolve, para cada registro, o nome principal, a coleção, o evento com data e lugar, a confiança e o link. Pai, mãe e cônjuge estreitam a busca. Datas aproximadas viram o ano. Use get_record para ver todas as pessoas de um registro. 1 requisição.
 
 **Tipo:** leitura
 
@@ -167,6 +167,9 @@ Busca registros históricos indexados no FamilySearch (nascimentos, casamentos, 
 | `birth_place` | string (min 1 chars) | — | Lugar de nascimento |
 | `death_date` | string (min 1 chars) | — | Data ou ano de falecimento |
 | `death_place` | string (min 1 chars) | — | Lugar de falecimento |
+| `father_name` | string (min 1 chars) | — | Nome completo do pai |
+| `mother_name` | string (min 1 chars) | — | Nome completo da mãe |
+| `spouse_name` | string (min 1 chars) | — | Nome completo do cônjuge |
 | `collection_id` | string (min 1 chars) | — | Id de uma coleção específica (o número no link da coleção) |
 | `limit` | integer (≥ 1, ≤ 50) | — | Máximo de itens (default 10) |
 

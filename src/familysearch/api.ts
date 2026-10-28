@@ -115,10 +115,22 @@ function splitName(full: string | undefined): { given?: string; surname?: string
   return { given: words.slice(0, -1).join(" "), surname: words.at(-1) };
 }
 
-export function treeSearchParams(query: TreeQuery): Record<string, string | number | undefined> {
+/** Father, mother and spouse as the search services take them: given name and surname apart. */
+function relativeParams(query: Pick<TreeQuery, "fatherName" | "motherName" | "spouseName">) {
   const father = splitName(query.fatherName);
   const mother = splitName(query.motherName);
   const spouse = splitName(query.spouseName);
+  return {
+    "q.fatherGivenName": father.given,
+    "q.fatherSurname": father.surname,
+    "q.motherGivenName": mother.given,
+    "q.motherSurname": mother.surname,
+    "q.spouseGivenName": spouse.given,
+    "q.spouseSurname": spouse.surname,
+  };
+}
+
+export function treeSearchParams(query: TreeQuery): Record<string, string | number | undefined> {
   return {
     "q.givenName": query.givenName,
     "q.surname": query.surname,
@@ -127,12 +139,7 @@ export function treeSearchParams(query: TreeQuery): Record<string, string | numb
     "q.birthLikePlace": query.birthPlace,
     "q.deathLikeDate": query.deathDate ? normalizeSearchDate(query.deathDate) : undefined,
     "q.deathLikePlace": query.deathPlace,
-    "q.fatherGivenName": father.given,
-    "q.fatherSurname": father.surname,
-    "q.motherGivenName": mother.given,
-    "q.motherSurname": mother.surname,
-    "q.spouseGivenName": spouse.given,
-    "q.spouseSurname": spouse.surname,
+    ...relativeParams(query),
     count: query.limit ?? 10,
   };
 }
@@ -180,6 +187,7 @@ export const searchRecords = (http: Http, query: RecordQuery) =>
       "q.birthLikePlace": query.birthPlace,
       "q.deathLikeDate.from": query.deathDate ? normalizeSearchDate(query.deathDate) : undefined,
       "q.deathLikePlace": query.deathPlace,
+      ...relativeParams(query),
       "f.collectionId": query.collectionId,
       count: query.limit ?? 10,
     },

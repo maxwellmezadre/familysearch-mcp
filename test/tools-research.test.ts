@@ -91,6 +91,29 @@ describe("search_records", () => {
     expect(result.records[0]!.event).not.toBeNull();
   });
 
+  test("relatives narrow the search: father, mother and spouse split into given name and surname", async () => {
+    const { run, fetch } = setup([replay("record-search")]);
+    await run("search_records", {
+      given_name: "Lia",
+      surname: "Fausto",
+      father_name: "Rui Fausto",
+      mother_name: "Ana Maria Cruz",
+      spouse_name: "Davi",
+    });
+    const params = new URL(fetch.calls[0]!.url).searchParams;
+    expect(params.get("q.fatherGivenName")).toBe("Rui");
+    expect(params.get("q.fatherSurname")).toBe("Fausto");
+    expect(params.get("q.motherGivenName")).toBe("Ana Maria");
+    expect(params.get("q.motherSurname")).toBe("Cruz");
+    expect(params.get("q.spouseSurname")).toBe("Davi");
+  });
+
+  test("a relative alone is enough to search", async () => {
+    const { run, fetch } = setup([replay("record-search")]);
+    await run("search_records", { spouse_name: "Davi Fausto" });
+    expect(new URL(fetch.calls[0]!.url).searchParams.get("q.spouseGivenName")).toBe("Davi");
+  });
+
   test("no search field at all is refused without a request", async () => {
     const { run, fetch } = setup([]);
     await expect(run("search_records", {})).rejects.toThrow(/pelo menos/);

@@ -165,6 +165,9 @@ export async function runCli(argv: string[], version: string): Promise<void> {
     .option("--birth-place <place>", "lugar de nascimento")
     .option("--death <date>", "data ou ano de falecimento")
     .option("--death-place <place>", "lugar de falecimento")
+    .option("--father <name>", "nome completo do pai")
+    .option("--mother <name>", "nome completo da mãe")
+    .option("--spouse <name>", "nome completo do cônjuge")
     .option("--collection <id>", "id de uma coleção")
     .option("--limit <n>", "máximo de resultados (default 10)")
     .action((options) =>
@@ -177,6 +180,9 @@ export async function runCli(argv: string[], version: string): Promise<void> {
           birth_place: options.birthPlace,
           death_date: options.death,
           death_place: options.deathPlace,
+          father_name: options.father,
+          mother_name: options.mother,
+          spouse_name: options.spouse,
           collection_id: options.collection,
           limit: options.limit ? Number(options.limit) : undefined,
         },

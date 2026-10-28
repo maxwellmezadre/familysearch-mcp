@@ -28,7 +28,7 @@ versionamento [SemVer](https://semver.org/lang/pt-BR/).
 - Leitura da árvore: `search_persons`, `get_person` (com fontes, notas e
   memórias opcionais), `get_family`, `get_ancestors` (até 8 gerações),
   `get_descendants` (até 4) e `get_change_history`.
-- Pesquisa: `search_records`, `get_record`, `get_hints`,
+- Pesquisa: `search_records` (com pai, mãe e cônjuge para estreitar), `get_record`, `get_hints`,
   `get_possible_duplicates` e `search_places`. Datas aproximadas viram o ano
   nas buscas; intervalos e décadas são ignorados em vez de estreitar a busca.
 - `compare_persons`: lado a lado de duas pessoas com fatos de um lado só,
