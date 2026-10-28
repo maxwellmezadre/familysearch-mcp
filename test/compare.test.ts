@@ -153,6 +153,12 @@ describe("red flags", () => {
     expect(buildComparison(a, b, BOTH, null).redFlags).toEqual([]);
   });
 
+  test("the Italian 'fu' (the late) before a parent's name is ignored", () => {
+    const a = bundle({ parents: [["Piero Ferrazzin", "Teresa Bortoluzzi"]] });
+    const b = bundle({ id: "BBBB-BBB", parents: [["fu Pietro FERRAZZIN", "Teresa MORTOLUZZO"]] });
+    expect(buildComparison(a, b, BOTH, null).redFlags).toEqual([]);
+  });
+
   test("a shared surname alone does not match", () => {
     const a = bundle({ parents: [["João da Silva", "Ana Lima"]] });
     const b = bundle({ id: "BBBB-BBB", parents: [["Pedro da Silva", "Rosa Lima"]] });

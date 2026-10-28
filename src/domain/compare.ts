@@ -24,7 +24,8 @@ type Order = { aSurvives: MergeCheck; bSurvives: MergeCheck };
 const fold = (text: string): string =>
   text.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/\s+/g, " ").trim();
 
-const PARTICLES = new Set(["de", "da", "do", "das", "dos", "e", "di", "del"]);
+// "fu" is Italian for "the late", as in "fu Pietro Ferrazzin" in a child's record.
+const PARTICLES = new Set(["de", "da", "do", "das", "dos", "e", "di", "del", "fu"]);
 
 /** True when one more, one fewer or one different letter turns `a` into `b`. */
 function oneEditApart(a: string, b: string): boolean {
@@ -42,11 +43,10 @@ function oneEditApart(a: string, b: string): boolean {
  * "Zanettin", "Zanetin"); a shared surname alone does not ("João da Silva", "Pedro da Silva").
  */
 function sameName(left: string, right: string): boolean {
-  const [first = "", ...restA] = fold(left).split(" ");
-  const [firstB = "", ...restB] = fold(right).split(" ");
+  const words = (name: string) => fold(name).split(" ").filter((word) => !PARTICLES.has(word));
+  const [first = "", ...later] = words(left);
+  const [firstB = "", ...laterB] = words(right);
   if (!oneEditApart(first, firstB)) return false;
-  const later = restA.filter((word) => !PARTICLES.has(word));
-  const laterB = restB.filter((word) => !PARTICLES.has(word));
   return later.length === 0 || laterB.length === 0 || laterB.some((word) => later.some((other) => oneEditApart(word, other)));
 }
 
