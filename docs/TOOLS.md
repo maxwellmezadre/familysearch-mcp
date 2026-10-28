@@ -357,7 +357,7 @@ Cria uma fonte (título, citação e endereço opcionais) e a anexa a uma pessoa
 
 ## `attach_record`
 
-Anexa um registro histórico a uma pessoa como fonte (título: nome principal e coleção; endereço: o link do registro). Se o registro já está anexado, avisa e não escreve. Pergunta ao usuário numa pergunta na tela antes de escrever. Custa 3 requisições de leitura antes, 2 escritas e 1 releitura. Com preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
+Anexa um registro histórico a uma pessoa como fonte (título: nome principal e coleção; endereço: o link do registro). Se o registro já está anexado, avisa e não escreve. Pergunta ao usuário numa pergunta na tela antes de escrever. Custa 3 requisições de leitura antes, 2 escritas e 1 releitura. Com preview: true mostra o plano sem perguntar nem escrever.
 
 **Tipo:** escrita
 

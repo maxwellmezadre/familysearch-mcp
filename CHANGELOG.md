@@ -90,7 +90,8 @@ versionamento [SemVer](https://semver.org/lang/pt-BR/).
 
 - Provadas em produção: `merge_persons` (piloto real, com troca de conflito e
   releitura conferida) e `update_person` (um falecimento numa pessoa viva, que
-  passou a falecida e pública com o mesmo id). As outras escritas foram
+  passou a falecida e pública com o mesmo id) e `attach_record` (registros de
+  casamento e óbito anexados como fonte). As outras escritas foram
   provadas só no beta; a descrição delas avisa isso, e o `doctor` lista quais
   são.
 - Uma escrita marca as pessoas que tocou como desatualizadas no cache local;

@@ -15,3 +15,7 @@ test("merge_persons is proven in production (grandmother pilot)", () => {
 test("update_person is proven in production (a death fact on a living person)", () => {
   expect(PRODUCTION_PROVEN.has("update_person")).toBe(true);
 });
+
+test("attach_record is proven in production (a marriage and a death record)", () => {
+  expect(PRODUCTION_PROVEN.has("attach_record")).toBe(true);
+});
