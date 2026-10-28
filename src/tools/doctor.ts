@@ -81,6 +81,7 @@ const LOCAL_WRITERS = new Set(["login", "sync", "export"]);
 const APPROVER_LABEL = {
   elicitation: "elicitation (cliente MCP)",
   dialog: "diálogo do macOS (CLI)",
+  auto: "ATENÇÃO: aprovação automática (FAMILYSEARCH_AUTO_APPROVE=1), toda escrita vai para a árvore sem pergunta",
   test: "teste",
 } as const;
 
@@ -137,7 +138,12 @@ export const doctor = defineTool({
     }
     // Informational: never stops the diagnosis, never touches the network.
     await step("approval", () => {
-      const kind = ctx.approver ? APPROVER_LABEL[ctx.approver.kind] : "nenhum: escritas desativadas";
+      // The config, not only the wired approver: the warning must show wherever the mode is on.
+      const kind = ctx.config.autoApprove
+        ? APPROVER_LABEL.auto
+        : ctx.approver
+          ? APPROVER_LABEL[ctx.approver.kind]
+          : "nenhum: escritas desativadas";
       const scan = hookFiles(homedir(), process.cwd());
       const found = elicitationHooks(scan.files);
       const warning = found.length

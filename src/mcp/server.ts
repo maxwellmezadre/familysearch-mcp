@@ -6,6 +6,7 @@ import {
 } from "@modelcontextprotocol/sdk/types.js";
 import type { Ctx } from "../context.js";
 import { isFailedWrite } from "../approval/run.js";
+import { autoApprover } from "../approval/gate.js";
 import { createElicitationApprover } from "./elicit.js";
 import { runTool } from "../tools/define.js";
 import { activeTools } from "../tools/registry.js";
@@ -51,7 +52,7 @@ export async function startMcpServer(ctx: Ctx, version: string): Promise<void> {
     }
   });
 
-  ctx.approver = createElicitationApprover(server);
+  ctx.approver = ctx.config.autoApprove ? autoApprover : createElicitationApprover(server);
 
   await server.connect(new StdioServerTransport());
   // stderr only: stdout is 100% JSON-RPC.

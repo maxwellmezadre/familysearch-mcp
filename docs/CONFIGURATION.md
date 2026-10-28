@@ -14,6 +14,7 @@ diz o que fazer.
 | `FAMILYSEARCH_SESSION_KEY` | — | Chave AES em base64 de 32 bytes (`openssl rand -base64 32`). Sem ela, uma é gerada em `session.key`. Vale para os dois ambientes |
 | `FAMILYSEARCH_EXPORT_DIR` | `~/Downloads/familysearch-export` | Único diretório em que o `export` pode escrever |
 | `FAMILYSEARCH_READ_ONLY` | `0` | Não registra as 14 tools que gravam algo: as 11 escritas na árvore, `login`, `sync` e `export` |
+| `FAMILYSEARCH_AUTO_APPROVE` | `0` | Aprova toda escrita sem perguntar (ADR-0012). Desligado por padrão |
 | `FAMILYSEARCH_IMPORT_BROWSER` | — | `dia`, `arc`, `chrome`, `chromium`, `brave` ou `edge`. Na produção, o `login` importa a sessão daí, e um 401 dispara uma reimportação silenciosa |
 | `FAMILYSEARCH_BROWSER_CHANNEL` | `chrome` | `chrome`, `chromium` ou `msedge`, para o login pela janela |
 | `FAMILYSEARCH_MIN_INTERVAL_MS` | `400` | Intervalo mínimo entre duas requisições |
@@ -26,7 +27,10 @@ diz o que fazer.
 Aceita como booleano: `1/0`, `true/false`, `yes/no`, `on/off`. Qualquer outra
 coisa é erro, não um default silencioso.
 
-Nenhuma variável desliga a pergunta de aprovação das escritas.
+Só `FAMILYSEARCH_AUTO_APPROVE=1` desliga a pergunta de aprovação das escritas. Com
+ela, toda escrita vai para a árvore compartilhada sem pergunta; o motivo, o
+registro em `audit/`, o snapshot da mesclagem e a releitura continuam, e o
+`doctor` avisa enquanto ela estiver ligada (ADR-0012).
 
 ## Arquivos em disco
 

@@ -2,7 +2,7 @@ import { describe, expect, test } from "bun:test";
 import { mkdtempSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { type WritePlan, requestApproval } from "../src/approval/gate.js";
+import { type WritePlan, autoApprover, requestApproval } from "../src/approval/gate.js";
 import { loadConfig } from "../src/config.js";
 import { createContext } from "../src/context.js";
 import { ApprovalRefusedError } from "../src/core/errors.js";
@@ -108,6 +108,15 @@ describe("requestApproval", () => {
     expect(() => ticket.take("POST", "/platform/tree/persons/BBBB-BBB/merges/AAAA-AAA")).toThrow(
       /não aprovada/,
     );
+  });
+
+  test("the automatic approver says yes, even to a plan that asks for a confirmation", async () => {
+    const { ctx } = setup();
+    ctx.approver = autoApprover;
+    const merge = { ...plan([note]), confirm: { title: "Confirme o id", expected: "BBBB-BBB", choices: ["AAAA-AAA", "BBBB-BBB"] } };
+    const { ticket, answer } = await requestApproval(ctx, merge);
+    expect(ticket.remaining()).toBe(1);
+    expect(answer).toMatch(/automaticamente.*FAMILYSEARCH_AUTO_APPROVE/);
   });
 
   test("audit and details files are 0600 inside a 0700 directory", async () => {

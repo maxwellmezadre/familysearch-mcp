@@ -107,6 +107,12 @@ describe("doctor", () => {
 });
 
 describe("doctor approval layer", () => {
+  test("warns loudly when writes are approved automatically", async () => {
+    const { run } = setup({ env: { FAMILYSEARCH_AUTO_APPROVE: "1" }, script: [response({ status: 401 })] });
+    const report = (await run("doctor")) as Report;
+    expect(report.layers.find((l) => l.layer === "approval")!.detail).toMatch(/automática.*sem pergunta/);
+  });
+
   test("reports the approver kind and warns about Elicitation hooks", async () => {
     const { run } = setup({ script: [response({ status: 401 })] });
     const report = (await run("doctor")) as Report;

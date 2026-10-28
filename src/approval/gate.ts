@@ -33,8 +33,17 @@ export function confirmMismatch(typed: unknown, expected: string): string | null
 }
 
 export type Approver = {
-  kind: "elicitation" | "dialog" | "test";
+  kind: "elicitation" | "dialog" | "auto" | "test";
   ask(prompt: ApprovalPrompt): Promise<ApprovalAnswer>;
+};
+
+/**
+ * Says yes to every plan without asking, confirmations included. Only when the
+ * user turned on FAMILYSEARCH_AUTO_APPROVE (ADR-0012); the audit records it.
+ */
+export const autoApprover: Approver = {
+  kind: "auto",
+  ask: async () => ({ approved: true, reason: "aprovado automaticamente (FAMILYSEARCH_AUTO_APPROVE=1)" }),
 };
 
 export type WritePlan = {
@@ -60,7 +69,7 @@ const cutHeadline = (headline: string) =>
   headline.split("\n").slice(0, MAX_HEADLINE_LINES).join("\n").slice(0, MAX_HEADLINE_CHARS);
 
 /** The ticket for the approved writes, and the file with everything the user was shown. */
-export type Approval = { ticket: WriteTicket; detailsPath: string };
+export type Approval = { ticket: WriteTicket; detailsPath: string; answer: string };
 
 export async function requestApproval(ctx: Ctx, plan: WritePlan): Promise<Approval> {
   if (plan.reason.trim().length < MIN_REASON) {
@@ -109,5 +118,5 @@ export async function requestApproval(ctx: Ctx, plan: WritePlan): Promise<Approv
     });
     throw new ApprovalRefusedError(plan.tool, answer.reason || "o usuário não aprovou.");
   }
-  return { ticket: issueTicket(plan.writes, at), detailsPath };
+  return { ticket: issueTicket(plan.writes, at), detailsPath, answer: answer.reason || "aprovado" };
 }

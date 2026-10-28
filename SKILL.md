@@ -39,6 +39,8 @@ parâmetros em `TOOLS.md`, ao lado deste arquivo.
    MCP e no CLI) corta o texto: ela mostra o título e o começo dos detalhes.
    Por isso a comparação e a prévia completas precisam aparecer no chat antes
    da chamada real: a pergunta só confirma o que o usuário já leu ali.
+   Com `FAMILYSEARCH_AUTO_APPROVE=1` não existe pergunta: a prévia e a tabela
+   no chat são a única revisão, e o resultado de cada escrita aparece depois.
 4. Nunca escolha sozinho o que só o usuário pode decidir: qual versão fica em
    cada conflito (`take_from_duplicate`), o que deixar de copiar (`skip_copy`),
    criar uma pessoa mesmo havendo parecidas, o texto do motivo. Pergunte.

@@ -173,8 +173,9 @@ Todas opcionais. A tabela completa está em
 | `FAMILYSEARCH_MIN_INTERVAL_MS` | `400` | Intervalo mínimo entre requisições |
 | `FAMILYSEARCH_JITTER_MS` | `200` | Variação aleatória somada ao intervalo |
 | `FAMILYSEARCH_WRITE_INTERVAL_MS` | `2000` | Intervalo mínimo antes de cada escrita |
+| `FAMILYSEARCH_AUTO_APPROVE` | `0` | Aprova toda escrita sem perguntar. O registro local e o snapshot continuam, e o `doctor` avisa (ADR-0012) |
 
-Nenhuma variável desliga a trava de aprovação. Sem sessão, os comandos falham na
+Só `FAMILYSEARCH_AUTO_APPROVE=1` desliga a pergunta de aprovação (ADR-0012). Sem sessão, os comandos falham na
 hora da chamada com uma mensagem que diz o que fazer, não no boot.
 
 ## Tools

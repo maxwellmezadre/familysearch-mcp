@@ -56,6 +56,8 @@ export const ConfigSchema = Type.Object({
   /** Base64 of 32 bytes. When absent the key file under configDir is used/created. */
   sessionKey: Type.Optional(Type.String({ minLength: 1 })),
   readOnly: Type.Boolean(),
+  /** Approves every write without asking (FAMILYSEARCH_AUTO_APPROVE, ADR-0012). */
+  autoApprove: Type.Boolean(),
   logFile: Type.Optional(Type.String({ minLength: 1 })),
   browserChannel: Type.Union([
     Type.Literal("chrome"),
@@ -175,6 +177,7 @@ export function loadConfig(env: Env = process.env): Config {
     ),
     sessionKey: readSessionKey(problems, env),
     readOnly: readBool(problems, env, "FAMILYSEARCH_READ_ONLY", false),
+    autoApprove: readBool(problems, env, "FAMILYSEARCH_AUTO_APPROVE", false),
     logFile: readOptional(env, "FAMILYSEARCH_LOG_FILE"),
     browserChannel: readEnum(
       problems,

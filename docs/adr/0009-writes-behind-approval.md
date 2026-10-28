@@ -46,7 +46,8 @@ do snapshot. Escrita nunca é repetida sozinha: só um 401,
 que prova que nada foi aplicado, é repetido depois de reimportar a sessão.
 Depois de aplicar, a tool relê o estado por outra leitura.
 
-Nenhuma variável de ambiente ou opção desliga a trava.
+A única opção que desliga a pergunta é `FAMILYSEARCH_AUTO_APPROVE=1`, ligada pela
+pessoa (ADR-0012); o resto da trava continua valendo.
 
 ## Consequências
 

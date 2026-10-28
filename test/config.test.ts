@@ -90,6 +90,11 @@ describe("loadConfig validation", () => {
     }
   });
 
+  test("auto-approve is off unless FAMILYSEARCH_AUTO_APPROVE turns it on", () => {
+    expect(loadConfig(base).autoApprove).toBe(false);
+    expect(loadConfig({ ...base, FAMILYSEARCH_AUTO_APPROVE: "1" }).autoApprove).toBe(true);
+  });
+
   test("rejects a non-boolean instead of defaulting silently", () => {
     expect(() => loadConfig({ ...base, FAMILYSEARCH_READ_ONLY: "maybe" })).toThrow(ConfigError);
   });

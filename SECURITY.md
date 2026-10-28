@@ -14,7 +14,7 @@ resposta sua na tela.
 | Sessão em log | O token é redigido em toda linha de log, por um provedor que acompanha uma reimportação. Cabeçalhos nunca são logados |
 | Sessão em resposta de tool | `auth_status` devolve ambiente, origem, usuário e idade, nunca o token |
 | Destino do token | Só o host do ambiente configurado, por https. Links de outras origens são recusados e redirecionamentos não são seguidos |
-| Escrita na conta | Só depois da sua aprovação: elicitation no MCP, diálogo nativo do macOS no CLI. A aprovação vira um ticket de uso único que cobre exatamente as escritas aprovadas; a camada HTTP recusa qualquer outra |
+| Escrita na conta | Só depois da sua aprovação: elicitation no MCP, diálogo nativo do macOS no CLI, ou aprovação automática se você ligar `FAMILYSEARCH_AUTO_APPROVE=1`. A aprovação vira um ticket de uso único que cobre exatamente as escritas aprovadas; a camada HTTP recusa qualquer outra |
 | Repetição de escrita | Nunca automática. Timeout, erro de rede e 5xx voltam como "pode ter sido aplicada"; só um 401 (prova de que nada foi aplicado) é repetido, depois de reimportar a sessão |
 | Mesclagem | Comparação antes, fingerprint contra alterações no meio do caminho, o id da duplicata confirmado na pergunta (digitado na elicitation, escolhido numa lista no diálogo do macOS), snapshot das duas pessoas antes do envio, releitura depois. Pessoa viva nunca é mesclada |
 | Registro local | `audit/` (`0700`) guarda cada tentativa de escrita, o texto de cada pergunta e os snapshots, em arquivos `0600` que nunca saem da máquina |
@@ -31,8 +31,11 @@ projeto sem uma resposta à pergunta na tela. Isso segura o erro e o excesso de
 iniciativa do modelo: a chamada de tool não tem como se aprovar, porque a
 elicitation vai do servidor para o cliente e volta, e o diálogo nativo do macOS
 não lê a entrada padrão. Sessões sem interface (`claude -p`, CLI fora do macOS
-ou sem sessão gráfica) cancelam a pergunta, e nada é escrito. Nenhuma variável
-de ambiente e nenhuma opção desligam a trava.
+ou sem sessão gráfica) cancelam a pergunta, e nada é escrito. A única opção que
+desliga a pergunta é `FAMILYSEARCH_AUTO_APPROVE=1`, que você liga (ADR-0012):
+com ela, toda escrita vai direto para a árvore compartilhada, e sobram o
+registro local, o snapshot da mesclagem e a releitura. O `doctor` avisa
+enquanto ela estiver ligada.
 
 ### O que ela não protege
 

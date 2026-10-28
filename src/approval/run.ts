@@ -73,7 +73,7 @@ export async function runWritePlan(
     if (error instanceof ApprovalRefusedError) return { ...base, status: "refused", message: error.message };
     throw error;
   }
-  const { ticket, detailsPath } = approval;
+  const { ticket, detailsPath, answer } = approval;
 
   const results: WriteResult[] = [];
   let status: WriteOutcome["status"] = "applied";
@@ -149,7 +149,7 @@ export async function runWritePlan(
     reason: plan.reason,
     headline: plan.headline,
     approved: true,
-    answer: "aprovado",
+    answer,
     writes: results,
     outcome: status,
     detailsPath,

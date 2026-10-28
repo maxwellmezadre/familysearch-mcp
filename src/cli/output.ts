@@ -3,6 +3,7 @@ import { loadConfig } from "../config.js";
 import { type Ctx, createContext } from "../context.js";
 import type { ToolDef } from "../tools/define.js";
 import { compactObject, runTool } from "../tools/define.js";
+import { autoApprover } from "../approval/gate.js";
 import { createDialogApprover } from "./dialog.js";
 import { activeTools, allTools } from "../tools/registry.js";
 
@@ -49,7 +50,7 @@ export function printTable<T>(rows: T[], columns: Array<[string, (row: T) => str
 
 export async function withContext<T>(fn: (ctx: Ctx) => Promise<T> | T): Promise<T> {
   const ctx = createContext(loadConfig());
-  ctx.approver = createDialogApprover();
+  ctx.approver = ctx.config.autoApprove ? autoApprover : createDialogApprover();
   try {
     return await fn(ctx);
   } finally {

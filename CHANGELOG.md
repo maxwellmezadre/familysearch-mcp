@@ -42,7 +42,8 @@ versionamento [SemVer](https://semver.org/lang/pt-BR/).
   aprovadas, motivo obrigatório (mínimo de 10 caracteres, enviado em
   `X-Reason`), `preview: true` em todas as escritas e registro local em
   `CONFIG_DIR/audit/` (tentativas, texto de cada pergunta e snapshots).
-  Nenhuma variável desliga a trava. Onde a pergunta exige um texto (o id da
+  Só `FAMILYSEARCH_AUTO_APPROVE=1`, ligada por você, desliga a pergunta
+  (ADR-0012): o resto da trava continua e o `doctor` avisa. Onde a pergunta exige um texto (o id da
   duplicata, "criar"), a elicitation pede para digitar e o diálogo do macOS
   pede para escolher numa lista: o macOS não entrega o teclado a um diálogo
   aberto por um processo em segundo plano.
@@ -83,7 +84,7 @@ versionamento [SemVer](https://semver.org/lang/pt-BR/).
   `--import-browser=`, que registra `dia` quando o Dia está instalado), CI,
   release com binários e publish no npm, e um teste ao vivo de leitura que só
   roda com `FAMILYSEARCH_LIVE=1`.
-- README, SKILL, guias em `docs/` e as ADRs 0001 a 0011.
+- README, SKILL, guias em `docs/` e as ADRs 0001 a 0012.
 
 ### Notas
 

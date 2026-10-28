@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, expect, test } from "bun:test";
 import { runWritePlan } from "../src/approval/run.js";
-import type { WritePlan } from "../src/approval/gate.js";
+import { type WritePlan, autoApprover } from "../src/approval/gate.js";
 import { loadConfig } from "../src/config.js";
 import { createContext } from "../src/context.js";
 import type { Approver } from "../src/approval/gate.js";
@@ -64,6 +64,12 @@ test("applies in order, reads back and audits one entry", async () => {
   const lines = audit();
   expect(lines).toHaveLength(1);
   expect(lines[0]).toMatchObject({ approved: true, outcome: "applied", tool: "test_tool" });
+});
+
+test("the audit keeps the approver's answer, so an automatic approval shows as such", async () => {
+  const { ctx, audit } = setup([response({ status: 204 })], autoApprover);
+  await runWritePlan(ctx, plan([w("/platform/a")]), { readBack: okRead });
+  expect(audit()[0]?.answer).toMatch(/automaticamente/);
 });
 
 test("calling the same plan twice asks twice", async () => {
