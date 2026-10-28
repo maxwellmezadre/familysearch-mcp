@@ -11,3 +11,7 @@ test("describeWrite flags tools not yet proven in production", () => {
 test("merge_persons is proven in production (grandmother pilot)", () => {
   expect(PRODUCTION_PROVEN.has("merge_persons")).toBe(true);
 });
+
+test("update_person is proven in production (a death fact on a living person)", () => {
+  expect(PRODUCTION_PROVEN.has("update_person")).toBe(true);
+});

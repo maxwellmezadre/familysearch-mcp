@@ -265,7 +265,7 @@ Cria uma pessoa nova na árvore compartilhada do FamilySearch, com nome, sexo e,
 
 ## `update_person`
 
-Altera uma pessoa: acrescenta fatos (add_facts), altera fatos existentes (update_facts, por fact_id; o que não for dito é mantido), remove fatos (remove_fact_ids), muda o sexo ou acrescenta um nome. Lê a pessoa antes e recusa ids de fato que não existem. Pergunta ao usuário numa pergunta na tela; nada é escrito sem aprovação. Custa 1 requisição de leitura antes, 1 escrita para tudo que é adição ou alteração, 1 por remoção, e 1 de releitura depois. Com preview: true mostra o plano sem perguntar nem escrever. Ainda não provada em produção.
+Altera uma pessoa: acrescenta fatos (add_facts), altera fatos existentes (update_facts, por fact_id; o que não for dito é mantido), remove fatos (remove_fact_ids), muda o sexo ou acrescenta um nome. Lê a pessoa antes e recusa ids de fato que não existem. Pergunta ao usuário numa pergunta na tela; nada é escrito sem aprovação. Custa 1 requisição de leitura antes, 1 escrita para tudo que é adição ou alteração, 1 por remoção, e 1 de releitura depois. Com preview: true mostra o plano sem perguntar nem escrever.
 
 **Tipo:** escrita, destrutiva
 

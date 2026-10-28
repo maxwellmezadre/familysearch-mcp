@@ -84,7 +84,7 @@ Todas com `X-Reason`, e só depois da aprovação.
 | Chamada | Corpo | Usado por |
 | --- | --- | --- |
 | `POST /platform/tree/persons` | `persons[0]` com `gender`, `living`, `names` (com `parts` Given e Surname) e `facts` | `create_person`; o id novo volta em `X-Entity-Id` |
-| `POST /platform/tree/persons/{id}` | `persons[0]` com `id` e os `facts`, `names` ou `gender` a acrescentar ou alterar (um fato com `id` é alterado) | `update_person` |
+| `POST /platform/tree/persons/{id}` | `persons[0]` com `id` e os `facts`, `names` ou `gender` a acrescentar ou alterar (um fato com `id` é alterado) | `update_person`. Um fato `Death` numa pessoa viva a torna falecida (`living: false`) e visível a todos, com o mesmo id |
 | `DELETE /platform/tree/persons/{id}/conclusions/{fatoId}` | — | `update_person` (remoção) |
 | `POST /platform/tree/relationships` | `childAndParentsRelationships[0]` com `parent1`, `parent2` e `child` | `link_parents` |
 | `POST /platform/tree/relationships` | `relationships[0]` do tipo `Couple`, com `person1`, `person2` e o casamento em `facts` | `link_spouses` |

@@ -201,11 +201,10 @@ describe("add_note", () => {
   });
 });
 
-test("every write tool description says it is not proven in production yet", () => {
-  for (const tool of [createPerson, updatePerson, addNote]) {
-    expect(tool.readOnly).toBe(false);
-    expect(tool.description).toContain("Ainda não provada em produção.");
-  }
+test("only the write tools not yet proven in production say so", () => {
+  for (const tool of [createPerson, updatePerson, addNote]) expect(tool.readOnly).toBe(false);
+  for (const tool of [createPerson, addNote]) expect(tool.description).toContain("Ainda não provada em produção.");
+  expect(updatePerson.description).not.toContain("Ainda não provada em produção.");
   expect(updatePerson.destructive).toBe(true);
   expect(allTools.map((t) => t.name)).toEqual(expect.arrayContaining(["create_person", "update_person", "add_note"]));
 });
