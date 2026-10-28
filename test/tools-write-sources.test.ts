@@ -68,6 +68,30 @@ describe("attach_record", () => {
     expect(fetch.calls.every((c) => c.init.method === "GET")).toBe(true);
   });
 
+  // FamilySearch stores the source's link without "www", whatever host it was sent with.
+  const storedAbout = `https://familysearch.org/ark:/61903/1:1:${RECORD}`;
+  const storedSources = jsonResponse({ sourceDescriptions: [{ id: "S1", titles: [{ value: title }], about: storedAbout }] });
+
+  test("a source stored without www still counts as already attached", async () => {
+    const { run, approver } = setup([doc("person"), doc("record"), storedSources]);
+    const out = await run("attach_record", { person_id: PERSON, record_id: RECORD, reason });
+    expect(out.status).toBe("already_attached");
+    expect(approver.prompts).toHaveLength(0);
+  });
+
+  test("the read-back finds the source stored without www", async () => {
+    const { run } = setup([
+      doc("person"),
+      doc("record"),
+      response({ status: 204 }),
+      response({ status: 201, headers: { location: "https://api.familysearch.org/platform/sources/descriptions/S1" } }),
+      response({ status: 201 }),
+      storedSources,
+    ]);
+    const out = await run("attach_record", { person_id: PERSON, record_id: RECORD, reason });
+    expect(out.readBack.ok).toBe(true);
+  });
+
   test("preview never asks and never writes", async () => {
     const { run, fetch, approver } = setup([doc("person"), doc("record"), response({ status: 204 })]);
     const out = await run("attach_record", { person_id: PERSON, record_id: RECORD, reason, preview: true });

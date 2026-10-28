@@ -2,7 +2,7 @@ import { Type } from "@sinclair/typebox";
 import type { ReadBack } from "../approval/run.js";
 import { runWritePlan } from "../approval/run.js";
 import type { Ctx } from "../context.js";
-import { recordUrl, toPersonSummary, toRecordDetail, toSources } from "../domain/normalize.js";
+import { isRecordUrl, recordUrl, toPersonSummary, toRecordDetail, toSources } from "../domain/normalize.js";
 import { getJson, readPerson, readRecordHints, readRecordPersona, readSources } from "../familysearch/api.js";
 import type { GxDocument } from "../familysearch/gedcomx.js";
 import { attachSourceWrite, createSourceWrite, matchResolutionWrite, notAMatchWrite } from "../familysearch/writes.js";
@@ -99,7 +99,7 @@ export const attachRecord = defineTool({
     const about = recordUrl(ctx.config.baseUrl, args.record_id);
     const who = await personLabel(ctx, args.person_id);
     const record = toRecordDetail(await readRecordPersona(ctx.http, args.record_id), args.record_id, ctx.config.baseUrl);
-    const already = toSources(await readSources(ctx.http, args.person_id)).some((s) => s.url === about);
+    const already = toSources(await readSources(ctx.http, args.person_id)).some((s) => isRecordUrl(s.url, args.record_id));
     if (already) {
       return { status: "already_attached", message: `O registro ${args.record_id} já está anexado a ${args.person_id}; nada foi escrito.` };
     }
@@ -116,7 +116,7 @@ export const attachRecord = defineTool({
     return runWritePlan(ctx, plan, {
       preview: args.preview,
       readBack: async () => {
-        const found = toSources(await readSources(ctx.http, args.person_id)).some((s) => s.url === about);
+        const found = toSources(await readSources(ctx.http, args.person_id)).some((s) => isRecordUrl(s.url, args.record_id));
         return {
           ok: found,
           checks: [
