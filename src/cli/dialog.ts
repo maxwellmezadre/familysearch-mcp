@@ -1,4 +1,4 @@
-import type { ApprovalAnswer, ApprovalPrompt, Approver } from "../approval/gate.js";
+import { type ApprovalAnswer, type ApprovalPrompt, type Approver, confirmMatches } from "../approval/gate.js";
 
 // Approval for the CLI: a native macOS dialog. Cancel is the default button, so
 // a stray Enter refuses.
@@ -28,7 +28,8 @@ export function createDialogApprover(deps: DialogDeps = {}): Approver {
       if (platform !== "darwin") return no("o CLI só pergunta no macOS");
       const text =
         `${prompt.headline}\n\n${prompt.details.slice(0, MAX_DETAILS)}` +
-        `\n\nDetalhes: ${prompt.detailsPath ?? "(indisponível)"}`;
+        `\n\nDetalhes: ${prompt.detailsPath ?? "(indisponível)"}` +
+        (prompt.confirm ? `\n\n${prompt.confirm.title}:` : "");
       const script =
         `display dialog "${escape(text)}"` +
         (prompt.confirm ? ` default answer ""` : "") +
@@ -40,7 +41,7 @@ export function createDialogApprover(deps: DialogDeps = {}): Approver {
         if (!stdout.includes("button returned:Aprovar")) return no("recusado pelo usuário");
         if (prompt.confirm) {
           const typed = /text returned:(.*)$/m.exec(stdout)?.[1]?.trim();
-          if (typed !== prompt.confirm.expected) return no("texto de confirmação não confere");
+          if (!confirmMatches(typed, prompt.confirm.expected)) return no("texto de confirmação não confere");
         }
         return { approved: true, reason: "aprovado pelo usuário" };
       } catch {

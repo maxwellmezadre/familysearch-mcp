@@ -57,13 +57,14 @@ describe("elicitation approver", () => {
     }
   });
 
-  test("confirm must match exactly (trimmed)", async () => {
+  test("confirm must match (trimmed, any letter case)", async () => {
     const confirm = { title: "Digite o id", expected: "BBBB-BBB" };
     const ask = (typed: string) =>
       createElicitationApprover(
         fakeServer({ action: "accept", content: { approve: true, confirm: typed } }).server,
       ).ask(prompt(confirm));
     expect((await ask("  BBBB-BBB ")).approved).toBe(true);
+    expect((await ask("bbbb-bbb")).approved).toBe(true);
     const wrong = await ask("CCCC-CCC");
     expect(wrong.approved).toBe(false);
     expect(wrong.reason).toContain("confirmação");

@@ -17,6 +17,10 @@ export type ApprovalPrompt = {
 
 export type ApprovalAnswer = { approved: boolean; reason: string };
 
+/** The typed confirmation proves intent, not a secret: spaces and letter case do not matter. */
+export const confirmMatches = (typed: unknown, expected: string): boolean =>
+  String(typed ?? "").trim().toUpperCase() === expected.toUpperCase();
+
 export type Approver = {
   kind: "elicitation" | "dialog" | "test";
   ask(prompt: ApprovalPrompt): Promise<ApprovalAnswer>;

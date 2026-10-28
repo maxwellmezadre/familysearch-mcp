@@ -50,4 +50,17 @@ describe("dialog approver", () => {
     expect((await ask("button returned:Aprovar, text returned:BBBB-BBB")).approved).toBe(true);
     expect((await ask("button returned:Aprovar, text returned:outro")).approved).toBe(false);
   });
+
+  test("confirm ignores letter case", async () => {
+    const r = runner(0, "button returned:Aprovar, text returned:bbbb-bbb\n");
+    const confirm = { title: "Digite o id", expected: "BBBB-BBB" };
+    expect((await createDialogApprover({ platform: "darwin", run: r.run }).ask(prompt({ confirm }))).approved).toBe(true);
+  });
+
+  test("the dialog says what to type when a confirm is asked", async () => {
+    const r = runner(1, "");
+    const confirm = { title: "Digite o id da duplicata (BBBB-BBB) para confirmar", expected: "BBBB-BBB" };
+    await createDialogApprover({ platform: "darwin", run: r.run }).ask(prompt({ confirm, details: "x".repeat(2000) }));
+    expect(r.calls[0]!.join(" ")).toContain("Digite o id da duplicata (BBBB-BBB) para confirmar");
+  });
 });

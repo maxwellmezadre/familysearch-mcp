@@ -1,5 +1,5 @@
 import type { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import type { ApprovalAnswer, ApprovalPrompt, Approver } from "../approval/gate.js";
+import { type ApprovalAnswer, type ApprovalPrompt, type Approver, confirmMatches } from "../approval/gate.js";
 
 // Approval through MCP elicitation: the client shows a form and the human
 // answers. The server only declares the question; nothing here can answer it.
@@ -42,7 +42,7 @@ export function createElicitationApprover(server: ElicitingServer): Approver {
         if (result.action !== "accept") return no("cancelado pelo usuário");
         const content = result.content ?? {};
         if (content.approve !== true) return no("recusado pelo usuário");
-        if (prompt.confirm && String(content.confirm ?? "").trim() !== prompt.confirm.expected) {
+        if (prompt.confirm && !confirmMatches(content.confirm, prompt.confirm.expected)) {
           return no("texto de confirmação não confere");
         }
         return { approved: true, reason: "aprovado pelo usuário" };
