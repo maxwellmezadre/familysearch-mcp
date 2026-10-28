@@ -159,6 +159,18 @@ describe("red flags", () => {
     expect(buildComparison(a, b, BOTH, null).redFlags).toEqual([]);
   });
 
+  test("a long surname two letters apart still matches (handwriting read two ways)", () => {
+    const a = bundle({ spouses: ["Teresa Bortoluzzi"] });
+    const b = bundle({ id: "BBBB-BBB", spouses: ["Teresa MORTOLUZZO"] });
+    expect(buildComparison(a, b, BOTH, null).redFlags).toEqual([]);
+  });
+
+  test("a short surname two letters apart does not match", () => {
+    const a = bundle({ spouses: ["Ana Lima"] });
+    const b = bundle({ id: "BBBB-BBB", spouses: ["Ana Luna"] });
+    expect(buildComparison(a, b, BOTH, null).redFlags[0]).toMatch(/cônjuge/i);
+  });
+
   test("a shared surname alone does not match", () => {
     const a = bundle({ parents: [["João da Silva", "Ana Lima"]] });
     const b = bundle({ id: "BBBB-BBB", parents: [["Pedro da Silva", "Rosa Lima"]] });

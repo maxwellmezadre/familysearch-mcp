@@ -80,7 +80,7 @@ FamilySearch de 1 a 5 (3 ou mais costuma ser a mesma pessoa), e `score`.
 | `a`, `b` | Cada pessoa com a família, o número de fontes, o número de alterações e a última alteração |
 | `onlyA`, `onlyB` | Fatos que só um lado tem |
 | `conflicts` | Fatos vitais (nascimento, morte, batismo, sepultamento, casamento) que os dois têm com valores diferentes |
-| `redFlags` | Sinais de que não são a mesma pessoa: sexo diferente, anos de nascimento ou falecimento a mais de 5 anos, países de nascimento diferentes, pais ou cônjuges sem nenhum nome parecido (primeiro nome e, quando os dois têm, um sobrenome em comum, cada um com até uma letra de diferença; sobrenome de casada não atrapalha) |
+| `redFlags` | Sinais de que não são a mesma pessoa: sexo diferente, anos de nascimento ou falecimento a mais de 5 anos, países de nascimento diferentes, pais ou cônjuges sem nenhum nome parecido (primeiro nome e, quando os dois têm, um sobrenome em comum, cada um com até uma letra de diferença, ou duas em palavras de 8 letras ou mais; sobrenome de casada não atrapalha) |
 | `path` | `merge` (o FamilySearch aceita), `relink` (alguém está vivo) ou `blocked` (o FamilySearch recusa) |
 | `suggestion` | Qual fica: a única ordem aceita, ou a mais completa (fontes x3 + relacionamentos x2 + alterações) |
 | `analysis` | A análise de mesclagem do FamilySearch: o que já está na sobrevivente, o que só existe na duplicata, os conflitos |

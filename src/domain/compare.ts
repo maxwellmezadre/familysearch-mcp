@@ -27,27 +27,35 @@ const fold = (text: string): string =>
 // "fu" is Italian for "the late", as in "fu Pietro Ferrazzin" in a child's record.
 const PARTICLES = new Set(["de", "da", "do", "das", "dos", "e", "di", "del", "fu"]);
 
-/** True when one more, one fewer or one different letter turns `a` into `b`. */
-function oneEditApart(a: string, b: string): boolean {
-  if (Math.abs(a.length - b.length) > 1) return false;
-  let i = 0;
-  while (i < a.length && a[i] === b[i]) i++;
-  const tail = (x: string, skip: number) => x.slice(i + skip);
-  return tail(a, 1) === tail(b, 1) || tail(a, 1) === tail(b, 0) || tail(a, 0) === tail(b, 1);
+/** Letters to add, drop or change to turn `a` into `b` (Levenshtein). */
+function editDistance(a: string, b: string): number {
+  let row = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const next = [i];
+    for (let j = 1; j <= b.length; j++) {
+      next[j] = Math.min(row[j]! + 1, next[j - 1]! + 1, row[j - 1]! + (a[i - 1] === b[j - 1] ? 0 : 1));
+    }
+    row = next;
+  }
+  return row[b.length]!;
 }
+
+/** Two spellings of one word: one letter off, two for words of 8+ letters read from handwriting. */
+const close = (a: string, b: string): boolean => editDistance(a, b) <= (Math.max(a.length, b.length) >= 8 ? 2 : 1);
 
 /**
  * Could two names be the same person, as far as a red flag cares: first names at most one
- * letter apart and, when both have more, a later word in common, also up to one letter apart.
- * A married surname or a typo still matches ("Élida de Moura Prado", "Elda de Moura";
- * "Zanettin", "Zanetin"); a shared surname alone does not ("João da Silva", "Pedro da Silva").
+ * letter apart and, when both have more, a later word in common, spelled close enough (`close`).
+ * A married surname or a misread still matches ("Élida de Moura Prado", "Elda de Moura";
+ * "Zanettin", "Zanetin"; "Bortoluzzi", "Mortoluzzo"); a shared surname alone does not ("João da
+ * Silva", "Pedro da Silva").
  */
 function sameName(left: string, right: string): boolean {
   const words = (name: string) => fold(name).split(" ").filter((word) => !PARTICLES.has(word));
   const [first = "", ...later] = words(left);
   const [firstB = "", ...laterB] = words(right);
-  if (!oneEditApart(first, firstB)) return false;
-  return later.length === 0 || laterB.length === 0 || laterB.some((word) => later.some((other) => oneEditApart(word, other)));
+  if (!close(first, firstB)) return false;
+  return later.length === 0 || laterB.length === 0 || laterB.some((word) => later.some((other) => close(word, other)));
 }
 
 function yearOf(date: GenDate | null | undefined): number | null {
