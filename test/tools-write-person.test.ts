@@ -53,7 +53,7 @@ describe("create_person", () => {
     const prompt = approver.prompts[0]!;
     expect(prompt.headline.split("\n")[0]).toBe("Criar Giulia Rossi (1921-?)");
     expect(prompt.headline.split("\n")[1]).toBe("ATENÇÃO: 1 pessoas parecidas já existem (maior confiança 4)");
-    expect(prompt.confirm).toEqual({ title: "Digite criar para criar mesmo assim", expected: "criar" });
+    expect(prompt.confirm).toEqual({ title: "Para criar mesmo assim, confirme: criar", expected: "criar", choices: ["não criar", "criar"] });
     expect(prompt.details).toContain("AAAA-111");
     expect(fetch.calls.filter((c) => c.init.method === "POST")).toHaveLength(0);
   });

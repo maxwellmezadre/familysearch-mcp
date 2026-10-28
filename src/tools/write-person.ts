@@ -128,7 +128,9 @@ export const createPerson = defineTool({
       ].join("\n"),
       writes: [createPersonWrite({ givenName: args.given_name, surname: args.surname, gender: args.gender, living, facts })],
       touches: [], // a new person is in no cached family yet
-      ...(strong.length > 0 ? { confirm: { title: "Digite criar para criar mesmo assim", expected: "criar" } } : {}),
+      ...(strong.length > 0
+        ? { confirm: { title: "Para criar mesmo assim, confirme: criar", expected: "criar", choices: ["não criar", "criar"] } }
+        : {}),
     };
 
     let personId: string | null = null;
